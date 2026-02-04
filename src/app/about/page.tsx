@@ -286,35 +286,69 @@ export default function AboutPage() {
       {/* Leadership Section */}
       <section className="section">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto">
-            <ScrollReveal className="text-center mb-12">
-              <span className="text-gold uppercase tracking-widest text-sm mb-4 block">
-                Leadership
-              </span>
-              <h2 className="font-display text-3xl md:text-4xl mb-4">
-                Founder & CEO
-              </h2>
-            </ScrollReveal>
+          <ScrollReveal className="text-center mb-12">
+            <span className="text-gold uppercase tracking-widest text-sm mb-4 block">
+              Leadership
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl mb-4">
+              Our Team
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Led by experienced professionals committed to empowering creative entrepreneurs.
+            </p>
+          </ScrollReveal>
 
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Founder */}
             <ScrollReveal delay={0.1}>
-              <Card variant="bordered" className="text-center">
+              <Card variant="bordered" className="text-center h-full">
                 <div className="w-24 h-24 rounded-full bg-gold/10 mx-auto mb-6 flex items-center justify-center">
                   <span className="font-display text-3xl text-gold">JR</span>
                 </div>
                 <h3 className="font-display text-2xl mb-2">James Rockel III</h3>
-                <p className="text-gold mb-4">Founder & Chief Executive Officer</p>
-                <p className="text-gray-400 max-w-xl mx-auto">
+                <p className="text-gold mb-4">Founder & CEO</p>
+                <p className="text-gray-400 text-sm">
                   James brings direct experience in creator business development,
-                  artist management, and entrepreneurship. His background includes
-                  operating artist management with fair revenue splits, building
-                  innovative merchandise systems, and developing comprehensive
-                  business strategies for patented products.
+                  artist management, and entrepreneurship. The mission of creator
+                  protection continues a family legacy established by his
+                  great-grandfather Archie Acciacca, a pioneer of UAW Local 174.
                 </p>
-                <p className="text-gray-500 text-sm mt-4">
-                  The mission of creator protection continues a family legacy of
-                  advocacy established by his great-grandfather Archie Acciacca,
-                  a pioneer of UAW Local 174.
+              </Card>
+            </ScrollReveal>
+
+            {/* Board Member Placeholder 1 */}
+            <ScrollReveal delay={0.2}>
+              <Card variant="bordered" className="text-center h-full border-dashed">
+                <div className="w-24 h-24 rounded-full bg-void-lighter mx-auto mb-6 flex items-center justify-center border-2 border-dashed border-gold/30">
+                  <span className="font-display text-3xl text-gold/30">?</span>
+                </div>
+                <h3 className="font-display text-2xl mb-2 text-gray-500">Board Member</h3>
+                <p className="text-gold/50 mb-4">Position Open</p>
+                <p className="text-gray-500 text-sm">
+                  We&apos;re seeking passionate advocates for creative entrepreneurs
+                  to join our board. Interested in making a difference?
                 </p>
+                <Link href="/contact" className="text-gold hover:text-gold-light transition-colors text-sm mt-4 inline-block">
+                  Learn More →
+                </Link>
+              </Card>
+            </ScrollReveal>
+
+            {/* Board Member Placeholder 2 */}
+            <ScrollReveal delay={0.3}>
+              <Card variant="bordered" className="text-center h-full border-dashed">
+                <div className="w-24 h-24 rounded-full bg-void-lighter mx-auto mb-6 flex items-center justify-center border-2 border-dashed border-gold/30">
+                  <span className="font-display text-3xl text-gold/30">?</span>
+                </div>
+                <h3 className="font-display text-2xl mb-2 text-gray-500">Board Member</h3>
+                <p className="text-gold/50 mb-4">Position Open</p>
+                <p className="text-gray-500 text-sm">
+                  Help shape the future of creator advocacy. We value diverse
+                  perspectives and industry experience.
+                </p>
+                <Link href="/contact" className="text-gold hover:text-gold-light transition-colors text-sm mt-4 inline-block">
+                  Learn More →
+                </Link>
               </Card>
             </ScrollReveal>
           </div>

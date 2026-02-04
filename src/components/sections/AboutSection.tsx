@@ -53,7 +53,7 @@ export default function AboutSection() {
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
               <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                We're not a label, management company, or publisher. We're a
+                We&apos;re not a label, management company, or publisher. We&apos;re a
                 nonprofit providing the infrastructure and support that creative
                 entrepreneurs need to thrive independently.
               </p>

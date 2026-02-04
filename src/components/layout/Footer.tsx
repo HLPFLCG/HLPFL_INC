@@ -17,8 +17,8 @@ const footerLinks = {
   ],
   creatives: [
     { label: "Get Started", href: "/portal" },
+    { label: "Store", href: "/store" },
     { label: "Resources", href: "/resources" },
-    { label: "Distribution", href: "/services#distribution" },
     { label: "Support", href: "/support" },
   ],
   legal: [
@@ -33,7 +33,7 @@ const socialLinks = [
   { icon: Instagram, href: "https://instagram.com/hlpfl", label: "Instagram" },
   { icon: Youtube, href: "https://youtube.com/@hlpfl", label: "YouTube" },
   { icon: Linkedin, href: "https://linkedin.com/company/hlpfl", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:hello@hlpfl.org", label: "Email" },
+  { icon: Mail, href: "mailto:contact@hlpfl.org", label: "Email" },
 ];
 
 export default function Footer() {

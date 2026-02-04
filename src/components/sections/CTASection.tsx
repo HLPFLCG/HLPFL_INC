@@ -29,26 +29,29 @@ export default function CTASection() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-              Join thousands of creative entrepreneurs who've chosen independence
-              over exploitation. Your journey starts here.
+            <p className="text-gray-400 text-lg md:text-xl mb-4 max-w-2xl mx-auto">
+              Have a viable product or creative talent? Let&apos;s talk about how we
+              can help you reach your market—with zero upfront costs.
+            </p>
+            <p className="text-gold text-lg font-medium mb-10">
+              We don&apos;t charge anything upfront. We earn when you earn.
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/portal">
+              <Link href="/contact">
                 <Button size="lg" className="group">
-                  Get Started Free
+                  Apply Now
                   <ArrowRight
                     size={20}
                     className="transition-transform group-hover:translate-x-1"
                   />
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/portal">
                 <Button variant="outline" size="lg">
-                  Talk to Us
+                  Try Demo Portal
                 </Button>
               </Link>
             </div>
@@ -56,8 +59,7 @@ export default function CTASection() {
 
           <ScrollReveal delay={0.3}>
             <p className="mt-8 text-gray-500 text-sm">
-              No credit card required • No long-term commitments • Cancel
-              anytime
+              No pitch fees • No consultation costs • Commission-only model
             </p>
           </ScrollReveal>
         </div>

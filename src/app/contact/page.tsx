@@ -59,13 +59,13 @@ export default function ContactPage() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl mb-6">
-                Let's <span className="text-gradient">Talk</span>
+                Let&apos;s <span className="text-gradient">Talk</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="text-gray-400 text-lg">
                 Have questions about our tools? Want to collaborate? Just want
-                to say hi? We'd love to hear from you.
+                to say hi? We&apos;d love to hear from you.
               </p>
             </ScrollReveal>
           </div>
@@ -135,7 +135,7 @@ export default function ContactPage() {
                         Message Sent!
                       </h3>
                       <p className="text-gray-400 mb-6">
-                        Thanks for reaching out. We'll get back to you within 24
+                        Thanks for reaching out. We&apos;ll get back to you within 24
                         hours.
                       </p>
                       <Button
