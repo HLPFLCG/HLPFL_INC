@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /portal/
+Disallow: /api/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /portal/
+Disallow: /api/
+
+Sitemap: https://hlpfl.org/sitemap.xml
+Host: https://hlpfl.org
