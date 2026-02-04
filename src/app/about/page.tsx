@@ -1,46 +1,114 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Heart, Users, Shield, Sparkles } from "lucide-react";
+import {
+  Heart,
+  Zap,
+  Users,
+  Shield,
+  ArrowRight,
+  Lightbulb,
+  Music,
+  Camera,
+  PenTool,
+  GraduationCap,
+  Quote,
+} from "lucide-react";
 import { ScrollReveal, Button, Card } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "About | HLPFL INC",
   description:
-    "Learn about our mission to empower creative entrepreneurs with tools, resources, and community.",
+    "HLPFL INC is a Wyoming nonprofit advocating for creative entrepreneurs. Zero upfront costs, commission-only model. Founded by James Rockel III.",
+  keywords: [
+    "HLPFL INC",
+    "nonprofit",
+    "creative entrepreneurs",
+    "Wyoming 501c3",
+    "James Rockel",
+    "artist advocacy",
+  ],
 };
 
-const teamValues = [
+const values = [
   {
     icon: Heart,
-    title: "Creator-First Always",
+    title: "Creator-First",
     description:
-      "Every decision we make is guided by one question: does this genuinely help creators succeed? If not, we don't do it.",
+      "Every decision we make starts with one question: does this help the creator? If not, we don't do it.",
   },
   {
-    icon: Shield,
+    icon: Zap,
     title: "Radical Transparency",
     description:
-      "No hidden fees, no confusing contracts, no fine print designed to trap you. We believe clarity builds trust.",
+      "No hidden fees, no surprise terms, no bullshit. You'll always know exactly what you're getting and what it costs.",
   },
   {
     icon: Users,
     title: "Community Over Competition",
     description:
-      "We're building a movement, not just a platform. When one creator wins, we all win.",
+      "Creators supporting creators. We believe in building each other up, not tearing each other down.",
   },
   {
-    icon: Sparkles,
-    title: "Independence is Everything",
+    icon: Shield,
+    title: "Your Rights, Always",
     description:
-      "Your work, your rights, your decisions. We support and amplify—never extract or control.",
+      "You keep 100% of your intellectual property. We help you protect your work, not take it from you.",
   },
 ];
 
-const milestones = [
-  { year: "2023", event: "HLPFL founded with a mission to help creators" },
-  { year: "2024", event: "Launched distribution tools for independent artists" },
-  { year: "2025", event: "Reached 10,000+ creative entrepreneurs served" },
-  { year: "2026", event: "Expanded community programs and resources" },
+const audiences = [
+  {
+    icon: Lightbulb,
+    title: "Inventors",
+    description: "Patent holders and product developers with working products that need sales, marketing, and business structure.",
+  },
+  {
+    icon: Music,
+    title: "Musicians",
+    description: "Independent artists, producers, and bands who need management, marketing, touring support, and merchandise systems.",
+  },
+  {
+    icon: Camera,
+    title: "Visual Artists",
+    description: "Painters, illustrators, photographers, and digital artists who need help selling work and building collector bases.",
+  },
+  {
+    icon: PenTool,
+    title: "Designers",
+    description: "Industrial, fashion, and UX/UI designers with products and services that need market positioning and sales channels.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Writers",
+    description: "Authors, screenwriters, and content creators who need publishing support, platform building, and rights protection.",
+  },
+];
+
+const timeline = [
+  {
+    year: "2023",
+    title: "The Beginning",
+    description:
+      "Started helping independent musicians navigate the industry with fair, transparent practices.",
+  },
+  {
+    year: "2024",
+    title: "Expanding the Mission",
+    description:
+      "Extended services beyond music to inventors, visual artists, and other creative entrepreneurs.",
+  },
+  {
+    year: "2025",
+    title: "Nonprofit Formation",
+    description:
+      "Established HLPFL INC as a Wyoming 501(c)(3) nonprofit to formalize our commitment to creator advocacy.",
+  },
+  {
+    year: "2026",
+    title: "Growing Impact",
+    description:
+      "Serving creative entrepreneurs across multiple disciplines with our commission-only model.",
+  },
 ];
 
 export default function AboutPage() {
@@ -49,27 +117,43 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="section pt-24 md:pt-32">
         <div className="container-custom">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto text-center">
             <ScrollReveal>
               <span className="text-gold uppercase tracking-widest text-sm mb-4 block">
-                Our Story
+                About Us
               </span>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl mb-6">
-                We Exist to Help{" "}
-                <span className="text-gradient">Creative Entrepreneurs</span>{" "}
-                Thrive
+                Advocating for{" "}
+                <span className="text-gradient">Creative Entrepreneurs</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
-                HLPFL was born from frustration with an industry that takes
-                more than it gives. We're here to flip the script—providing
-                tools and support without the exploitative contracts.
+                HLPFL Inc. is a Wyoming 501(c)(3) nonprofit advocating for fair
+                treatment, equitable compensation, and protection of rights for
+                creative entrepreneurs.
               </p>
             </ScrollReveal>
           </div>
+        </div>
+      </section>
+
+      {/* Key Message Quote */}
+      <section className="section pt-8 pb-16">
+        <div className="container-custom">
+          <ScrollReveal>
+            <Card variant="bordered" className="max-w-3xl mx-auto text-center py-12">
+              <Quote size={40} className="text-gold/30 mx-auto mb-4" />
+              <p className="font-display text-2xl md:text-3xl text-gold mb-4">
+                &ldquo;You shouldn&apos;t have to pay thousands just to find out if someone can help you.&rdquo;
+              </p>
+              <p className="text-gray-400">
+                We don&apos;t charge anything upfront. We earn when you earn. That&apos;s it.
+              </p>
+            </Card>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -78,34 +162,41 @@ export default function AboutPage() {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal>
-              <div className="space-y-6">
-                <h2 className="font-display text-3xl md:text-4xl">
-                  Tools, Not Contracts
-                </h2>
-                <p className="text-gray-400 leading-relaxed">
-                  The creative industry is built on a broken model: talented
-                  people sign away their work for the chance to succeed. We
-                  believe there's a better way.
+              <span className="text-gold uppercase tracking-widest text-sm mb-4 block">
+                Our Mission
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl mb-6">
+                Tools, Not Contracts
+              </h2>
+              <div className="space-y-4 text-gray-400">
+                <p>
+                  The creator economy generates over $100 billion annually, yet the
+                  individuals who create this value routinely face exploitation.
                 </p>
-                <p className="text-gray-400 leading-relaxed">
-                  HLPFL is a nonprofit organization providing the infrastructure,
-                  tools, and community that creative entrepreneurs need to build
-                  sustainable careers—without giving up ownership of their work.
+                <p>
+                  Predatory business services charge thousands of dollars upfront
+                  with no guaranteed results. Unfair contract terms strip creators
+                  of their rights and revenue. A lack of accessible business
+                  education leaves talented entrepreneurs vulnerable.
                 </p>
-                <p className="text-gray-400 leading-relaxed">
-                  No VCs demanding growth at all costs. No shareholders expecting
-                  extraction. Just genuine support for your creative journey.
+                <p>
+                  We built HLPFL to be the opposite of that. Our commission-only
+                  model means we only succeed when our clients succeed. No upfront
+                  fees. No predatory contracts. No exploitation.
                 </p>
               </div>
+              <p className="text-gold font-semibold mt-6 text-lg">
+                No VCs. No Exploitation. No Bullshit.
+              </p>
             </ScrollReveal>
 
-            <ScrollReveal delay={0.2} direction="left">
+            <ScrollReveal delay={0.2}>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { value: "100%", label: "Royalties to Creators" },
-                  { value: "0%", label: "Hidden Fees" },
-                  { value: "10K+", label: "Creators Served" },
-                  { value: "150+", label: "Distribution Partners" },
+                  { value: "$0", label: "Upfront Fees" },
+                  { value: "100%", label: "Your Rights" },
+                  { value: "15-30%", label: "Commission Only" },
+                  { value: "501(c)(3)", label: "Nonprofit Status" },
                 ].map((stat, index) => (
                   <Card key={index} variant="bordered" className="text-center">
                     <div className="font-display text-3xl text-gold mb-1">
@@ -120,24 +211,62 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* Who We Serve Section */}
       <section className="section">
+        <div className="container-custom">
+          <ScrollReveal className="text-center mb-16">
+            <span className="text-gold uppercase tracking-widest text-sm mb-4 block">
+              Who We Serve
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mb-4">
+              Creative Entrepreneurs
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              We work with creators who have viable products or talent but need
+              business infrastructure to reach their potential.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {audiences.map((audience, index) => (
+              <ScrollReveal key={audience.title} delay={index * 0.1}>
+                <Card variant="bordered" hover className="h-full group">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-gold/10 text-gold group-hover:bg-gold group-hover:text-void transition-all">
+                      <audience.icon size={24} />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-xl mb-2 group-hover:text-gold transition-colors">
+                        {audience.title}
+                      </h3>
+                      <p className="text-gray-400 text-sm">{audience.description}</p>
+                    </div>
+                  </div>
+                </Card>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="section bg-void-light">
         <div className="container-custom">
           <ScrollReveal className="text-center mb-16">
             <span className="text-gold uppercase tracking-widest text-sm mb-4 block">
               What We Believe
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mb-4">
               Our Core Values
             </h2>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {teamValues.map((value, index) => (
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {values.map((value, index) => (
               <ScrollReveal key={value.title} delay={index * 0.1}>
                 <Card variant="bordered" hover className="h-full group">
-                  <div className="flex gap-5">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-void transition-all">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-gold/10 text-gold group-hover:bg-gold group-hover:text-void transition-all">
                       <value.icon size={24} />
                     </div>
                     <div>
@@ -154,6 +283,44 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Leadership Section */}
+      <section className="section">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto">
+            <ScrollReveal className="text-center mb-12">
+              <span className="text-gold uppercase tracking-widest text-sm mb-4 block">
+                Leadership
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl mb-4">
+                Founder & CEO
+              </h2>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.1}>
+              <Card variant="bordered" className="text-center">
+                <div className="w-24 h-24 rounded-full bg-gold/10 mx-auto mb-6 flex items-center justify-center">
+                  <span className="font-display text-3xl text-gold">JR</span>
+                </div>
+                <h3 className="font-display text-2xl mb-2">James Rockel III</h3>
+                <p className="text-gold mb-4">Founder & Chief Executive Officer</p>
+                <p className="text-gray-400 max-w-xl mx-auto">
+                  James brings direct experience in creator business development,
+                  artist management, and entrepreneurship. His background includes
+                  operating artist management with fair revenue splits, building
+                  innovative merchandise systems, and developing comprehensive
+                  business strategies for patented products.
+                </p>
+                <p className="text-gray-500 text-sm mt-4">
+                  The mission of creator protection continues a family legacy of
+                  advocacy established by his great-grandfather Archie Acciacca,
+                  a pioneer of UAW Local 174.
+                </p>
+              </Card>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* Timeline Section */}
       <section className="section bg-void-light">
         <div className="container-custom">
@@ -161,26 +328,24 @@ export default function AboutPage() {
             <span className="text-gold uppercase tracking-widest text-sm mb-4 block">
               Our Journey
             </span>
-            <h2 className="font-display text-3xl md:text-4xl">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl">
               Building Something Different
             </h2>
           </ScrollReveal>
 
-          <div className="max-w-2xl mx-auto">
-            {milestones.map((milestone, index) => (
-              <ScrollReveal key={index} delay={index * 0.1}>
-                <div className="flex gap-6 pb-8 last:pb-0">
-                  <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 rounded-full bg-gold/20 border-2 border-gold flex items-center justify-center font-display text-gold">
-                      {milestone.year.slice(-2)}
-                    </div>
-                    {index < milestones.length - 1 && (
-                      <div className="w-px h-full bg-gold/20 mt-2" />
-                    )}
+          <div className="max-w-3xl mx-auto">
+            {timeline.map((item, index) => (
+              <ScrollReveal key={item.year} delay={index * 0.1}>
+                <div className="flex gap-6 mb-8 last:mb-0">
+                  <div className="flex-shrink-0 w-20">
+                    <span className="font-display text-2xl text-gold">
+                      {item.year}
+                    </span>
                   </div>
-                  <div className="pt-3">
-                    <span className="text-gold font-medium">{milestone.year}</span>
-                    <p className="text-gray-400 mt-1">{milestone.event}</p>
+                  <div className="flex-1 pb-8 border-l border-gold/20 pl-6 relative">
+                    <div className="absolute left-0 top-2 w-3 h-3 rounded-full bg-gold -translate-x-[7px]" />
+                    <h3 className="font-display text-xl mb-2">{item.title}</h3>
+                    <p className="text-gray-400">{item.description}</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -194,25 +359,26 @@ export default function AboutPage() {
         <div className="container-custom">
           <ScrollReveal className="text-center max-w-3xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mb-6">
-              Ready to Join the Movement?
+              Join the Movement
             </h2>
             <p className="text-gray-400 text-lg mb-8">
-              Whether you're just starting out or looking to take your creative
-              business to the next level, we're here to help.
+              Whether you&apos;re a creator looking for support or someone who
+              believes in fair treatment for creative entrepreneurs—we&apos;d
+              love to connect.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/portal">
+              <Link href="/contact">
                 <Button size="lg" className="group">
-                  Get Started
+                  Get in Touch
                   <ArrowRight
                     size={20}
                     className="transition-transform group-hover:translate-x-1"
                   />
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/services">
                 <Button variant="outline" size="lg">
-                  Contact Us
+                  See Our Services
                 </Button>
               </Link>
             </div>

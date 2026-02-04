@@ -1,51 +1,51 @@
 "use client";
 
 import {
-  Music,
-  Users,
-  TrendingUp,
-  Shield,
-  Headphones,
-  Globe,
+  Palette,
+  Building2,
+  Handshake,
+  Target,
+  Video,
+  GraduationCap,
 } from "lucide-react";
 import { ScrollReveal, Card } from "@/components/ui";
 
 const services = [
   {
-    icon: Music,
-    title: "Distribution",
+    icon: Palette,
+    title: "Brand Development",
     description:
-      "Get your music on all major platforms worldwide. Spotify, Apple Music, Tidal, and 150+ more stores.",
+      "Build a distinctive brand identity—logo design, visual identity, and market positioning that makes you stand out.",
   },
   {
-    icon: TrendingUp,
-    title: "Growth Tools",
+    icon: Building2,
+    title: "Business Formation",
     description:
-      "Analytics, marketing resources, and promotional tools to help you reach new audiences.",
+      "Navigate entity formation, LLC filing, structure guidance, and compliance so you can focus on creating.",
   },
   {
-    icon: Users,
-    title: "Community",
+    icon: Handshake,
+    title: "Sales Representation",
     description:
-      "Connect with fellow creative entrepreneurs. Collaborate, learn, and grow together.",
+      "Connect with buyers, close deals, and access markets through our network and direct sales advocacy.",
   },
   {
-    icon: Shield,
-    title: "Rights Protection",
+    icon: Target,
+    title: "Marketing Strategy",
     description:
-      "Keep 100% of your rights. We help you protect your creative work without taking ownership.",
+      "Develop targeted marketing plans, campaign strategies, and promotional tactics that actually work.",
   },
   {
-    icon: Headphones,
-    title: "Production Support",
+    icon: Video,
+    title: "Content Creation",
     description:
-      "Access to production resources, mixing/mastering services, and creative consultation.",
+      "Professional video production, photography, and social media content that tells your story.",
   },
   {
-    icon: Globe,
-    title: "Global Reach",
+    icon: GraduationCap,
+    title: "Creator Education",
     description:
-      "Expand your audience internationally with localized marketing and regional distribution.",
+      "Learn business fundamentals, rights protection, and contract navigation to thrive independently.",
   },
 ];
 
@@ -56,14 +56,14 @@ export default function ServicesSection() {
         {/* Section Header */}
         <ScrollReveal className="text-center mb-16">
           <span className="text-gold uppercase tracking-widest text-sm mb-4 block">
-            What We Offer
+            How We Help
           </span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-6">
-            Tools for Your <span className="text-gradient">Creative Journey</span>
+            Professional Services, <span className="text-gradient">Zero Upfront</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Everything you need to build, grow, and sustain your creative
-            business—all without giving up your independence.
+            Everything you need to build and grow your creative business—with no
+            upfront costs. We only earn when you earn.
           </p>
         </ScrollReveal>
 

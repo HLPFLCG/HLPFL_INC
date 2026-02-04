@@ -37,7 +37,7 @@ export default function HeroSection() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold/30 bg-gold/5 mb-8"
         >
           <Sparkles size={16} className="text-gold" />
-          <span className="text-sm text-gold">Tools, Not Contracts</span>
+          <span className="text-sm text-gold">Commission-Only Model • Zero Upfront Costs</span>
         </motion.div>
 
         {/* Main Heading */}
@@ -58,11 +58,20 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-4 leading-relaxed"
         >
-          We provide the tools, resources, and community you need to build your
-          creative business. No VCs. No exploitation. Just genuine support for
-          your journey.
+          Professional business support with zero upfront costs. We don&apos;t charge
+          anything upfront—we earn when you earn.
+        </motion.p>
+
+        {/* Key Message */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="text-gold font-medium text-lg mb-10"
+        >
+          No VCs. No Exploitation. No Bullshit.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -81,9 +90,9 @@ export default function HeroSection() {
               />
             </Button>
           </Link>
-          <Link href="/about">
+          <Link href="/services">
             <Button variant="outline" size="lg">
-              Learn More
+              How It Works
             </Button>
           </Link>
         </motion.div>
@@ -96,9 +105,9 @@ export default function HeroSection() {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { value: "100%", label: "Royalties Kept" },
-            { value: "0%", label: "Hidden Fees" },
-            { value: "24/7", label: "Support" },
+            { value: "$0", label: "Upfront Fees" },
+            { value: "100%", label: "Your Rights" },
+            { value: "15-30%", label: "Commission Only" },
             { value: "∞", label: "Possibilities" },
           ].map((stat, index) => (
             <div key={index} className="text-center">

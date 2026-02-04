@@ -1,103 +1,132 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import Link from "next/link";
 import {
-  Music,
+  Briefcase,
   BarChart2,
   Users,
   Settings,
-  Upload,
+  BookOpen,
   DollarSign,
-  Calendar,
   Bell,
   ChevronRight,
-  Play,
+  Sparkles,
   ExternalLink,
+  LogOut,
+  LayoutDashboard,
+  Lightbulb,
+  Palette,
+  PenTool,
+  FileText,
 } from "lucide-react";
 import { Button, Card, ScrollReveal } from "@/components/ui";
+import { useAuth } from "@/contexts/AuthContext";
+import AuthGuard from "@/components/auth/AuthGuard";
 
-// Demo data for the portal
-const recentReleases = [
+// Demo data for the portal - generic creative entrepreneur data
+const recentProjects = [
   {
-    title: "Summer Vibes EP",
-    streams: "12.5K",
-    status: "Live",
+    title: "Brand Identity Package",
+    type: "Brand Development",
+    status: "In Progress",
     date: "Jan 15, 2026",
+    icon: Palette,
   },
   {
-    title: "Midnight Dreams",
-    streams: "8.2K",
-    status: "Live",
+    title: "Product Launch Campaign",
+    type: "Marketing",
+    status: "Complete",
     date: "Dec 28, 2025",
+    icon: Lightbulb,
   },
   {
-    title: "New Single",
-    streams: "—",
-    status: "Processing",
+    title: "Sales Representation Agreement",
+    type: "Sales",
+    status: "Pending",
     date: "Feb 1, 2026",
+    icon: FileText,
   },
 ];
 
 const quickStats = [
-  { label: "Total Streams", value: "45.2K", change: "+12%", icon: Play },
-  { label: "Revenue", value: "$1,247", change: "+8%", icon: DollarSign },
-  { label: "Followers", value: "2.1K", change: "+24%", icon: Users },
-  { label: "Releases", value: "7", change: "+1", icon: Music },
+  { label: "Active Projects", value: "3", change: "+1", icon: Briefcase },
+  { label: "Revenue Generated", value: "$12,450", change: "+18%", icon: DollarSign },
+  { label: "Network Connections", value: "45", change: "+8", icon: Users },
+  { label: "Resources Accessed", value: "28", change: "+5", icon: BookOpen },
 ];
 
 const quickActions = [
-  { label: "Upload New Release", icon: Upload, href: "#upload" },
-  { label: "View Analytics", icon: BarChart2, href: "#analytics" },
-  { label: "Schedule Release", icon: Calendar, href: "#schedule" },
+  { label: "Request Service", icon: Sparkles, href: "#services" },
+  { label: "View Progress", icon: BarChart2, href: "#progress" },
+  { label: "Browse Resources", icon: BookOpen, href: "#resources" },
   { label: "Account Settings", icon: Settings, href: "#settings" },
 ];
 
-export default function PortalPage() {
+const sidebarNav = [
+  { id: "overview", label: "Overview", icon: LayoutDashboard },
+  { id: "projects", label: "My Projects", icon: Briefcase },
+  { id: "services", label: "Services", icon: Sparkles },
+  { id: "resources", label: "Resources", icon: BookOpen },
+  { id: "community", label: "Community", icon: Users },
+  { id: "settings", label: "Settings", icon: Settings },
+];
+
+function PortalDashboard() {
+  const { user, logout } = useAuth();
   const [activeTab, setActiveTab] = useState("overview");
 
   return (
     <div className="min-h-screen bg-void">
       {/* Portal Header */}
       <section className="bg-void-light border-b border-gold/10">
-        <div className="container-custom py-8">
-          <ScrollReveal>
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div className="container-custom py-6">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            {/* Logo & Title */}
+            <div className="flex items-center gap-6">
+              <Link href="/" className="font-display text-2xl tracking-wider">
+                HLPFL<span className="text-gold">.</span>
+              </Link>
+              <div className="h-8 w-px bg-gold/20 hidden md:block" />
               <div>
-                <span className="text-gold uppercase tracking-widest text-sm">
+                <span className="text-gold uppercase tracking-widest text-xs">
                   Creative Entrepreneur Portal
                 </span>
-                <h1 className="font-display text-3xl md:text-4xl mt-2">
-                  Welcome Back, <span className="text-gradient">Creator</span>
+                <h1 className="font-display text-xl md:text-2xl">
+                  Welcome, <span className="text-gradient">{user?.name || "Creator"}</span>
                 </h1>
               </div>
-              <div className="flex gap-3">
-                <Button variant="outline" size="sm">
-                  <Bell size={18} />
-                  Notifications
-                </Button>
-                <Button size="sm">
-                  <Upload size={18} />
-                  New Release
-                </Button>
-              </div>
             </div>
-          </ScrollReveal>
+
+            {/* Actions */}
+            <div className="flex items-center gap-3">
+              <Button variant="outline" size="sm">
+                <Bell size={16} />
+                <span className="hidden sm:inline">Notifications</span>
+              </Button>
+              <Button variant="ghost" size="sm" onClick={logout}>
+                <LogOut size={16} />
+                <span className="hidden sm:inline">Logout</span>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Demo Notice Banner */}
-      <div className="bg-gold/10 border-b border-gold/20">
-        <div className="container-custom py-3">
-          <p className="text-center text-sm text-gold">
-            <span className="font-semibold">Demo Mode:</span> This is a preview
-            of the Creative Entrepreneur Portal.{" "}
-            <a href="#" className="underline hover:no-underline">
-              Sign up to access your real dashboard →
-            </a>
-          </p>
+      {user?.type === "demo" && (
+        <div className="bg-gold/10 border-b border-gold/20">
+          <div className="container-custom py-3">
+            <p className="text-center text-sm text-gold">
+              <span className="font-semibold">Demo Mode:</span> This is a preview
+              of the Creative Entrepreneur Portal.{" "}
+              <Link href="/contact" className="underline hover:no-underline">
+                Apply to get your real dashboard →
+              </Link>
+            </p>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Main Content */}
       <div className="container-custom py-8">
@@ -107,14 +136,7 @@ export default function PortalPage() {
             <ScrollReveal>
               <Card variant="bordered" padding="sm">
                 <nav className="space-y-1">
-                  {[
-                    { id: "overview", label: "Overview", icon: BarChart2 },
-                    { id: "releases", label: "My Releases", icon: Music },
-                    { id: "analytics", label: "Analytics", icon: BarChart2 },
-                    { id: "earnings", label: "Earnings", icon: DollarSign },
-                    { id: "community", label: "Community", icon: Users },
-                    { id: "settings", label: "Settings", icon: Settings },
-                  ].map((item) => (
+                  {sidebarNav.map((item) => (
                     <button
                       key={item.id}
                       onClick={() => setActiveTab(item.id)}
@@ -138,7 +160,7 @@ export default function PortalPage() {
             {/* Quick Stats */}
             <ScrollReveal delay={0.1}>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                {quickStats.map((stat, index) => (
+                {quickStats.map((stat) => (
                   <Card
                     key={stat.label}
                     variant="bordered"
@@ -185,12 +207,12 @@ export default function PortalPage() {
               </div>
             </ScrollReveal>
 
-            {/* Recent Releases */}
+            {/* Recent Projects */}
             <ScrollReveal delay={0.3}>
               <div className="flex items-center justify-between mb-4">
-                <h2 className="font-display text-xl">Recent Releases</h2>
+                <h2 className="font-display text-xl">Recent Projects</h2>
                 <a
-                  href="#releases"
+                  href="#projects"
                   className="text-gold text-sm hover:underline flex items-center gap-1"
                 >
                   View All <ChevronRight size={16} />
@@ -198,33 +220,35 @@ export default function PortalPage() {
               </div>
               <Card variant="bordered" padding="none">
                 <div className="divide-y divide-gold/10">
-                  {recentReleases.map((release, index) => (
+                  {recentProjects.map((project, index) => (
                     <div
                       key={index}
                       className="flex items-center justify-between p-4 hover:bg-void-lighter transition-colors"
                     >
                       <div className="flex items-center gap-4">
                         <div className="w-12 h-12 rounded-lg bg-gold/20 flex items-center justify-center">
-                          <Music className="text-gold" size={20} />
+                          <project.icon className="text-gold" size={20} />
                         </div>
                         <div>
-                          <p className="font-medium">{release.title}</p>
-                          <p className="text-sm text-gray-500">{release.date}</p>
+                          <p className="font-medium">{project.title}</p>
+                          <p className="text-sm text-gray-500">{project.type}</p>
                         </div>
                       </div>
-                      <div className="flex items-center gap-6">
-                        <div className="text-right">
-                          <p className="text-sm text-gray-500">Streams</p>
-                          <p className="font-medium">{release.streams}</p>
+                      <div className="flex items-center gap-4 sm:gap-6">
+                        <div className="text-right hidden sm:block">
+                          <p className="text-sm text-gray-500">Date</p>
+                          <p className="font-medium text-sm">{project.date}</p>
                         </div>
                         <span
-                          className={`px-3 py-1 rounded-full text-xs font-medium ${
-                            release.status === "Live"
+                          className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap ${
+                            project.status === "Complete"
                               ? "bg-green-500/20 text-green-500"
+                              : project.status === "In Progress"
+                              ? "bg-blue-500/20 text-blue-400"
                               : "bg-gold/20 text-gold"
                           }`}
                         >
-                          {release.status}
+                          {project.status}
                         </span>
                         <button className="p-2 hover:bg-gold/10 rounded-lg transition-colors">
                           <ExternalLink size={18} className="text-gray-500" />
@@ -241,32 +265,88 @@ export default function PortalPage() {
               <h2 className="font-display text-xl mb-4">Resources & Learning</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 <Card variant="bordered" hover className="group">
-                  <h3 className="font-display text-lg mb-2 group-hover:text-gold transition-colors">
-                    Distribution Guide
-                  </h3>
-                  <p className="text-gray-400 text-sm mb-4">
-                    Learn how to get your music on all major streaming platforms.
-                  </p>
-                  <a
-                    href="#"
-                    className="text-gold text-sm flex items-center gap-1 hover:underline"
-                  >
-                    Read Guide <ChevronRight size={16} />
-                  </a>
+                  <div className="flex items-start gap-4">
+                    <div className="p-2 rounded-lg bg-gold/10 text-gold">
+                      <PenTool size={20} />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-lg mb-2 group-hover:text-gold transition-colors">
+                        Brand Development Guide
+                      </h3>
+                      <p className="text-gray-400 text-sm mb-4">
+                        Learn how to build a distinctive brand identity that resonates with your audience.
+                      </p>
+                      <a
+                        href="#"
+                        className="text-gold text-sm flex items-center gap-1 hover:underline"
+                      >
+                        Read Guide <ChevronRight size={16} />
+                      </a>
+                    </div>
+                  </div>
                 </Card>
                 <Card variant="bordered" hover className="group">
-                  <h3 className="font-display text-lg mb-2 group-hover:text-gold transition-colors">
-                    Marketing Toolkit
-                  </h3>
-                  <p className="text-gray-400 text-sm mb-4">
-                    Templates, strategies, and tools to promote your releases.
-                  </p>
-                  <a
-                    href="#"
-                    className="text-gold text-sm flex items-center gap-1 hover:underline"
-                  >
-                    Access Toolkit <ChevronRight size={16} />
-                  </a>
+                  <div className="flex items-start gap-4">
+                    <div className="p-2 rounded-lg bg-gold/10 text-gold">
+                      <DollarSign size={20} />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-lg mb-2 group-hover:text-gold transition-colors">
+                        Sales & Revenue Toolkit
+                      </h3>
+                      <p className="text-gray-400 text-sm mb-4">
+                        Strategies and templates for pitching, pricing, and closing deals.
+                      </p>
+                      <a
+                        href="#"
+                        className="text-gold text-sm flex items-center gap-1 hover:underline"
+                      >
+                        Access Toolkit <ChevronRight size={16} />
+                      </a>
+                    </div>
+                  </div>
+                </Card>
+                <Card variant="bordered" hover className="group">
+                  <div className="flex items-start gap-4">
+                    <div className="p-2 rounded-lg bg-gold/10 text-gold">
+                      <FileText size={20} />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-lg mb-2 group-hover:text-gold transition-colors">
+                        Rights & Contracts
+                      </h3>
+                      <p className="text-gray-400 text-sm mb-4">
+                        Understand your rights and navigate contracts with confidence.
+                      </p>
+                      <a
+                        href="#"
+                        className="text-gold text-sm flex items-center gap-1 hover:underline"
+                      >
+                        Learn More <ChevronRight size={16} />
+                      </a>
+                    </div>
+                  </div>
+                </Card>
+                <Card variant="bordered" hover className="group">
+                  <div className="flex items-start gap-4">
+                    <div className="p-2 rounded-lg bg-gold/10 text-gold">
+                      <Lightbulb size={20} />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-lg mb-2 group-hover:text-gold transition-colors">
+                        Business Fundamentals
+                      </h3>
+                      <p className="text-gray-400 text-sm mb-4">
+                        Essential business skills for independent creative entrepreneurs.
+                      </p>
+                      <a
+                        href="#"
+                        className="text-gold text-sm flex items-center gap-1 hover:underline"
+                      >
+                        Start Learning <ChevronRight size={16} />
+                      </a>
+                    </div>
+                  </div>
                 </Card>
               </div>
             </ScrollReveal>
@@ -274,5 +354,13 @@ export default function PortalPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function PortalPage() {
+  return (
+    <AuthGuard>
+      <PortalDashboard />
+    </AuthGuard>
   );
 }

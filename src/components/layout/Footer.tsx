@@ -33,7 +33,7 @@ const socialLinks = [
   { icon: Instagram, href: "https://instagram.com/hlpfl", label: "Instagram" },
   { icon: Youtube, href: "https://youtube.com/@hlpfl", label: "YouTube" },
   { icon: Linkedin, href: "https://linkedin.com/company/hlpfl", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:hello@hlpfl.com", label: "Email" },
+  { icon: Mail, href: "mailto:hello@hlpfl.org", label: "Email" },
 ];
 
 export default function Footer() {
@@ -138,8 +138,9 @@ export default function Footer() {
               © {currentYear} HLPFL INC. All rights reserved.
             </p>
             <p className="text-gray-500 text-sm">
-              Tools, Not Contracts<span className="text-gold mx-2">•</span>
-              Built for Creatives
+              No VCs<span className="text-gold mx-2">•</span>
+              No Exploitation<span className="text-gold mx-2">•</span>
+              No Bullshit
             </p>
           </div>
         </div>
