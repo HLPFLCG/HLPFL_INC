@@ -23,5 +23,3 @@ export {
   BlurTransition,
   TransitionWrapper,
 } from "./PageTransition";
-
-export { default as CustomCursor } from "./CustomCursor";

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -43,9 +44,12 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-display text-2xl tracking-wider hover:text-gold transition-colors"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
-            HLPFL<span className="text-gold">.</span>
+            <Image src="/logo.svg" alt="HLPFL" width={24} height={36} priority />
+            <span className="font-display text-2xl tracking-wider">
+              HLPFL<span className="text-gold">.</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -103,8 +107,11 @@ export default function Header() {
               <div className="flex flex-col h-full">
                 {/* Mobile Menu Header */}
                 <div className="flex items-center justify-between p-4 border-b border-gold/20">
-                  <span className="font-display text-xl tracking-wider">
-                    HLPFL<span className="text-gold">.</span>
+                  <span className="flex items-center gap-2">
+                    <Image src="/logo.svg" alt="HLPFL" width={20} height={30} />
+                    <span className="font-display text-xl tracking-wider">
+                      HLPFL<span className="text-gold">.</span>
+                    </span>
                   </span>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
