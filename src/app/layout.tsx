@@ -102,9 +102,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "google-site-verification-code",
-  },
   category: "nonprofit",
 };
 

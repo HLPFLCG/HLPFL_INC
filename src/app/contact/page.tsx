@@ -39,9 +39,14 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    // Open user's email client with form data pre-filled
+    const subject = encodeURIComponent(formData.subject || "Contact Form Submission");
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    );
+    window.location.href = `mailto:contact@hlpfl.org?subject=${subject}&body=${body}`;
 
+    await new Promise((resolve) => setTimeout(resolve, 800));
     setIsSubmitting(false);
     setSubmitted(true);
   };
@@ -105,19 +110,17 @@ export default function ContactPage() {
 
               <ScrollReveal delay={0.4}>
                 <Card variant="glass" className="mt-8">
-                  <h3 className="font-display text-xl mb-3">Quick Support</h3>
+                  <h3 className="font-display text-xl mb-3">Prefer Email?</h3>
                   <p className="text-gray-400 text-sm mb-4">
-                    For urgent issues or quick questions, check our FAQ or join
-                    our community Discord.
+                    You can also reach us directly at contact@hlpfl.org for any
+                    questions about our services or the application process.
                   </p>
-                  <div className="flex gap-3">
+                  <a href="mailto:contact@hlpfl.org">
                     <Button variant="outline" size="sm">
-                      View FAQ
+                      <Mail size={16} />
+                      Email Us Directly
                     </Button>
-                    <Button variant="ghost" size="sm">
-                      Join Discord
-                    </Button>
-                  </div>
+                  </a>
                 </Card>
               </ScrollReveal>
             </div>
@@ -132,11 +135,11 @@ export default function ContactPage() {
                         <Send className="text-green-500" size={32} />
                       </div>
                       <h3 className="font-display text-2xl mb-2">
-                        Message Sent!
+                        Almost There!
                       </h3>
                       <p className="text-gray-400 mb-6">
-                        Thanks for reaching out. We&apos;ll get back to you within 24
-                        hours.
+                        Your email client should have opened with your message.
+                        Just hit send and we&apos;ll get back to you within 24 hours.
                       </p>
                       <Button
                         variant="outline"

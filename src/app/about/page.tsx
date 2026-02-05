@@ -86,28 +86,22 @@ const audiences = [
 
 const timeline = [
   {
-    year: "2023",
-    title: "The Beginning",
-    description:
-      "Started helping independent musicians navigate the industry with fair, transparent practices.",
-  },
-  {
     year: "2024",
-    title: "Expanding the Mission",
+    title: "The Vision",
     description:
-      "Extended services beyond music to inventors, visual artists, and other creative entrepreneurs.",
+      "Recognized the need for fair, transparent business support for independent creative entrepreneurs.",
   },
   {
     year: "2025",
     title: "Nonprofit Formation",
     description:
-      "Established HLPFL INC as a Wyoming 501(c)(3) nonprofit to formalize our commitment to creator advocacy.",
+      "Established HLPFL INC as a Wyoming 501(c)(3) nonprofit with a commission-only model that puts creators first.",
   },
   {
     year: "2026",
     title: "Growing Impact",
     description:
-      "Serving creative entrepreneurs across multiple disciplines with our commission-only model.",
+      "Serving creative entrepreneurs across multiple disciplines: inventors, musicians, visual artists, designers, and writers.",
   },
 ];
 

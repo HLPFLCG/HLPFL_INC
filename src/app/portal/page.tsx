@@ -276,12 +276,11 @@ function PortalDashboard() {
                       <p className="text-gray-400 text-sm mb-4">
                         Learn how to build a distinctive brand identity that resonates with your audience.
                       </p>
-                      <a
-                        href="#"
-                        className="text-gold text-sm flex items-center gap-1 hover:underline"
+                      <span
+                        className="text-gold/50 text-sm flex items-center gap-1"
                       >
-                        Read Guide <ChevronRight size={16} />
-                      </a>
+                        Coming Soon <ChevronRight size={16} />
+                      </span>
                     </div>
                   </div>
                 </Card>
@@ -297,12 +296,11 @@ function PortalDashboard() {
                       <p className="text-gray-400 text-sm mb-4">
                         Strategies and templates for pitching, pricing, and closing deals.
                       </p>
-                      <a
-                        href="#"
-                        className="text-gold text-sm flex items-center gap-1 hover:underline"
+                      <span
+                        className="text-gold/50 text-sm flex items-center gap-1"
                       >
-                        Access Toolkit <ChevronRight size={16} />
-                      </a>
+                        Coming Soon <ChevronRight size={16} />
+                      </span>
                     </div>
                   </div>
                 </Card>
@@ -318,12 +316,11 @@ function PortalDashboard() {
                       <p className="text-gray-400 text-sm mb-4">
                         Understand your rights and navigate contracts with confidence.
                       </p>
-                      <a
-                        href="#"
-                        className="text-gold text-sm flex items-center gap-1 hover:underline"
+                      <span
+                        className="text-gold/50 text-sm flex items-center gap-1"
                       >
-                        Learn More <ChevronRight size={16} />
-                      </a>
+                        Coming Soon <ChevronRight size={16} />
+                      </span>
                     </div>
                   </div>
                 </Card>
@@ -339,12 +336,11 @@ function PortalDashboard() {
                       <p className="text-gray-400 text-sm mb-4">
                         Essential business skills for independent creative entrepreneurs.
                       </p>
-                      <a
-                        href="#"
-                        className="text-gold text-sm flex items-center gap-1 hover:underline"
+                      <span
+                        className="text-gold/50 text-sm flex items-center gap-1"
                       >
-                        Start Learning <ChevronRight size={16} />
-                      </a>
+                        Coming Soon <ChevronRight size={16} />
+                      </span>
                     </div>
                   </div>
                 </Card>

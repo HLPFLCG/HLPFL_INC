@@ -166,10 +166,20 @@ export default function StorePage() {
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   const handleCheckout = () => {
-    // For now, redirect to Stripe payment link for the first item
-    // In production, you'd create a checkout session with all items
-    if (cart.length > 0 && cart[0].stripeLink) {
-      window.open(cart[0].stripeLink, "_blank");
+    // Open Stripe payment links for each unique item in the cart
+    // Each product has its own Stripe payment link
+    const itemsWithLinks = cart.filter((item) => item.stripeLink);
+    if (itemsWithLinks.length > 0) {
+      // Open the first item's link directly, show summary for the rest
+      window.open(itemsWithLinks[0].stripeLink, "_blank");
+      if (itemsWithLinks.length > 1) {
+        alert(
+          `Your cart has ${itemsWithLinks.length} items. Each item will be processed separately. Please complete checkout for each item.`
+        );
+        itemsWithLinks.slice(1).forEach((item) => {
+          window.open(item.stripeLink, "_blank");
+        });
+      }
     }
   };
 
