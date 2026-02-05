@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { ShimmerText, GlowHover } from "@/components/animations";
 
@@ -30,15 +31,21 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="container-custom relative z-10 text-center px-4">
-        {/* Badge */}
+        {/* Logo */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold/30 bg-gold/5 mb-8"
+          initial={{ opacity: 0, scale: 0.8, rotateY: -90 }}
+          animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-8"
         >
-          <Sparkles size={16} className="text-gold" />
-          <span className="text-sm text-gold">Commission-Only Model • Zero Upfront Costs</span>
+          <Image
+            src="/logo.svg"
+            alt="HLPFL INC"
+            width={80}
+            height={80}
+            className="mx-auto"
+            priority
+          />
         </motion.div>
 
         {/* Main Heading */}

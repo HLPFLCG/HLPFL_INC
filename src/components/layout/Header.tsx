@@ -92,7 +92,7 @@ export default function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-void/80 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 bg-black/90 backdrop-blur-sm md:hidden z-[55]"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
@@ -102,7 +102,7 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 left-0 bottom-0 w-72 bg-void-light border-r border-gold/20 md:hidden"
+              className="fixed top-0 left-0 bottom-0 w-72 bg-[#0a0a0a] border-r border-gold/20 md:hidden z-[60]"
             >
               <div className="flex flex-col h-full">
                 {/* Mobile Menu Header */}
