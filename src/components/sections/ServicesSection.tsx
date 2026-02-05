@@ -1,53 +1,7 @@
 "use client";
 
-import {
-  Palette,
-  Building2,
-  Handshake,
-  Target,
-  Video,
-  GraduationCap,
-} from "lucide-react";
 import { ScrollReveal, Card } from "@/components/ui";
-
-const services = [
-  {
-    icon: Palette,
-    title: "Brand Development",
-    description:
-      "Build a distinctive brand identity—logo design, visual identity, and market positioning that makes you stand out.",
-  },
-  {
-    icon: Building2,
-    title: "Business Formation",
-    description:
-      "Navigate entity formation, LLC filing, structure guidance, and compliance so you can focus on creating.",
-  },
-  {
-    icon: Handshake,
-    title: "Sales Representation",
-    description:
-      "Connect with buyers, close deals, and access markets through our network and direct sales advocacy.",
-  },
-  {
-    icon: Target,
-    title: "Marketing Strategy",
-    description:
-      "Develop targeted marketing plans, campaign strategies, and promotional tactics that actually work.",
-  },
-  {
-    icon: Video,
-    title: "Content Creation",
-    description:
-      "Professional video production, photography, and social media content that tells your story.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Creator Education",
-    description:
-      "Learn business fundamentals, rights protection, and contract navigation to thrive independently.",
-  },
-];
+import { services } from "@/lib/data";
 
 export default function ServicesSection() {
   return (

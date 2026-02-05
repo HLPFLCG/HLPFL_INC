@@ -1,19 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import {
-  Heart,
-  Zap,
-  Users,
-  Shield,
-  ArrowRight,
-  Lightbulb,
-  Music,
-  Camera,
-  PenTool,
-  GraduationCap,
-  Quote,
-} from "lucide-react";
+import { Heart, Zap, Users, Shield, ArrowRight, Quote } from "lucide-react";
 import { ScrollReveal, Button, Card } from "@/components/ui";
+import { audiences } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "About | HLPFL INC",
@@ -53,34 +42,6 @@ const values = [
     title: "Your Rights, Always",
     description:
       "You keep 100% of your intellectual property. We help you protect your work, not take it from you.",
-  },
-];
-
-const audiences = [
-  {
-    icon: Lightbulb,
-    title: "Inventors",
-    description: "Patent holders and product developers with working products that need sales, marketing, and business structure.",
-  },
-  {
-    icon: Music,
-    title: "Musicians",
-    description: "Independent artists, producers, and bands who need management, marketing, touring support, and merchandise systems.",
-  },
-  {
-    icon: Camera,
-    title: "Visual Artists",
-    description: "Painters, illustrators, photographers, and digital artists who need help selling work and building collector bases.",
-  },
-  {
-    icon: PenTool,
-    title: "Designers",
-    description: "Industrial, fashion, and UX/UI designers with products and services that need market positioning and sales channels.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Writers",
-    description: "Authors, screenwriters, and content creators who need publishing support, platform building, and rights protection.",
   },
 ];
 
