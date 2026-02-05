@@ -18,6 +18,12 @@ export default function LoadingScreen() {
   const [messageIndex, setMessageIndex] = useState(0);
 
   useEffect(() => {
+    const hasSeenLoading = sessionStorage.getItem("hlpfl_loading_seen");
+    if (hasSeenLoading) {
+      setIsLoading(false);
+      return;
+    }
+
     // Progress animation
     const progressInterval = setInterval(() => {
       setProgress((prev) => {
@@ -37,6 +43,7 @@ export default function LoadingScreen() {
     // Complete loading
     const completeTimer = setTimeout(() => {
       setIsLoading(false);
+      sessionStorage.setItem("hlpfl_loading_seen", "true");
     }, 2500);
 
     return () => {
@@ -177,7 +184,7 @@ export default function LoadingScreen() {
             </motion.div>
 
             {/* Progress bar */}
-            <div className="mt-8 w-64 h-1 bg-void-lighter rounded-full overflow-hidden">
+            <div className="mt-8 w-64 h-1 bg-void-lighter rounded-full overflow-hidden" role="progressbar" aria-valuenow={Math.min(Math.round(progress), 100)} aria-valuemin={0} aria-valuemax={100}>
               <motion.div
                 className="h-full bg-gradient-to-r from-gold-dark via-gold to-gold-light rounded-full relative"
                 initial={{ width: 0 }}

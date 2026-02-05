@@ -1,40 +1,21 @@
 import Link from "next/link";
-import {
-  Twitter,
-  Instagram,
-  Youtube,
-  Linkedin,
-  Mail,
-} from "lucide-react";
+import SocialLinks from "./SocialLinks";
 
 const footerLinks = {
   company: [
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
-    { label: "Community", href: "/community" },
-    { label: "News", href: "/news" },
     { label: "Contact", href: "/contact" },
   ],
   creatives: [
     { label: "Get Started", href: "/portal" },
     { label: "Store", href: "/store" },
-    { label: "Resources", href: "/resources" },
-    { label: "Support", href: "/support" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
-    { label: "Cookie Policy", href: "/cookies" },
   ],
 };
-
-const socialLinks = [
-  { icon: Twitter, href: "https://twitter.com/hlpfl", label: "Twitter" },
-  { icon: Instagram, href: "https://instagram.com/hlpfl", label: "Instagram" },
-  { icon: Youtube, href: "https://youtube.com/@hlpfl", label: "YouTube" },
-  { icon: Linkedin, href: "https://linkedin.com/company/hlpfl", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:contact@hlpfl.org", label: "Email" },
-];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -43,7 +24,7 @@ export default function Footer() {
     <footer className="bg-void-light border-t border-gold/10">
       <div className="container-custom py-16">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link
@@ -59,20 +40,7 @@ export default function Footer() {
             </p>
 
             {/* Social Links */}
-            <div className="flex gap-4 mt-6">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full border border-gold/30 hover:border-gold hover:text-gold hover:bg-gold/10 transition-all"
-                  aria-label={social.label}
-                >
-                  <social.icon size={18} />
-                </a>
-              ))}
-            </div>
+            <SocialLinks />
           </div>
 
           {/* Company Links */}

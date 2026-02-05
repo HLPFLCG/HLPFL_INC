@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { ScrollReveal, Button } from "@/components/ui";
+import { GlowHover } from "@/components/animations";
 
 export default function CTASection() {
   return (
@@ -40,15 +41,17 @@ export default function CTASection() {
 
           <ScrollReveal delay={0.2}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
-                <Button size="lg" className="group">
-                  Apply Now
-                  <ArrowRight
-                    size={20}
-                    className="transition-transform group-hover:translate-x-1"
-                  />
-                </Button>
-              </Link>
+              <GlowHover>
+                <Link href="/contact">
+                  <Button size="lg" className="group">
+                    Apply Now
+                    <ArrowRight
+                      size={20}
+                      className="transition-transform group-hover:translate-x-1"
+                    />
+                  </Button>
+                </Link>
+              </GlowHover>
               <Link href="/portal">
                 <Button variant="outline" size="lg">
                   Try Demo Portal

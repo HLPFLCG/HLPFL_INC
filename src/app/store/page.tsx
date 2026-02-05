@@ -14,16 +14,22 @@ import {
   Sparkles,
   Gift,
   Truck,
+  Shirt,
+  BookOpen,
+  Package,
+  Tag,
+  type LucideIcon,
 } from "lucide-react";
 import { Button, Card, ScrollReveal } from "@/components/ui";
-import { TiltHover, GlowHover } from "@/components/animations";
+import { TiltHover } from "@/components/animations";
 
 interface Product {
   id: string;
   name: string;
   description: string;
   price: number;
-  image: string;
+  icon: LucideIcon;
+  gradient: string;
   category: string;
   stripeLink?: string;
   badge?: string;
@@ -35,7 +41,8 @@ const products: Product[] = [
     name: "HLPFL Logo Tee",
     description: "Premium cotton tee with embroidered HLPFL logo. 100% proceeds support creators.",
     price: 35,
-    image: "/images/store/tee.jpg",
+    icon: Shirt,
+    gradient: "from-amber-900/20 via-void-lighter to-void-lighter",
     category: "Apparel",
     stripeLink: "https://buy.stripe.com/test_hlpfl_tee",
     badge: "Best Seller",
@@ -45,7 +52,8 @@ const products: Product[] = [
     name: "Creator Hoodie",
     description: "Heavyweight hoodie with 'Empowering Creative Entrepreneurs' print.",
     price: 65,
-    image: "/images/store/hoodie.jpg",
+    icon: ShoppingBag,
+    gradient: "from-rose-900/20 via-void-lighter to-void-lighter",
     category: "Apparel",
     stripeLink: "https://buy.stripe.com/test_creator_hoodie",
   },
@@ -54,7 +62,8 @@ const products: Product[] = [
     name: "Creator's Notebook",
     description: "Premium leather-bound notebook for ideas, sketches, and business plans.",
     price: 28,
-    image: "/images/store/notebook.jpg",
+    icon: BookOpen,
+    gradient: "from-blue-900/20 via-void-lighter to-void-lighter",
     category: "Accessories",
     stripeLink: "https://buy.stripe.com/test_notebook",
   },
@@ -63,7 +72,8 @@ const products: Product[] = [
     name: "HLPFL Cap",
     description: "Embroidered cap with gold HLPFL logo. Adjustable fit.",
     price: 32,
-    image: "/images/store/cap.jpg",
+    icon: Tag,
+    gradient: "from-emerald-900/20 via-void-lighter to-void-lighter",
     category: "Apparel",
     stripeLink: "https://buy.stripe.com/test_cap",
     badge: "New",
@@ -73,7 +83,8 @@ const products: Product[] = [
     name: "Creator Starter Kit",
     description: "Everything you need: tee, notebook, stickers, and welcome guide.",
     price: 75,
-    image: "/images/store/kit.jpg",
+    icon: Package,
+    gradient: "from-gold/20 via-void-lighter to-void-lighter",
     category: "Bundles",
     stripeLink: "https://buy.stripe.com/test_kit",
     badge: "Value Pack",
@@ -83,7 +94,8 @@ const products: Product[] = [
     name: "Sticker Pack",
     description: "Set of 10 premium vinyl stickers with HLPFL designs.",
     price: 12,
-    image: "/images/store/stickers.jpg",
+    icon: Sparkles,
+    gradient: "from-purple-900/20 via-void-lighter to-void-lighter",
     category: "Accessories",
     stripeLink: "https://buy.stripe.com/test_stickers",
   },
@@ -247,9 +259,9 @@ export default function StorePage() {
                       className="group overflow-hidden"
                     >
                       {/* Product Image Placeholder */}
-                      <div className="relative aspect-square bg-void-lighter overflow-hidden">
+                      <div className={`relative aspect-square bg-gradient-to-br ${product.gradient} overflow-hidden`}>
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <ShoppingBag size={48} className="text-gold/20" />
+                          <product.icon size={64} className="text-gold/20" />
                         </div>
 
                         {/* Badge */}
@@ -293,6 +305,7 @@ export default function StorePage() {
                           <button
                             onClick={() => addToCart(product)}
                             className="p-2 rounded-lg bg-gold/10 text-gold hover:bg-gold hover:text-void transition-all"
+                            aria-label={`Add ${product.name} to cart`}
                           >
                             <Plus size={20} />
                           </button>

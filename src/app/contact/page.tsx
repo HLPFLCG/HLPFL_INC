@@ -8,8 +8,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "hello@hlpfl.com",
-    href: "mailto:hello@hlpfl.com",
+    value: "contact@hlpfl.org",
+    href: "mailto:contact@hlpfl.org",
   },
   {
     icon: MapPin,

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4945c"/>
+      <stop offset="50%" stop-color="#c87941"/>
+      <stop offset="100%" stop-color="#a86535"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <!-- Border frame -->
+  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#c87941" stroke-width="1" opacity="0.3" rx="4"/>
+  <rect x="60" y="60" width="1080" height="510" fill="none" stroke="#c87941" stroke-width="0.5" opacity="0.15" rx="2"/>
+  <!-- Corner accents -->
+  <path d="M40,80 L40,40 L80,40" fill="none" stroke="url(#goldGrad)" stroke-width="3"/>
+  <path d="M1120,40 L1160,40 L1160,80" fill="none" stroke="url(#goldGrad)" stroke-width="3"/>
+  <path d="M40,550 L40,590 L80,590" fill="none" stroke="url(#goldGrad)" stroke-width="3"/>
+  <path d="M1120,590 L1160,590 L1160,550" fill="none" stroke="url(#goldGrad)" stroke-width="3"/>
+  <!-- Gold line accent -->
+  <line x1="500" y1="230" x2="700" y2="230" stroke="url(#goldGrad)" stroke-width="2" opacity="0.6"/>
+  <!-- Main title -->
+  <text x="600" y="300" text-anchor="middle" font-family="system-ui, sans-serif" font-size="72" font-weight="700" letter-spacing="12" fill="white">HLPFL INC</text>
+  <!-- Gold dot after HLPFL -->
+  <circle cx="710" cy="288" r="5" fill="#c87941"/>
+  <!-- Tagline -->
+  <text x="600" y="360" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="300" letter-spacing="4" fill="#d4945c">EMPOWERING CREATIVE ENTREPRENEURS</text>
+  <!-- Bottom line -->
+  <line x1="500" y1="400" x2="700" y2="400" stroke="url(#goldGrad)" stroke-width="2" opacity="0.6"/>
+  <!-- Nonprofit tag -->
+  <text x="600" y="450" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="400" letter-spacing="6" fill="#888888">501(c)(3) NONPROFIT ORGANIZATION</text>
+  <!-- Subtle radial glow -->
+  <circle cx="600" cy="315" r="200" fill="url(#goldGrad)" opacity="0.03"/>
+</svg>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import Button from "@/components/ui/Button";
+import { ShimmerText, GlowHover } from "@/components/animations";
 
 export default function HeroSection() {
   return (
@@ -71,7 +72,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.25 }}
           className="text-gold font-medium text-lg mb-10"
         >
-          No VCs. No Exploitation. No Bullshit.
+          <ShimmerText>No VCs. No Exploitation. No Bullshit.</ShimmerText>
         </motion.p>
 
         {/* CTA Buttons */}
@@ -81,15 +82,17 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Link href="/portal">
-            <Button size="lg" className="group">
-              Enter Creative Portal
-              <ArrowRight
-                size={20}
-                className="transition-transform group-hover:translate-x-1"
-              />
-            </Button>
-          </Link>
+          <GlowHover>
+            <Link href="/portal">
+              <Button size="lg" className="group">
+                Enter Creative Portal
+                <ArrowRight
+                  size={20}
+                  className="transition-transform group-hover:translate-x-1"
+                />
+              </Button>
+            </Link>
+          </GlowHover>
           <Link href="/services">
             <Button variant="outline" size="lg">
               How It Works
