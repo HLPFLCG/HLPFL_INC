@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "HLPFL INC privacy policy. Learn how we collect, use, and protect your personal information.",
+  openGraph: {
+    title: "Privacy Policy | HLPFL INC",
+    description: "HLPFL INC privacy policy.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "HLPFL INC" }],
+  },
 };
 
 export default function PrivacyPolicyPage() {

@@ -13,6 +13,12 @@ export const metadata: Metadata = {
     "HLPFL updates",
     "nonprofit newsletter",
   ],
+  openGraph: {
+    title: "Newsletter | HLPFL INC",
+    description:
+      "Subscribe to the HLPFL newsletter for news and resources for creative entrepreneurs.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "HLPFL INC" }],
+  },
 };
 
 const benefits = [

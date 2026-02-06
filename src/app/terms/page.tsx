@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description:
     "HLPFL INC terms of service. Our commitment to fair, transparent business practices for creative entrepreneurs.",
+  openGraph: {
+    title: "Terms of Service | HLPFL INC",
+    description: "HLPFL INC terms of service.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "HLPFL INC" }],
+  },
 };
 
 export default function TermsOfServicePage() {

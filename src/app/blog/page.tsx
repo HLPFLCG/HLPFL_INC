@@ -14,6 +14,12 @@ export const metadata: Metadata = {
     "creator economy insights",
     "HLPFL news",
   ],
+  openGraph: {
+    title: "Blog | HLPFL INC",
+    description:
+      "News, case studies, and insights from HLPFL INC for creative entrepreneurs.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "HLPFL INC" }],
+  },
 };
 
 const categoryStyles: Record<BlogPost["category"], { bg: string; text: string }> = {

@@ -16,6 +16,12 @@ export const metadata: Metadata = {
     "sales representation",
     "business formation",
   ],
+  openGraph: {
+    title: "Services | HLPFL INC",
+    description:
+      "Professional business services for creative entrepreneurs with zero upfront costs. Commission-only model.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "HLPFL INC" }],
+  },
 };
 
 const commissionFeatures = [

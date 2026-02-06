@@ -16,6 +16,12 @@ export const metadata: Metadata = {
     "James Rockel",
     "artist advocacy",
   ],
+  openGraph: {
+    title: "About | HLPFL INC",
+    description:
+      "HLPFL INC is a Wyoming nonprofit advocating for creative entrepreneurs. Zero upfront costs, commission-only model.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "HLPFL INC" }],
+  },
 };
 
 const values = [
