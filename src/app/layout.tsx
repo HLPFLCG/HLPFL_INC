@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     url: "https://hlpfl.org",
     images: [
       {
-        url: "/og-image.svg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "HLPFL INC - Empowering Creative Entrepreneurs",
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
       "Nonprofit business support for creative entrepreneurs. Zero upfront costs. We earn when you earn.",
     creator: "@hlpfl",
     site: "@hlpfl",
-    images: ["/og-image.svg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -114,7 +114,7 @@ const structuredDataOrg = {
   alternateName: "HLPFL",
   url: "https://hlpfl.org",
   logo: "https://hlpfl.org/logo.svg",
-  image: "https://hlpfl.org/og-image.svg",
+  image: "https://hlpfl.org/og-image.png",
   description:
     "Wyoming 501(c)(3) nonprofit organization empowering creative entrepreneurs with professional business support services. Zero upfront costs, commission-only model.",
   nonprofitStatus: "Nonprofit501c3",
