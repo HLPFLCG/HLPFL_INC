@@ -65,6 +65,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://hlpfl.org",
   },
+  icons: {
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+    apple: "/logo.svg",
+  },
   openGraph: {
     title: "HLPFL INC | Empowering Creative Entrepreneurs",
     description:
