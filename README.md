@@ -95,6 +95,17 @@ Access the Creative Entrepreneur Portal with demo credentials:
 - **Email:** demo@hlpfl.org
 - **Password:** demo123
 
+## Documentation
+
+Detailed guides are available in the `docs/` folder:
+
+| Guide | Description |
+|-------|-------------|
+| [Editing Guide](docs/EDITING_GUIDE.md) | Edit images, headers, menus, and all site content |
+| [API Integration](docs/API_INTEGRATION.md) | Add backend APIs for dashboard and client management |
+| [Newsletter & Blog](docs/NEWSLETTER_BLOG.md) | Implement newsletter and blog for press releases |
+| [SEO Guide](docs/SEO_GUIDE.md) | Optimize for search engines |
+
 ## License
 
 All rights reserved. HLPFL INC.
