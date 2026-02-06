@@ -1,131 +1,100 @@
 # HLPFL INC
 
-Empowering creative entrepreneurs with tools, resources, and community. No contracts, no exploitation—just support for your creative journey.
-
-## Overview
-
-HLPFL INC is a modern website built for supporting creative entrepreneurs (musicians, artists, content creators) with distribution tools, analytics, community resources, and more.
-
-**Live Site:** [Coming Soon]
+Wyoming 501(c)(3) nonprofit empowering creative entrepreneurs with professional business services. Zero upfront costs—we earn when you earn.
 
 ## Tech Stack
 
-- **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
-- **Language:** [TypeScript](https://www.typescriptlang.org/)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Animations:** [Framer Motion](https://www.framer.com/motion/)
-- **Icons:** [Lucide React](https://lucide.dev/)
-- **Deployment:** [Cloudflare Pages](https://pages.cloudflare.com/)
-
-## Features
-
-- Modern dark luxury design with gold accents
-- Responsive layout (mobile-first)
-- Smooth scroll animations
-- Creative Entrepreneur Portal (demo)
-- Static site generation for optimal performance
-- Cloudflare Pages ready
+- **Next.js 15** (App Router, Static Export)
+- **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion**
+- **Cloudflare Pages**
 
 ## Quick Start
 
-### Prerequisites
-
-- Node.js 18+
-- npm or yarn
-
-### Installation
-
 ```bash
-# Clone the repository
-git clone https://github.com/HLPFLCG/HLPFL_INC.git
-cd HLPFL_INC
-
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
 ```
 
 Visit [http://localhost:3000](http://localhost:3000)
 
-### Build for Production
-
-```bash
-npm run build
-```
-
-Output will be in the `out/` folder.
-
 ## Project Structure
 
 ```
 src/
-├── app/                    # Pages (Next.js App Router)
-│   ├── layout.tsx         # Root layout
-│   ├── page.tsx           # Homepage
-│   ├── globals.css        # Global styles
-│   ├── about/             # About page
-│   ├── contact/           # Contact page
-│   ├── services/          # Services page
-│   └── portal/            # Creative Entrepreneur Portal
+├── app/                    # Next.js App Router pages
+│   ├── layout.tsx          # Root layout
+│   ├── page.tsx            # Homepage
+│   ├── globals.css         # Global styles
+│   ├── about/              # About page
+│   ├── contact/            # Contact page
+│   ├── services/           # Services page
+│   ├── store/              # Store page
+│   ├── portal/             # Creative Entrepreneur Portal
+│   ├── privacy/            # Privacy policy
+│   └── terms/              # Terms of service
 │
 ├── components/
-│   ├── layout/            # Header, Footer
-│   ├── sections/          # Homepage sections
-│   └── ui/                # Reusable components
+│   ├── common/             # Shared components (Logo, LoadingScreen)
+│   ├── layout/             # Header, Footer
+│   ├── sections/           # Homepage sections
+│   ├── ui/                 # Reusable UI (Button, Card, ScrollReveal)
+│   ├── animations/         # Animation components
+│   └── auth/               # Auth components
+│
+├── contexts/               # React contexts
+│   └── AuthContext.tsx     # Authentication context
+│
+└── lib/                    # Shared utilities
+    └── data.ts             # Shared data constants
 ```
-
-## Documentation
-
-- **[EDITING_GUIDE.md](./EDITING_GUIDE.md)** - How to edit and maintain the site
-- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Cloudflare Pages deployment instructions
-
-## Design System
-
-### Colors
-
-| Color | Hex | Usage |
-|-------|-----|-------|
-| Void | `#0a0a0a` | Primary background |
-| Gold | `#c87941` | Primary accent |
-| Gold Light | `#d4945c` | Hover states |
-| White | `#ffffff` | Text |
-
-### Typography
-
-- **Headings:** Bebas Neue
-- **Body:** Space Grotesk
 
 ## Scripts
 
 | Command | Description |
 |---------|-------------|
 | `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run start` | Start production server |
+| `npm run build` | Build for production (outputs to `out/`) |
 | `npm run lint` | Run ESLint |
+
+## Design System
+
+### Colors
+
+| Name | Hex | Usage |
+|------|-----|-------|
+| Void | `#0a0a0a` | Primary background |
+| Gold | `#c87941` | Primary accent |
+| Gold Light | `#d4945c` | Hover states |
+
+### Typography
+
+- **Headings:** Bebas Neue
+- **Body:** Space Grotesk
 
 ## Deployment
 
-This site is configured for Cloudflare Pages. See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
+Configured for Cloudflare Pages static export.
 
-Quick deploy:
 ```bash
 npm run build
 wrangler pages deploy out --project-name hlpfl-inc
 ```
 
-## Contributing
+### Cloudflare Dashboard Setup
 
-1. Create a feature branch
-2. Make your changes
-3. Submit a pull request
+1. Connect repository in Workers & Pages
+2. Set build command: `npm run build`
+3. Set output directory: `out`
+4. Set Node.js version: `18`
+
+## Portal Demo
+
+Access the Creative Entrepreneur Portal with demo credentials:
+- **Email:** demo@hlpfl.org
+- **Password:** demo123
 
 ## License
 
 All rights reserved. HLPFL INC.
-
----
-
-**Built with love for creative entrepreneurs.**

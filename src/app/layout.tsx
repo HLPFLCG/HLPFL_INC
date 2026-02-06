@@ -3,7 +3,7 @@ import { Bebas_Neue, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import ClientEffects from "@/components/ClientEffects";
+import ClientEffects from "@/components/common/ClientEffects";
 
 // Font configurations
 const bebasNeue = Bebas_Neue({
