@@ -5,11 +5,13 @@ const footerLinks = {
   company: [
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
+    { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
   ],
   creatives: [
     { label: "Get Started", href: "/portal" },
     { label: "Store", href: "/store" },
+    { label: "Newsletter", href: "/newsletter" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },
