@@ -248,7 +248,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className="mt-12 p-8 rounded-2xl bg-gradient-to-br from-gold/10 to-transparent border border-gold/20">
           <h3 className="font-display text-2xl mb-4">Ready to Get Started?</h3>
           <p className="text-gray-400 mb-6">
-            Join the creative entrepreneurs who are building their businesses with HLPFL's support.
+            Join the creative entrepreneurs who are building their businesses with HLPFL&apos;s support.
             Zero upfront costs. We earn when you earn.
           </p>
           <Link
