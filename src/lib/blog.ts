@@ -32,11 +32,11 @@ export const testimonials: Testimonial[] = [
     featured: true,
   },
   {
-    name: "HCJK",
-    role: "Organization",
+    name: "Heather Krystecki",
+    role: "Poet & Author",
     company: "HCJK",
     quote:
-      "Working with HLPFL gave us the foundation we needed to grow. Their team provided the business support and strategic guidance that helped turn our vision into reality. The commission-only model meant we could focus on our mission without worrying about upfront costs.",
+      "HLPFL took everything I had — poems in notebooks, a dream of a book — and helped me build a real author platform from scratch. They designed my brand, built hcjk.org, handled the publishing logistics, and gave me a professional presence I never could have created alone. The commission-only model meant I could focus on writing without worrying about costs. My debut collection is now available worldwide, and I have a home for my words that truly feels like mine.",
     featured: true,
   },
 ];
@@ -413,6 +413,176 @@ If you're a creative entrepreneur with a product that might have untapped potent
     date: "2025-02-05",
     category: "case-study",
     featured: false,
+  },
+  {
+    slug: "hcjk-heather-krystecki-author-platform-case-study",
+    title:
+      "Case Study: How HLPFL Helped Poet Heather Krystecki Launch Her Debut Collection and Build hcjk.org",
+    excerpt:
+      "From poems in notebooks to a worldwide book launch — how HLPFL partnered with Heather Krystecki to build a complete author brand, website, and publishing strategy for her debut poetry collection 'I See You, I See Me.'",
+    content: `
+# Case Study: Heather Krystecki & hcjk.org
+
+## From Notebooks to Nationwide — Building an Author Platform from Scratch
+
+Heather Krystecki is a poet whose work explores the intimate geography of human connection — love, loss, mental health, self-discovery, and the quiet courage of being truly seen. Her debut poetry collection, *I See You, I See Me*, is raw, honest, and deeply personal.
+
+But like many writers, Heather had the talent and the work — what she didn't have was the business infrastructure to turn a manuscript into a published, marketed, professionally presented book and author brand.
+
+That's where HLPFL came in.
+
+## The Challenge
+
+Heather had been writing for years. Poems lived in notebooks, voice memos, and phone notes — captured in quiet moments, at 2am, during the pauses between conversations. The work was real. The voice was clear. But the path from personal writing to published author was anything but.
+
+She faced the same barriers many independent writers encounter:
+
+- **No publishing infrastructure** — No agent, no publisher, no roadmap for self-publishing
+- **No brand or web presence** — No website, no professional identity, no way to reach readers
+- **No marketing strategy** — No plan for book promotion, audience building, or sales channels
+- **Limited budget** — Traditional publishing services charge thousands upfront with no guarantee of results
+- **Mental health context** — The collection deals with her own mental health crisis, making the stakes deeply personal
+
+## The HLPFL Solution
+
+When Heather connected with HLPFL, we saw a writer with a powerful voice and a collection that deserved to reach people. More importantly, we saw someone who needed a partner, not a gatekeeper.
+
+### What We Built Together
+
+**1. Complete Author Brand Identity**
+
+We developed the HCJK brand from the ground up:
+
+- **Brand name & identity** — HCJK (Heather's initials) as a clean, memorable author brand
+- **Visual design system** — A warm, literary aesthetic with Cormorant Garamond serif typography, a cream-and-blush color palette, and a minimal design that lets the poetry breathe
+- **Brand voice** — Intimate, honest, lowercase — matching the tone of Heather's writing
+- **Professional positioning** — "Poet, author, and believer in the beauty of quiet moments"
+
+**2. Full Author Website — hcjk.org**
+
+We designed and built a complete author platform at [hcjk.org](https://hcjk.org):
+
+- **Homepage** with hero section, featured poems, book showcase, and newsletter signup
+- **About page** with full biography, writing philosophy, and press section
+- **Poetry archive** — a growing collection of poems from the book and beyond
+- **Shop page** with purchase links across multiple retailers (direct, Barnes & Noble, Amazon)
+- **Journal/Blog** for personal reflections, writing process insights, and new work
+- **Events page** for readings, signings, and speaking engagements
+- **Book Club Discussion Guide** with 12 thoughtful questions and key themes
+- **Contact page** for press inquiries, collaborations, and reader messages
+- **Newsletter integration** for building a direct reader community
+- **Instagram integration** connecting @hcjk_collection for weekly poem sharing
+- **Full SEO optimization** with metadata, schema markup, and social sharing
+
+The site was built with Next.js, Tailwind CSS, and TypeScript — a modern, fast, responsive platform designed to grow with Heather's career.
+
+**3. Publishing Strategy & Execution**
+
+We guided the entire self-publishing process:
+
+- **ISBN registration** (979-8-2954-8091-1)
+- **IngramSpark distribution** for worldwide availability
+- **Multi-platform listing** — Direct author sales, Barnes & Noble, Amazon
+- **Book formatting** for paperback publication
+- **Back cover copy and book description** crafted for emotional resonance and discoverability
+
+**4. Content & Marketing Infrastructure**
+
+- **Social media strategy** with weekly poem sharing on Instagram
+- **Reader praise collection** and testimonial system
+- **Blog/journal content** to build ongoing reader engagement
+- **Newsletter system** for direct audience building
+- **Book club outreach** with a ready-made discussion guide
+- **Press and media section** for review copies and interview requests
+
+**5. Community & Reader Experience**
+
+We created touchpoints that turn readers into a community:
+
+- **Book Club Guide** with 12 discussion questions exploring mental health, love, identity, and vulnerability
+- **Events framework** for readings, signings, and virtual book club visits
+- **Direct contact** making Heather accessible to her readers: "Every message is read, every word matters"
+
+## The Book: I See You, I See Me
+
+*"A poetry collection about the act of truly seeing — others, ourselves, and the quiet revelations that emerge when we let ourselves be known."*
+
+The collection moves through love, solitude, healing, and the small sacred moments that make up a life. Heather writes in spare, honest language — lowercase, minimal punctuation — that invites readers into the most human spaces.
+
+From the back cover:
+
+> "This book holds the journey through my own mental health crisis — poems that hold more dark than light. It's being shared so that no one feels alone. You're not alone."
+
+### Sample Poems
+
+**"in the quiet between us"**
+
+> in the quiet between us / i found the words / i had been searching for — / the ones that sound like home
+
+**"what i was looking for"**
+
+> you asked me / what i was looking for — / i didn't have the words then / but i do now: / someone who stays / when the quiet gets loud
+
+**"too true to say out loud"**
+
+> i write because / some things are too true / to say out loud — / so i give them / to the page instead
+
+## Reader Response
+
+> "A collection that wraps around you like a conversation you didn't know you needed." — Early Reader
+
+> "Raw, honest, and deeply human. These poems made me feel less alone." — Reader Review
+
+> "The kind of poetry that makes you stop scrolling and start feeling." — Instagram Reader
+
+## The Results
+
+Heather went from poems in notebooks to a professionally published, globally available author with:
+
+- **A published poetry collection** available worldwide through multiple retailers
+- **A professional author website** at hcjk.org with full e-commerce, blog, and community features
+- **A growing Instagram presence** at @hcjk_collection sharing weekly poems
+- **A complete brand identity** that authentically represents her voice and vision
+- **Book club infrastructure** making her work accessible to reading groups and classrooms
+- **Press-ready materials** for media coverage, interviews, and review copies
+- **A sustainable platform** built to grow as she writes more, publishes more, and reaches more readers
+
+## Heather's Words
+
+> "HLPFL took everything I had — poems in notebooks, a dream of a book — and helped me build a real author platform from scratch. They designed my brand, built hcjk.org, handled the publishing logistics, and gave me a professional presence I never could have created alone. The commission-only model meant I could focus on writing without worrying about costs. My debut collection is now available worldwide, and I have a home for my words that truly feels like mine."
+
+## The HLPFL Difference
+
+This partnership shows what HLPFL's model means for writers:
+
+- **$0 upfront** — Heather didn't pay for branding, web development, or publishing support
+- **Full creative ownership** — Every poem, every word, every right stays with Heather
+- **Comprehensive execution** — Not just advice, but actual brand design, web development, publishing logistics, and marketing strategy
+- **Authentic partnership** — We built what Heather needed, in her voice, for her readers
+- **Long-term platform** — Not a one-time project, but a foundation for an entire writing career
+
+## For Writers Considering HLPFL
+
+If you're a writer with work that deserves to reach people — whether it's poetry, fiction, nonfiction, or anything in between — we want to hear from you. HLPFL provides:
+
+- Brand development and author identity
+- Professional website design and development
+- Publishing strategy and distribution
+- Marketing and audience building
+- Rights protection and business guidance
+
+All on a commission-only basis. No upfront fees. No gatekeeping. Your words, your rights, your career — with real support behind you.
+
+**Ready to build your author platform? Apply at hlpfl.org**
+
+---
+
+*Visit Heather's website at [hcjk.org](https://hcjk.org) and follow her on Instagram at [@hcjk_collection](https://www.instagram.com/hcjk_collection/). I See You, I See Me is available at [Barnes & Noble](https://www.barnesandnoble.com/w/i-see-you-i-see-me-heather-krystecki/1149164117) and [direct from the author](https://shop.ingramspark.com/b/084).*
+    `,
+    author: "HLPFL Team",
+    date: "2026-02-08",
+    category: "case-study",
+    featured: true,
   },
 ];
 

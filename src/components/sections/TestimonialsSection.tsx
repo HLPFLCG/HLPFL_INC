@@ -61,15 +61,27 @@ export default function TestimonialsSection() {
                       />
                     </Link>
                   ) : testimonial.company === "HCJK" ? (
-                    <a
-                      href="https://hcjk.org"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 border border-gold/30 rounded-lg text-gold hover:bg-gold/10 transition-colors group text-sm"
-                    >
-                      Visit Site
-                      <ExternalLink size={14} />
-                    </a>
+                    <div className="flex items-center gap-2">
+                      <Link
+                        href="/blog/hcjk-heather-krystecki-author-platform-case-study"
+                        className="inline-flex items-center gap-2 px-4 py-2 border border-gold/30 rounded-lg text-gold hover:bg-gold/10 transition-colors group text-sm"
+                      >
+                        Case Study
+                        <ArrowRight
+                          size={14}
+                          className="transition-transform group-hover:translate-x-1"
+                        />
+                      </Link>
+                      <a
+                        href="https://hcjk.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 border border-gold/30 rounded-lg text-gold hover:bg-gold/10 transition-colors group text-sm"
+                      >
+                        hcjk.org
+                        <ExternalLink size={14} />
+                      </a>
+                    </div>
                   ) : null}
                 </div>
               </div>
