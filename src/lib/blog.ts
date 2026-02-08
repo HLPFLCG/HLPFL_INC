@@ -31,6 +31,14 @@ export const testimonials: Testimonial[] = [
       "HLPFL transformed my business. As an inventor with a patented children's salon chair, I had the product but struggled with sales and marketing. Their commission-only model meant I could access professional business services without upfront costs. Within months, we developed a complete sales system, marketing strategy, and expanded into new markets like pediatric dental and therapy centers. They don't just talk about helping creators—they actually do it.",
     featured: true,
   },
+  {
+    name: "HCJK",
+    role: "Organization",
+    company: "HCJK",
+    quote:
+      "Working with HLPFL gave us the foundation we needed to grow. Their team provided the business support and strategic guidance that helped turn our vision into reality. The commission-only model meant we could focus on our mission without worrying about upfront costs.",
+    featured: true,
+  },
 ];
 
 // Blog posts

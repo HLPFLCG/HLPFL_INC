@@ -1,14 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { Quote, ArrowRight } from "lucide-react";
+import { Quote, ArrowRight, ExternalLink } from "lucide-react";
 import { ScrollReveal } from "@/components/ui";
 import { testimonials } from "@/lib/blog";
 
 export default function TestimonialsSection() {
-  const featuredTestimonial = testimonials.find((t) => t.featured) || testimonials[0];
+  const featuredTestimonials = testimonials.filter((t) => t.featured);
 
-  if (!featuredTestimonial) return null;
+  if (featuredTestimonials.length === 0) return null;
 
   return (
     <section className="section bg-gradient-to-b from-void to-void-light" id="testimonials">
@@ -24,44 +24,58 @@ export default function TestimonialsSection() {
           </h2>
         </ScrollReveal>
 
-        {/* Featured Testimonial */}
-        <ScrollReveal delay={0.2}>
-          <div className="max-w-4xl mx-auto">
-            <div className="relative p-8 lg:p-12 rounded-2xl bg-void border border-gold/20 shadow-xl shadow-gold/5">
-              {/* Quote Icon */}
-              <div className="absolute -top-6 left-8 w-12 h-12 rounded-full bg-gold flex items-center justify-center">
-                <Quote size={24} className="text-void" />
-              </div>
-
-              {/* Quote Text */}
-              <blockquote className="text-xl lg:text-2xl text-gray-300 leading-relaxed mb-8 mt-4">
-                &ldquo;{featuredTestimonial.quote}&rdquo;
-              </blockquote>
-
-              {/* Attribution */}
-              <div className="flex items-center justify-between flex-wrap gap-4">
-                <div>
-                  <p className="font-display text-xl text-white">
-                    {featuredTestimonial.name}
-                  </p>
-                  <p className="text-gold">
-                    {featuredTestimonial.role}, {featuredTestimonial.company}
-                  </p>
+        {/* Testimonials Grid */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {featuredTestimonials.map((testimonial, index) => (
+            <ScrollReveal key={testimonial.name} delay={0.2 + index * 0.1}>
+              <div className="relative p-8 rounded-2xl bg-void border border-gold/20 shadow-xl shadow-gold/5 h-full flex flex-col">
+                {/* Quote Icon */}
+                <div className="absolute -top-5 left-8 w-10 h-10 rounded-full bg-gold flex items-center justify-center">
+                  <Quote size={20} className="text-void" />
                 </div>
-                <Link
-                  href="/blog/torres-entertainment-partnership-success-story"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 border border-gold/30 rounded-lg text-gold hover:bg-gold/10 transition-colors group"
-                >
-                  Read Full Case Study
-                  <ArrowRight
-                    size={16}
-                    className="transition-transform group-hover:translate-x-1"
-                  />
-                </Link>
+
+                {/* Quote Text */}
+                <blockquote className="text-lg text-gray-300 leading-relaxed mb-6 mt-4 flex-grow">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </blockquote>
+
+                {/* Attribution */}
+                <div className="flex items-center justify-between flex-wrap gap-4">
+                  <div>
+                    <p className="font-display text-xl text-white">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-gold">
+                      {testimonial.role}, {testimonial.company}
+                    </p>
+                  </div>
+                  {testimonial.company === "Torres Entertainment" ? (
+                    <Link
+                      href="/blog/torres-entertainment-partnership-success-story"
+                      className="inline-flex items-center gap-2 px-4 py-2 border border-gold/30 rounded-lg text-gold hover:bg-gold/10 transition-colors group text-sm"
+                    >
+                      Case Study
+                      <ArrowRight
+                        size={14}
+                        className="transition-transform group-hover:translate-x-1"
+                      />
+                    </Link>
+                  ) : testimonial.company === "HCJK" ? (
+                    <a
+                      href="https://hcjk.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 border border-gold/30 rounded-lg text-gold hover:bg-gold/10 transition-colors group text-sm"
+                    >
+                      Visit Site
+                      <ExternalLink size={14} />
+                    </a>
+                  ) : null}
+                </div>
               </div>
-            </div>
-          </div>
-        </ScrollReveal>
+            </ScrollReveal>
+          ))}
+        </div>
 
         {/* Stats */}
         <ScrollReveal delay={0.3}>
