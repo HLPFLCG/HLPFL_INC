@@ -1,5 +1,8 @@
 import {
   HeroSection,
+  TrustBar,
+  HowItWorks,
+  ValueStack,
   ServicesSection,
   AboutSection,
   TestimonialsSection,
@@ -10,6 +13,9 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <TrustBar />
+      <HowItWorks />
+      <ValueStack />
       <ServicesSection />
       <AboutSection />
       <TestimonialsSection />

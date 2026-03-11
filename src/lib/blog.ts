@@ -24,14 +24,6 @@ export interface Testimonial {
 // Featured testimonials
 export const testimonials: Testimonial[] = [
   {
-    name: "Emma Laureen",
-    role: "Founder & Artist",
-    company: "Elisabeth Jane",
-    quote:
-      "HLPFL helped me turn a handmade passion into a real business. I was painting recipe boxes one at a time from my kitchen table, and they built me a professional brand, a beautiful website with e-commerce, and a strategy to reach customers I never could have found on my own. The commission-only model meant I could invest in materials and focus on my craft instead of worrying about upfront agency fees. Now I have an online store, a retail stockist, and a brand that truly represents who I am.",
-    featured: true,
-  },
-  {
     name: "Heather Krystecki",
     role: "Poet & Author",
     company: "HCJK",
@@ -39,9 +31,17 @@ export const testimonials: Testimonial[] = [
       "HLPFL took everything I had — poems in notebooks, a dream of a book — and helped me build a real author platform from scratch. They designed my brand, built hcjk.org, handled the publishing logistics, and gave me a professional presence I never could have created alone. The commission-only model meant I could focus on writing without worrying about costs. My debut collection is now available worldwide, and I have a home for my words that truly feels like mine.",
     featured: true,
   },
+  {
+    name: "Emma Laureen",
+    role: "Founder & Artist",
+    company: "Elisabeth Jane",
+    quote:
+      "HLPFL helped me turn a handmade passion into a real business. I was painting recipe boxes one at a time from my kitchen table, and they built me a professional brand, a beautiful website with e-commerce, and a strategy to reach customers I never could have found on my own. The commission-only model meant I could invest in materials and focus on my craft instead of worrying about upfront agency fees. Now I have an online store, a retail stockist, and a brand that truly represents who I am.",
+    featured: true,
+  },
 ];
 
-// Blog posts
+// Blog posts — HCJK is primary client, Elisabeth Jane is secondary
 export const blogPosts: BlogPost[] = [
   {
     slug: "hlpfl-launches-to-empower-creative-entrepreneurs",
@@ -237,15 +237,15 @@ All on a commission-only basis. No upfront fees. No gatekeeping. Your craft, you
   },
   {
     slug: "why-commission-only-matters",
-    title: "Why Commission-Only Matters: The Problem with Traditional Creative Services",
+    title: "Why $1,000 + Commission Matters: The Problem with Traditional Creative Services",
     excerpt:
-      "Understanding why HLPFL's commission-only model is a game-changer for creative entrepreneurs who've been burned by upfront fees and empty promises.",
+      "Understanding why HLPFL's $1,000 activation + commission model is a game-changer for creative entrepreneurs who've been burned by $10K+ upfront fees and empty promises.",
     content: `
-# Why Commission-Only Matters
+# Why $1,000 + Commission Matters
 
 ## The Traditional Model is Broken
 
-For decades, creative entrepreneurs have faced a frustrating choice: pay thousands upfront for services that may or may not work, or struggle to build everything themselves.
+For decades, creative entrepreneurs have faced a frustrating choice: pay tens of thousands upfront for services that may or may not work, or struggle to build everything themselves.
 
 Consider the typical paths available to an independent creator:
 
@@ -287,12 +287,12 @@ This approach preserves independence but sacrifices growth. There are only so ma
 
 We designed our model to solve these problems:
 
-### True Commission-Only
+### $1,000 Activation + Commission
 
-- **Zero upfront fees** - We don't get paid until you do
-- **Aligned incentives** - Your success is literally our business model
-- **No minimum commitments** - You're free to leave anytime
-- **Transparent terms** - 15-30% commission based on services used
+- **$1,000 replaces $10,000+** — Entity formation, branding, web, contracts, sales materials — all built for you in weeks
+- **Aligned incentives** — We earn a commission on the revenue we help generate. If you don't make money, we don't make money
+- **No lock-in** — If it's not working, walk. We don't hold your domain, your brand, or your business hostage
+- **Transparent terms** — 10-25% commission negotiated upfront and in writing
 
 ### Nonprofit Structure
 
@@ -305,32 +305,34 @@ As a 501(c)(3), we have no:
 
 ### Complete Services
 
-We provide what you actually need:
+Your $1,000 activation includes:
 
-- Brand development and design
-- Business formation and compliance
-- Sales representation and outreach
-- Marketing strategy and execution
-- Content creation support
-- Education and training
+- Entity formation + EIN
+- Brand strategy + visual identity
+- Custom website design + development
+- Contract templates (NDAs, service agreements)
+- Sales materials + social media setup
+- Market research + positioning
+
+Total market value: $10,000–$31,500. Your cost: $1,000. That's 3–10 cents on the dollar.
 
 ## Real Results, Real Alignment
 
-When Emma Laureen partnered with us to build Elisabeth Jane, she didn't write a check. We invested our time, expertise, and resources into her brand because we believed in her craft.
+When Heather Krystecki partnered with us to build HCJK, she invested $1,000 in herself — and we invested our time, expertise, and resources into her author platform because we believed in her work.
 
-Our return? A percentage of the sales we help generate.
+Our return? A commission on the revenue we help generate.
 
-If we don't help her succeed, we don't get paid. Period.
+If we don't help her succeed, we don't earn. Period.
 
 This is how it should work.
 
 ## Is This Right for You?
 
-Our commission-only model works best for:
+Our $1,000 + commission model works best for:
 
 - Creators with products/services ready for market
 - Entrepreneurs who need business infrastructure, not just advice
-- People tired of paying for promises
+- People tired of paying $10K+ for promises
 - Anyone who believes success should be shared, not extracted
 
 **Ready to work with a partner who only wins when you win?**

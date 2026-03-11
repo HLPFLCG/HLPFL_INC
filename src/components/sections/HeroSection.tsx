@@ -1,17 +1,26 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import Button from "@/components/ui/Button";
-import { ShimmerText, GlowHover } from "@/components/animations";
+import { ScrollReveal } from "@/components/ui";
 
 export default function HeroSection() {
+  const scrollToApply = () => {
+    document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-void via-void to-void-light" />
+
+      {/* Radial gold glow */}
+      <div
+        className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(200,121,65,0.03) 0%, transparent 70%)",
+        }}
+      />
 
       {/* Animated gold accent lines */}
       <div className="absolute inset-0 overflow-hidden">
@@ -29,107 +38,58 @@ export default function HeroSection() {
         />
       </div>
 
+      {/* Diagonal lines */}
+      <div
+        className="absolute top-0 right-0 w-[400px] h-full opacity-[0.03] pointer-events-none"
+        style={{
+          background:
+            "repeating-linear-gradient(45deg, transparent, transparent 40px, #fff 40px, #fff 41px)",
+        }}
+      />
+
       {/* Content */}
-      <div className="container-custom relative z-10 text-center px-4">
-        {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotateY: -90 }}
-          animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-8"
-        >
-          <Image
-            src="/logo.svg"
-            alt="HLPFL INC"
-            width={80}
-            height={80}
-            className="mx-auto"
-            priority
-          />
-        </motion.div>
+      <div className="container-custom relative z-10 text-center px-4 py-32">
+        <ScrollReveal>
+          <span className="text-gold uppercase tracking-[0.25em] text-xs mb-8 block opacity-90">
+            Wyoming 501(c)(3) Nonprofit
+          </span>
+        </ScrollReveal>
 
-        {/* Main Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide mb-6"
-        >
-          Empowering{" "}
-          <span className="text-gradient">Creative</span>
-          <br />
-          Entrepreneurs
-        </motion.h1>
+        <ScrollReveal delay={0.1}>
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide mb-6 leading-none">
+            Your talent deserves
+            <br />
+            <span className="text-gradient">a real business</span>
+            <br />
+            behind it.
+          </h1>
+        </ScrollReveal>
 
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-4 leading-relaxed"
-        >
-          Professional business support with zero upfront costs. We don&apos;t charge
-          anything upfront—we earn when you earn.
-        </motion.p>
+        <ScrollReveal delay={0.2}>
+          <p className="text-lg md:text-xl text-gray-400 max-w-xl mx-auto mb-10 leading-relaxed">
+            HLPFL builds the brand, the business, and the sales engine — so you
+            can focus on creating.
+            <span className="text-gold font-semibold"> $1,000 to start.</span>{" "}
+            We earn when you earn.
+          </p>
+        </ScrollReveal>
 
-        {/* Key Message */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="text-gold font-medium text-lg mb-10"
-        >
-          <ShimmerText>No VCs. No Exploitation. No Bullshit.</ShimmerText>
-        </motion.p>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <GlowHover>
-            <Link href="/portal">
-              <Button size="lg" className="group">
-                Enter Creative Portal
-                <ArrowRight
-                  size={20}
-                  className="transition-transform group-hover:translate-x-1"
-                />
-              </Button>
-            </Link>
-          </GlowHover>
-          <Link href="/services">
-            <Button variant="outline" size="lg">
+        <ScrollReveal delay={0.3}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={scrollToApply}
+              className="bg-gold text-white border-none px-10 py-4 text-xs tracking-[0.2em] uppercase font-bold transition-all duration-300 hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(200,121,65,0.4)]"
+            >
+              Apply to Partner
+            </button>
+            <a
+              href="#how-it-works"
+              className="text-gray-400 border border-void-lighter px-10 py-4 text-xs tracking-[0.2em] uppercase transition-all duration-300 hover:border-gold hover:text-gold inline-block text-center"
+            >
               How It Works
-            </Button>
-          </Link>
-        </motion.div>
-
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
-        >
-          {[
-            { value: "$0", label: "Upfront Fees" },
-            { value: "100%", label: "Your Rights" },
-            { value: "15-30%", label: "Commission Only" },
-            { value: "∞", label: "Possibilities" },
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="font-display text-3xl md:text-4xl text-gold mb-2">
-                {stat.value}
-              </div>
-              <div className="text-sm text-gray-500 uppercase tracking-wider">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
+            </a>
+          </div>
+        </ScrollReveal>
       </div>
 
       {/* Scroll indicator */}

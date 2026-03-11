@@ -7,7 +7,7 @@ import { audiences } from "@/lib/data";
 export const metadata: Metadata = {
   title: "About | HLPFL INC",
   description:
-    "HLPFL INC is a Wyoming nonprofit advocating for creative entrepreneurs. Zero upfront costs, commission-only model. Founded by James Rockel III.",
+    "HLPFL INC is a Wyoming 501(c)(3) nonprofit building real businesses for creative entrepreneurs. $1,000 activation + commission model. Founded by James Rockel III.",
   keywords: [
     "HLPFL INC",
     "nonprofit",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About | HLPFL INC",
     description:
-      "HLPFL INC is a Wyoming nonprofit advocating for creative entrepreneurs. Zero upfront costs, commission-only model.",
+      "HLPFL INC is a Wyoming 501(c)(3) nonprofit building real businesses for creative entrepreneurs. $1,000 activation + commission.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "HLPFL INC" }],
   },
 };
@@ -35,7 +35,7 @@ const values = [
     icon: Zap,
     title: "Radical Transparency",
     description:
-      "No hidden fees, no surprise terms, no bullshit. You'll always know exactly what you're getting and what it costs.",
+      "No hidden fees, no surprise terms. $1,000 activation, commission negotiated upfront, everything in writing.",
   },
   {
     icon: Users,
@@ -62,13 +62,13 @@ const timeline = [
     year: "2025",
     title: "Nonprofit Formation",
     description:
-      "Established HLPFL INC as a Wyoming 501(c)(3) nonprofit with a commission-only model that puts creators first.",
+      "Established HLPFL INC as a Wyoming 501(c)(3) nonprofit with a $1,000 activation + commission model that puts creators first.",
   },
   {
     year: "2026",
     title: "Growing Impact",
     description:
-      "Serving creative entrepreneurs across multiple disciplines: inventors, musicians, visual artists, designers, and writers.",
+      "Partnered with HCJK, Elisabeth Jane, Pardyalone, Alki, PRIV, and more — building real businesses for creative entrepreneurs across multiple disciplines.",
   },
 ];
 
@@ -86,15 +86,15 @@ export default function AboutPage() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl mb-6">
-                Advocating for{" "}
+                Building Real Businesses for{" "}
                 <span className="text-gradient">Creative Entrepreneurs</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
-                HLPFL Inc. is a Wyoming 501(c)(3) nonprofit advocating for fair
-                treatment, equitable compensation, and protection of rights for
-                creative entrepreneurs.
+                HLPFL Inc. is a Wyoming 501(c)(3) nonprofit that gives creative
+                entrepreneurs the business infrastructure they deserve — for
+                $1,000 to start, with commission on revenue we help generate.
               </p>
             </ScrollReveal>
           </div>
@@ -108,10 +108,10 @@ export default function AboutPage() {
             <Card variant="bordered" className="max-w-3xl mx-auto text-center py-12">
               <Quote size={40} className="text-gold/30 mx-auto mb-4" />
               <p className="font-display text-2xl md:text-3xl text-gold mb-4">
-                &ldquo;You shouldn&apos;t have to pay thousands just to find out if someone can help you.&rdquo;
+                &ldquo;Your talent deserves a real business behind it.&rdquo;
               </p>
               <p className="text-gray-400">
-                We don&apos;t charge anything upfront. We earn when you earn. That&apos;s it.
+                $1,000 to start. We earn when you earn. Your rights, always.
               </p>
             </Card>
           </ScrollReveal>
@@ -127,7 +127,7 @@ export default function AboutPage() {
                 Our Mission
               </span>
               <h2 className="font-display text-3xl md:text-4xl mb-6">
-                Tools, Not Contracts
+                Infrastructure, Not Invoices
               </h2>
               <div className="space-y-4 text-gray-400">
                 <p>
@@ -135,28 +135,29 @@ export default function AboutPage() {
                   individuals who create this value routinely face exploitation.
                 </p>
                 <p>
-                  Predatory business services charge thousands of dollars upfront
-                  with no guaranteed results. Unfair contract terms strip creators
-                  of their rights and revenue. A lack of accessible business
-                  education leaves talented entrepreneurs vulnerable.
+                  Traditional agencies charge $10,000–$30,000+ with no guaranteed
+                  results. Management companies lock you into multi-year contracts
+                  and take ownership of your work. DIY means spending all your time
+                  on business instead of creating.
                 </p>
                 <p>
-                  We built HLPFL to be the opposite of that. Our commission-only
-                  model means we only succeed when our clients succeed. No upfront
-                  fees. No predatory contracts. No exploitation.
+                  We built HLPFL to be different. Our $1,000 activation replaces
+                  $10,000+ in startup costs, and our commission model means we only
+                  succeed when you succeed. No retainers. No hourly billing. No
+                  games.
                 </p>
               </div>
               <p className="text-gold font-semibold mt-6 text-lg">
-                No VCs. No Exploitation. No Bullshit.
+                Nonprofit, Not No-Money. Built Different.
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { value: "$0", label: "Upfront Fees" },
+                  { value: "$1K", label: "Activation Fee" },
                   { value: "100%", label: "Your Rights" },
-                  { value: "15-30%", label: "Commission Only" },
+                  { value: "10-25%", label: "Commission Range" },
                   { value: "501(c)(3)", label: "Nonprofit Status" },
                 ].map((stat, index) => (
                   <Card key={index} variant="bordered" className="text-center">
@@ -183,8 +184,8 @@ export default function AboutPage() {
               Creative Entrepreneurs
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              We work with creators who have viable products or talent but need
-              business infrastructure to reach their potential.
+              We work with creators who have a product or talent but lack the business
+              infrastructure to monetize it.
             </p>
           </ScrollReveal>
 
@@ -255,7 +256,7 @@ export default function AboutPage() {
               Our Team
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Led by experienced professionals committed to empowering creative entrepreneurs.
+              Led by experienced professionals committed to building real businesses for creative entrepreneurs.
             </p>
           </ScrollReveal>
 
@@ -357,14 +358,14 @@ export default function AboutPage() {
               Join the Movement
             </h2>
             <p className="text-gray-400 text-lg mb-8">
-              Whether you&apos;re a creator looking for support or someone who
-              believes in fair treatment for creative entrepreneurs—we&apos;d
-              love to connect.
+              Whether you&apos;re a creator looking for a real business partner or
+              someone who believes in fair treatment for creative entrepreneurs —
+              we&apos;d love to connect.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
                 <Button size="lg" className="group">
-                  Get in Touch
+                  Apply to Partner
                   <ArrowRight
                     size={20}
                     className="transition-transform group-hover:translate-x-1"

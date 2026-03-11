@@ -36,9 +36,9 @@ export default function Footer() {
               HLPFL<span className="text-gold">.</span>
             </Link>
             <p className="mt-4 text-gray-400 max-w-sm leading-relaxed">
-              Empowering creative entrepreneurs with tools, resources, and
-              community. No contracts, no exploitation—just genuine support for
-              your creative journey.
+              HLPFL Inc. is a Wyoming 501(c)(3) nonprofit corporation. We exist
+              to give creative entrepreneurs the business infrastructure they
+              deserve.
             </p>
 
             {/* Social Links */}
@@ -108,9 +108,9 @@ export default function Footer() {
               © {currentYear} HLPFL INC. All rights reserved.
             </p>
             <p className="text-gray-500 text-sm">
-              No VCs<span className="text-gold mx-2">•</span>
-              No Exploitation<span className="text-gold mx-2">•</span>
-              No Bullshit
+              $1K Activation<span className="text-gold mx-2">•</span>
+              Commission Model<span className="text-gold mx-2">•</span>
+              Your Rights Always
             </p>
           </div>
         </div>
