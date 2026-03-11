@@ -24,11 +24,11 @@ export interface Testimonial {
 // Featured testimonials
 export const testimonials: Testimonial[] = [
   {
-    name: "Adrian Torres",
-    role: "Founder & CEO",
-    company: "Torres Entertainment",
+    name: "Emma Laureen",
+    role: "Founder & Artist",
+    company: "Elisabeth Jane",
     quote:
-      "HLPFL transformed my business. As an inventor with a patented children's salon chair, I had the product but struggled with sales and marketing. Their commission-only model meant I could access professional business services without upfront costs. Within months, we developed a complete sales system, marketing strategy, and expanded into new markets like pediatric dental and therapy centers. They don't just talk about helping creators—they actually do it.",
+      "HLPFL helped me turn a handmade passion into a real business. I was painting recipe boxes one at a time from my kitchen table, and they built me a professional brand, a beautiful website with e-commerce, and a strategy to reach customers I never could have found on my own. The commission-only model meant I could invest in materials and focus on my craft instead of worrying about upfront agency fees. Now I have an online store, a retail stockist, and a brand that truly represents who I am.",
     featured: true,
   },
   {
@@ -109,96 +109,129 @@ contact@hlpfl.org
     featured: true,
   },
   {
-    slug: "torres-entertainment-partnership-success-story",
-    title: "Case Study: How HLPFL Helped Torres Entertainment Scale Nationwide",
+    slug: "elisabeth-jane-hand-painted-recipe-boxes-case-study",
+    title: "Case Study: How HLPFL Helped Elisabeth Jane Grow from Kitchen Table to Online Brand",
     excerpt:
-      "From patented invention to nationwide sales—how Adrian Torres partnered with HLPFL to transform his children's salon chair business.",
+      "From hand-painting recipe boxes as gifts to a full e-commerce brand—how Emma Laureen partnered with HLPFL to build Elisabeth Jane into a thriving artisan business.",
     content: `
-# Case Study: Torres Entertainment Partnership
+# Case Study: Elisabeth Jane Partnership
 
 ## The Challenge
 
-Adrian Torres had a brilliant invention: a patented children's salon chair designed to make haircuts fun and stress-free for kids and stylists alike. The Torres Entertainment Chair transforms the salon experience with its engaging design and practical features.
+Emma Laureen is a former teacher turned stay-at-home mom with a rare gift: she hand-paints recipe boxes and cards with nature-inspired botanical designs — wildflowers, garden herbs, strawberry vines — each one sketched, painted, sealed, and shipped entirely by hand. No stencils, no stamps, no batch production. Every piece is one of a kind.
 
-But like many inventors, Adrian faced a common problem: having a great product doesn't automatically mean having a great business. He needed sales infrastructure, marketing strategy, and business development support—services that typically require significant upfront investment.
+What started as a single hand-painted recipe box given as a gift quickly turned into something much bigger. Emma had the talent, the product, and the passion — but she didn't have the business infrastructure to turn a craft into a brand.
+
+She faced the same barriers many independent artisans encounter:
+
+- **No online presence** — No website, no e-commerce, no way to reach customers beyond word of mouth
+- **No brand identity** — No cohesive visual brand, no professional positioning
+- **No marketing strategy** — No plan for reaching customers, building an audience, or driving sales
+- **Limited budget** — Traditional branding and web development agencies charge thousands upfront
+- **Time constraints** — As a stay-at-home mom, every hour matters
 
 ## The HLPFL Solution
 
-When Adrian connected with HLPFL, we saw immediately the potential of his product. More importantly, we saw an entrepreneur who deserved real support, not exploitation.
+When Emma connected with HLPFL, we saw an artist with a beautiful product and an authentic story that deserved to reach people. More importantly, we saw someone who needed a partner, not an invoice.
 
 ### What We Built Together
 
-**1. Professional Sales System**
+**1. Complete Brand Identity — Elisabeth Jane**
 
-We developed a comprehensive sales methodology specifically for the Torres Entertainment Chair, including:
+We developed the Elisabeth Jane brand from the ground up:
 
-- Detailed product knowledge training
-- Customer-centric sales scripts
-- Objection handling frameworks
-- Follow-up protocols
-- CRM integration
+- **Brand name & identity** — Elisabeth Jane as a warm, memorable artisan brand
+- **Visual design system** — A cottagecore-inspired aesthetic with Cormorant Garamond serif typography, ivory and cream tones, and elegant minimal design that lets the handwork shine
+- **Brand voice** — Warm, personal, nature-inspired — matching Emma's authentic creative spirit
+- **Professional positioning** — "Hand-painted recipe boxes made to be used, loved, and passed down"
 
-**2. Market Expansion Strategy**
+**2. Full E-Commerce Website — elisabethjane.com**
 
-While the chair was originally designed for children's salons, we identified significant opportunities in adjacent markets:
+We designed and built a complete online store and brand platform:
 
-- **Pediatric Dental Offices** - Same challenge of keeping kids calm during procedures
-- **ABA Therapy Centers** - Engaging seating for children with autism
-- **Pediatric Optometry** - Fun alternative to traditional exam chairs
-- **Children's Hospitals** - Comfortable seating for young patients
-- **Photography Studios** - Unique prop for children's portraits
+- **Homepage** with hero section, product showcase, brand story, and process breakdown
+- **Shop page** with Stripe-powered checkout for direct purchases
+- **About page** with Emma's full story, values, and creative philosophy
+- **Process section** showing the four-step journey: Sketch, Paint, Seal, Ship
+- **Stockist page** featuring retail partner Stoffer Home in Grand Rapids, Michigan
+- **Shipping & policies** with clear, transparent terms
+- **Full SEO optimization** with metadata and social sharing
+- **Mobile-responsive design** optimized for all devices
 
-**3. Marketing Infrastructure**
+The site was built with Next.js, Tailwind CSS, and TypeScript — a modern, fast platform deployed on Cloudflare Pages for edge performance.
 
-We created a complete marketing ecosystem:
+**3. Product Strategy & Pricing**
 
-- Brand messaging and positioning
-- Sales collateral and presentations
-- Digital marketing strategy
-- Content calendar for year-round engagement
-- Trade show support
+We helped Emma structure her product line:
 
-**4. Business Operations**
+- **Hand-Illustrated Strawberry Garden Recipe Cards** (Set of 10) — $10.00
+- **Strawberry Hand-Painted Recipe Box (Large)** — $30.00, fits 4x6 cards
+- **Strawberry Hand-Painted Recipe Box (Small)** — $20.00, fits 3x5 cards
+- Archival-quality materials, metal hinges, magnetic closures, polyurethane sealed for real kitchen use
 
-- Pricing strategy optimization
-- Distribution planning
-- Customer service protocols
-- Warranty and support systems
+**4. Marketing & Brand Storytelling**
+
+We built a marketing foundation rooted in authenticity:
+
+- **Instagram strategy** connecting @elisabeth.jane.c for showcasing the painting process
+- **Brand storytelling** — "In a world of screens and bookmarked links, a recipe box is easily overlooked — until it's your grandmother's. Then, it's no longer just a box; it's a legacy."
+- **Retail outreach** resulting in a stockist partnership with Stoffer Home
+- **Content strategy** for process photos, behind-the-scenes, and finished pieces
+
+**5. Brand Values That Sell**
+
+We helped Emma articulate what makes Elisabeth Jane special:
+
+- **Handmade, Always** — Every step done by hand, no shortcuts
+- **Built to Last** — Sealed and finished for real everyday kitchen use
+- **Nature-Inspired** — Designs drawn from what's growing outside
+- **One at a Time** — Individual attention from start to finish
 
 ## The Results
 
-Adrian's business transformed from a single-product inventor operation to a scalable enterprise with:
+Emma went from painting recipe boxes as gifts to running a professional artisan brand with:
 
-- Multiple market verticals generating revenue
-- Professional sales processes attracting larger buyers
-- Consistent lead flow from marketing efforts
-- Business infrastructure supporting growth
+- **A full e-commerce website** at elisabethjane.com with Stripe checkout
+- **A cohesive brand identity** that authentically represents her craft and values
+- **A retail stockist** — Stoffer Home in Grand Rapids, Michigan
+- **A growing Instagram presence** showcasing her process and finished pieces
+- **A sustainable product line** with clear pricing and professional presentation
+- **A platform built to grow** as she expands her designs and reaches more customers
 
-## Adrian's Words
+## Emma's Words
 
-> "HLPFL transformed my business. As an inventor with a patented children's salon chair, I had the product but struggled with sales and marketing. Their commission-only model meant I could access professional business services without upfront costs. Within months, we developed a complete sales system, marketing strategy, and expanded into new markets. They don't just talk about helping creators—they actually do it."
+> "HLPFL helped me turn a handmade passion into a real business. I was painting recipe boxes one at a time from my kitchen table, and they built me a professional brand, a beautiful website with e-commerce, and a strategy to reach customers I never could have found on my own. The commission-only model meant I could invest in materials and focus on my craft instead of worrying about upfront agency fees. Now I have an online store, a retail stockist, and a brand that truly represents who I am."
 
 ## The HLPFL Difference
 
-This partnership exemplifies what HLPFL stands for:
+This partnership shows what HLPFL's model means for artisans and makers:
 
-- **Zero upfront costs** - Adrian didn't pay a dime until sales came in
-- **Aligned interests** - We succeed only when our clients succeed
-- **Comprehensive support** - Not just advice, but actual execution
-- **Creator ownership** - Adrian retains 100% ownership of his invention and company
+- **$0 upfront** — Emma didn't pay for branding, web development, or e-commerce setup
+- **Full creative ownership** — Every design, every brushstroke, every product stays with Emma
+- **Comprehensive execution** — Not just advice, but actual brand design, web development, e-commerce integration, and marketing strategy
+- **Authentic partnership** — We built what Emma needed, in her voice, for her customers
+- **Long-term platform** — Not a one-time project, but a foundation for a growing artisan business
 
-## Is HLPFL Right for You?
+## For Makers and Artisans Considering HLPFL
 
-If you're a creative entrepreneur with a product or service that's ready for market but lacking the business infrastructure to scale, we want to hear from you.
+If you're a maker, artist, or artisan with a product people love but no way to reach them at scale — we want to hear from you. HLPFL provides:
 
-**Apply today at hlpfl.org**
+- Brand development and visual identity
+- Professional website design and e-commerce
+- Product strategy and pricing
+- Marketing and audience building
+- Retail outreach and stockist development
+
+All on a commission-only basis. No upfront fees. No gatekeeping. Your craft, your rights, your business — with real support behind you.
+
+**Ready to build your artisan brand? Apply at hlpfl.org**
 
 ---
 
-*Torres Entertainment Chair is a registered product. Results may vary based on individual circumstances.*
+*Visit Emma's website at [elisabethjane.com](https://elisabethjane.com) and follow her on Instagram at [@elisabeth.jane.c](https://www.instagram.com/elisabeth.jane.c).*
     `,
     author: "HLPFL Team",
-    date: "2025-02-01",
+    date: "2026-03-01",
     category: "case-study",
     featured: true,
   },
@@ -283,11 +316,11 @@ We provide what you actually need:
 
 ## Real Results, Real Alignment
 
-When Adrian Torres partnered with us, he didn't write a check. We invested our time, expertise, and resources into his business because we believed in his product.
+When Emma Laureen partnered with us to build Elisabeth Jane, she didn't write a check. We invested our time, expertise, and resources into her brand because we believed in her craft.
 
 Our return? A percentage of the sales we help generate.
 
-If we don't help him succeed, we don't get paid. Period.
+If we don't help her succeed, we don't get paid. Period.
 
 This is how it should work.
 
@@ -314,103 +347,96 @@ Apply at hlpfl.org
     featured: false,
   },
   {
-    slug: "five-markets-beyond-salons-torres-chair",
-    title: "5 Markets Beyond Salons: Expanding the Torres Entertainment Chair",
+    slug: "from-gift-to-brand-building-a-handmade-business",
+    title: "From Gift to Brand: How One Hand-Painted Recipe Box Became a Business",
     excerpt:
-      "How creative thinking and market research helped one inventor expand from children's salons to pediatric healthcare, therapy, and photography.",
+      "The story behind Elisabeth Jane — how a single hand-painted recipe box given as a gift turned into a thriving artisan brand with an online store and retail presence.",
     content: `
-# 5 Markets Beyond Salons: Expanding the Torres Entertainment Chair
+# From Gift to Brand: How One Hand-Painted Recipe Box Became a Business
 
-When Adrian Torres first invented his children's salon chair, the target market was obvious: kids' hair salons and barbershops. The chair's engaging design and practical features made haircuts less stressful for children and more efficient for stylists.
+Emma Laureen never planned to start a business. She was a teacher for seven years before becoming a stay-at-home mom in Grand Rapids, Michigan. But when she hand-painted a recipe box as a gift, something clicked — for both the recipient and for Emma.
 
-But at HLPFL, we believe in maximizing the potential of every product. Through strategic analysis and market research, we identified five additional markets where the Torres Entertainment Chair could thrive.
+That single box turned into something much bigger. Here's how.
 
-## 1. Pediatric Dental Offices
+## The Origin Story
 
-**The Challenge:** Getting children to sit still during dental exams and cleanings is a universal struggle. Traditional dental chairs are designed for adults and can be intimidating for young patients.
+It started with a simple idea: take an ordinary recipe box and make it beautiful. Emma sketched wildflowers and strawberry vines in pencil, layered on paint by hand, sealed it with polyurethane for real kitchen use, and gave it away.
 
-**The Opportunity:** The Torres Entertainment Chair transforms the dental experience. Its engaging design captures children's attention, making exams easier for dentists and less scary for kids.
+The response was immediate. People wanted their own. Friends asked for gifts. Word spread.
 
-**Key Benefits:**
-- Reduces patient anxiety
-- Improves cooperation during procedures
-- Creates memorable positive experiences
-- Differentiates the practice from competitors
+But Emma didn't just see a product — she saw a philosophy: **everyday items should be as beautiful as they are useful.**
 
-## 2. ABA Therapy Centers
+## What Makes Elisabeth Jane Different
 
-**The Challenge:** Applied Behavior Analysis (ABA) therapy for children with autism requires engaging environments. Standard therapy furniture often fails to capture and maintain attention.
+In a market flooded with mass-produced kitchenware and machine-printed designs, Elisabeth Jane stands apart:
 
-**The Opportunity:** The chair's interactive design aligns perfectly with ABA therapy's engagement-focused approach.
+### Handmade, Always
 
-**Key Benefits:**
-- Provides sensory-friendly seating option
-- Supports attention and engagement goals
-- Creates comfortable, non-threatening environment
-- Enhances therapy session effectiveness
+Every piece is done entirely by hand — sketch, paint, seal. No stencils, no stamps, no batch production. Each box takes hours of careful work. No two are exactly alike.
 
-## 3. Pediatric Optometry
+### Built to Last
 
-**The Challenge:** Eye exams require children to sit still and focus—often in an unfamiliar, clinical environment with unusual equipment.
+These aren't decorative shelf pieces. Every box is sealed with polyurethane and built with metal hinges and magnetic closures. They're designed to sit on your kitchen counter, hold your grandmother's recipes, and get used every single day.
 
-**The Opportunity:** The Torres Entertainment Chair can make optometry visits fun, improving cooperation and exam accuracy.
+### Nature-Inspired
 
-**Key Benefits:**
-- Helps children stay still for precise measurements
-- Reduces anxiety about eye exam equipment
-- Creates positive associations with eye care
-- Increases efficiency of appointments
+Emma's designs come from what she sees outside — wildflowers, garden herbs, vintage botanicals, strawberry vines. There's something timeless about bringing the garden into the kitchen.
 
-## 4. Children's Hospitals
+### One at a Time
 
-**The Challenge:** Hospitalized children face stress, boredom, and discomfort. Standard hospital furniture prioritizes function over child-friendliness.
+In Emma's words: "I paint each one like it's the only one." That philosophy shows in every brushstroke.
 
-**The Opportunity:** In waiting rooms, treatment areas, and patient rooms, engaging seating can significantly improve the hospital experience.
+## The Business Behind the Art
 
-**Key Benefits:**
-- Provides comfort during difficult times
-- Offers distraction from medical procedures
-- Creates welcoming environment for young patients
-- Supports family-centered care initiatives
+Having a beautiful product is one thing. Having a business is another. With HLPFL's support, Emma built:
 
-## 5. Photography Studios
+- A professional brand identity that captures the warmth and authenticity of her craft
+- A full e-commerce website with Stripe checkout for direct sales
+- A product line with clear pricing and professional photography
+- A retail partnership with Stoffer Home in Grand Rapids
+- An Instagram presence showcasing her process from sketch to ship
 
-**The Challenge:** Children's portrait photographers need unique props and settings. Getting kids to sit in one spot while looking natural is notoriously difficult.
+## Why This Matters for Artisans
 
-**The Opportunity:** The chair serves as both a functional seat and an engaging prop that captures children's attention and creates unique photos.
+Emma's story illustrates a crucial principle for independent makers: **your craft deserves business infrastructure, not just an Etsy listing.**
 
-**Key Benefits:**
-- Unique prop for distinctive portraits
-- Keeps children engaged and in position
-- Creates natural, joyful expressions
-- Differentiates studio offerings
+Too many talented artisans are stuck selling through marketplace platforms that take large cuts, commoditize their work, and give them no control over the customer experience.
 
-## The Lesson for All Creators
+With a dedicated brand and website, Emma controls:
 
-Adrian's story illustrates a crucial principle: **your product may have more potential than you realize.**
+- Her pricing and margins
+- Her customer relationships
+- Her brand story and presentation
+- Her growth trajectory
 
-At HLPFL, we help creative entrepreneurs see beyond their initial market. The same product that solves one problem often solves many others—you just need to find the connections.
+### Questions for Fellow Makers
 
-### Questions to Ask About Your Own Product:
+1. Does your current sales channel reflect the quality of your work?
+2. Are you building a brand, or just filling orders?
+3. Do customers know the story behind what you make?
+4. Could you reach more people with a professional online presence?
+5. What would change if you had real business support behind your craft?
 
-1. What core problem does your product solve?
-2. Who else experiences this problem in different contexts?
-3. What industries are adjacent to your primary market?
-4. How might your product be adapted or positioned for new uses?
-5. What partnerships could open new market doors?
+## The Legacy Angle
 
-## Ready to Expand Your Market?
+Here's what resonates most about Elisabeth Jane's recipe boxes:
 
-If you're a creative entrepreneur with a product that might have untapped potential, we'd love to talk. Our commission-only model means we're invested in finding every opportunity for your success.
+> "In a world of screens and bookmarked links, a recipe box is easily overlooked — until it's your grandmother's. Then, it's no longer just a box; it's a legacy."
+
+Emma isn't just selling painted wood. She's creating heirlooms. And that's the kind of story that builds a lasting brand.
+
+## Ready to Build Your Artisan Brand?
+
+If you're a maker with a product people love but no business infrastructure to match, HLPFL can help. Commission-only. No upfront fees. Your craft, your business.
 
 **Apply at hlpfl.org**
 
 ---
 
-*This case study is based on our partnership with Torres Entertainment. Results vary based on individual products and market conditions.*
+*This article is based on our partnership with Elisabeth Jane. Visit [elisabethjane.com](https://elisabethjane.com) and follow [@elisabeth.jane.c](https://www.instagram.com/elisabeth.jane.c) on Instagram.*
     `,
     author: "HLPFL Team",
-    date: "2025-02-05",
+    date: "2026-03-05",
     category: "case-study",
     featured: false,
   },

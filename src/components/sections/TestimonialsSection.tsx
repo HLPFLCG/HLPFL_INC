@@ -49,17 +49,28 @@ export default function TestimonialsSection() {
                       {testimonial.role}, {testimonial.company}
                     </p>
                   </div>
-                  {testimonial.company === "Torres Entertainment" ? (
-                    <Link
-                      href="/blog/torres-entertainment-partnership-success-story"
-                      className="inline-flex items-center gap-2 px-4 py-2 border border-gold/30 rounded-lg text-gold hover:bg-gold/10 transition-colors group text-sm"
-                    >
-                      Case Study
-                      <ArrowRight
-                        size={14}
-                        className="transition-transform group-hover:translate-x-1"
-                      />
-                    </Link>
+                  {testimonial.company === "Elisabeth Jane" ? (
+                    <div className="flex items-center gap-2">
+                      <Link
+                        href="/blog/elisabeth-jane-hand-painted-recipe-boxes-case-study"
+                        className="inline-flex items-center gap-2 px-4 py-2 border border-gold/30 rounded-lg text-gold hover:bg-gold/10 transition-colors group text-sm"
+                      >
+                        Case Study
+                        <ArrowRight
+                          size={14}
+                          className="transition-transform group-hover:translate-x-1"
+                        />
+                      </Link>
+                      <a
+                        href="https://elisabethjane.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 border border-gold/30 rounded-lg text-gold hover:bg-gold/10 transition-colors group text-sm"
+                      >
+                        elisabethjane.com
+                        <ExternalLink size={14} />
+                      </a>
+                    </div>
                   ) : testimonial.company === "HCJK" ? (
                     <div className="flex items-center gap-2">
                       <Link
