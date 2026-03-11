@@ -1,95 +1,60 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowRight, Heart, Zap, Shield } from "lucide-react";
-import { ScrollReveal, Button } from "@/components/ui";
+import { ScrollReveal } from "@/components/ui";
 
-const values = [
+const REASONS = [
   {
-    icon: Heart,
-    title: "Creator-First",
-    description:
-      "Every decision we make starts with one question: does this help creators?",
+    title: "Nonprofit, Not No-Money",
+    desc: "We're a Wyoming 501(c)(3). Every dollar of surplus goes back into serving more entrepreneurs. We don't have shareholders to feed.",
   },
   {
-    icon: Zap,
-    title: "Transparency",
-    description:
-      "No hidden fees, no confusing contracts, no surprises. What you see is what you get.",
+    title: "You Keep Your Rights",
+    desc: "We never take ownership of your IP, masters, patents, or creative work. Your work is yours. Period.",
   },
   {
-    icon: Shield,
-    title: "Independence",
-    description:
-      "We're here to support, not control. Your work stays yours—always.",
+    title: "Aligned Incentives",
+    desc: "We earn a commission on the revenue we help generate. If you don't make money, we don't make money. No retainers, no hourly billing.",
+  },
+  {
+    title: "No Lock-In",
+    desc: "If it's not working, walk. We don't hold your domain, your brand, or your business hostage. Everything we build is yours.",
   },
 ];
 
 export default function AboutSection() {
   return (
-    <section className="section" id="about">
-      <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Content Side */}
-          <div>
-            <ScrollReveal>
-              <span className="text-gold uppercase tracking-widest text-sm mb-4 block">
-                Our Mission
-              </span>
-            </ScrollReveal>
-            <ScrollReveal delay={0.1}>
-              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-6">
-                Built by Creatives,{" "}
-                <span className="text-gradient">For Creatives</span>
-              </h2>
-            </ScrollReveal>
-            <ScrollReveal delay={0.2}>
-              <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                We started HLPFL because we were tired of seeing talented
-                creative entrepreneurs get trapped in exploitative deals. The
-                industry is changing, and creatives deserve partners who
-                actually help—not extract.
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.3}>
-              <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                We&apos;re not a label, management company, or publisher. We&apos;re a
-                nonprofit providing the infrastructure and support that creative
-                entrepreneurs need to thrive independently.
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.4}>
-              <Link href="/about">
-                <Button variant="outline" className="group">
-                  Read Our Story
-                  <ArrowRight
-                    size={18}
-                    className="transition-transform group-hover:translate-x-1"
-                  />
-                </Button>
-              </Link>
-            </ScrollReveal>
-          </div>
+    <section className="section bg-void-light" id="about">
+      <div className="max-w-[1000px] mx-auto px-4">
+        <ScrollReveal>
+          <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block">
+            Why Us
+          </span>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-16 tracking-wide leading-none">
+            Built <span className="text-gradient">Different.</span>
+          </h2>
+        </ScrollReveal>
 
-          {/* Values Side */}
-          <div className="space-y-6">
-            {values.map((value, index) => (
-              <ScrollReveal key={value.title} delay={index * 0.15} direction="left">
-                <div className="flex gap-5 p-6 rounded-xl bg-void-light border border-gold/10 hover:border-gold/30 transition-colors group">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-void transition-all">
-                    <value.icon size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-display text-xl mb-2 group-hover:text-gold transition-colors">
-                      {value.title}
-                    </h3>
-                    <p className="text-gray-400">{value.description}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
+        {REASONS.map((r, i) => (
+          <ScrollReveal key={i} delay={i * 0.1}>
+            <div
+              className={`flex gap-6 items-start py-7 ${
+                i < REASONS.length - 1 ? "border-b border-void-lighter" : ""
+              }`}
+            >
+              <div className="font-display text-xl text-gold min-w-[32px]">
+                0{i + 1}
+              </div>
+              <div>
+                <h3 className="text-white text-lg font-bold mb-2">
+                  {r.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {r.desc}
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+        ))}
       </div>
     </section>
   );

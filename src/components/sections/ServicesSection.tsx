@@ -1,49 +1,85 @@
 "use client";
 
-import { ScrollReveal, Card } from "@/components/ui";
-import { services } from "@/lib/data";
+import { ScrollReveal } from "@/components/ui";
+
+const SERVICES = [
+  {
+    icon: "◆",
+    title: "Brand Development",
+    desc: "Strategy, visual identity, and market positioning that turns your talent into a recognizable brand.",
+    tags: ["Strategy", "Identity", "Positioning"],
+  },
+  {
+    icon: "⬡",
+    title: "Business Formation",
+    desc: "LLC setup, EIN, registration, and compliance — your legal foundation, handled.",
+    tags: ["Entity Setup", "Registration", "Compliance"],
+  },
+  {
+    icon: "△",
+    title: "Sales Representation",
+    desc: "We sell for you. Outreach, negotiation, deal closing, pipeline management.",
+    tags: ["Outreach", "Negotiation", "Pipeline"],
+  },
+  {
+    icon: "○",
+    title: "Marketing & PR",
+    desc: "Go-to-market, content strategy, PR, and campaigns that reach the right people.",
+    tags: ["Go-To-Market", "PR", "Campaigns"],
+  },
+  {
+    icon: "□",
+    title: "Web & Digital",
+    desc: "Custom website, social setup, e-commerce — your entire digital presence, built.",
+    tags: ["Website", "Social", "E-commerce"],
+  },
+  {
+    icon: "⊕",
+    title: "Contracts & Legal Templates",
+    desc: "NDAs, service agreements, licensing — professional documents ready to sign.",
+    tags: ["NDAs", "Agreements", "Licensing"],
+  },
+];
 
 export default function ServicesSection() {
   return (
-    <section className="section bg-void-light" id="services">
+    <section className="section" id="services">
       <div className="container-custom">
-        {/* Section Header */}
-        <ScrollReveal className="text-center mb-16">
-          <span className="text-gold uppercase tracking-widest text-sm mb-4 block">
-            How We Help
+        <ScrollReveal>
+          <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block">
+            What We Build
           </span>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-6">
-            Professional Services, <span className="text-gradient">Zero Upfront</span>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-16 tracking-wide leading-none">
+            A Full Business Team.
+            <br />
+            <span className="text-gradient">One Partner.</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Everything you need to build and grow your creative business—with no
-            upfront costs. We only earn when you earn.
-          </p>
         </ScrollReveal>
 
-        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <ScrollReveal key={service.title} delay={index * 0.1}>
-              <Card
-                variant="bordered"
-                hover
-                className="h-full group"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-gold/10 text-gold group-hover:bg-gold group-hover:text-void transition-all duration-300">
-                    <service.icon size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-display text-xl mb-2 group-hover:text-gold transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-400 leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
+          {SERVICES.map((s, i) => (
+            <ScrollReveal key={i} delay={i * 0.08}>
+              <div className="bg-void-light border border-void-lighter p-8 h-full group transition-all duration-300 hover:border-gold/25">
+                <span className="text-2xl text-gold block mb-4">
+                  {s.icon}
+                </span>
+                <h3 className="font-display text-xl md:text-2xl text-white mb-3 tracking-wide group-hover:text-gold transition-colors">
+                  {s.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                  {s.desc}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {s.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="text-[10px] text-gold tracking-wider uppercase px-2.5 py-1 border border-gold/20 bg-gold/[0.04]"
+                    >
+                      {t}
+                    </span>
+                  ))}
                 </div>
-              </Card>
+              </div>
             </ScrollReveal>
           ))}
         </div>

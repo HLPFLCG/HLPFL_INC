@@ -1,23 +1,8 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ClientEffects from "@/components/common/ClientEffects";
-
-// Font configurations
-const bebasNeue = Bebas_Neue({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-bebas",
-  display: "swap",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hlpfl.org"),
@@ -26,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | HLPFL INC",
   },
   description:
-    "Wyoming 501(c)(3) nonprofit supporting creative entrepreneurs with professional business services. Zero upfront costs, commission-only model. Serving inventors, musicians, artists, designers, and writers.",
+    "Wyoming 501(c)(3) nonprofit building real businesses for creative entrepreneurs. $1,000 activation + commission model. Brand, website, contracts, sales — all included. We earn when you earn.",
   keywords: [
     "creative entrepreneur",
     "nonprofit business support",
@@ -73,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "HLPFL INC | Empowering Creative Entrepreneurs",
     description:
-      "Nonprofit supporting creative entrepreneurs with zero upfront costs. We earn when you earn. No VCs, No Exploitation, No Bullshit.",
+      "Nonprofit building real businesses for creative entrepreneurs. $1,000 activation + commission. Brand, website, contracts, sales — all included.",
     type: "website",
     siteName: "HLPFL INC",
     locale: "en_US",
@@ -91,7 +76,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "HLPFL INC | Empowering Creative Entrepreneurs",
     description:
-      "Nonprofit business support for creative entrepreneurs. Zero upfront costs. We earn when you earn.",
+      "Nonprofit building real businesses for creative entrepreneurs. $1,000 to start. We earn when you earn.",
     creator: "@hlpfl",
     site: "@hlpfl",
     images: ["/og-image.png"],
@@ -121,7 +106,7 @@ const structuredDataOrg = {
   logo: "https://hlpfl.org/logo.svg",
   image: "https://hlpfl.org/og-image.png",
   description:
-    "Wyoming 501(c)(3) nonprofit organization empowering creative entrepreneurs with professional business support services. Zero upfront costs, commission-only model.",
+    "Wyoming 501(c)(3) nonprofit building real businesses for creative entrepreneurs. $1,000 activation + commission model. Brand, website, contracts, sales representation — all included.",
   nonprofitStatus: "Nonprofit501c3",
   areaServed: { "@type": "Place", name: "Worldwide" },
   founder: {
@@ -192,8 +177,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${bebasNeue.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en">
       <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

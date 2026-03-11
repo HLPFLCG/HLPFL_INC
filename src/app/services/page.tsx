@@ -7,11 +7,11 @@ import { services, audiences } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Services | HLPFL INC",
   description:
-    "Professional business services for creative entrepreneurs with zero upfront costs. Commission-only model—we earn when you earn.",
+    "Full business infrastructure for creative entrepreneurs. $1,000 activation + commission model — brand, website, contracts, sales, all included. We earn when you earn.",
   keywords: [
     "creative entrepreneur services",
-    "commission-only",
-    "no upfront fees",
+    "$1000 activation",
+    "commission model",
     "brand development",
     "sales representation",
     "business formation",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Services | HLPFL INC",
     description:
-      "Professional business services for creative entrepreneurs with zero upfront costs. Commission-only model.",
+      "Full business infrastructure for creative entrepreneurs. $1,000 activation + commission. We earn when you earn.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "HLPFL INC" }],
   },
 };
@@ -27,23 +27,23 @@ export const metadata: Metadata = {
 const commissionFeatures = [
   {
     icon: DollarSign,
-    title: "$0 Upfront",
-    description: "No retainers. No deposits. No fees until we deliver results.",
+    title: "$1,000 Activation",
+    description: "One-time fee covers entity setup, brand, website, contracts, sales materials — $10K+ in value.",
   },
   {
     icon: Zap,
     title: "Success-Aligned",
-    description: "We only earn when you earn. Our incentives are your incentives.",
+    description: "After activation, we earn a commission on revenue we help generate. Your success is our success.",
   },
   {
     icon: Shield,
     title: "Transparent Terms",
-    description: "Clear commission rates (15-30%) negotiated per project. No hidden costs.",
+    description: "Commission rates (10-25%) negotiated upfront and in writing. No hidden costs. No surprises.",
   },
   {
     icon: Heart,
     title: "Your Rights",
-    description: "You keep 100% of your intellectual property. Always.",
+    description: "You keep 100% of your intellectual property. Always. No exceptions.",
   },
 ];
 
@@ -61,16 +61,16 @@ export default function ServicesPage() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl mb-6">
-                Professional Services,{" "}
-                <span className="text-gradient">Zero Upfront</span>
+                $1,000 Replaces{" "}
+                <span className="text-gradient">$10,000+</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="text-gray-400 text-lg md:text-xl mb-4">
-                You shouldn&apos;t have to pay thousands just to find out if someone can help you.
+                Other companies charge $10,000–$30,000 for what we deliver in the activation alone.
               </p>
               <p className="text-gold text-lg font-medium">
-                We don&apos;t charge anything upfront. We earn when you earn. That&apos;s it.
+                $1,000 to start. Commission on revenue we help generate. That&apos;s it.
               </p>
             </ScrollReveal>
           </div>
@@ -101,14 +101,13 @@ export default function ServicesPage() {
         <div className="container-custom">
           <ScrollReveal className="text-center mb-16">
             <span className="text-gold uppercase tracking-widest text-sm mb-4 block">
-              Our Services
+              What&apos;s Included
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mb-4">
-              What We Offer
+              A Full Business Team. One Partner.
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Comprehensive business support for creative entrepreneurs—everything
-              you need to succeed, nothing you don&apos;t.
+              Everything you need to sell professionally — built by a team that&apos;s invested in your success.
             </p>
           </ScrollReveal>
 
@@ -152,8 +151,8 @@ export default function ServicesPage() {
               Creative Entrepreneurs
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              We work with creators who have viable products or talent but need
-              business infrastructure to reach their potential.
+              We work with creators who have a product or talent but lack the business
+              infrastructure to monetize it.
             </p>
           </ScrollReveal>
 
@@ -181,7 +180,7 @@ export default function ServicesPage() {
               The Process
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mb-4">
-              How It Works
+              Three Steps to a Real Business
             </h2>
           </ScrollReveal>
 
@@ -189,27 +188,21 @@ export default function ServicesPage() {
             {[
               {
                 step: "01",
-                title: "Initial Consultation",
+                title: "Activate — $1,000",
                 description:
-                  "We assess your product, market potential, and needs. If we believe we can help, we'll propose a partnership.",
+                  "Full business audit, entity setup, brand strategy, and market positioning. In 2–4 weeks, you have a legitimate business.",
               },
               {
                 step: "02",
-                title: "Define the Scope",
+                title: "Build — Included",
                 description:
-                  "We agree on services, commission structure (typically 15-30%), and clear success metrics.",
+                  "Custom website, brand identity, contracts, sales materials, social presence. Everything you need to sell professionally.",
               },
               {
                 step: "03",
-                title: "We Get to Work",
+                title: "Grow — Commission",
                 description:
-                  "Our team executes on brand development, marketing, sales, content—whatever you need.",
-              },
-              {
-                step: "04",
-                title: "You Earn, We Earn",
-                description:
-                  "When our work generates sales, we take our commission. No sales? No fees. Simple.",
+                  "We actively sell for you. Outreach, negotiation, deal closing, pipeline management. We earn when you earn.",
               },
             ].map((item, index) => (
               <ScrollReveal key={item.step} delay={index * 0.1}>
@@ -239,24 +232,24 @@ export default function ServicesPage() {
             </h2>
             <p className="text-gray-400 text-lg mb-4">
               Have a viable product or creative talent? Let&apos;s talk about how we
-              can help you reach your market.
+              can build your business.
             </p>
             <p className="text-gold mb-8">
-              No pitch fees. No consultation costs. Just a conversation.
+              $1,000 activation. Commission on sales. Your rights, always.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
                 <Button size="lg" className="group">
-                  Apply Now
+                  Apply to Partner
                   <ArrowRight
                     size={20}
                     className="transition-transform group-hover:translate-x-1"
                   />
                 </Button>
               </Link>
-              <Link href="/portal">
+              <Link href="/blog">
                 <Button variant="outline" size="lg">
-                  Try Demo Portal
+                  See Case Studies
                 </Button>
               </Link>
             </div>

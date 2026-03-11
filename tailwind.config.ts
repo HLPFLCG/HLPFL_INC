@@ -24,8 +24,8 @@ export default {
         cream: "#f5f5f5",
       },
       fontFamily: {
-        display: ["var(--font-bebas)", "Bebas Neue", "sans-serif"],
-        body: ["var(--font-space)", "Space Grotesk", "sans-serif"],
+        display: ["Bebas Neue", "var(--font-bebas)", "sans-serif"],
+        body: ["Space Grotesk", "var(--font-space)", "sans-serif"],
       },
       letterSpacing: {
         tight: "-0.02em",
