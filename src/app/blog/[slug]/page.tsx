@@ -66,6 +66,34 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+// Parse inline markdown: **bold** and [text](url)
+function parseInline(text: string): React.ReactNode[] {
+  // Split on bold and link patterns
+  const tokens = text.split(/(\*\*.*?\*\*|\[.*?\]\(.*?\))/g);
+  return tokens.map((token, j) => {
+    // Bold
+    if (token.startsWith("**") && token.endsWith("**")) {
+      return <strong key={j}>{token.slice(2, -2)}</strong>;
+    }
+    // Link [text](url)
+    const linkMatch = token.match(/^\[(.*?)\]\((.*?)\)$/);
+    if (linkMatch) {
+      return (
+        <a
+          key={j}
+          href={linkMatch[2]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gold hover:text-gold-light underline underline-offset-2 transition-colors"
+        >
+          {linkMatch[1]}
+        </a>
+      );
+    }
+    return token;
+  });
+}
+
 // Simple markdown-like rendering for blog content
 function renderContent(content: string) {
   const lines = content.trim().split("\n");
@@ -79,7 +107,7 @@ function renderContent(content: string) {
         elements.push(
           <ul key={elements.length} className="list-disc list-inside space-y-2 mb-6 text-gray-300">
             {currentList.map((item, i) => (
-              <li key={i}>{item}</li>
+              <li key={i}>{parseInline(item)}</li>
             ))}
           </ul>
         );
@@ -87,7 +115,7 @@ function renderContent(content: string) {
         elements.push(
           <ol key={elements.length} className="list-decimal list-inside space-y-2 mb-6 text-gray-300">
             {currentList.map((item, i) => (
-              <li key={i}>{item}</li>
+              <li key={i}>{parseInline(item)}</li>
             ))}
           </ol>
         );
@@ -151,7 +179,7 @@ function renderContent(content: string) {
       flushList();
       elements.push(
         <p key={i} className="text-white font-semibold mb-4">
-          {trimmed.slice(2, -2)}
+          {parseInline(trimmed.slice(2, -2))}
         </p>
       );
     }
@@ -161,7 +189,7 @@ function renderContent(content: string) {
         flushList();
         listType = "ul";
       }
-      currentList.push(trimmed.slice(2).replace(/\*\*(.*?)\*\*/g, "$1"));
+      currentList.push(trimmed.slice(2));
     }
     // Ordered list
     else if (/^\d+\.\s/.test(trimmed)) {
@@ -169,22 +197,23 @@ function renderContent(content: string) {
         flushList();
         listType = "ol";
       }
-      currentList.push(trimmed.replace(/^\d+\.\s/, "").replace(/\*\*(.*?)\*\*/g, "$1"));
+      currentList.push(trimmed.replace(/^\d+\.\s/, ""));
+    }
+    // Italic line (e.g. *Visit Emma's website...*)
+    else if (trimmed.startsWith("*") && trimmed.endsWith("*") && !trimmed.startsWith("**")) {
+      flushList();
+      elements.push(
+        <p key={i} className="text-gray-400 italic leading-relaxed mb-4">
+          {parseInline(trimmed.slice(1, -1))}
+        </p>
+      );
     }
     // Regular paragraph
     else {
       flushList();
-      // Handle inline bold
-      const parts = trimmed.split(/(\*\*.*?\*\*)/);
-      const content = parts.map((part, j) => {
-        if (part.startsWith("**") && part.endsWith("**")) {
-          return <strong key={j}>{part.slice(2, -2)}</strong>;
-        }
-        return part;
-      });
       elements.push(
         <p key={i} className="text-gray-300 leading-relaxed mb-4">
-          {content}
+          {parseInline(trimmed)}
         </p>
       );
     }
@@ -257,8 +286,8 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className="mt-12 p-8 rounded-2xl bg-gradient-to-br from-gold/10 to-transparent border border-gold/20">
           <h3 className="font-display text-2xl mb-4">Ready to Get Started?</h3>
           <p className="text-gray-400 mb-6">
-            Join the creative entrepreneurs who are building their businesses with HLPFL&apos;s support.
-            Zero upfront costs. We earn when you earn.
+            Join the creative entrepreneurs who are building their businesses with HLPFL.
+            $1,000 to start. We earn when you earn.
           </p>
           <Link
             href="/portal"
