@@ -6,9 +6,8 @@ import { ScrollReveal } from "@/components/ui";
 import { testimonials } from "@/lib/blog";
 
 const PARTNERS = [
-  { name: "Pardyalone", type: "Musician", status: "Signed Artist" },
-  { name: "Alki", type: "Musician", status: "Signed Artist" },
-  { name: "PRIV", type: "Musician", status: "Signed Artist" },
+  { name: "Pardyalone", type: "Musician", status: "Partner" },
+  { name: "Alki", type: "Musician", status: "Partner" },
 ];
 
 export default function TestimonialsSection() {
@@ -36,7 +35,7 @@ export default function TestimonialsSection() {
         </ScrollReveal>
 
         {/* Partner cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-20">
           {PARTNERS.map((p, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>
               <div className="bg-void-light border border-void-lighter p-8 text-center group transition-all duration-300 hover:border-gold/25">

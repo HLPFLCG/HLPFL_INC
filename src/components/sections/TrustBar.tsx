@@ -5,7 +5,7 @@ import { ScrollReveal } from "@/components/ui";
 const TRUST = [
   { stat: "501(c)(3)", label: "Nonprofit Status", sub: "Wyoming" },
   { stat: "100%", label: "Rights Retained", sub: "Always yours" },
-  { stat: "50/50", label: "Revenue Split", sub: "With signed artists" },
+  { stat: "10–25%", label: "Commission", sub: "Aligned incentives" },
   { stat: "$0", label: "Hidden Fees", sub: "Ever" },
 ];
 
