@@ -68,7 +68,7 @@ const timeline = [
     year: "2026",
     title: "Growing Impact",
     description:
-      "Partnered with HCJK, Elisabeth Jane, Pardyalone, Alki, PRIV, and more — building real businesses for creative entrepreneurs across multiple disciplines.",
+      "Partnered with HCJK, Elisabeth Jane, Pardyalone, Alki, and more — building real businesses for creative entrepreneurs across multiple disciplines.",
   },
 ];
 
