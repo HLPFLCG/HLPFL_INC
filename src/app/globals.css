@@ -236,13 +236,13 @@ img, video, iframe { max-width: 100%; }
 /* Form inputs — prevent iOS zoom */
 input, textarea, select { font-size: 16px !important; }
 
-/* Tap targets */
-button, a { min-height: 48px; min-width: 48px; }
-
-/* Inline/small text links — override min-width */
-.text-gold.text-sm, .text-white\/60.text-sm, .nav-link {
-  min-width: auto;
-  min-height: auto;
+/* Tap targets — apply to interactive elements in content areas */
+.btn-primary, .btn-ghost, .whatsapp-btn, .whatsapp-sticky,
+.mobile-bottom-nav-item,
+form button, form select,
+.mobile-wa-banner a {
+  min-height: 48px;
+  min-width: 48px;
 }
 
 /* ===== Skip Navigation Link ===== */

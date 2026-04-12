@@ -2,11 +2,7 @@
 
 import Link from "next/link";
 import { Home, Briefcase, Mail, MessageCircle } from "lucide-react";
-
-const WHATSAPP_NUMBER = "50688888888";
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  "Hola HLPFL, quiero más información sobre sus servicios para mi negocio turístico."
-)}`;
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 const navItems = [
   { href: "/", label: "Home", icon: Home },
@@ -15,6 +11,8 @@ const navItems = [
 ];
 
 export default function MobileBottomNav() {
+  const whatsappUrl = getWhatsAppUrl();
+
   return (
     <nav
       className="mobile-bottom-nav"
@@ -31,7 +29,7 @@ export default function MobileBottomNav() {
         </Link>
       ))}
       <a
-        href={WHATSAPP_URL}
+        href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="mobile-bottom-nav-item text-[#25D366]"

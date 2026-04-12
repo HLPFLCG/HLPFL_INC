@@ -4,8 +4,9 @@ import { useState } from "react";
 import { ScrollReveal } from "@/components/ui";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { MessageCircle } from "lucide-react";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
-const WHATSAPP_NUMBER = "50688888888"; // placeholder — replace with real number
+const WHATSAPP_CONTACT_METHOD = "whatsapp";
 
 export default function CTASection() {
   const { t } = useLanguage();
@@ -30,7 +31,7 @@ export default function CTASection() {
     setSubmitted(true);
   };
 
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hola HLPFL, quiero más información sobre sus servicios para mi negocio turístico.")}`;
+  const whatsappUrl = getWhatsAppUrl();
 
   if (submitted) {
     return (
@@ -188,7 +189,7 @@ export default function CTASection() {
             </div>
 
             {/* WhatsApp Number — conditionally shown */}
-            {form.contactMethod.toLowerCase().includes("whatsapp") && (
+            {form.contactMethod.toLowerCase().includes(WHATSAPP_CONTACT_METHOD) && (
               <div>
                 <label htmlFor="cta-whatsapp" className="form-label">{labels.whatsappNumber}</label>
                 <input
