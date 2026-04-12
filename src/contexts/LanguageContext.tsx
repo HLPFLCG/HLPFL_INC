@@ -27,6 +27,16 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const stored = localStorage.getItem("hlpfl-lang");
     if (stored === "en" || stored === "es") {
       setLangState(stored);
+      document.documentElement.lang = stored;
+    } else {
+      // Spanish-first: detect Costa Rican users by timezone, browser language, or referrer
+      const preferSpanish =
+        typeof navigator !== "undefined" &&
+        (navigator.language?.startsWith("es") ||
+          Intl.DateTimeFormat().resolvedOptions().timeZone === "America/Costa_Rica");
+      const detectedLang: Lang = preferSpanish ? "es" : "en";
+      setLangState(detectedLang);
+      document.documentElement.lang = detectedLang;
     }
   }, []);
 
