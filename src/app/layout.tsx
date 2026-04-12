@@ -3,45 +3,40 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ClientEffects from "@/components/common/ClientEffects";
+import CookieBanner from "@/components/common/CookieBanner";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hlpfl.org"),
   title: {
-    default: "HLPFL INC | Empowering Creative Entrepreneurs",
-    template: "%s | HLPFL INC",
+    default: "Caribe Sur CR | Costa Rica Caribbean Coast Travel Guide",
+    template: "%s | Caribe Sur CR",
   },
   description:
-    "Wyoming 501(c)(3) nonprofit building real businesses for creative entrepreneurs. $1,000 activation + commission model. Brand, website, contracts, sales — all included. We earn when you earn.",
+    "Your guide to the southern Caribbean coast of Costa Rica — things to do in Cahuita, hotels in Puerto Viejo, Manzanillo wildlife refuge tours, restaurants, and sustainable travel in Limón Province.",
   keywords: [
-    "creative entrepreneur",
-    "nonprofit business support",
-    "commission-only",
-    "no upfront fees",
-    "artist services",
-    "inventor support",
-    "creative business",
-    "independent artist",
-    "brand development",
-    "business formation",
-    "sales representation",
-    "501c3 nonprofit",
-    "HLPFL",
-    "creative entrepreneur support",
-    "artist management nonprofit",
-    "creator economy",
-    "independent creator services",
-    "nonprofit for artists",
-    "musician business support",
-    "designer business services",
-    "writer support nonprofit",
-    "inventor commercialization",
-    "fair creator contracts",
-    "transparent business model",
-    "no exploitation nonprofit",
+    "things to do in Cahuita Costa Rica",
+    "Puerto Viejo hotels",
+    "Manzanillo wildlife refuge tour",
+    "Caribbean coast Costa Rica travel",
+    "Caribe Sur",
+    "Costa Rica Caribbean tourism",
+    "Cahuita National Park",
+    "Gandoca Manzanillo wildlife refuge",
+    "Puerto Viejo de Talamanca",
+    "Limon Province Costa Rica",
+    "eco lodge Caribbean Costa Rica",
+    "Afro-Caribbean culture Costa Rica",
+    "Bribri indigenous tours",
+    "snorkeling Cahuita",
+    "surfing Playa Cocles",
+    "Caribbean coast restaurants",
+    "Punta Uva beach",
+    "sustainable tourism Costa Rica",
   ],
-  authors: [{ name: "HLPFL INC" }],
-  creator: "HLPFL INC",
-  publisher: "HLPFL INC",
+  authors: [{ name: "Caribe Sur CR" }],
+  creator: "Caribe Sur CR",
+  publisher: "Caribe Sur CR",
   formatDetection: {
     email: false,
     address: false,
@@ -51,35 +46,26 @@ export const metadata: Metadata = {
     canonical: "https://hlpfl.org",
   },
   icons: {
-    icon: "/logo.svg",
-    shortcut: "/logo.svg",
-    apple: "/logo.svg",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
   openGraph: {
-    title: "HLPFL INC | Empowering Creative Entrepreneurs",
+    title: "Caribe Sur CR | Costa Rica Caribbean Coast Travel Guide",
     description:
-      "Nonprofit building real businesses for creative entrepreneurs. $1,000 activation + commission. Brand, website, contracts, sales — all included.",
+      "Explore the wild Caribbean coast of Costa Rica — from Cahuita to Manzanillo. Find hotels, tours, restaurants, and travel tips for Limón Province.",
     type: "website",
-    siteName: "HLPFL INC",
+    siteName: "Caribe Sur CR",
     locale: "en_US",
     url: "https://hlpfl.org",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "HLPFL INC - Empowering Creative Entrepreneurs",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "HLPFL INC | Empowering Creative Entrepreneurs",
+    title: "Caribe Sur CR | Costa Rica Caribbean Coast Travel Guide",
     description:
-      "Nonprofit building real businesses for creative entrepreneurs. $1,000 to start. We earn when you earn.",
-    creator: "@hlpfl",
-    site: "@hlpfl",
-    images: ["/og-image.png"],
+      "Explore the wild Caribbean coast of Costa Rica — hotels, tours, restaurants and travel tips from Cahuita to Manzanillo.",
+    creator: "@caribesur_cr",
+    site: "@caribesur_cr",
   },
   robots: {
     index: true,
@@ -92,56 +78,29 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  category: "nonprofit",
+  category: "travel",
 };
 
-// Structured data for nonprofit organization
-const structuredDataOrg = {
+const structuredDataDestination = {
   "@context": "https://schema.org",
-  "@type": "NGO",
-  "@id": "https://hlpfl.org/#organization",
-  name: "HLPFL INC",
-  alternateName: "HLPFL",
-  url: "https://hlpfl.org",
-  logo: "https://hlpfl.org/logo.svg",
-  image: "https://hlpfl.org/og-image.png",
+  "@type": "TouristDestination",
+  "@id": "https://hlpfl.org/#destination",
+  name: "Southern Caribbean Coast of Costa Rica",
   description:
-    "Wyoming 501(c)(3) nonprofit building real businesses for creative entrepreneurs. $1,000 activation + commission model. Brand, website, contracts, sales representation — all included.",
-  nonprofitStatus: "Nonprofit501c3",
-  areaServed: { "@type": "Place", name: "Worldwide" },
-  founder: {
-    "@type": "Person",
-    name: "James Rockel III",
-    jobTitle: "Founder & CEO",
-  },
-  foundingDate: "2025",
-  slogan: "Empowering Creative Entrepreneurs",
-  knowsAbout: [
-    "Brand Development",
-    "Business Formation",
-    "Sales Representation",
-    "Marketing Strategy",
-    "Content Creation",
-    "Creator Education",
-    "Creative Entrepreneurship",
-    "Artist Management",
+    "The corridor from Cahuita to Manzanillo in Limón Province, Costa Rica — featuring Cahuita National Park coral reefs, Gandoca-Manzanillo Wildlife Refuge, Afro-Caribbean culture, and Bribri indigenous heritage.",
+  url: "https://hlpfl.org",
+  touristType: ["Eco-tourists", "Adventure travelers", "Cultural tourists", "Beach travelers"],
+  includesAttraction: [
+    { "@type": "TouristAttraction", name: "Cahuita National Park" },
+    { "@type": "TouristAttraction", name: "Gandoca-Manzanillo Wildlife Refuge" },
+    { "@type": "TouristAttraction", name: "Playa Cocles" },
+    { "@type": "TouristAttraction", name: "Punta Uva" },
+    { "@type": "TouristAttraction", name: "Manzanillo Village" },
   ],
-  sameAs: [
-    "https://twitter.com/hlpfl",
-    "https://instagram.com/hlpfl",
-    "https://linkedin.com/company/hlpfl",
-    "https://youtube.com/@hlpfl",
-  ],
-  contactPoint: {
-    "@type": "ContactPoint",
-    email: "contact@hlpfl.org",
-    contactType: "customer service",
-    availableLanguage: "English",
-  },
-  address: {
-    "@type": "PostalAddress",
-    addressRegion: "WY",
-    addressCountry: "US",
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "9.6565",
+    longitude: "-82.7536",
   },
 };
 
@@ -150,26 +109,13 @@ const structuredDataWebsite = {
   "@type": "WebSite",
   "@id": "https://hlpfl.org/#website",
   url: "https://hlpfl.org",
-  name: "HLPFL INC",
-  description: "Nonprofit empowering creative entrepreneurs",
-  publisher: { "@id": "https://hlpfl.org/#organization" },
+  name: "Caribe Sur CR",
+  description:
+    "Travel guide for the southern Caribbean coast of Costa Rica — Cahuita to Manzanillo corridor.",
+  inLanguage: ["en", "es"],
 };
 
-const structuredDataServices = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "HLPFL Services",
-  itemListElement: [
-    { "@type": "Service", position: 1, name: "Brand Development", description: "Logo design, visual identity, and market positioning" },
-    { "@type": "Service", position: 2, name: "Business Formation", description: "LLC filing, entity structure, and compliance" },
-    { "@type": "Service", position: 3, name: "Sales Representation", description: "Direct sales and deal negotiation" },
-    { "@type": "Service", position: 4, name: "Marketing Strategy", description: "Campaign planning and execution" },
-    { "@type": "Service", position: 5, name: "Content Creation", description: "Video, photography, and social media" },
-    { "@type": "Service", position: 6, name: "Creator Education", description: "Rights education and business fundamentals" },
-  ],
-};
-
-const structuredData = [structuredDataOrg, structuredDataWebsite, structuredDataServices];
+const structuredData = [structuredDataDestination, structuredDataWebsite];
 
 export default function RootLayout({
   children,
@@ -180,7 +126,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
         <script
@@ -188,11 +134,14 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="bg-void text-white font-body antialiased">
-        <ClientEffects />
-        <Header />
-        <main className="min-h-screen pt-16">{children}</main>
-        <Footer />
+      <body className="bg-sandy-light text-dark font-body antialiased">
+        <LanguageProvider>
+          <ClientEffects />
+          <Header />
+          <main className="min-h-screen pt-16">{children}</main>
+          <Footer />
+          <CookieBanner />
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -1,8 +1,5 @@
 export { default as HeroSection } from "./HeroSection";
-export { default as TrustBar } from "./TrustBar";
-export { default as HowItWorks } from "./HowItWorks";
-export { default as ValueStack } from "./ValueStack";
-export { default as ServicesSection } from "./ServicesSection";
-export { default as AboutSection } from "./AboutSection";
-export { default as TestimonialsSection } from "./TestimonialsSection";
-export { default as CTASection } from "./CTASection";
+export { default as FeatureCards } from "./FeatureCards";
+export { default as RegionTeaser } from "./RegionTeaser";
+export { default as FeaturedBusinesses } from "./FeaturedBusinesses";
+export { default as MapEmbed } from "./MapEmbed";

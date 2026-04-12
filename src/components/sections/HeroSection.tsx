@@ -1,111 +1,84 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ScrollReveal } from "@/components/ui";
+import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function HeroSection() {
-  const scrollToApply = () => {
-    document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
-  };
+  const { t } = useLanguage();
+  const home = t("home");
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-void via-void to-void-light" />
-
-      {/* Radial gold glow */}
+    <section
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      aria-label="Hero section"
+    >
+      {/* Background gradient simulating rainforest-meets-sea */}
       <div
-        className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none"
+        className="absolute inset-0 hero-gradient"
+        aria-hidden="true"
         style={{
           background:
-            "radial-gradient(circle, rgba(200,121,65,0.03) 0%, transparent 70%)",
+            "linear-gradient(135deg, #1B4332 0%, #0E9AA7 50%, #E07A5F 100%)",
         }}
       />
 
-      {/* Animated gold accent lines */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"
-          initial={{ x: "-100%" }}
-          animate={{ x: "100%" }}
-          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-        />
-        <motion.div
-          className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent"
-          initial={{ x: "100%" }}
-          animate={{ x: "-100%" }}
-          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-        />
-      </div>
-
-      {/* Diagonal lines */}
+      {/* Tropical canopy pattern overlay */}
       <div
-        className="absolute top-0 right-0 w-[400px] h-full opacity-[0.03] pointer-events-none"
+        className="absolute inset-0 opacity-10"
+        aria-hidden="true"
         style={{
-          background:
-            "repeating-linear-gradient(45deg, transparent, transparent 40px, #fff 40px, #fff 41px)",
+          backgroundImage:
+            "radial-gradient(circle at 20% 80%, #2D6A4F 0%, transparent 50%), radial-gradient(circle at 80% 20%, #0E9AA7 0%, transparent 40%), radial-gradient(circle at 50% 50%, #1B4332 0%, transparent 70%)",
         }}
       />
 
-      {/* Content */}
-      <div className="container-custom relative z-10 text-center px-4 py-32">
-        <ScrollReveal>
-          <span className="text-gold uppercase tracking-[0.25em] text-xs mb-8 block opacity-90">
-            Wyoming 501(c)(3) Nonprofit
-          </span>
-        </ScrollReveal>
+      {/* Placeholder image area with descriptive alt */}
+      <div
+        className="absolute inset-0 opacity-30"
+        role="img"
+        aria-label="Lush rainforest canopy meeting white-sand beach on the Caribbean coast of Costa Rica near Cahuita National Park"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(27,67,50,0.6) 0%, rgba(14,154,167,0.3) 40%, rgba(245,230,200,0.2) 100%)",
+        }}
+      />
 
-        <ScrollReveal delay={0.1}>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide mb-6 leading-none">
-            Your talent deserves
-            <br />
-            <span className="text-gradient">a real business</span>
-            <br />
-            behind it.
-          </h1>
-        </ScrollReveal>
+      <div className="relative container-custom text-center text-white py-24">
+        <p className="text-turquoise-light text-sm font-semibold tracking-widest uppercase mb-4">
+          Limón Province, Costa Rica
+        </p>
 
-        <ScrollReveal delay={0.2}>
-          <p className="text-lg md:text-xl text-gray-400 max-w-xl mx-auto mb-10 leading-relaxed">
-            HLPFL builds the brand, the business, and the sales engine — so you
-            can focus on creating.
-            <span className="text-gold font-semibold"> $1,000 to start.</span>{" "}
-            We earn when you earn.
-          </p>
-        </ScrollReveal>
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4">
+          {home.heroHeadline}
+        </h1>
 
-        <ScrollReveal delay={0.3}>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={scrollToApply}
-              className="bg-gold text-white border-none px-10 py-4 text-xs tracking-[0.2em] uppercase font-bold transition-all duration-300 hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(200,121,65,0.4)]"
-            >
-              Apply to Partner
-            </button>
-            <a
-              href="#how-it-works"
-              className="text-gray-400 border border-void-lighter px-10 py-4 text-xs tracking-[0.2em] uppercase transition-all duration-300 hover:border-gold hover:text-gold inline-block text-center"
-            >
-              How It Works
-            </a>
-          </div>
-        </ScrollReveal>
-      </div>
+        <p className="text-white/80 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          {home.heroSubhead}
+        </p>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <div className="w-6 h-10 rounded-full border-2 border-gold/50 flex justify-center pt-2">
-          <motion.div
-            className="w-1.5 h-1.5 rounded-full bg-gold"
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            href="/plan"
+            className="btn-primary text-base min-h-[44px] flex items-center justify-center px-8 py-3"
+          >
+            {home.heroCta1}
+          </Link>
+          <Link
+            href="/explore"
+            className="btn-outline-white text-base min-h-[44px] flex items-center justify-center px-8 py-3"
+          >
+            {home.heroCta2}
+          </Link>
         </div>
-      </motion.div>
+
+        {/* Scroll cue */}
+        <div className="mt-16 flex flex-col items-center gap-2 text-white/50">
+          <span className="text-xs tracking-widest uppercase">
+            Cahuita · Puerto Viejo · Manzanillo
+          </span>
+          <div className="w-px h-10 bg-white/30" aria-hidden="true" />
+        </div>
+      </div>
     </section>
   );
 }

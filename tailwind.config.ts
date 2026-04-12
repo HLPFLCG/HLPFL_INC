@@ -9,23 +9,33 @@ export default {
   theme: {
     extend: {
       colors: {
-        // HLPFL Design System Colors
-        void: {
-          DEFAULT: "#0a0a0a",
-          light: "#141414",
-          lighter: "#1a1a1a",
+        // Caribe Sur CR Design System Colors
+        jungle: {
+          DEFAULT: "#1B4332",
+          light: "#2D6A4F",
+          dark: "#0F2D1F",
         },
-        gold: {
-          DEFAULT: "#c87941",
-          light: "#d4945c",
-          dark: "#a86535",
-          muted: "#c8794133",
+        turquoise: {
+          DEFAULT: "#0E9AA7",
+          light: "#1BB5C4",
+          dark: "#0A7A85",
+          muted: "#0E9AA720",
         },
-        cream: "#f5f5f5",
+        sandy: {
+          DEFAULT: "#F5E6C8",
+          light: "#FAF2E2",
+          dark: "#E8D4A8",
+        },
+        coral: {
+          DEFAULT: "#E07A5F",
+          light: "#E8947C",
+          dark: "#C4614A",
+        },
+        dark: "#1A1A1A",
       },
       fontFamily: {
-        display: ["Bebas Neue", "var(--font-bebas)", "sans-serif"],
-        body: ["Space Grotesk", "var(--font-space)", "sans-serif"],
+        display: ["Playfair Display", "Georgia", "serif"],
+        body: ["Inter", "system-ui", "sans-serif"],
       },
       letterSpacing: {
         tight: "-0.02em",
@@ -58,8 +68,8 @@ export default {
           "100%": { opacity: "1", transform: "scale(1)" },
         },
         glow: {
-          "0%": { boxShadow: "0 0 20px rgba(200, 121, 65, 0.3)" },
-          "100%": { boxShadow: "0 0 40px rgba(200, 121, 65, 0.6)" },
+          "0%": { boxShadow: "0 0 20px rgba(14, 154, 167, 0.3)" },
+          "100%": { boxShadow: "0 0 40px rgba(14, 154, 167, 0.6)" },
         },
       },
       spacing: {
