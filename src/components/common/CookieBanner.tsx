@@ -2,11 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function CookieBanner() {
-  const { t } = useLanguage();
-  const cookieStrings = t("cookie");
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -32,30 +29,30 @@ export default function CookieBanner() {
     <div
       role="dialog"
       aria-label="Cookie consent"
-      className="fixed bottom-0 left-0 right-0 z-50 bg-jungle text-white p-4 shadow-2xl"
+      className="fixed bottom-0 left-0 right-0 z-50 bg-void-light border-t border-void-lighter text-white p-4 shadow-2xl"
     >
       <div className="container-custom flex flex-col sm:flex-row items-start sm:items-center gap-4">
-        <p className="flex-1 text-sm leading-relaxed">
-          {cookieStrings.message}{" "}
+        <p className="flex-1 text-sm leading-relaxed text-gray-300">
+          We use cookies to improve your experience.{" "}
           <Link
             href="/privacy"
-            className="underline hover:text-sandy transition-colors"
+            className="underline hover:text-gold transition-colors"
           >
-            {cookieStrings.learnMore}
+            Learn more
           </Link>
         </p>
         <div className="flex gap-3 shrink-0">
           <button
             onClick={handleDecline}
-            className="px-4 py-2 text-sm font-medium border border-white/40 rounded-md hover:bg-white/10 transition-colors"
+            className="px-4 py-2 text-sm font-medium border border-white/20 hover:border-gold/50 transition-colors"
           >
-            {cookieStrings.decline}
+            Decline
           </button>
           <button
             onClick={handleAccept}
-            className="px-4 py-2 text-sm font-medium bg-turquoise rounded-md hover:bg-turquoise-dark transition-colors"
+            className="px-4 py-2 text-sm font-medium bg-gold text-void hover:bg-gold-light transition-colors"
           >
-            {cookieStrings.accept}
+            Accept
           </button>
         </div>
       </div>

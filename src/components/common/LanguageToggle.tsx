@@ -1,36 +1,27 @@
 "use client";
 
 import { useLanguage } from "@/contexts/LanguageContext";
-import type { Lang } from "@/lib/translations";
 
 export default function LanguageToggle() {
   const { lang, setLang } = useLanguage();
 
-  const toggle = (newLang: Lang) => {
-    setLang(newLang);
-  };
-
   return (
-    <div className="flex items-center gap-1 text-sm font-medium" role="group" aria-label="Language selection">
+    <div className="flex items-center gap-1">
       <button
-        onClick={() => toggle("en")}
+        onClick={() => setLang("en")}
         aria-pressed={lang === "en"}
-        className={`px-2 py-1 rounded transition-colors ${
-          lang === "en"
-            ? "bg-turquoise text-white"
-            : "text-jungle hover:text-turquoise"
+        className={`text-xs tracking-wider px-2 py-1 transition-colors ${
+          lang === "en" ? "text-gold font-semibold" : "text-white/50 hover:text-white/80"
         }`}
       >
         EN
       </button>
-      <span className="text-gray-400 select-none">|</span>
+      <span className="text-white/20 text-xs">/</span>
       <button
-        onClick={() => toggle("es")}
+        onClick={() => setLang("es")}
         aria-pressed={lang === "es"}
-        className={`px-2 py-1 rounded transition-colors ${
-          lang === "es"
-            ? "bg-turquoise text-white"
-            : "text-jungle hover:text-turquoise"
+        className={`text-xs tracking-wider px-2 py-1 transition-colors ${
+          lang === "es" ? "text-gold font-semibold" : "text-white/50 hover:text-white/80"
         }`}
       >
         ES

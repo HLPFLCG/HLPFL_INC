@@ -5,473 +5,434 @@ export const translations = {
     // Navigation
     nav: {
       home: "Home",
-      explore: "Explore",
-      stay: "Stay",
-      eatDrink: "Eat & Drink",
-      plan: "Plan Your Trip",
-      listWithUs: "List With Us",
+      services: "Services",
       about: "About",
+      contact: "Contact",
+      getStarted: "Get Started",
     },
 
     // Common
     common: {
-      findAGuide: "Find a Guide →",
-      bookLearnMore: "Book / Learn More",
+      getStarted: "Get Started",
+      seeWhatWeDo: "See What We Do",
       learnMore: "Learn More",
-      planYourVisit: "Plan Your Visit",
-      exploreTheCoast: "Explore the Coast",
-      viewAll: "View All",
-      filterBy: "Filter by",
-      location: "Location",
-      type: "Type",
-      priceRange: "Price Range",
-      allLocations: "All Locations",
-      allTypes: "All Types",
-      allPrices: "All Prices",
-      stars: "stars",
-      perNight: "/ night",
-      free: "Free",
+      contactUs: "Contact Us",
+      viewServices: "View Services",
+      bookConsultation: "Book a Consultation",
+      whatsappUs: "WhatsApp Us",
     },
 
     // Home page
     home: {
-      heroHeadline: "Discover the Wild Caribbean Coast of Costa Rica",
+      // Hero
+      heroHeadline: "Your Caribbean Coast Business.",
+      heroChaos: "Chaos → Clarity.",
       heroSubhead:
-        "From Cahuita to Manzanillo — where the jungle meets the sea.",
-      heroCta1: "Plan Your Visit",
-      heroCta2: "Explore the Coast",
+        "HLPFL helps hotels, lodges, restaurants, and tour operators between Cahuita and Manzanillo build the systems, brand, and digital presence that turn a beautiful operation into a fully booked one.",
+      heroCta1: "Get Started",
+      heroCta2: "See What We Do",
 
-      featuresTitle: "Explore the Corridor",
-      featureExploreTitle: "Explore",
-      featureExploreDesc:
-        "Snorkel Cahuita's reef, kayak wildlife canals, spot sloths in the canopy — the southern Caribbean bursts with natural adventure.",
-      featureStayTitle: "Stay",
-      featureStayDesc:
-        "From eco-lodges nestled in jungle to cozy beachfront B&Bs, find your perfect base for exploring the coast.",
-      featureEatTitle: "Eat & Drink",
-      featureEatDesc:
-        "Savor Afro-Caribbean flavors: rice and beans in coconut milk, rondon stew, fresh ceviche, and cold agua de pipa.",
+      // Trust Bar
+      trustStat1: "9",
+      trustLabel1: "Core Services",
+      trustSub1: "End-to-end",
+      trustStat2: "100%",
+      trustLabel2: "Hospitality Focus",
+      trustSub2: "CR Caribbean coast",
+      trustStat3: "EN/ES",
+      trustLabel3: "Bilingual",
+      trustSub3: "Spanish & English",
+      trustStat4: "1",
+      trustLabel4: "Corridor",
+      trustSub4: "Cahuita → Manzanillo",
 
-      regionTitle: "A Corridor Like No Other",
-      regionDesc:
-        "The southern Caribbean coast of Costa Rica shelters one of the most biodiverse stretches of coastline in the Americas. From the coral reefs of Cahuita National Park to the wildlife canals of the Gandoca-Manzanillo Refuge, this corridor is home to sea turtles, jaguars, and over 500 bird species. The region's Afro-Caribbean communities — rooted in Jamaican immigrant heritage — and its Bribri indigenous villages add a rich cultural tapestry found nowhere else in Costa Rica.",
+      // How It Works
+      howTitle: "Three Steps to a",
+      howTitleAccent: "Fully Booked Season",
+      howStep1Num: "01",
+      howStep1Title: "Diagnose",
+      howStep1Price: "Discovery",
+      howStep1Desc:
+        "We audit your current operation — bookings, online presence, pricing, systems, and brand. In two weeks you have a clear picture of what's working, what's bleeding revenue, and exactly what to fix first.",
+      howStep2Num: "02",
+      howStep2Title: "Build",
+      howStep2Price: "Execution",
+      howStep2Desc:
+        "Website, booking system, brand identity, marketing campaigns, legal setup, operational processes — whatever your operation needs, we build it. Fast, mobile-optimized, bilingual.",
+      howStep3Num: "03",
+      howStep3Title: "Grow",
+      howStep3Price: "Scale",
+      howStep3Desc:
+        "Ongoing strategy, market positioning, team structure, and digital marketing to make sure the slow season looks nothing like last year. More bookings. Less chaos.",
 
-      featuredTitle: "Featured Businesses",
-      featuredSubtitle:
-        "Discover top-rated hotels, tour operators, and restaurants along the corridor.",
-
-      mapTitle: "Explore the Map",
-      mapSubtitle:
-        "Navigate the Cahuita to Manzanillo corridor — find beaches, parks, and hidden gems.",
-    },
-
-    // Explore page
-    explore: {
-      pageTitle: "Experiences & Activities",
-      pageSubtitle:
-        "From coral reef snorkeling to Bribri cultural tours, the southern Caribbean offers adventures for every traveler.",
-      activitiesTitle: "Things to Do",
-    },
-
-    // Stay page
-    stay: {
-      pageTitle: "Where to Stay",
-      pageSubtitle:
-        "Eco-lodges, beachfront hotels, B&Bs, hostels, and private rentals — find your perfect base on the Caribbean coast.",
-      listingsCta: "List Your Property — It's Free",
-      listingsCtaDesc:
-        "Are you a property owner in the Cahuita–Manzanillo corridor? Get listed and reach thousands of travelers.",
-      listNow: "List with Us",
-      noResults: "No listings match your current filters. Try adjusting them.",
-    },
-
-    // Eat & Drink page
-    eatDrink: {
-      pageTitle: "Flavors of the Coast",
-      pageSubtitle:
-        "Afro-Caribbean cuisine is the heart of this coast — shaped by Jamaican roots, fresh seafood, tropical fruits, and generations of culinary tradition.",
-      editorialTitle: "A Taste of Afro-Caribbean Culture",
-      editorialBody:
-        "No visit to the Caribbean coast is complete without tasting rice and beans simmered in coconut milk — a dish distinct from the Pacific-coast gallo pinto. Rondon, a slow-cooked seafood stew with yuca, plantain, and breadfruit in rich coconut broth, is the region's signature dish. Street stalls serve crispy patacones (smashed fried plantain) with black bean paste. Fresh ceviche made with locally caught fish or shrimp, marinated in lime juice with cilantro, is a staple at beachside restaurants. Finish with agua de pipa — coconut water sipped straight from a green pipa — sold by vendors along the beach road.",
-      restaurantsTitle: "Restaurants & Food",
-      noResults: "No restaurants match your current filters.",
-    },
-
-    // Plan page
-    plan: {
-      pageTitle: "Plan Your Trip",
-      pageSubtitle:
-        "Everything you need to know before you go — from getting here to what to pack.",
-      gettingHereTitle: "Getting Here",
-      busTitle: "Bus from San José",
-      busDesc:
-        "MEPE buses depart from Terminal del Caribe (Calle Central, Avenida 15) in San José daily to Sixaola, with stops in Cahuita and Puerto Viejo de Talamanca. The journey takes approximately 4–5 hours. Book in advance on busy weekends.",
-      shuttleTitle: "Shuttle Services",
-      shuttleDesc:
-        "Private shuttles connect San José, La Fortuna (Arenal), and Manuel Antonio to Puerto Viejo. Shared shuttles are affordable and comfortable — operators include Interbus and Caribe Shuttle.",
-      driveTitle: "Driving via Ruta 32",
-      driveDesc:
-        "From San José, take Ruta 32 east through the stunning Braulio Carrillo National Park to Limón, then head south on Ruta 36. Total drive from San José is about 3.5–4 hours. Road conditions are generally good but watch for rain-slicked curves through Braulio Carrillo.",
-      bestTimeTitle: "Best Time to Visit",
-      bestTimeDesc:
-        "The Caribbean coast follows its own climate, distinct from the Pacific. The driest months are February–April and September–October — ideal for snorkeling, hiking, and beach time. The rest of the year is lush and tropical, with frequent but usually brief afternoon rains. Sea turtle nesting season runs July–October at Gandoca-Manzanillo beach. The Cahuita reef is best visited when seas are calm (Feb–Apr).",
-      itinerariesTitle: "Sample Itineraries",
-      essentialTipsTitle: "Essential Tips",
-      packingTitle: "What to Pack",
-      packingItems: [
-        "Light, quick-dry clothing and a light rain jacket",
-        "Reef-safe sunscreen (required in Cahuita NP)",
-        "Sturdy sandals or waterproof shoes for muddy trails",
-        "Insect repellent (DEET or natural alternatives)",
-        "Reusable water bottle",
-        "Small daypack for hikes",
-        "Swimwear and snorkel mask (or rent locally)",
+      // Value Stack
+      valueTitle: "What Your Operation",
+      valueTitleAccent: "Actually Needs",
+      valueSubtitle:
+        "Most Caribbean coast businesses are leaving serious money on the table — not because the product is bad, but because the systems, brand, and online presence aren't doing the work. Here's what HLPFL builds:",
+      valueItems: [
+        { service: "Mobile-Optimized Bilingual Website", market: "Built for rural CR connectivity" },
+        { service: "Online Booking System", market: "No more midnight WhatsApps" },
+        { service: "OTA Integration (Booking.com, Airbnb, Expedia)", market: "One dashboard, all channels" },
+        { service: "Brand Identity & Photography Direction", market: "Look as good as you are" },
+        { service: "Instagram / Facebook / Google Campaigns", market: "Travelers who actually book" },
+        { service: "ICT Registration & Legal Compliance", market: "Operate with confidence" },
+        { service: "Operational Systems & SOPs", market: "Runs without you on-site" },
+        { service: "Business Strategy & Pricing Audit", market: "More revenue per guest" },
       ],
-      currencyTitle: "Currency & Payments",
-      currencyDesc:
-        "Costa Rica's currency is the colón (₡). USD is widely accepted along the tourist corridor. ATMs are available in Cahuita and Puerto Viejo. Credit cards accepted at most hotels and larger restaurants. Tip 10–15% at restaurants (service charge is not always included).",
-      connectivityTitle: "Connectivity",
-      connectivityDesc:
-        "Wi-Fi is available at most hotels and cafes. Mobile coverage (Kölbi, Claro, Movistar) is adequate in Cahuita and Puerto Viejo but can be spotty near Manzanillo and on jungle trails. Download offline maps before heading out.",
-      wildlifeTitle: "Wildlife Dos & Don'ts",
-      wildlifeDos: [
-        "Do keep a respectful distance from all wildlife",
-        "Do use reef-safe sunscreen in the ocean",
-        "Do walk on marked trails only",
-        "Do report wildlife in distress to MINAE or local guides",
-        "Do support locally operated eco-tours",
-      ],
-      wildlifeDonts: [
-        "Don't feed monkeys, sloths, or any wildlife",
-        "Don't touch coral or stand on the reef",
-        "Don't collect shells, rocks, or plants from protected areas",
-        "Don't disturb sea turtle nesting beaches at night without a licensed guide",
-        "Don't litter — pack out everything you pack in",
-      ],
-    },
 
-    // List With Us page
-    listWithUs: {
-      pageTitle: "List Your Business",
-      pageSubtitle:
-        "Reach thousands of travelers exploring the Cahuita–Manzanillo corridor. Listing on Caribe Sur CR is free.",
-      formTitle: "Submit Your Listing",
-      businessName: "Business Name",
-      category: "Category",
-      locationLabel: "Location",
-      email: "Email Address",
-      phone: "Phone Number",
-      description: "Short Description",
-      descriptionPlaceholder: "Tell travelers what makes your business special (max 200 characters)",
-      website: "Website URL",
-      logoPhoto: "Logo / Photo",
-      logoPhotoDesc: "Upload your business logo or a photo (JPG/PNG, max 5MB)",
-      submit: "Submit Listing",
-      submitting: "Submitting...",
-      successTitle: "Listing Submitted!",
-      successDesc:
-        "Thank you! We'll review your submission and be in touch within 2–3 business days.",
-      pricingTitle: "Listing Options",
-      pricingFreeTitle: "Free Basic",
-      pricingFreeFeatures: [
-        "Business name and category",
-        "Location and contact info",
-        "Short description",
-        "One photo",
-        "Link to your website",
+      // Services
+      servicesTitle: "What We",
+      servicesTitleAccent: "Build",
+      servicesSubtitle:
+        "Nine core services, every one reengineered for hospitality and tourism operators on Costa Rica's Caribbean coast.",
+
+      // About
+      aboutOverline: "Why Us",
+      aboutTitle: "Built for the",
+      aboutTitleAccent: "Caribbean Coast.",
+      aboutDesc:
+        "HLPFL isn't a generic digital agency. We work exclusively with hospitality and tourism operators in the Cahuita → Puerto Viejo → Manzanillo corridor. That specificity is a feature, not a limitation — we know the seasonal dynamics, the OTA landscape, the ICT registration process, and what a German eco-tourist is searching for at 11pm before they book.",
+      aboutReasons: [
+        {
+          title: "Corridor-Specific Expertise",
+          desc: "We know the Cahuita National Park visitor patterns, the Gandoca-Manzanillo Wildlife Refuge crowd, the turtle season surges, and the Semana Santa booking window. Generic advice doesn't survive contact with a Caribbean coast reality.",
+        },
+        {
+          title: "Hospitality-Only Focus",
+          desc: "We don't serve tech startups, real estate agencies, or insurance brokers. If you run a hotel, restaurant, tour operation, surf school, or wellness retreat in this corridor — you're exactly who we built this for.",
+        },
+        {
+          title: "Bilingual by Default",
+          desc: "Every website, booking system, and marketing campaign we build is Spanish and English from day one. Your guests are arriving from San José and from Stockholm. Your business needs to speak to both.",
+        },
+        {
+          title: "Transparent & Direct",
+          desc: "No retainer traps. No scope creep. No jargon. We tell you exactly what we're building, what it costs, and what result to expect. If it's not working, we say so.",
+        },
       ],
-      pricingFeaturedTitle: "Featured Listing",
-      pricingFeaturedPrice: "$29 / month",
-      pricingFeaturedFeatures: [
-        "Everything in Free Basic",
-        "Up to 6 photos",
-        "Priority placement in search",
-        "Featured badge",
-        "Social media promotion",
-        "Monthly analytics report",
+
+      // Testimonials
+      testimonialsOverline: "Client Stories",
+      testimonialsTitle: "What Operators",
+      testimonialsTitleAccent: "Are Saying",
+      testimonials: [
+        {
+          quote:
+            "We were fully booked every weekend but had almost no online presence. HLPFL built our website, set up online booking, and we started seeing reservations from Germany and the US within the first month.",
+          author: "Eco-lodge owner",
+          location: "Puerto Viejo de Talamanca",
+        },
+        {
+          quote:
+            "I had a great tour operation but no system. Guests would lose my WhatsApp message and never follow up. Now everything is automated and my calendar fills itself.",
+          author: "Wildlife guide",
+          location: "Manzanillo",
+        },
+        {
+          quote:
+            "They made us look like a real brand. Same operation, same jungle, same beach — but now guests arrive already excited because they saw us online.",
+          author: "Restaurant owner",
+          location: "Cahuita",
+        },
       ],
-      categories: [
-        "Hotel / Eco-Lodge / B&B",
-        "Hostel / Vacation Rental",
+
+      // CTA
+      ctaOverline: "Get Started",
+      ctaTitle: "Tell Us About Your",
+      ctaTitleAccent: "Operation",
+      ctaSubtitle:
+        "Fill in the form below and we'll reach out within 24 hours. Or just WhatsApp us directly — this region runs on WhatsApp.",
+      ctaFormLabels: {
+        businessName: "Business Name",
+        businessType: "Business Type",
+        location: "Location in the Corridor",
+        challenge: "Biggest Challenge Right Now",
+        revenue: "Monthly Revenue Range (optional)",
+        contactMethod: "Preferred Contact Method",
+        submit: "Send Inquiry",
+        whatsapp: "WhatsApp Us Instead",
+      },
+      ctaBusinessTypes: [
+        "Hotel / Eco-Lodge",
+        "B&B / Vacation Rental",
+        "Restaurant / Soda",
         "Tour Operator",
-        "Restaurant / Café / Bar",
-        "Surf School / Water Sports",
-        "Yoga / Wellness",
-        "Artisan / Craft Shop",
+        "Surf / Yoga / Wellness",
         "Other",
       ],
+      ctaLocations: [
+        "Cahuita",
+        "Puerto Viejo de Talamanca",
+        "Playa Cocles / Playa Negra",
+        "Punta Uva",
+        "Manzanillo",
+        "Other",
+      ],
+      ctaRevenues: [
+        "Under $3,000 / month",
+        "$3,000 – $10,000 / month",
+        "$10,000 – $30,000 / month",
+        "Over $30,000 / month",
+        "Prefer not to say",
+      ],
+      ctaContactMethods: ["WhatsApp", "Email", "Video Call"],
+      ctaSuccessTitle: "Message Received",
+      ctaSuccessDesc:
+        "We'll be in touch within 24 hours. If you'd rather talk now, hit the WhatsApp button.",
+    },
+
+    // Services page
+    services: {
+      pageTitle: "Services",
+      pageSubtitle:
+        "Nine core services built for hospitality and tourism operators in the Cahuita–Manzanillo corridor.",
+      ctaTitle: "Ready to Start?",
+      ctaDesc: "Tell us about your operation and we'll map out the right services for your stage.",
+      ctaButton: "Get Started",
     },
 
     // About page
     about: {
-      pageTitle: "About Caribe Sur CR",
+      pageTitle: "About HLPFL",
+      pageSubtitle: "We exist to help Caribbean coast hospitality operators grow their businesses — with the same level of professional infrastructure the big resorts have, without the big resort budget.",
       missionTitle: "Our Mission",
-      missionBody:
-        "Caribe Sur CR is a community-driven travel guide dedicated to the southern Caribbean coast of Costa Rica — the breathtaking corridor from Cahuita to Manzanillo in Limón Province. Our mission is to connect curious travelers with the authentic, sustainable businesses that make this region extraordinary: family-run eco-lodges, Afro-Caribbean restaurants, Bribri-guided cultural tours, independent surf schools, and the passionate local guides who know every hidden trail.",
-      sustainabilityTitle: "Sustainable & Responsible Tourism",
-      sustainabilityBody:
-        "We believe tourism should benefit the communities and ecosystems it touches. We prioritize businesses that respect the environment, pay fair wages, source locally, and actively contribute to conservation. The coral reefs of Cahuita, the sea turtle nesting beaches of Gandoca-Manzanillo, and the rainforest canopy corridors linking them deserve our collective protection.",
-      cultureTitle: "Cultural Respect",
-      cultureBody:
-        "The Caribbean coast's Afro-Caribbean community — descendants of Jamaican workers who came to build the railroad in the 19th century — has cultivated a vibrant, distinct culture of music, food, language (Limonese Creole English), and spirituality. The Bribri and Cabécar indigenous peoples have called this land home for millennia. We are honored to promote their stories and businesses, always with permission, respect, and benefit flowing back to the community.",
-      contactTitle: "Get in Touch",
-      contactEmail: "hello@caribesur.cr",
-      contactNote:
-        "For listing inquiries, partnership proposals, or general questions, reach out to us directly.",
+      missionDesc:
+        "The Caribbean coast of Costa Rica is one of the most biodiverse, culturally rich, and naturally beautiful destinations in the Americas. The small lodges, family restaurants, independent tour guides, and surf schools that make this corridor special are competing against international booking platforms and large resort chains with a fraction of the resources. HLPFL closes that gap.",
+      valuesTitle: "How We Work",
+      values: [
+        { title: "Corridor-First", desc: "We work exclusively with operators in the Cahuita–Manzanillo corridor. Not because we can't work elsewhere — because deep expertise in one place is more valuable than shallow expertise everywhere." },
+        { title: "Results Over Optics", desc: "We don't optimize for impressive decks or strategy documents. We optimize for bookings, occupancy rate, and revenue per guest. If you're not seeing results, we haven't done our job." },
+        { title: "Build to Last", desc: "Everything we build — your website, your booking system, your brand — is yours. We don't use proprietary platforms that lock you in. You can take it all with you." },
+        { title: "Bilingual by Default", desc: "Every deliverable is Spanish and English. Because your guests speak both, and your business should too." },
+      ],
     },
 
-    // Privacy page
+    // Contact page
+    contact: {
+      pageTitle: "Contact HLPFL",
+      pageSubtitle: "Fill in the form or send us a WhatsApp. We respond within 24 hours.",
+      formTitle: "Tell Us About Your Operation",
+      whatsappTitle: "Prefer WhatsApp?",
+      whatsappDesc: "Most of our corridor clients reach us this way. Send a message anytime.",
+      whatsappButton: "Open WhatsApp Chat",
+    },
+
+    // Privacy policy
     privacy: {
       pageTitle: "Privacy Policy",
-      lastUpdated: "Last updated: April 2025",
+      lastUpdated: "Last updated: April 2026",
     },
 
-    // Cookie Banner
-    cookie: {
-      message:
-        "We use cookies to enhance your experience. By continuing to use this site, you agree to our use of cookies in accordance with Costa Rican Law 8968 and GDPR guidelines.",
-      accept: "Accept",
-      decline: "Decline",
-      learnMore: "Privacy Policy",
-    },
-
-    // 404
-    notFound: {
-      title: "Page Not Found",
-      desc: "The page you're looking for doesn't exist. Let's get you back on the trail.",
-      cta: "Return Home",
+    // Terms
+    terms: {
+      pageTitle: "Terms of Service",
+      lastUpdated: "Last updated: April 2026",
     },
   },
 
+  // ============================================================
+  // SPANISH TRANSLATIONS — [TRANSLATE] all sections below
+  // These are structural placeholders. Professional human
+  // review required before publishing.
+  // ============================================================
   es: {
     nav: {
       home: "Inicio",
-      explore: "Explorar",
-      stay: "Alojamiento",
-      eatDrink: "Comer & Beber",
-      plan: "Planifica tu Viaje",
-      listWithUs: "Regístrate",
-      about: "Acerca de",
+      services: "Servicios",
+      about: "Nosotros",
+      contact: "Contacto",
+      getStarted: "Comenzar",
     },
-
     common: {
-      findAGuide: "Encontrar Guía →",
-      bookLearnMore: "Reservar / Más Info",
+      getStarted: "Comenzar",
+      seeWhatWeDo: "Ver Servicios",
       learnMore: "Más Información",
-      planYourVisit: "Planifica tu Visita",
-      exploreTheCoast: "Explora la Costa",
-      viewAll: "Ver Todos",
-      filterBy: "Filtrar por",
-      location: "Ubicación",
-      type: "Tipo",
-      priceRange: "Precio",
-      allLocations: "Todas las Ubicaciones",
-      allTypes: "Todos los Tipos",
-      allPrices: "Todos los Precios",
-      stars: "estrellas",
-      perNight: "/ noche",
-      free: "Gratis",
+      contactUs: "Contáctanos",
+      viewServices: "Ver Servicios",
+      bookConsultation: "Reservar Consulta",
+      whatsappUs: "Escribirnos por WhatsApp",
     },
-
     home: {
-      heroHeadline: "Descubre la Costa Caribeña Salvaje de Costa Rica",
+      heroHeadline: "Tu Negocio en la Costa Caribe.",
+      heroChaos: "Caos → Claridad.",
       heroSubhead:
-        "De Cahuita a Manzanillo — donde la selva se encuentra con el mar.",
-      heroCta1: "Planifica tu Visita",
-      heroCta2: "Explora la Costa",
-
-      featuresTitle: "Explora el Corredor",
-      featureExploreTitle: "Explorar",
-      featureExploreDesc:
-        "Bucea en el arrecife de Cahuita, navega canales de vida silvestre en kayak, observa perezosos en el dosel — el Caribe sur rebosa de aventura natural.",
-      featureStayTitle: "Alojamiento",
-      featureStayDesc:
-        "Desde ecolodges en la selva hasta acogedores B&Bs frente al mar, encuentra tu base perfecta para explorar la costa.",
-      featureEatTitle: "Comer & Beber",
-      featureEatDesc:
-        "Saborea la gastronomía afrocaribeña: arroz con leche de coco, rondon, ceviche fresco y agua de pipa helada.",
-
-      regionTitle: "Un Corredor Único",
-      regionDesc:
-        "La costa Caribe sur de Costa Rica alberga uno de los tramos costeros más biodiversos de las Américas. Desde los arrecifes del Parque Nacional Cahuita hasta los canales del Refugio Gandoca-Manzanillo, este corredor es hogar de tortugas marinas, jaguares y más de 500 especies de aves. Las comunidades afrocaribeñas — arraigadas en la herencia inmigrante jamaicana — y las aldeas indígenas Bribri añaden un rico tapiz cultural que no se encuentra en ningún otro lugar de Costa Rica.",
-
-      featuredTitle: "Negocios Destacados",
-      featuredSubtitle:
-        "Descubre los mejores hoteles, operadoras de turismo y restaurantes del corredor.",
-
-      mapTitle: "Explora el Mapa",
-      mapSubtitle:
-        "Navega el corredor de Cahuita a Manzanillo — encuentra playas, parques y joyas escondidas.",
-    },
-
-    explore: {
-      pageTitle: "Experiencias y Actividades",
-      pageSubtitle:
-        "Desde snorkeling en arrecifes de coral hasta tours culturales Bribri, el Caribe sur ofrece aventuras para todo viajero.",
-      activitiesTitle: "Qué Hacer",
-    },
-
-    stay: {
-      pageTitle: "Dónde Alojarse",
-      pageSubtitle:
-        "Ecolodges, hoteles frente al mar, B&Bs, hostales y alquileres privados — encuentra tu base perfecta en la costa Caribe.",
-      listingsCta: "Registra tu Propiedad — Es Gratis",
-      listingsCtaDesc:
-        "¿Tienes una propiedad en el corredor Cahuita–Manzanillo? Regístrala y llega a miles de viajeros.",
-      listNow: "Regístranos",
-      noResults: "Ningún alojamiento coincide con los filtros actuales.",
-    },
-
-    eatDrink: {
-      pageTitle: "Sabores de la Costa",
-      pageSubtitle:
-        "La cocina afrocaribeña es el corazón de esta costa — moldeada por raíces jamaicanas, mariscos frescos, frutas tropicales y generaciones de tradición culinaria.",
-      editorialTitle: "Un Sabor de la Cultura Afrocaribeña",
-      editorialBody:
-        "Ninguna visita a la costa Caribe está completa sin probar el arroz con frijoles cocidos en leche de coco — un plato diferente al gallo pinto del Pacífico. El rondon, un guiso de mariscos con yuca, plátano y fruto del árbol del pan en un rico caldo de coco, es el plato emblema de la región. Los puestos callejeros sirven patacones crujientes con pasta de frijoles negros. El ceviche fresco de pescado o camarones locales, marinado en jugo de limón con cilantro, es básico en los restaurantes de playa. Termina con agua de pipa — agua de coco sorbida directamente de una pipa verde — vendida por vendedores a lo largo de la carretera costera.",
-      restaurantsTitle: "Restaurantes y Comida",
-      noResults: "Ningún restaurante coincide con los filtros actuales.",
-    },
-
-    plan: {
-      pageTitle: "Planifica tu Viaje",
-      pageSubtitle:
-        "Todo lo que necesitas saber antes de llegar — desde cómo llegar hasta qué empacar.",
-      gettingHereTitle: "Cómo Llegar",
-      busTitle: "Autobús desde San José",
-      busDesc:
-        "Los autobuses MEPE salen de la Terminal del Caribe (Calle Central, Avenida 15) en San José diariamente hacia Sixaola, con paradas en Cahuita y Puerto Viejo de Talamanca. El viaje tarda aproximadamente 4–5 horas. Reserva con anticipación los fines de semana.",
-      shuttleTitle: "Servicios de Shuttle",
-      shuttleDesc:
-        "Los shuttles privados conectan San José, La Fortuna (Arenal) y Manuel Antonio con Puerto Viejo. Los shuttles compartidos son asequibles y cómodos — operadores incluyen Interbus y Caribe Shuttle.",
-      driveTitle: "En Carro por la Ruta 32",
-      driveDesc:
-        "Desde San José, toma la Ruta 32 hacia el este a través del espectacular Parque Nacional Braulio Carrillo hacia Limón, luego al sur por la Ruta 36. El viaje total desde San José es de unas 3.5–4 horas. Las condiciones de la carretera son generalmente buenas, pero vigila las curvas mojadas por la lluvia en Braulio Carrillo.",
-      bestTimeTitle: "Mejor Época para Visitar",
-      bestTimeDesc:
-        "La costa Caribe sigue su propio clima, distinto del Pacífico. Los meses más secos son febrero–abril y septiembre–octubre — ideales para snorkeling, senderismo y playa. El resto del año es exuberante y tropical, con lluvias frecuentes pero generalmente breves por la tarde. La temporada de anidación de tortugas marinas es julio–octubre en la playa de Gandoca-Manzanillo. El arrecife de Cahuita es mejor visitarlo cuando el mar está en calma (feb–abr).",
-      itinerariesTitle: "Itinerarios Sugeridos",
-      essentialTipsTitle: "Consejos Esenciales",
-      packingTitle: "Qué Empacar",
-      packingItems: [
-        "Ropa ligera de secado rápido y una chaqueta impermeable ligera",
-        "Protector solar respetuoso con los arrecifes (requerido en el PN Cahuita)",
-        "Sandalias resistentes o zapatos impermeables para senderos lodosos",
-        "Repelente de insectos (DEET o alternativas naturales)",
-        "Botella de agua reutilizable",
-        "Pequeña mochila para caminatas",
-        "Traje de baño y máscara de snorkel (o alquila localmente)",
+        "HLPFL ayuda a hoteles, lodges, restaurantes y operadores de tours entre Cahuita y Manzanillo a construir los sistemas, la marca y la presencia digital que convierten una operación hermosa en una completamente reservada.",
+      heroCta1: "Comenzar",
+      heroCta2: "Ver Servicios",
+      trustStat1: "9",
+      trustLabel1: "Servicios Clave",
+      trustSub1: "Integral",
+      trustStat2: "100%",
+      trustLabel2: "Enfoque Hospitalidad",
+      trustSub2: "Costa Caribe CR",
+      trustStat3: "EN/ES",
+      trustLabel3: "Bilingüe",
+      trustSub3: "Español e Inglés",
+      trustStat4: "1",
+      trustLabel4: "Corredor",
+      trustSub4: "Cahuita → Manzanillo",
+      howTitle: "Tres Pasos hacia una",
+      howTitleAccent: "Temporada Completa",
+      howStep1Num: "01",
+      howStep1Title: "Diagnóstico",
+      howStep1Price: "Descubrimiento",
+      howStep1Desc:
+        "Auditamos tu operación actual — reservas, presencia en línea, precios, sistemas y marca. En dos semanas tendrás un panorama claro de lo que funciona, lo que está perdiendo ingresos y qué corregir primero.",
+      howStep2Num: "02",
+      howStep2Title: "Construir",
+      howStep2Price: "Ejecución",
+      howStep2Desc:
+        "Sitio web, sistema de reservas, identidad de marca, campañas de marketing, configuración legal, procesos operativos — lo que tu operación necesite, lo construimos. Rápido, optimizado para móviles, bilingüe.",
+      howStep3Num: "03",
+      howStep3Title: "Crecer",
+      howStep3Price: "Escala",
+      howStep3Desc:
+        "Estrategia continua, posicionamiento en el mercado, estructura de equipo y marketing digital para asegurarnos de que la temporada baja no se parezca en nada al año pasado. Más reservas. Menos caos.",
+      valueTitle: "Lo que Tu Operación",
+      valueTitleAccent: "Realmente Necesita",
+      valueSubtitle:
+        "La mayoría de los negocios en la costa Caribe están dejando dinero sobre la mesa — no porque el producto sea malo, sino porque los sistemas, la marca y la presencia en línea no están haciendo su trabajo.",
+      valueItems: [
+        { service: "Sitio Web Bilingüe Optimizado para Móviles", market: "Para la conectividad rural de CR" },
+        { service: "Sistema de Reservas en Línea", market: "Sin más WhatsApps a medianoche" },
+        { service: "Integración OTA (Booking.com, Airbnb, Expedia)", market: "Un dashboard, todos los canales" },
+        { service: "Identidad de Marca y Fotografía", market: "Luce tan bien como eres" },
+        { service: "Campañas Instagram / Facebook / Google", market: "Viajeros que realmente reservan" },
+        { service: "Registro ICT y Cumplimiento Legal", market: "Opera con confianza" },
+        { service: "Sistemas Operativos y POEs", market: "Funciona sin que estés presente" },
+        { service: "Estrategia de Negocio y Auditoría de Precios", market: "Más ingresos por huésped" },
       ],
-      currencyTitle: "Moneda y Pagos",
-      currencyDesc:
-        "La moneda de Costa Rica es el colón (₡). El dólar estadounidense es ampliamente aceptado en el corredor turístico. Hay cajeros automáticos en Cahuita y Puerto Viejo. Las tarjetas de crédito son aceptadas en la mayoría de hoteles y restaurantes más grandes. Propina del 10–15% en restaurantes (el cargo por servicio no siempre está incluido).",
-      connectivityTitle: "Conectividad",
-      connectivityDesc:
-        "Wi-Fi disponible en la mayoría de hoteles y cafés. La cobertura móvil (Kölbi, Claro, Movistar) es adecuada en Cahuita y Puerto Viejo pero puede ser irregular cerca de Manzanillo y en senderos de selva. Descarga mapas sin conexión antes de salir.",
-      wildlifeTitle: "Fauna: Qué Hacer y Qué No Hacer",
-      wildlifeDos: [
-        "Mantén una distancia respetuosa de toda la fauna silvestre",
-        "Usa protector solar respetuoso con los arrecifes en el océano",
-        "Camina solo por senderos señalizados",
-        "Reporta fauna silvestre en peligro al MINAE o guías locales",
-        "Apoya los ecotours operados localmente",
+      servicesTitle: "Lo que",
+      servicesTitleAccent: "Construimos",
+      servicesSubtitle:
+        "Nueve servicios principales, todos rediseñados para operadores de hospitalidad y turismo en la costa Caribe de Costa Rica.",
+      aboutOverline: "¿Por Qué Nosotros?",
+      aboutTitle: "Construidos para la",
+      aboutTitleAccent: "Costa Caribe.",
+      aboutDesc:
+        "HLPFL no es una agencia digital genérica. Trabajamos exclusivamente con operadores de hospitalidad y turismo en el corredor Cahuita → Puerto Viejo → Manzanillo.",
+      aboutReasons: [
+        {
+          title: "Experiencia Específica del Corredor",
+          desc: "Conocemos los patrones de visitantes del Parque Nacional Cahuita, la afluencia al Refugio de Vida Silvestre Gandoca-Manzanillo, los picos de la temporada de tortugas y la ventana de reservas de Semana Santa.",
+        },
+        {
+          title: "Enfoque Exclusivo en Hospitalidad",
+          desc: "No atendemos startups tecnológicas ni agencias inmobiliarias. Si tienes un hotel, restaurante, operación de tours, escuela de surf o retiro de bienestar en este corredor — eres exactamente para quien construimos esto.",
+        },
+        {
+          title: "Bilingüe por Defecto",
+          desc: "Cada sitio web, sistema de reservas y campaña de marketing que construimos es en español e inglés desde el primer día.",
+        },
+        {
+          title: "Transparente y Directo",
+          desc: "Sin trampas de retención. Sin alcance descontrolado. Sin jerga. Te decimos exactamente qué construimos, cuánto cuesta y qué resultado esperar.",
+        },
       ],
-      wildlifeDonts: [
-        "No alimentes monos, perezosos ni ningún animal silvestre",
-        "No toques el coral ni te pares sobre el arrecife",
-        "No recolectes conchas, rocas ni plantas de áreas protegidas",
-        "No perturbes las playas de anidación de tortugas por la noche sin guía autorizado",
-        "No tires basura — llévate todo lo que traes",
+      testimonialsOverline: "Historias de Clientes",
+      testimonialsTitle: "Lo que Dicen los",
+      testimonialsTitleAccent: "Operadores",
+      testimonials: [
+        {
+          quote:
+            "Estábamos completamente reservados cada fin de semana pero casi no teníamos presencia en línea. HLPFL construyó nuestro sitio web, configuró las reservas en línea y comenzamos a ver reservas de Alemania y Estados Unidos en el primer mes.",
+          author: "Propietaria de eco-lodge",
+          location: "Puerto Viejo de Talamanca",
+        },
+        {
+          quote:
+            "Tenía una gran operación de tours pero ningún sistema. Los huéspedes perdían mi mensaje de WhatsApp y nunca hacían seguimiento. Ahora todo está automatizado y mi calendario se llena solo.",
+          author: "Guía de vida silvestre",
+          location: "Manzanillo",
+        },
+        {
+          quote:
+            "Nos hicieron ver como una marca real. Misma operación, misma selva, misma playa — pero ahora los huéspedes llegan ya emocionados porque nos vieron en línea.",
+          author: "Propietario de restaurante",
+          location: "Cahuita",
+        },
       ],
-    },
-
-    listWithUs: {
-      pageTitle: "Registra tu Negocio",
-      pageSubtitle:
-        "Llega a miles de viajeros que exploran el corredor Cahuita–Manzanillo. El registro en Caribe Sur CR es gratuito.",
-      formTitle: "Envía tu Registro",
-      businessName: "Nombre del Negocio",
-      category: "Categoría",
-      locationLabel: "Ubicación",
-      email: "Correo Electrónico",
-      phone: "Número de Teléfono",
-      description: "Descripción Breve",
-      descriptionPlaceholder: "Cuéntale a los viajeros qué hace especial a tu negocio (máx 200 caracteres)",
-      website: "URL del Sitio Web",
-      logoPhoto: "Logo / Foto",
-      logoPhotoDesc: "Sube el logo de tu negocio o una foto (JPG/PNG, máx 5MB)",
-      submit: "Enviar Registro",
-      submitting: "Enviando...",
-      successTitle: "¡Registro Enviado!",
-      successDesc:
-        "¡Gracias! Revisaremos tu solicitud y nos pondremos en contacto en 2–3 días hábiles.",
-      pricingTitle: "Opciones de Registro",
-      pricingFreeTitle: "Básico Gratuito",
-      pricingFreeFeatures: [
-        "Nombre y categoría del negocio",
-        "Ubicación e información de contacto",
-        "Descripción breve",
-        "Una foto",
-        "Enlace a tu sitio web",
-      ],
-      pricingFeaturedTitle: "Registro Destacado",
-      pricingFeaturedPrice: "$29 / mes",
-      pricingFeaturedFeatures: [
-        "Todo lo del Básico Gratuito",
-        "Hasta 6 fotos",
-        "Posición prioritaria en búsqueda",
-        "Insignia destacada",
-        "Promoción en redes sociales",
-        "Informe de analíticas mensual",
-      ],
-      categories: [
-        "Hotel / Ecolodge / B&B",
-        "Hostal / Alquiler Vacacional",
-        "Operadora de Tours",
-        "Restaurante / Café / Bar",
-        "Escuela de Surf / Deportes Acuáticos",
-        "Yoga / Bienestar",
-        "Artesanía / Tienda",
+      ctaOverline: "Comenzar",
+      ctaTitle: "Cuéntanos sobre tu",
+      ctaTitleAccent: "Operación",
+      ctaSubtitle:
+        "Completa el formulario y te contactaremos en 24 horas. O simplemente escríbenos por WhatsApp — esta región funciona en WhatsApp.",
+      ctaFormLabels: {
+        businessName: "Nombre del Negocio",
+        businessType: "Tipo de Negocio",
+        location: "Ubicación en el Corredor",
+        challenge: "Mayor Desafío Actual",
+        revenue: "Rango de Ingresos Mensuales (opcional)",
+        contactMethod: "Método de Contacto Preferido",
+        submit: "Enviar Consulta",
+        whatsapp: "Escribirnos por WhatsApp",
+      },
+      ctaBusinessTypes: [
+        "Hotel / Eco-Lodge",
+        "B&B / Alquiler Vacacional",
+        "Restaurante / Soda",
+        "Operador de Tours",
+        "Surf / Yoga / Bienestar",
         "Otro",
       ],
+      ctaLocations: [
+        "Cahuita",
+        "Puerto Viejo de Talamanca",
+        "Playa Cocles / Playa Negra",
+        "Punta Uva",
+        "Manzanillo",
+        "Otro",
+      ],
+      ctaRevenues: [
+        "Menos de $3,000 / mes",
+        "$3,000 – $10,000 / mes",
+        "$10,000 – $30,000 / mes",
+        "Más de $30,000 / mes",
+        "Prefiero no decir",
+      ],
+      ctaContactMethods: ["WhatsApp", "Correo Electrónico", "Videollamada"],
+      ctaSuccessTitle: "Mensaje Recibido",
+      ctaSuccessDesc:
+        "Nos comunicaremos en 24 horas. Si prefiere hablar ahora, presione el botón de WhatsApp.",
     },
-
+    services: {
+      pageTitle: "Servicios",
+      pageSubtitle:
+        "Nueve servicios principales para operadores de hospitalidad y turismo en el corredor Cahuita-Manzanillo.",
+      ctaTitle: "¿Listo para Comenzar?",
+      ctaDesc: "Cuéntanos sobre tu operación y mapearemos los servicios correctos para tu etapa.",
+      ctaButton: "Comenzar",
+    },
     about: {
-      pageTitle: "Acerca de Caribe Sur CR",
+      pageTitle: "Acerca de HLPFL",
+      pageSubtitle: "Existimos para ayudar a los operadores de hospitalidad de la costa Caribe a hacer crecer sus negocios.",
       missionTitle: "Nuestra Misión",
-      missionBody:
-        "Caribe Sur CR es una guía de viaje comunitaria dedicada a la costa Caribe sur de Costa Rica — el impresionante corredor de Cahuita a Manzanillo en la Provincia de Limón. Nuestra misión es conectar a los viajeros curiosos con los negocios auténticos y sostenibles que hacen extraordinaria esta región: ecolodges familiares, restaurantes afrocaribeños, tours culturales guiados por Bribris, escuelas de surf independientes y los apasionados guías locales que conocen cada sendero escondido.",
-      sustainabilityTitle: "Turismo Sostenible y Responsable",
-      sustainabilityBody:
-        "Creemos que el turismo debe beneficiar a las comunidades y ecosistemas que toca. Priorizamos los negocios que respetan el medio ambiente, pagan salarios justos, abastecen localmente y contribuyen activamente a la conservación. Los arrecifes de coral de Cahuita, las playas de anidación de tortugas de Gandoca-Manzanillo y los corredores de dosel de selva tropical que los conectan merecen nuestra protección colectiva.",
-      cultureTitle: "Respeto Cultural",
-      cultureBody:
-        "La comunidad afrocaribeña de la costa — descendientes de trabajadores jamaicanos que llegaron a construir el ferrocarril en el siglo XIX — ha cultivado una cultura vibrante y distintiva de música, comida, idioma (Inglés Criollo Limonense) y espiritualidad. Los pueblos indígenas Bribri y Cabécar han llamado hogar a esta tierra por milenios. Nos honra promover sus historias y negocios, siempre con permiso, respeto y beneficio fluyendo de regreso a la comunidad.",
-      contactTitle: "Contáctanos",
-      contactEmail: "hello@caribesur.cr",
-      contactNote:
-        "Para consultas sobre registros, propuestas de asociación o preguntas generales, contáctanos directamente.",
+      missionDesc:
+        "La costa Caribe de Costa Rica es uno de los destinos más biodiversos, culturalmente ricos y naturalmente hermosos de las Américas. Los pequeños lodges, restaurantes familiares, guías independientes y escuelas de surf que hacen especial este corredor compiten contra plataformas internacionales de reservas y grandes cadenas hoteleras con una fracción de los recursos. HLPFL cierra esa brecha.",
+      valuesTitle: "Cómo Trabajamos",
+      values: [
+        { title: "Corredor Primero", desc: "Trabajamos exclusivamente con operadores en el corredor Cahuita-Manzanillo." },
+        { title: "Resultados sobre Apariencias", desc: "No optimizamos para presentaciones impresionantes. Optimizamos para reservas, tasa de ocupación e ingresos por huésped." },
+        { title: "Construir para Durar", desc: "Todo lo que construimos — tu sitio web, tu sistema de reservas, tu marca — es tuyo." },
+        { title: "Bilingüe por Defecto", desc: "Cada entregable es en español e inglés. Porque tus huéspedes hablan ambos idiomas, y tu negocio también debería." },
+      ],
     },
-
+    contact: {
+      pageTitle: "Contacto HLPFL",
+      pageSubtitle: "Completa el formulario o envíanos un WhatsApp. Respondemos en 24 horas.",
+      formTitle: "Cuéntanos sobre tu Operación",
+      whatsappTitle: "¿Prefieres WhatsApp?",
+      whatsappDesc: "La mayoría de nuestros clientes del corredor nos contactan así. Envía un mensaje en cualquier momento.",
+      whatsappButton: "Abrir Chat de WhatsApp",
+    },
     privacy: {
       pageTitle: "Política de Privacidad",
-      lastUpdated: "Última actualización: Abril 2025",
+      lastUpdated: "Última actualización: Abril 2026",
     },
-
-    cookie: {
-      message:
-        "Usamos cookies para mejorar tu experiencia. Al continuar usando este sitio, aceptas el uso de cookies de acuerdo con la Ley 8968 de Costa Rica y las directrices del RGPD.",
-      accept: "Aceptar",
-      decline: "Rechazar",
-      learnMore: "Política de Privacidad",
-    },
-
-    notFound: {
-      title: "Página No Encontrada",
-      desc: "La página que buscas no existe. Volvamos al sendero.",
-      cta: "Volver al Inicio",
+    terms: {
+      pageTitle: "Términos de Servicio",
+      lastUpdated: "Última actualización: Abril 2026",
     },
   },
 } as const;
-
-export type TranslationKey = typeof translations;

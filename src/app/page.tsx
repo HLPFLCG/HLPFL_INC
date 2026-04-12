@@ -1,27 +1,33 @@
 import type { Metadata } from "next";
-import HeroSection from "@/components/sections/HeroSection";
-import FeatureCards from "@/components/sections/FeatureCards";
-import RegionTeaser from "@/components/sections/RegionTeaser";
-import FeaturedBusinesses from "@/components/sections/FeaturedBusinesses";
-import MapEmbed from "@/components/sections/MapEmbed";
+import {
+  HeroSection,
+  TrustBar,
+  HowItWorks,
+  ValueStack,
+  ServicesSection,
+  AboutSection,
+  TestimonialsSection,
+  CTASection,
+} from "@/components/sections";
 
 export const metadata: Metadata = {
-  title: "Caribe Sur CR | Costa Rica Caribbean Coast Travel Guide",
+  title: "HLPFL | Chaos → Clarity for Caribbean Coast Hospitality",
   description:
-    "Discover the wild southern Caribbean coast of Costa Rica — from Cahuita National Park to Manzanillo. Find hotels, tours, restaurants, and travel guides for Limón Province.",
-  alternates: {
-    canonical: "https://hlpfl.org",
-  },
+    "HLPFL helps hotels, eco-lodges, restaurants, and tour operators between Cahuita and Manzanillo build the systems, brand, and digital presence that turn a beautiful operation into a fully booked one.",
+  alternates: { canonical: "https://hlpfl.org" },
 };
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      <FeatureCards />
-      <RegionTeaser />
-      <FeaturedBusinesses />
-      <MapEmbed />
+      <TrustBar />
+      <HowItWorks />
+      <ValueStack />
+      <ServicesSection />
+      <AboutSection />
+      <TestimonialsSection />
+      <CTASection />
     </>
   );
 }
