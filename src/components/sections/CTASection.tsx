@@ -35,13 +35,13 @@ export default function CTASection() {
 
   if (submitted) {
     return (
-      <section id="apply" className="section bg-void-light">
+      <section id="apply" className="section bg-sand">
         <div className="max-w-[600px] mx-auto px-4 text-center">
           <div className="text-5xl mb-6 text-gold">◆</div>
-          <h2 className="font-display text-3xl md:text-4xl text-white mb-4 tracking-wide">
+          <h2 className="font-display text-3xl md:text-4xl text-night mb-4 tracking-wide">
             {home.ctaSuccessTitle}
           </h2>
-          <p className="text-gray-400 text-base leading-relaxed mb-8">{home.ctaSuccessDesc}</p>
+          <p className="text-fog text-base leading-relaxed mb-8">{home.ctaSuccessDesc}</p>
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="whatsapp-btn">
             <MessageCircle className="w-5 h-5" />
             {labels.whatsapp}
@@ -52,7 +52,7 @@ export default function CTASection() {
   }
 
   return (
-    <section id="apply" className="section bg-void-light">
+    <section id="apply" className="section bg-sand">
       <div className="max-w-[700px] mx-auto px-4">
         <ScrollReveal>
           <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block">{home.ctaOverline}</span>
@@ -60,8 +60,8 @@ export default function CTASection() {
             {home.ctaTitle}{" "}
             <span className="text-gradient">{home.ctaTitleAccent}</span>
           </h2>
-          <p className="text-gray-400 text-base leading-relaxed mb-4">{home.ctaSubtitle}</p>
-          <p className="text-turquoise text-sm mb-10">{home.offSeasonBanner}</p>
+          <p className="text-fog text-base leading-relaxed mb-4">{home.ctaSubtitle}</p>
+          <p className="text-wave text-sm mb-10">{home.offSeasonBanner}</p>
         </ScrollReveal>
 
         {/* WhatsApp shortcut */}
@@ -179,7 +179,7 @@ export default function CTASection() {
                     className={`px-4 py-2 text-sm border transition-all duration-200 ${
                       form.contactMethod === method
                         ? "border-gold bg-gold/10 text-gold"
-                        : "border-void-lighter text-gray-400 hover:border-gold/40"
+                        : "border-sea/15 text-fog hover:border-gold/40"
                     }`}
                   >
                     {method}
@@ -223,8 +223,8 @@ export default function CTASection() {
 
             {/* Low-pressure copy */}
             <div className="text-center space-y-1 pt-2">
-              <p className="text-gray-500 text-xs">{home.ctaLowPressure}</p>
-              <p className="text-gray-500 text-xs">{home.ctaResponse}</p>
+              <p className="text-bark text-xs">{home.ctaLowPressure}</p>
+              <p className="text-bark text-xs">{home.ctaResponse}</p>
             </div>
           </form>
         </ScrollReveal>

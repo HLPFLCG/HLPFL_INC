@@ -35,7 +35,7 @@ export default function ContactPageClient() {
   const whatsappUrl = getWhatsAppUrl();
 
   return (
-    <div className="pt-24 min-h-screen">
+    <div className="pt-24 min-h-screen bg-cream">
       <section className="section">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -43,18 +43,18 @@ export default function ContactPageClient() {
             <div>
               <ScrollReveal>
                 <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block">Contact</span>
-                <h1 className="font-display text-5xl md:text-7xl tracking-wide leading-none mb-6">
+                <h1 className="font-display text-5xl md:text-7xl tracking-wide leading-none mb-6 text-night">
                   {contact.pageTitle}
                 </h1>
-                <p className="text-gray-400 text-base leading-relaxed mb-10">{contact.pageSubtitle}</p>
+                <p className="text-fog text-base leading-relaxed mb-10">{contact.pageSubtitle}</p>
               </ScrollReveal>
 
               <ScrollReveal delay={0.1}>
-                <div className="bg-void-light border border-void-lighter p-8">
-                  <h2 className="font-display text-2xl tracking-wide mb-3 text-white">{contact.whatsappTitle}</h2>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-6">{contact.whatsappDesc}</p>
+                <div className="bg-jungle border border-sea/15 p-8">
+                  <h2 className="font-display text-2xl tracking-wide mb-3 text-sand">{contact.whatsappTitle}</h2>
+                  <p className="text-sand/70 text-sm leading-relaxed mb-6">{contact.whatsappDesc}</p>
                   <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="whatsapp-btn">
-                    <MessageCircle className="w-5 h-5" />
+                    <MessageCircle className="w-5 h-5 text-wa" />
                     {contact.whatsappButton}
                   </a>
                 </div>
@@ -67,8 +67,8 @@ export default function ContactPageClient() {
                 <ScrollReveal>
                   <div className="text-center py-16">
                     <div className="text-5xl mb-6 text-gold">◆</div>
-                    <h2 className="font-display text-3xl text-white mb-4 tracking-wide">{home.ctaSuccessTitle}</h2>
-                    <p className="text-gray-400 text-base leading-relaxed mb-8">{home.ctaSuccessDesc}</p>
+                    <h2 className="font-display text-3xl text-night mb-4 tracking-wide">{home.ctaSuccessTitle}</h2>
+                    <p className="text-fog text-base leading-relaxed mb-8">{home.ctaSuccessDesc}</p>
                     <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="whatsapp-btn">
                       <MessageCircle className="w-5 h-5" />
                       {labels.whatsapp}
@@ -77,7 +77,7 @@ export default function ContactPageClient() {
                 </ScrollReveal>
               ) : (
                 <ScrollReveal delay={0.05}>
-                  <h2 className="font-display text-3xl tracking-wide mb-8">{contact.formTitle}</h2>
+                  <h2 className="font-display text-3xl tracking-wide mb-8 text-night">{contact.formTitle}</h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <label htmlFor="contact-business-name" className="form-label">{labels.businessName}</label>
@@ -117,7 +117,7 @@ export default function ContactPageClient() {
                       <div className="flex gap-3 flex-wrap">
                         {home.ctaContactMethods.map((method) => (
                           <button key={method} type="button" onClick={() => setForm({ ...form, contactMethod: method })}
-                            className={`px-4 py-2 text-sm border transition-all duration-200 ${form.contactMethod === method ? "border-gold bg-gold/10 text-gold" : "border-void-lighter text-gray-400 hover:border-gold/40"}`}>
+                            className={`px-4 py-2 text-sm border transition-all duration-200 ${form.contactMethod === method ? "border-gold bg-gold/10 text-gold" : "border-sea/15 text-fog hover:border-sea/40"}`}>
                             {method}
                           </button>
                         ))}
@@ -135,8 +135,8 @@ export default function ContactPageClient() {
                     </div>
                     <button type="submit" className="btn-primary w-full">{labels.submit}</button>
                     <div className="text-center space-y-1 pt-2">
-                      <p className="text-gray-500 text-xs">{home.ctaLowPressure}</p>
-                      <p className="text-gray-500 text-xs">{home.ctaResponse}</p>
+                      <p className="text-bark text-xs">{home.ctaLowPressure}</p>
+                      <p className="text-bark text-xs">{home.ctaResponse}</p>
                     </div>
                   </form>
                 </ScrollReveal>

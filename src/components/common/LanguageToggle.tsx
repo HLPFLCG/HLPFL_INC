@@ -11,17 +11,17 @@ export default function LanguageToggle() {
         onClick={() => setLang("en")}
         aria-pressed={lang === "en"}
         className={`text-xs tracking-wider px-2 py-1 transition-colors ${
-          lang === "en" ? "text-gold font-semibold" : "text-white/50 hover:text-white/80"
+          lang === "en" ? "text-gold font-bold" : "text-sand/50 hover:text-sand/80"
         }`}
       >
         EN
       </button>
-      <span className="text-white/20 text-xs">/</span>
+      <span className="text-sand/40 text-xs">/</span>
       <button
         onClick={() => setLang("es")}
         aria-pressed={lang === "es"}
         className={`text-xs tracking-wider px-2 py-1 transition-colors ${
-          lang === "es" ? "text-gold font-semibold" : "text-white/50 hover:text-white/80"
+          lang === "es" ? "text-gold font-bold" : "text-sand/50 hover:text-sand/80"
         }`}
       >
         ES
