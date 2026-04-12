@@ -85,7 +85,7 @@ export default function Footer() {
                 href="https://wa.me/50688888888"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-wa hover:text-wa transition-colors text-sm"
+                className="flex items-center gap-2 text-wa hover:text-wa/80 transition-colors text-sm"
               >
                 <MessageCircle size={16} />
                 WhatsApp Us
