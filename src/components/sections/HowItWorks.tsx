@@ -14,11 +14,11 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="section">
+    <section id="how-it-works" className="section bg-cream">
       <div className="container-custom">
         <ScrollReveal>
           <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block">The Process</span>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-16 tracking-wide leading-none">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-16 tracking-wide leading-none text-night">
             {home.howTitle}
             <br />
             <span className="text-gradient">{home.howTitleAccent}</span>
@@ -28,13 +28,13 @@ export default function HowItWorks() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {STEPS.map((s, i) => (
             <ScrollReveal key={i} delay={i * 0.12}>
-              <div className="relative bg-void-light border border-void-lighter p-10 h-full group transition-all duration-300 hover:border-gold/25 hover:-translate-y-1 overflow-hidden">
+              <div className="relative bg-mist border border-sea/15 p-10 h-full group transition-all duration-300 hover:border-sea hover:-translate-y-[1px] overflow-hidden">
                 <div className="absolute top-3 right-4 font-display text-7xl text-gold/[0.06] leading-none select-none">
                   {s.num}
                 </div>
                 <div className="text-gold text-xs tracking-[0.2em] uppercase mb-2">{s.price}</div>
-                <h3 className="font-display text-3xl text-white tracking-wide mb-4">{s.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
+                <h3 className="font-display text-3xl text-jungle tracking-wide mb-4">{s.title}</h3>
+                <p className="text-fog text-sm leading-relaxed">{s.desc}</p>
               </div>
             </ScrollReveal>
           ))}
