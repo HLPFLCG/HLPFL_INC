@@ -28,16 +28,16 @@ export default function ServicesPageClient() {
   const pageT = t("services");
 
   return (
-    <div className="pt-24 min-h-screen">
+    <div className="pt-24 min-h-screen bg-cream">
       {/* Hero */}
-      <section className="section pb-12">
+      <section className="section pb-12 bg-jungle">
         <div className="container-custom">
           <ScrollReveal>
             <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block">What We Build</span>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide leading-none mb-6">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide leading-none mb-6 text-sand">
               {pageT.pageTitle}
             </h1>
-            <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl">
+            <p className="text-sand/70 text-base md:text-lg leading-relaxed max-w-2xl">
               {pageT.pageSubtitle}
             </p>
           </ScrollReveal>
@@ -56,13 +56,13 @@ export default function ServicesPageClient() {
 
               return (
                 <ScrollReveal key={i} delay={i * 0.06}>
-                  <div className="bg-void-light border border-void-lighter p-8 h-full group transition-all duration-300 hover:border-gold/25 hover:-translate-y-1 flex flex-col">
+                  <div className="bg-mist border border-sea/15 p-8 h-full group transition-all duration-300 hover:border-sea/40 hover:-translate-y-1 flex flex-col">
                     <div className="w-10 h-10 flex items-center justify-center border border-gold/20 mb-6 group-hover:border-gold/50 transition-colors">
                       <Icon className="w-5 h-5 text-gold" />
                     </div>
                     <div className="text-gold text-xs tracking-[0.2em] uppercase mb-2">0{i + 1}</div>
-                    <h2 className="font-display text-2xl md:text-3xl text-white tracking-wide mb-4">{title}</h2>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-1">{description}</p>
+                    <h2 className="font-display text-2xl md:text-3xl text-night tracking-wide mb-4">{title}</h2>
+                    <p className="text-fog text-sm leading-relaxed mb-6 flex-1">{description}</p>
                     <div className="flex flex-wrap gap-2 mb-6">
                       {tags.map((tag, j) => (
                         <span key={j} className="text-[11px] text-gold/70 border border-gold/15 px-2 py-0.5 tracking-wider">
@@ -70,7 +70,7 @@ export default function ServicesPageClient() {
                         </span>
                       ))}
                     </div>
-                    <Link href="/contact" className="text-gold text-sm tracking-wider hover:text-gold-light transition-colors">
+                    <Link href="/contact" className="text-sea text-sm tracking-wider hover:text-canopy transition-colors">
                       Learn More / Get Started →
                     </Link>
                   </div>
@@ -82,11 +82,11 @@ export default function ServicesPageClient() {
       </section>
 
       {/* Before vs After */}
-      <section className="section bg-void-light">
+      <section className="section bg-sand">
         <div className="container-custom">
           <ScrollReveal>
             <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block text-center">Transformation</span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wide leading-none">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wide leading-none text-night">
               Before vs. <span className="text-gradient">After</span>
             </h2>
           </ScrollReveal>
@@ -94,16 +94,16 @@ export default function ServicesPageClient() {
           <div className="space-y-8">
             {beforeAfters.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="bg-void border border-void-lighter p-8">
+                <div className="bg-mist border border-sea/15 p-8">
                   <h3 className="font-display text-xl text-gold tracking-wide mb-6">{item.service}</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <span className="text-red-400/70 text-xs tracking-[0.2em] uppercase mb-2 block">Before</span>
-                      <p className="text-gray-400 text-sm leading-relaxed">{item.before}</p>
+                      <p className="text-fog text-sm leading-relaxed">{item.before}</p>
                     </div>
                     <div>
-                      <span className="text-turquoise text-xs tracking-[0.2em] uppercase mb-2 block">After</span>
-                      <p className="text-gray-300 text-sm leading-relaxed">{item.after}</p>
+                      <span className="text-wave text-xs tracking-[0.2em] uppercase mb-2 block">After</span>
+                      <p className="text-night text-sm leading-relaxed">{item.after}</p>
                     </div>
                   </div>
                 </div>
@@ -114,13 +114,13 @@ export default function ServicesPageClient() {
       </section>
 
       {/* CTA */}
-      <section className="section">
+      <section className="section bg-sand">
         <div className="container-custom text-center">
           <ScrollReveal>
-            <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4">
+            <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4 text-night">
               {pageT.ctaTitle}
             </h2>
-            <p className="text-gray-400 mb-8 max-w-xl mx-auto">{pageT.ctaDesc}</p>
+            <p className="text-fog mb-8 max-w-xl mx-auto">{pageT.ctaDesc}</p>
             <Link href="/contact" className="btn-primary">{pageT.ctaButton}</Link>
           </ScrollReveal>
         </div>

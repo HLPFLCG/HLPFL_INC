@@ -38,14 +38,14 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <div className="pt-24 min-h-screen">
+    <div className="pt-24 min-h-screen bg-cream">
       <section className="section">
         <div className="container-custom">
           <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block">Resources</span>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide leading-none mb-6">
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide leading-none mb-6 text-night">
             Blog
           </h1>
-          <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl mb-16">
+          <p className="text-fog text-base md:text-lg leading-relaxed max-w-2xl mb-16">
             Guides and strategies for hospitality operators on Costa Rica&apos;s Caribbean coast.
           </p>
 
@@ -54,13 +54,13 @@ export default function BlogPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="bg-void-light border border-void-lighter p-8 group transition-all duration-300 hover:border-gold/25 hover:-translate-y-1 block"
+                className="bg-mist border border-sea/15 p-8 group transition-all duration-300 hover:border-sea/40 hover:-translate-y-1 block"
               >
-                <h2 className="font-display text-2xl text-white tracking-wide mb-3 group-hover:text-gold transition-colors">
+                <h2 className="font-display text-2xl text-night tracking-wide mb-3 group-hover:text-gold transition-colors">
                   {post.title}
                 </h2>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">{post.desc}</p>
-                <span className="text-gold text-sm tracking-wider">Coming Soon →</span>
+                <p className="text-fog text-sm leading-relaxed mb-4">{post.desc}</p>
+                <span className="text-sea text-sm tracking-wider">Coming Soon →</span>
               </Link>
             ))}
           </div>
