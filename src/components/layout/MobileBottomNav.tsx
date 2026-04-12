@@ -32,7 +32,7 @@ export default function MobileBottomNav() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="mobile-bottom-nav-item text-[#25D366]"
+        className="mobile-bottom-nav-item text-wa"
         aria-label="Chat with HLPFL on WhatsApp"
       >
         <MessageCircle className="w-5 h-5" />
