@@ -1,6 +1,6 @@
 "use client";
 
-import { forwardRef, HTMLAttributes } from "react";
+import { forwardRef } from "react";
 import { motion, HTMLMotionProps } from "framer-motion";
 import { clsx } from "clsx";
 
@@ -14,10 +14,10 @@ interface CardProps extends Omit<HTMLMotionProps<"div">, "ref"> {
 }
 
 const variants = {
-  default: "bg-void-light",
-  bordered: "bg-void-light border border-gold/20",
-  elevated: "bg-void-light shadow-xl shadow-black/50",
-  glass: "bg-void/50 backdrop-blur-lg border border-gold/10",
+  default: "bg-white",
+  bordered: "bg-white border border-gray-100",
+  elevated: "bg-white shadow-lg shadow-black/10",
+  glass: "bg-white/80 backdrop-blur-lg border border-turquoise/10",
 };
 
 const paddings = {
@@ -46,12 +46,12 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
           hover
             ? {
                 y: -4,
-                boxShadow: "0 20px 40px rgba(200, 121, 65, 0.15)",
+                boxShadow: "0 20px 40px rgba(14, 154, 167, 0.12)",
               }
             : undefined
         }
         className={clsx(
-          "rounded-xl transition-all duration-300",
+          "rounded-2xl transition-all duration-300",
           variants[variant],
           paddings[padding],
           hover && "cursor-pointer",

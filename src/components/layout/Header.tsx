@@ -2,22 +2,26 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/blog", label: "Blog" },
-  { href: "/store", label: "Store" },
-  { href: "/contact", label: "Contact" },
-];
+import LanguageToggle from "@/components/common/LanguageToggle";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
+  const nav = t("nav");
+
+  const navLinks = [
+    { href: "/", label: nav.home },
+    { href: "/explore", label: nav.explore },
+    { href: "/stay", label: nav.stay },
+    { href: "/eat-drink", label: nav.eatDrink },
+    { href: "/plan", label: nav.plan },
+    { href: "/list-with-us", label: nav.listWithUs },
+    { href: "/about", label: nav.about },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +32,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, []);
@@ -36,51 +39,62 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass-dark" : "glass"
+        isScrolled ? "glass-dark text-white" : "glass text-dark"
       }`}
     >
       <div className="container-custom">
-        <nav className="flex items-center justify-between h-16">
+        <nav className="flex items-center justify-between h-16" aria-label="Main navigation">
           {/* Logo */}
           <Link
             href="/"
             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            aria-label="Caribe Sur CR — home"
           >
-            <Image src="/logo.svg" alt="HLPFL" width={24} height={36} priority />
-            <span className="font-display text-2xl tracking-wider">
-              HLPFL<span className="text-gold">.</span>
+            <span
+              className={`font-display text-2xl font-bold ${
+                isScrolled ? "text-sandy" : "text-jungle"
+              }`}
+            >
+              Caribe Sur{" "}
+              <span className="text-turquoise">CR</span>
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="nav-link text-sm font-medium tracking-wide uppercase hover:text-gold transition-colors"
+                className={`nav-link text-sm font-medium transition-colors ${
+                  isScrolled
+                    ? "text-white/90 hover:text-turquoise-light"
+                    : "text-dark hover:text-turquoise"
+                }`}
               >
                 {link.label}
               </Link>
             ))}
           </div>
 
-          {/* CTA Button - Desktop */}
-          <div className="hidden md:block">
-            <Link href="/portal" className="btn-primary text-sm">
-              Creative Portal
-            </Link>
-          </div>
+          {/* Language Toggle + Mobile Button */}
+          <div className="flex items-center gap-3">
+            <div className={isScrolled ? "[&_button]:text-white [&_button:not([aria-pressed=true])]:text-white/70 [&_span]:text-white/30" : ""}>
+              <LanguageToggle />
+            </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 hover:text-gold transition-colors"
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isMobileMenuOpen}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className={`lg:hidden p-2 transition-colors ${
+                isScrolled ? "text-white hover:text-turquoise-light" : "text-jungle hover:text-turquoise"
+              }`}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </nav>
       </div>
 
@@ -93,7 +107,7 @@ export default function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/90 backdrop-blur-sm md:hidden z-[55]"
+              className="fixed inset-0 bg-jungle/80 backdrop-blur-sm lg:hidden z-[55]"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
@@ -103,40 +117,37 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 left-0 bottom-0 w-72 bg-[#0a0a0a] border-r border-gold/20 md:hidden z-[60]"
+              className="fixed top-0 left-0 bottom-0 w-72 bg-sandy-light border-r border-jungle/20 lg:hidden z-[60]"
             >
               <div className="flex flex-col h-full">
                 {/* Mobile Menu Header */}
-                <div className="flex items-center justify-between p-4 border-b border-gold/20">
-                  <span className="flex items-center gap-2">
-                    <Image src="/logo.svg" alt="HLPFL" width={20} height={30} />
-                    <span className="font-display text-xl tracking-wider">
-                      HLPFL<span className="text-gold">.</span>
-                    </span>
+                <div className="flex items-center justify-between p-4 border-b border-jungle/20">
+                  <span className="font-display text-xl font-bold text-jungle">
+                    Caribe Sur <span className="text-turquoise">CR</span>
                   </span>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="p-2 hover:text-gold transition-colors"
+                    className="p-2 text-jungle hover:text-turquoise transition-colors"
+                    aria-label="Close menu"
                   >
                     <X size={20} />
                   </button>
                 </div>
 
                 {/* Mobile Nav Links */}
-                <nav className="flex-1 py-6">
+                <nav className="flex-1 py-6" aria-label="Mobile navigation">
                   {navLinks.map((link, index) => (
                     <motion.div
                       key={link.href}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
+                      transition={{ delay: index * 0.05 }}
                     >
                       <Link
                         href={link.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="flex items-center gap-3 px-6 py-3 text-lg hover:text-gold hover:bg-gold/5 transition-all border-l-2 border-transparent hover:border-gold"
+                        className="flex items-center gap-3 px-6 py-3 text-base text-dark hover:text-turquoise hover:bg-turquoise/5 transition-all border-l-2 border-transparent hover:border-turquoise"
                       >
-                        <span className="w-2 h-2 rounded-full border border-gold/50" />
                         {link.label}
                       </Link>
                     </motion.div>
@@ -144,14 +155,8 @@ export default function Header() {
                 </nav>
 
                 {/* Mobile Menu Footer */}
-                <div className="p-6 border-t border-gold/20">
-                  <Link
-                    href="/portal"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="btn-primary w-full text-center block"
-                  >
-                    Creative Portal
-                  </Link>
+                <div className="p-6 border-t border-jungle/20">
+                  <LanguageToggle />
                 </div>
               </div>
             </motion.div>

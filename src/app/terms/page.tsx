@@ -1,280 +1,128 @@
 import type { Metadata } from "next";
-import { ScrollReveal, Card } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
+  title: "Terms of Service | Caribe Sur CR",
   description:
-    "HLPFL INC terms of service. Our commitment to fair, transparent business practices for creative entrepreneurs.",
-  openGraph: {
-    title: "Terms of Service | HLPFL INC",
-    description: "HLPFL INC terms of service.",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "HLPFL INC" }],
+    "Terms of service for Caribe Sur CR — the Caribbean coast of Costa Rica travel guide. Learn about listing guidelines, user responsibilities, and our commitment to the community.",
+  alternates: {
+    canonical: "https://hlpfl.org/terms",
   },
 };
 
 export default function TermsOfServicePage() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="section pt-24 md:pt-32">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <ScrollReveal>
-              <span className="text-gold uppercase tracking-widest text-sm mb-4 block">
-                Legal
-              </span>
-            </ScrollReveal>
-            <ScrollReveal delay={0.1}>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl mb-6">
-                Terms of <span className="text-gradient">Service</span>
-              </h1>
-            </ScrollReveal>
-            <ScrollReveal delay={0.2}>
-              <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
-                Clear, fair terms that reflect our commitment to transparency
-                and creator protection.
-              </p>
-            </ScrollReveal>
+      {/* Header */}
+      <div
+        className="py-20 px-4 text-center text-white"
+        style={{ background: "linear-gradient(135deg, #1B4332 0%, #0E9AA7 100%)" }}
+      >
+        <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
+          Terms of Service
+        </h1>
+        <p className="text-white/70 text-sm">Last updated: April 2025</p>
+      </div>
+
+      {/* Content */}
+      <section className="section bg-sandy-light">
+        <div className="container-custom max-w-3xl">
+          <div className="space-y-8">
+            {[
+              {
+                title: "Acceptance of Terms",
+                content: (
+                  <p className="text-gray-600">
+                    By accessing or using the Caribe Sur CR website, you agree to be bound by these Terms of
+                    Service. If you do not agree to these terms, please do not use the site. We may update these
+                    terms from time to time; continued use constitutes acceptance of any changes.
+                  </p>
+                ),
+              },
+              {
+                title: "Site Purpose",
+                content: (
+                  <p className="text-gray-600">
+                    Caribe Sur CR is a travel guide and business directory for the southern Caribbean coast of
+                    Costa Rica — specifically the corridor from Cahuita to Manzanillo in Limón Province. The site
+                    provides informational content and connects travelers with local tourism and hospitality
+                    businesses.
+                  </p>
+                ),
+              },
+              {
+                title: "Business Listings",
+                content: (
+                  <div className="space-y-3 text-gray-600">
+                    <p>Businesses listed on Caribe Sur CR agree to:</p>
+                    <ul className="list-disc list-inside space-y-2 ml-2">
+                      <li>Provide accurate and truthful information in their listing submission</li>
+                      <li>Operate within the geographic scope of the Cahuita–Manzanillo corridor</li>
+                      <li>Maintain current and up-to-date contact information</li>
+                      <li>Comply with all applicable Costa Rican laws and regulations</li>
+                    </ul>
+                    <p>Caribe Sur CR reserves the right to decline, remove, or modify any listing at its discretion.</p>
+                  </div>
+                ),
+              },
+              {
+                title: "User Responsibilities",
+                content: (
+                  <div className="space-y-3 text-gray-600">
+                    <p>When using Caribe Sur CR, you agree to:</p>
+                    <ul className="list-disc list-inside space-y-2 ml-2">
+                      <li>Use the site for lawful purposes only</li>
+                      <li>Not copy, scrape, or reproduce content without permission</li>
+                      <li>Not submit false or misleading information</li>
+                      <li>Respect the privacy and intellectual property of listed businesses</li>
+                    </ul>
+                  </div>
+                ),
+              },
+              {
+                title: "Disclaimers",
+                content: (
+                  <div className="space-y-3 text-gray-600">
+                    <p>
+                      The information on Caribe Sur CR is provided for general informational purposes only.
+                      While we strive to keep content accurate and up to date, we make no warranties about the
+                      completeness, reliability, or accuracy of information about third-party businesses,
+                      opening hours, prices, or availability.
+                    </p>
+                    <p>
+                      Always verify details directly with service providers before booking or traveling.
+                      Caribe Sur CR is not responsible for any loss, inconvenience, or harm arising from
+                      reliance on information on this site.
+                    </p>
+                  </div>
+                ),
+              },
+              {
+                title: "Governing Law",
+                content: (
+                  <p className="text-gray-600">
+                    These terms are governed by the laws of the Republic of Costa Rica. Any disputes arising
+                    from these terms shall be subject to the jurisdiction of Costa Rican courts.
+                  </p>
+                ),
+              },
+              {
+                title: "Contact",
+                content: (
+                  <p className="text-gray-600">
+                    Questions about these terms? Contact us at{" "}
+                    <a href="mailto:hello@caribesur.cr" className="text-turquoise hover:underline">
+                      hello@caribesur.cr
+                    </a>
+                  </p>
+                ),
+              },
+            ].map(({ title, content }) => (
+              <div key={title} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <h2 className="font-display text-2xl font-bold text-jungle mb-4">{title}</h2>
+                {content}
+              </div>
+            ))}
           </div>
-        </div>
-      </section>
-
-      {/* Terms Content */}
-      <section className="section pt-8">
-        <div className="container-custom max-w-4xl">
-          <ScrollReveal>
-            <p className="text-gray-500 text-sm mb-12 text-center">
-              Last updated: January 2026
-            </p>
-          </ScrollReveal>
-
-          {/* Acceptance of Terms */}
-          <ScrollReveal>
-            <Card variant="bordered" className="mb-8">
-              <h2 className="font-display text-2xl md:text-3xl text-gold mb-4">
-                Acceptance of Terms
-              </h2>
-              <div className="space-y-4 text-gray-400">
-                <p>
-                  By accessing or using the HLPFL INC website and services, you
-                  agree to be bound by these Terms of Service. If you do not
-                  agree to these terms, please do not use our services.
-                </p>
-                <p>
-                  HLPFL INC is a Wyoming 501(c)(3) nonprofit corporation. These
-                  terms govern your use of our website, portal, and all services
-                  we provide. We may update these terms from time to time, and
-                  continued use of our services constitutes acceptance of any
-                  changes.
-                </p>
-              </div>
-            </Card>
-          </ScrollReveal>
-
-          {/* Services Description */}
-          <ScrollReveal>
-            <Card variant="bordered" className="mb-8">
-              <h2 className="font-display text-2xl md:text-3xl text-gold mb-4">
-                Services Description
-              </h2>
-              <div className="space-y-4 text-gray-400">
-                <p>
-                  HLPFL INC provides business support services for creative
-                  entrepreneurs, including but not limited to:
-                </p>
-                <ul className="list-disc list-inside space-y-2 ml-2">
-                  <li>Brand development and visual identity</li>
-                  <li>Business formation and compliance guidance</li>
-                  <li>Sales representation and deal negotiation</li>
-                  <li>Marketing strategy and campaign execution</li>
-                  <li>Content creation and production support</li>
-                  <li>Creator education and rights advocacy</li>
-                </ul>
-                <p>
-                  Specific services are agreed upon during the consultation
-                  process and documented in individual service agreements. We
-                  reserve the right to decline service if we believe we cannot
-                  effectively help a prospective client.
-                </p>
-              </div>
-            </Card>
-          </ScrollReveal>
-
-          {/* Commission Model */}
-          <ScrollReveal>
-            <Card variant="bordered" className="mb-8">
-              <h2 className="font-display text-2xl md:text-3xl text-gold mb-4">
-                Commission Model
-              </h2>
-              <div className="space-y-4 text-gray-400">
-                <p>
-                  HLPFL INC operates on a commission-only model. This means:
-                </p>
-                <ul className="list-disc list-inside space-y-2 ml-2">
-                  <li>
-                    There are no upfront fees, retainers, or deposits required to
-                    begin services
-                  </li>
-                  <li>
-                    Commission rates typically range from 15% to 30% and are
-                    negotiated per project before work begins
-                  </li>
-                  <li>
-                    Commissions are only earned when our work generates revenue
-                    for you
-                  </li>
-                  <li>
-                    All commission structures are documented in writing before
-                    services commence
-                  </li>
-                </ul>
-                <p>
-                  If our efforts do not generate revenue, you owe nothing. Our
-                  success is directly tied to yours.
-                </p>
-              </div>
-            </Card>
-          </ScrollReveal>
-
-          {/* User Responsibilities */}
-          <ScrollReveal>
-            <Card variant="bordered" className="mb-8">
-              <h2 className="font-display text-2xl md:text-3xl text-gold mb-4">
-                User Responsibilities
-              </h2>
-              <div className="space-y-4 text-gray-400">
-                <p>When using our services, you agree to:</p>
-                <ul className="list-disc list-inside space-y-2 ml-2">
-                  <li>
-                    Provide accurate and truthful information in applications and
-                    communications
-                  </li>
-                  <li>
-                    Maintain the confidentiality of any portal account
-                    credentials
-                  </li>
-                  <li>
-                    Respond to communications in a timely manner to facilitate
-                    service delivery
-                  </li>
-                  <li>
-                    Not use our services for any unlawful purpose or in violation
-                    of these terms
-                  </li>
-                  <li>
-                    Honor agreed-upon commission structures and payment timelines
-                  </li>
-                </ul>
-              </div>
-            </Card>
-          </ScrollReveal>
-
-          {/* Intellectual Property */}
-          <ScrollReveal>
-            <Card variant="bordered" className="mb-8">
-              <h2 className="font-display text-2xl md:text-3xl text-gold mb-4">
-                Intellectual Property
-              </h2>
-              <div className="space-y-4 text-gray-400">
-                <p>
-                  <span className="text-white font-medium">
-                    You retain 100% ownership of your intellectual property.
-                  </span>{" "}
-                  This is a core principle of HLPFL INC. Any creative work,
-                  inventions, designs, music, writing, or other intellectual
-                  property you bring to us remains entirely yours.
-                </p>
-                <p>
-                  Materials created by HLPFL INC on your behalf (such as
-                  marketing materials, brand assets, and content) are
-                  transferred to you upon completion unless otherwise specified
-                  in your service agreement.
-                </p>
-                <p>
-                  The HLPFL INC name, logo, and website content are the
-                  property of HLPFL INC and may not be used without written
-                  permission.
-                </p>
-              </div>
-            </Card>
-          </ScrollReveal>
-
-          {/* Limitation of Liability */}
-          <ScrollReveal>
-            <Card variant="bordered" className="mb-8">
-              <h2 className="font-display text-2xl md:text-3xl text-gold mb-4">
-                Limitation of Liability
-              </h2>
-              <div className="space-y-4 text-gray-400">
-                <p>
-                  HLPFL INC provides services on a best-effort basis. While we
-                  are committed to delivering quality work, we cannot guarantee
-                  specific financial outcomes or results.
-                </p>
-                <p>
-                  To the maximum extent permitted by law, HLPFL INC shall not be
-                  liable for any indirect, incidental, special, or consequential
-                  damages arising out of or in connection with our services.
-                </p>
-                <p>
-                  Our total liability for any claim related to our services
-                  shall not exceed the total commissions paid to HLPFL INC by
-                  you in the twelve months preceding the claim.
-                </p>
-              </div>
-            </Card>
-          </ScrollReveal>
-
-          {/* Governing Law */}
-          <ScrollReveal>
-            <Card variant="bordered" className="mb-8">
-              <h2 className="font-display text-2xl md:text-3xl text-gold mb-4">
-                Governing Law
-              </h2>
-              <div className="space-y-4 text-gray-400">
-                <p>
-                  These Terms of Service are governed by and construed in
-                  accordance with the laws of the State of Wyoming, without
-                  regard to its conflict of law provisions.
-                </p>
-                <p>
-                  Any disputes arising from these terms or our services shall be
-                  resolved through good-faith negotiation first. If a resolution
-                  cannot be reached, disputes shall be submitted to binding
-                  arbitration in the State of Wyoming in accordance with
-                  applicable arbitration rules.
-                </p>
-              </div>
-            </Card>
-          </ScrollReveal>
-
-          {/* Contact */}
-          <ScrollReveal>
-            <Card variant="bordered" className="mb-8">
-              <h2 className="font-display text-2xl md:text-3xl text-gold mb-4">
-                Contact
-              </h2>
-              <div className="space-y-4 text-gray-400">
-                <p>
-                  If you have any questions about these Terms of Service, please
-                  contact us:
-                </p>
-                <p>
-                  <span className="text-white font-medium">Email:</span>{" "}
-                  <a
-                    href="mailto:contact@hlpfl.org"
-                    className="text-gold hover:text-gold-light transition-colors"
-                  >
-                    contact@hlpfl.org
-                  </a>
-                </p>
-                <p>
-                  <span className="text-white font-medium">Organization:</span>{" "}
-                  HLPFL INC, a Wyoming 501(c)(3) nonprofit corporation
-                </p>
-              </div>
-            </Card>
-          </ScrollReveal>
         </div>
       </section>
     </div>

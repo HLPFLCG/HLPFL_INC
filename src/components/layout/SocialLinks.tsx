@@ -1,31 +1,26 @@
-"use client";
-
-import { MagneticHover } from "@/components/animations";
-import { Twitter, Instagram, Youtube, Linkedin, Mail } from "lucide-react";
+import { Instagram, Facebook, Youtube, Twitter } from "lucide-react";
 
 const socialLinks = [
-  { icon: Twitter, href: "https://twitter.com/hlpfl", label: "Twitter" },
-  { icon: Instagram, href: "https://instagram.com/hlpfl", label: "Instagram" },
-  { icon: Youtube, href: "https://youtube.com/@hlpfl", label: "YouTube" },
-  { icon: Linkedin, href: "https://linkedin.com/company/hlpfl", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:contact@hlpfl.org", label: "Email" },
+  { icon: Instagram, label: "Instagram", href: "https://instagram.com/caribesur_cr" },
+  { icon: Facebook, label: "Facebook", href: "https://facebook.com/caribesur_cr" },
+  { icon: Twitter, label: "Twitter / X", href: "https://twitter.com/caribesur_cr" },
+  { icon: Youtube, label: "YouTube", href: "https://youtube.com/@caribesur_cr" },
 ];
 
 export default function SocialLinks() {
   return (
-    <div className="flex gap-4 mt-6">
-      {socialLinks.map((social) => (
-        <MagneticHover key={social.label}>
-          <a
-            href={social.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded-full border border-gold/30 hover:border-gold hover:text-gold hover:bg-gold/10 transition-all"
-            aria-label={social.label}
-          >
-            <social.icon size={18} />
-          </a>
-        </MagneticHover>
+    <div className="flex gap-4 mt-6" aria-label="Social media links">
+      {socialLinks.map(({ icon: Icon, label, href }) => (
+        <a
+          key={label}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={label}
+          className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-turquoise hover:text-turquoise transition-colors"
+        >
+          <Icon size={18} />
+        </a>
       ))}
     </div>
   );
