@@ -95,9 +95,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <head>
-        <meta name="theme-color" content="#0a0a0a" />
+        <meta name="theme-color" content="#1A3728" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Nunito:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
         <script
@@ -105,9 +107,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="bg-void text-white font-body antialiased">
+      <body className="bg-cream text-night font-body antialiased">
         <LanguageProvider>
-          <a href="#main-content" className="skip-link">Skip to main content</a>
+          <a href="#main-content" className="skip-link">Saltar al contenido / Skip to content</a>
           <ClientEffects />
           <Header />
           <main id="main-content" className="min-h-screen">{children}</main>
