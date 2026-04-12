@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "HLPFL Privacy Policy",
+  description: "HLPFL Privacy Policy — hospitality and tourism businesses in Limón Province, Costa Rica.",
+  alternates: { canonical: "https://hlpfl.org/privacy/" },
 };
 
 export default function PrivacyPage() {
@@ -16,16 +17,24 @@ export default function PrivacyPage() {
 
           <div className="prose prose-invert prose-gold max-w-none text-gray-400 space-y-8">
             <div>
+              <h2 className="font-display text-2xl text-white tracking-wide mb-3">Scope</h2>
+              <p>This privacy policy applies to HLPFL and the services we provide to hospitality and tourism businesses in Limón Province, Costa Rica — specifically the Cahuita → Puerto Viejo → Manzanillo corridor.</p>
+            </div>
+            <div>
               <h2 className="font-display text-2xl text-white tracking-wide mb-3">Information We Collect</h2>
-              <p>We collect information you provide directly to us, such as when you fill out our contact form: your business name, business type, location, biggest challenge, monthly revenue range, and preferred contact method.</p>
+              <p>We collect information you provide directly to us, such as when you fill out our contact form: your business name, your name, business type, location, biggest challenge, monthly revenue range, preferred contact method, WhatsApp number, and email address.</p>
             </div>
             <div>
               <h2 className="font-display text-2xl text-white tracking-wide mb-3">How We Use Your Information</h2>
               <p>We use the information we collect to respond to your inquiry, provide consulting services, and communicate with you about HLPFL services. We do not sell or share your information with third parties for marketing purposes.</p>
             </div>
             <div>
+              <h2 className="font-display text-2xl text-white tracking-wide mb-3">Legal Basis &amp; Compliance</h2>
+              <p>We process personal data in compliance with Costa Rican Law 8968 (Ley de Protección de la Persona frente al tratamiento de sus datos personales) and the EU General Data Protection Regulation (GDPR) where applicable to European travelers and business operators. You have the right to access, correct, or delete your personal data at any time by contacting us.</p>
+            </div>
+            <div>
               <h2 className="font-display text-2xl text-white tracking-wide mb-3">Cookies</h2>
-              <p>We use a minimal number of cookies to improve your experience on our site. You can control cookie settings through your browser. We use analytics cookies to understand how visitors use our site.</p>
+              <p>We use a minimal number of cookies to improve your experience on our site. You can control cookie settings through your browser or through our cookie consent banner. We use analytics cookies to understand how visitors use our site.</p>
             </div>
             <div>
               <h2 className="font-display text-2xl text-white tracking-wide mb-3">Contact</h2>

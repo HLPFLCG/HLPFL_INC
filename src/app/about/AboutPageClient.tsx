@@ -25,8 +25,18 @@ export default function AboutPageClient() {
         </div>
       </section>
 
-      {/* Mission */}
+      {/* Story */}
       <section className="section bg-void-light">
+        <div className="max-w-[800px] mx-auto px-4">
+          <ScrollReveal>
+            <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block">{about.storyTitle}</span>
+            <p className="text-gray-300 text-base md:text-lg leading-relaxed">{about.storyDesc}</p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Mission */}
+      <section className="section">
         <div className="max-w-[800px] mx-auto px-4">
           <ScrollReveal>
             <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block">{about.missionTitle}</span>
@@ -36,7 +46,7 @@ export default function AboutPageClient() {
       </section>
 
       {/* Values */}
-      <section className="section">
+      <section className="section bg-void-light">
         <div className="max-w-[900px] mx-auto px-4">
           <ScrollReveal>
             <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-16">{about.valuesTitle}</h2>
@@ -56,7 +66,7 @@ export default function AboutPageClient() {
       </section>
 
       {/* CTA */}
-      <section className="section bg-void-light">
+      <section className="section">
         <div className="container-custom text-center">
           <ScrollReveal>
             <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4">
@@ -65,7 +75,10 @@ export default function AboutPageClient() {
             <p className="text-gray-400 mb-8 max-w-xl mx-auto">
               Tell us about your operation. No pitch, no pressure — just a conversation about where you are and where you want to be.
             </p>
-            <Link href="/contact" className="btn-primary">Get in Touch</Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="btn-primary">Get in Touch</Link>
+              <Link href="/services" className="btn-ghost">View Services</Link>
+            </div>
           </ScrollReveal>
         </div>
       </section>

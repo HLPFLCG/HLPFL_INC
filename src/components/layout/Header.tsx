@@ -17,6 +17,7 @@ export default function Header() {
     { href: "/", label: nav.home },
     { href: "/services", label: nav.services },
     { href: "/about", label: nav.about },
+    { href: "/faq", label: nav.faq },
     { href: "/contact", label: nav.contact },
   ];
 

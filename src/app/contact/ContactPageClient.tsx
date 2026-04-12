@@ -4,8 +4,9 @@ import { useState } from "react";
 import { ScrollReveal } from "@/components/ui";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { MessageCircle } from "lucide-react";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
-const WHATSAPP_NUMBER = "50688888888"; // placeholder — replace with real number
+const WHATSAPP_CONTACT_METHOD = "whatsapp";
 
 export default function ContactPageClient() {
   const { t } = useLanguage();
@@ -15,11 +16,14 @@ export default function ContactPageClient() {
 
   const [form, setForm] = useState({
     businessName: "",
+    yourName: "",
     businessType: "",
     location: "",
     challenge: "",
     revenue: "",
     contactMethod: "",
+    whatsappNumber: "",
+    email: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -28,7 +32,7 @@ export default function ContactPageClient() {
     setSubmitted(true);
   };
 
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi HLPFL, I'd like to discuss my hospitality business on the Caribbean coast.")}`;
+  const whatsappUrl = getWhatsAppUrl();
 
   return (
     <div className="pt-24 min-h-screen">
@@ -76,30 +80,34 @@ export default function ContactPageClient() {
                   <h2 className="font-display text-3xl tracking-wide mb-8">{contact.formTitle}</h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                      <label className="form-label">{labels.businessName}</label>
-                      <input type="text" className="form-input" placeholder="e.g. Cabinas Mar Azul" value={form.businessName} onChange={(e) => setForm({ ...form, businessName: e.target.value })} required />
+                      <label htmlFor="contact-business-name" className="form-label">{labels.businessName}</label>
+                      <input id="contact-business-name" type="text" className="form-input" placeholder="e.g. Cabinas Mar Azul" value={form.businessName} onChange={(e) => setForm({ ...form, businessName: e.target.value })} required />
                     </div>
                     <div>
-                      <label className="form-label">{labels.businessType}</label>
-                      <select className="form-input" value={form.businessType} onChange={(e) => setForm({ ...form, businessType: e.target.value })} required>
+                      <label htmlFor="contact-your-name" className="form-label">{labels.yourName}</label>
+                      <input id="contact-your-name" type="text" className="form-input" placeholder="e.g. María López" value={form.yourName} onChange={(e) => setForm({ ...form, yourName: e.target.value })} required />
+                    </div>
+                    <div>
+                      <label htmlFor="contact-business-type" className="form-label">{labels.businessType}</label>
+                      <select id="contact-business-type" className="form-input" value={form.businessType} onChange={(e) => setForm({ ...form, businessType: e.target.value })} required>
                         <option value="">Select type...</option>
                         {home.ctaBusinessTypes.map((type) => (<option key={type} value={type}>{type}</option>))}
                       </select>
                     </div>
                     <div>
-                      <label className="form-label">{labels.location}</label>
-                      <select className="form-input" value={form.location} onChange={(e) => setForm({ ...form, location: e.target.value })} required>
+                      <label htmlFor="contact-location" className="form-label">{labels.location}</label>
+                      <select id="contact-location" className="form-input" value={form.location} onChange={(e) => setForm({ ...form, location: e.target.value })} required>
                         <option value="">Select location...</option>
                         {home.ctaLocations.map((loc) => (<option key={loc} value={loc}>{loc}</option>))}
                       </select>
                     </div>
                     <div>
-                      <label className="form-label">{labels.challenge}</label>
-                      <textarea className="form-input min-h-[100px] resize-none" placeholder="What's the biggest thing holding your operation back right now?" value={form.challenge} onChange={(e) => setForm({ ...form, challenge: e.target.value })} required />
+                      <label htmlFor="contact-challenge" className="form-label">{labels.challenge}</label>
+                      <textarea id="contact-challenge" className="form-input min-h-[100px] resize-none" placeholder="e.g., empty rooms in low season, no booking system, scattered reviews..." value={form.challenge} onChange={(e) => setForm({ ...form, challenge: e.target.value })} required />
                     </div>
                     <div>
-                      <label className="form-label">{labels.revenue}</label>
-                      <select className="form-input" value={form.revenue} onChange={(e) => setForm({ ...form, revenue: e.target.value })}>
+                      <label htmlFor="contact-revenue" className="form-label">{labels.revenue}</label>
+                      <select id="contact-revenue" className="form-input" value={form.revenue} onChange={(e) => setForm({ ...form, revenue: e.target.value })}>
                         <option value="">Prefer not to say</option>
                         {home.ctaRevenues.map((r) => (<option key={r} value={r}>{r}</option>))}
                       </select>
@@ -115,7 +123,21 @@ export default function ContactPageClient() {
                         ))}
                       </div>
                     </div>
+                    {form.contactMethod.toLowerCase().includes(WHATSAPP_CONTACT_METHOD) && (
+                      <div>
+                        <label htmlFor="contact-whatsapp" className="form-label">{labels.whatsappNumber}</label>
+                        <input id="contact-whatsapp" type="tel" className="form-input" placeholder="+506 8888 8888" value={form.whatsappNumber} onChange={(e) => setForm({ ...form, whatsappNumber: e.target.value })} />
+                      </div>
+                    )}
+                    <div>
+                      <label htmlFor="contact-email" className="form-label">{labels.email}</label>
+                      <input id="contact-email" type="email" className="form-input" placeholder="you@yourbusiness.com" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required />
+                    </div>
                     <button type="submit" className="btn-primary w-full">{labels.submit}</button>
+                    <div className="text-center space-y-1 pt-2">
+                      <p className="text-gray-500 text-xs">{home.ctaLowPressure}</p>
+                      <p className="text-gray-500 text-xs">{home.ctaResponse}</p>
+                    </div>
                   </form>
                 </ScrollReveal>
               )}

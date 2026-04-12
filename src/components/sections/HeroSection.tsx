@@ -72,8 +72,11 @@ export default function HeroSection() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.3}>
-          <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+          <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-4">
             {home.heroSubhead}
+          </p>
+          <p className="text-turquoise text-sm tracking-wider mb-10">
+            {home.heroCredibility}
           </p>
         </ScrollReveal>
 

@@ -4,8 +4,9 @@ import { useState } from "react";
 import { ScrollReveal } from "@/components/ui";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { MessageCircle } from "lucide-react";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
-const WHATSAPP_NUMBER = "50688888888"; // placeholder — replace with real number
+const WHATSAPP_CONTACT_METHOD = "whatsapp";
 
 export default function CTASection() {
   const { t } = useLanguage();
@@ -14,11 +15,14 @@ export default function CTASection() {
 
   const [form, setForm] = useState({
     businessName: "",
+    yourName: "",
     businessType: "",
     location: "",
     challenge: "",
     revenue: "",
     contactMethod: "",
+    whatsappNumber: "",
+    email: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -27,7 +31,7 @@ export default function CTASection() {
     setSubmitted(true);
   };
 
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi HLPFL, I'd like to discuss my hospitality business on the Caribbean coast.")}`;
+  const whatsappUrl = getWhatsAppUrl();
 
   if (submitted) {
     return (
@@ -56,7 +60,8 @@ export default function CTASection() {
             {home.ctaTitle}{" "}
             <span className="text-gradient">{home.ctaTitleAccent}</span>
           </h2>
-          <p className="text-gray-400 text-base leading-relaxed mb-10">{home.ctaSubtitle}</p>
+          <p className="text-gray-400 text-base leading-relaxed mb-4">{home.ctaSubtitle}</p>
+          <p className="text-turquoise text-sm mb-10">{home.offSeasonBanner}</p>
         </ScrollReveal>
 
         {/* WhatsApp shortcut */}
@@ -73,8 +78,9 @@ export default function CTASection() {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Business Name */}
             <div>
-              <label className="form-label">{labels.businessName}</label>
+              <label htmlFor="cta-business-name" className="form-label">{labels.businessName}</label>
               <input
+                id="cta-business-name"
                 type="text"
                 className="form-input"
                 placeholder="e.g. Cabinas Mar Azul"
@@ -84,10 +90,25 @@ export default function CTASection() {
               />
             </div>
 
+            {/* Your Name */}
+            <div>
+              <label htmlFor="cta-your-name" className="form-label">{labels.yourName}</label>
+              <input
+                id="cta-your-name"
+                type="text"
+                className="form-input"
+                placeholder="e.g. María López"
+                value={form.yourName}
+                onChange={(e) => setForm({ ...form, yourName: e.target.value })}
+                required
+              />
+            </div>
+
             {/* Business Type */}
             <div>
-              <label className="form-label">{labels.businessType}</label>
+              <label htmlFor="cta-business-type" className="form-label">{labels.businessType}</label>
               <select
+                id="cta-business-type"
                 className="form-input"
                 value={form.businessType}
                 onChange={(e) => setForm({ ...form, businessType: e.target.value })}
@@ -102,8 +123,9 @@ export default function CTASection() {
 
             {/* Location */}
             <div>
-              <label className="form-label">{labels.location}</label>
+              <label htmlFor="cta-location" className="form-label">{labels.location}</label>
               <select
+                id="cta-location"
                 className="form-input"
                 value={form.location}
                 onChange={(e) => setForm({ ...form, location: e.target.value })}
@@ -118,10 +140,11 @@ export default function CTASection() {
 
             {/* Challenge */}
             <div>
-              <label className="form-label">{labels.challenge}</label>
+              <label htmlFor="cta-challenge" className="form-label">{labels.challenge}</label>
               <textarea
+                id="cta-challenge"
                 className="form-input min-h-[100px] resize-none"
-                placeholder="e.g. We get walk-in guests but no online bookings. Our photos are terrible and we have no website..."
+                placeholder="e.g., empty rooms in low season, no booking system, scattered reviews..."
                 value={form.challenge}
                 onChange={(e) => setForm({ ...form, challenge: e.target.value })}
                 required
@@ -130,8 +153,9 @@ export default function CTASection() {
 
             {/* Revenue Range (optional) */}
             <div>
-              <label className="form-label">{labels.revenue}</label>
+              <label htmlFor="cta-revenue" className="form-label">{labels.revenue}</label>
               <select
+                id="cta-revenue"
                 className="form-input"
                 value={form.revenue}
                 onChange={(e) => setForm({ ...form, revenue: e.target.value })}
@@ -146,7 +170,7 @@ export default function CTASection() {
             {/* Contact Method */}
             <div>
               <label className="form-label">{labels.contactMethod}</label>
-              <div className="flex gap-3">
+              <div className="flex gap-3 flex-wrap">
                 {home.ctaContactMethods.map((method) => (
                   <button
                     key={method}
@@ -164,9 +188,44 @@ export default function CTASection() {
               </div>
             </div>
 
+            {/* WhatsApp Number — conditionally shown */}
+            {form.contactMethod.toLowerCase().includes(WHATSAPP_CONTACT_METHOD) && (
+              <div>
+                <label htmlFor="cta-whatsapp" className="form-label">{labels.whatsappNumber}</label>
+                <input
+                  id="cta-whatsapp"
+                  type="tel"
+                  className="form-input"
+                  placeholder="+506 8888 8888"
+                  value={form.whatsappNumber}
+                  onChange={(e) => setForm({ ...form, whatsappNumber: e.target.value })}
+                />
+              </div>
+            )}
+
+            {/* Email Address */}
+            <div>
+              <label htmlFor="cta-email" className="form-label">{labels.email}</label>
+              <input
+                id="cta-email"
+                type="email"
+                className="form-input"
+                placeholder="you@yourbusiness.com"
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                required
+              />
+            </div>
+
             <button type="submit" className="btn-primary w-full">
               {labels.submit}
             </button>
+
+            {/* Low-pressure copy */}
+            <div className="text-center space-y-1 pt-2">
+              <p className="text-gray-500 text-xs">{home.ctaLowPressure}</p>
+              <p className="text-gray-500 text-xs">{home.ctaResponse}</p>
+            </div>
           </form>
         </ScrollReveal>
       </div>

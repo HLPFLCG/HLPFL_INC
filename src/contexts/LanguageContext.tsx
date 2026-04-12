@@ -5,6 +5,7 @@ import React, {
   useContext,
   useState,
   useCallback,
+  useEffect,
   type ReactNode,
 } from "react";
 import { translations, type Lang } from "@/lib/translations";
@@ -22,8 +23,17 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("en");
 
+  useEffect(() => {
+    const stored = localStorage.getItem("hlpfl-lang");
+    if (stored === "en" || stored === "es") {
+      setLangState(stored);
+    }
+  }, []);
+
   const setLang = useCallback((newLang: Lang) => {
     setLangState(newLang);
+    localStorage.setItem("hlpfl-lang", newLang);
+    document.documentElement.lang = newLang;
   }, []);
 
   const t = useCallback(
