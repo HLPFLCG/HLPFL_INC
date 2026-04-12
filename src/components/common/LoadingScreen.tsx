@@ -7,7 +7,7 @@ export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const hasSeenLoading = sessionStorage.getItem("caribesur_loading_seen");
+    const hasSeenLoading = sessionStorage.getItem("hlpfl_loading_seen");
     if (hasSeenLoading) {
       setIsLoading(false);
       return;
@@ -15,7 +15,7 @@ export default function LoadingScreen() {
 
     const timer = setTimeout(() => {
       setIsLoading(false);
-      sessionStorage.setItem("caribesur_loading_seen", "true");
+      sessionStorage.setItem("hlpfl_loading_seen", "true");
     }, 1000);
 
     return () => clearTimeout(timer);
@@ -29,8 +29,8 @@ export default function LoadingScreen() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
           className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
-          style={{ background: "#1B4332" }}
-          aria-label="Loading Caribe Sur CR"
+          style={{ background: "#0a0a0a" }}
+          aria-label="Loading HLPFL"
           aria-live="polite"
         >
           <div className="flex flex-col items-center gap-4">
@@ -38,10 +38,9 @@ export default function LoadingScreen() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="font-display text-4xl font-bold text-sandy"
+              className="font-display text-4xl font-bold tracking-widest text-white"
             >
-              Caribe Sur{" "}
-              <span style={{ color: "#0E9AA7" }}>CR</span>
+              HLPFL<span className="inline-block w-2 h-2 rounded-full bg-gold ml-1" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0 }}
@@ -49,7 +48,7 @@ export default function LoadingScreen() {
               transition={{ delay: 0.3 }}
               className="text-white/60 text-sm"
             >
-              Caribbean Coast of Costa Rica
+              Chaos → Clarity
             </motion.div>
           </div>
         </motion.div>

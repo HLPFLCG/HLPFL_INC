@@ -1,10 +1,10 @@
 import { Instagram, Facebook, Youtube, Twitter } from "lucide-react";
 
 const socialLinks = [
-  { icon: Instagram, label: "Instagram", href: "https://instagram.com/caribesur_cr" },
-  { icon: Facebook, label: "Facebook", href: "https://facebook.com/caribesur_cr" },
-  { icon: Twitter, label: "Twitter / X", href: "https://twitter.com/caribesur_cr" },
-  { icon: Youtube, label: "YouTube", href: "https://youtube.com/@caribesur_cr" },
+  { icon: Instagram, label: "Instagram", href: "https://instagram.com/hlpfl" },
+  { icon: Facebook, label: "Facebook", href: "https://facebook.com/hlpfl" },
+  { icon: Twitter, label: "Twitter / X", href: "https://twitter.com/hlpfl" },
+  { icon: Youtube, label: "YouTube", href: "https://youtube.com/@hlpfl" },
 ];
 
 export default function SocialLinks() {

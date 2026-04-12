@@ -7,6 +7,7 @@ export const translations = {
       home: "Home",
       services: "Services",
       about: "About",
+      faq: "FAQ",
       contact: "Contact",
       getStarted: "Get Started",
     },
@@ -28,9 +29,25 @@ export const translations = {
       heroHeadline: "Your Caribbean Coast Business.",
       heroChaos: "Chaos → Clarity.",
       heroSubhead:
-        "HLPFL helps hotels, lodges, restaurants, and tour operators between Cahuita and Manzanillo build the systems, brand, and digital presence that turn a beautiful operation into a fully booked one.",
+        "HLPFL helps hotels, lodges, restaurants, and tour operators between Cahuita and Manzanillo turn beautiful operations into consistently booked ones — with systems, branding, and digital infrastructure built for how this region actually works.",
+      heroCredibility: "Built exclusively for Costa Rica's Caribbean coast operators.",
       heroCta1: "Get Started",
       heroCta2: "See What We Do",
+
+      // Off-season banner
+      offSeasonBanner: "Low season coming? Let's build your fill-the-calendar plan before it hits.",
+
+      // Pain section
+      painOverline: "Sound Familiar?",
+      painTitle: "Does This Sound",
+      painTitleAccent: "Like You?",
+      painPoints: [
+        "High season is chaos. Low season is silence.",
+        "Your WhatsApp is your booking system. It shouldn't be.",
+        "Beautiful operation, terrible photos, zero social presence.",
+        "You're competing against large resorts and OTAs with a fraction of the budget.",
+        "Solo-operator burnout — no team, no process, no time.",
+      ],
 
       // Trust Bar
       trustStat1: "9",
@@ -87,6 +104,37 @@ export const translations = {
       servicesSubtitle:
         "Nine core services, every one reengineered for hospitality and tourism operators on Costa Rica's Caribbean coast.",
 
+      // Results / Metrics
+      resultsOverline: "Real Results",
+      resultsTitle: "Numbers That",
+      resultsTitleAccent: "Matter",
+      resultsMetrics: [
+        { stat: "+40%", desc: "Increased direct bookings in low season" },
+        { stat: "5%", desc: "Average OTA commission — down from 18%" },
+        { stat: "10+", desc: "Hours saved per week on manual reservation management" },
+        { stat: "12→87", desc: "Google Reviews growth in six months" },
+        { stat: "+$35", desc: "Higher average nightly rate without lowering occupancy" },
+      ],
+
+      // Competitor Differentiation
+      competitorOverline: "The Difference",
+      competitorTitle: "Why",
+      competitorTitleAccent: "HLPFL?",
+      competitorItems: [
+        {
+          vs: "vs. Generic Agencies",
+          desc: "They build pretty websites. We build booking engines that work in low-connectivity zones.",
+        },
+        {
+          vs: "vs. OTAs",
+          desc: "They take 15–20% per booking. We help you own your guest relationship directly.",
+        },
+        {
+          vs: "vs. Local Freelancers",
+          desc: "We don't just design a logo. We integrate OTA listings, legal setup, and staff training.",
+        },
+      ],
+
       // About
       aboutOverline: "Why Us",
       aboutTitle: "Built for the",
@@ -139,26 +187,30 @@ export const translations = {
 
       // CTA
       ctaOverline: "Get Started",
-      ctaTitle: "Tell Us About Your",
-      ctaTitleAccent: "Operation",
+      ctaTitle: "Get Clarity on",
+      ctaTitleAccent: "Your Operation",
       ctaSubtitle:
         "Fill in the form below and we'll reach out within 24 hours. Or just WhatsApp us directly — this region runs on WhatsApp.",
       ctaFormLabels: {
         businessName: "Business Name",
+        yourName: "Your Name",
         businessType: "Business Type",
         location: "Location in the Corridor",
         challenge: "Biggest Challenge Right Now",
         revenue: "Monthly Revenue Range (optional)",
         contactMethod: "Preferred Contact Method",
+        whatsappNumber: "WhatsApp Number",
+        email: "Email Address",
         submit: "Send Inquiry",
         whatsapp: "WhatsApp Us Instead",
       },
       ctaBusinessTypes: [
-        "Hotel / Eco-Lodge",
-        "B&B / Vacation Rental",
+        "Hotel / Lodge",
         "Restaurant / Soda",
         "Tour Operator",
         "Surf / Yoga / Wellness",
+        "Vacation Rental",
+        "Artisan / Agritourism",
         "Other",
       ],
       ctaLocations: [
@@ -166,17 +218,19 @@ export const translations = {
         "Puerto Viejo de Talamanca",
         "Playa Cocles / Playa Negra",
         "Punta Uva",
-        "Manzanillo",
+        "Manzanillo / Gandoca",
         "Other",
       ],
       ctaRevenues: [
-        "Under $3,000 / month",
-        "$3,000 – $10,000 / month",
-        "$10,000 – $30,000 / month",
-        "Over $30,000 / month",
+        "Under $5,000",
+        "$5,000 – $15,000",
+        "$15,000 – $30,000",
+        "$30,000+",
         "Prefer not to say",
       ],
-      ctaContactMethods: ["WhatsApp", "Email", "Video Call"],
+      ctaContactMethods: ["WhatsApp (fastest)", "Email", "Video Call"],
+      ctaLowPressure: "No long-term contracts. Built for small teams. Works even with limited internet.",
+      ctaResponse: "We respond within 24 hours — usually much faster on WhatsApp.",
       ctaSuccessTitle: "Message Received",
       ctaSuccessDesc:
         "We'll be in touch within 24 hours. If you'd rather talk now, hit the WhatsApp button.",
@@ -196,6 +250,9 @@ export const translations = {
     about: {
       pageTitle: "About HLPFL",
       pageSubtitle: "We exist to help Caribbean coast hospitality operators grow their businesses — with the same level of professional infrastructure the big resorts have, without the big resort budget.",
+      storyTitle: "Our Story",
+      storyDesc:
+        "We saw too many incredible lodges and tour operators on the Caribbean coast losing money because they had no systems — only chaos. So we pivoted to serve this region exclusively. We know the seasonal swings, the ICT paperwork, the WhatsApp culture, and the road conditions. We work here.",
       missionTitle: "Our Mission",
       missionDesc:
         "The Caribbean coast of Costa Rica is one of the most biodiverse, culturally rich, and naturally beautiful destinations in the Americas. The small lodges, family restaurants, independent tour guides, and surf schools that make this corridor special are competing against international booking platforms and large resort chains with a fraction of the resources. HLPFL closes that gap.",
@@ -208,11 +265,39 @@ export const translations = {
       ],
     },
 
+    // FAQ page
+    faq: {
+      pageTitle: "Frequently Asked Questions",
+      pageSubtitle: "Common questions from operators in the Cahuita–Manzanillo corridor.",
+      items: [
+        {
+          q: "Do you only work with businesses in the Cahuita–Manzanillo corridor?",
+          a: "Yes. We live and work here. If you're outside that area, we'll refer you elsewhere.",
+        },
+        {
+          q: "How is this different from hiring a local social media manager?",
+          a: "A social media manager posts photos. We build the underlying systems — booking, OTA integration, pricing, legal, staff training. Instagram is the tip of the iceberg.",
+        },
+        {
+          q: "My property is already on Booking.com. Why do I need you?",
+          a: "Booking.com brings guests but you pay 15%+ and own none of the relationship. We help you capture direct bookings — higher margin, repeat guests, and control over your brand.",
+        },
+        {
+          q: "How long until I see results?",
+          a: "Booking system: 2–3 weeks. First campaigns: live in 10 days. Most clients see more direct inquiries within the first month. Full operational systems: 2–4 months.",
+        },
+        {
+          q: "Do you speak Spanish?",
+          a: "Our team is bilingual. The site is professionally translated. We work with local legal and accounting partners who know Costa Rican tourism law.",
+        },
+      ],
+    },
+
     // Contact page
     contact: {
       pageTitle: "Contact HLPFL",
       pageSubtitle: "Fill in the form or send us a WhatsApp. We respond within 24 hours.",
-      formTitle: "Tell Us About Your Operation",
+      formTitle: "Get Clarity on Your Operation",
       whatsappTitle: "Prefer WhatsApp?",
       whatsappDesc: "Most of our corridor clients reach us this way. Send a message anytime.",
       whatsappButton: "Open WhatsApp Chat",
@@ -241,6 +326,7 @@ export const translations = {
       home: "Inicio",
       services: "Servicios",
       about: "Nosotros",
+      faq: "Preguntas",
       contact: "Contacto",
       getStarted: "Comenzar",
     },
@@ -257,9 +343,23 @@ export const translations = {
       heroHeadline: "Tu Negocio en la Costa Caribe.",
       heroChaos: "Caos → Claridad.",
       heroSubhead:
-        "HLPFL ayuda a hoteles, lodges, restaurantes y operadores de tours entre Cahuita y Manzanillo a construir los sistemas, la marca y la presencia digital que convierten una operación hermosa en una completamente reservada.",
+        "HLPFL ayuda a hoteles, lodges, restaurantes y operadores de tours entre Cahuita y Manzanillo a convertir operaciones hermosas en consistentemente reservadas — con sistemas, marca e infraestructura digital construida para cómo esta región realmente funciona.",
+      heroCredibility: "[TRANSLATE] Built exclusively for Costa Rica's Caribbean coast operators.",
       heroCta1: "Comenzar",
       heroCta2: "Ver Servicios",
+      offSeasonBanner: "[TRANSLATE] Low season coming? Let's build your fill-the-calendar plan before it hits.",
+
+      painOverline: "[TRANSLATE] Sound Familiar?",
+      painTitle: "[TRANSLATE] Does This Sound",
+      painTitleAccent: "[TRANSLATE] Like You?",
+      painPoints: [
+        "[TRANSLATE] High season is chaos. Low season is silence.",
+        "[TRANSLATE] Your WhatsApp is your booking system. It shouldn't be.",
+        "[TRANSLATE] Beautiful operation, terrible photos, zero social presence.",
+        "[TRANSLATE] You're competing against large resorts and OTAs with a fraction of the budget.",
+        "[TRANSLATE] Solo-operator burnout — no team, no process, no time.",
+      ],
+
       trustStat1: "9",
       trustLabel1: "Servicios Clave",
       trustSub1: "Integral",
@@ -307,6 +407,36 @@ export const translations = {
       servicesTitleAccent: "Construimos",
       servicesSubtitle:
         "Nueve servicios principales, todos rediseñados para operadores de hospitalidad y turismo en la costa Caribe de Costa Rica.",
+
+      resultsOverline: "[TRANSLATE] Real Results",
+      resultsTitle: "[TRANSLATE] Numbers That",
+      resultsTitleAccent: "[TRANSLATE] Matter",
+      resultsMetrics: [
+        { stat: "+40%", desc: "[TRANSLATE] Increased direct bookings in low season" },
+        { stat: "5%", desc: "[TRANSLATE] Average OTA commission — down from 18%" },
+        { stat: "10+", desc: "[TRANSLATE] Hours saved per week on manual reservation management" },
+        { stat: "12→87", desc: "[TRANSLATE] Google Reviews growth in six months" },
+        { stat: "+$35", desc: "[TRANSLATE] Higher average nightly rate without lowering occupancy" },
+      ],
+
+      competitorOverline: "[TRANSLATE] The Difference",
+      competitorTitle: "[TRANSLATE] Why",
+      competitorTitleAccent: "HLPFL?",
+      competitorItems: [
+        {
+          vs: "[TRANSLATE] vs. Generic Agencies",
+          desc: "[TRANSLATE] They build pretty websites. We build booking engines that work in low-connectivity zones.",
+        },
+        {
+          vs: "[TRANSLATE] vs. OTAs",
+          desc: "[TRANSLATE] They take 15–20% per booking. We help you own your guest relationship directly.",
+        },
+        {
+          vs: "[TRANSLATE] vs. Local Freelancers",
+          desc: "[TRANSLATE] We don't just design a logo. We integrate OTA listings, legal setup, and staff training.",
+        },
+      ],
+
       aboutOverline: "¿Por Qué Nosotros?",
       aboutTitle: "Construidos para la",
       aboutTitleAccent: "Costa Caribe.",
@@ -354,26 +484,30 @@ export const translations = {
         },
       ],
       ctaOverline: "Comenzar",
-      ctaTitle: "Cuéntanos sobre tu",
-      ctaTitleAccent: "Operación",
+      ctaTitle: "[TRANSLATE] Get Clarity on",
+      ctaTitleAccent: "[TRANSLATE] Your Operation",
       ctaSubtitle:
         "Completa el formulario y te contactaremos en 24 horas. O simplemente escríbenos por WhatsApp — esta región funciona en WhatsApp.",
       ctaFormLabels: {
         businessName: "Nombre del Negocio",
+        yourName: "[TRANSLATE] Your Name",
         businessType: "Tipo de Negocio",
         location: "Ubicación en el Corredor",
         challenge: "Mayor Desafío Actual",
         revenue: "Rango de Ingresos Mensuales (opcional)",
         contactMethod: "Método de Contacto Preferido",
+        whatsappNumber: "[TRANSLATE] WhatsApp Number",
+        email: "[TRANSLATE] Email Address",
         submit: "Enviar Consulta",
         whatsapp: "Escribirnos por WhatsApp",
       },
       ctaBusinessTypes: [
-        "Hotel / Eco-Lodge",
-        "B&B / Alquiler Vacacional",
+        "Hotel / Lodge",
         "Restaurante / Soda",
         "Operador de Tours",
         "Surf / Yoga / Bienestar",
+        "Alquiler Vacacional",
+        "[TRANSLATE] Artisan / Agritourism",
         "Otro",
       ],
       ctaLocations: [
@@ -381,17 +515,19 @@ export const translations = {
         "Puerto Viejo de Talamanca",
         "Playa Cocles / Playa Negra",
         "Punta Uva",
-        "Manzanillo",
+        "Manzanillo / Gandoca",
         "Otro",
       ],
       ctaRevenues: [
-        "Menos de $3,000 / mes",
-        "$3,000 – $10,000 / mes",
-        "$10,000 – $30,000 / mes",
-        "Más de $30,000 / mes",
+        "[TRANSLATE] Under $5,000",
+        "$5,000 – $15,000",
+        "$15,000 – $30,000",
+        "$30,000+",
         "Prefiero no decir",
       ],
       ctaContactMethods: ["WhatsApp", "Correo Electrónico", "Videollamada"],
+      ctaLowPressure: "[TRANSLATE] No long-term contracts. Built for small teams. Works even with limited internet.",
+      ctaResponse: "[TRANSLATE] We respond within 24 hours — usually much faster on WhatsApp.",
       ctaSuccessTitle: "Mensaje Recibido",
       ctaSuccessDesc:
         "Nos comunicaremos en 24 horas. Si prefiere hablar ahora, presione el botón de WhatsApp.",
@@ -407,6 +543,9 @@ export const translations = {
     about: {
       pageTitle: "Acerca de HLPFL",
       pageSubtitle: "Existimos para ayudar a los operadores de hospitalidad de la costa Caribe a hacer crecer sus negocios.",
+      storyTitle: "[TRANSLATE] Our Story",
+      storyDesc:
+        "[TRANSLATE] We saw too many incredible lodges and tour operators on the Caribbean coast losing money because they had no systems — only chaos. So we pivoted to serve this region exclusively. We know the seasonal swings, the ICT paperwork, the WhatsApp culture, and the road conditions. We work here.",
       missionTitle: "Nuestra Misión",
       missionDesc:
         "La costa Caribe de Costa Rica es uno de los destinos más biodiversos, culturalmente ricos y naturalmente hermosos de las Américas. Los pequeños lodges, restaurantes familiares, guías independientes y escuelas de surf que hacen especial este corredor compiten contra plataformas internacionales de reservas y grandes cadenas hoteleras con una fracción de los recursos. HLPFL cierra esa brecha.",
@@ -418,10 +557,36 @@ export const translations = {
         { title: "Bilingüe por Defecto", desc: "Cada entregable es en español e inglés. Porque tus huéspedes hablan ambos idiomas, y tu negocio también debería." },
       ],
     },
+    faq: {
+      pageTitle: "[TRANSLATE] Frequently Asked Questions",
+      pageSubtitle: "[TRANSLATE] Common questions from operators in the Cahuita–Manzanillo corridor.",
+      items: [
+        {
+          q: "[TRANSLATE] Do you only work with businesses in the Cahuita–Manzanillo corridor?",
+          a: "[TRANSLATE] Yes. We live and work here. If you're outside that area, we'll refer you elsewhere.",
+        },
+        {
+          q: "[TRANSLATE] How is this different from hiring a local social media manager?",
+          a: "[TRANSLATE] A social media manager posts photos. We build the underlying systems — booking, OTA integration, pricing, legal, staff training. Instagram is the tip of the iceberg.",
+        },
+        {
+          q: "[TRANSLATE] My property is already on Booking.com. Why do I need you?",
+          a: "[TRANSLATE] Booking.com brings guests but you pay 15%+ and own none of the relationship. We help you capture direct bookings — higher margin, repeat guests, and control over your brand.",
+        },
+        {
+          q: "[TRANSLATE] How long until I see results?",
+          a: "[TRANSLATE] Booking system: 2–3 weeks. First campaigns: live in 10 days. Most clients see more direct inquiries within the first month. Full operational systems: 2–4 months.",
+        },
+        {
+          q: "[TRANSLATE] Do you speak Spanish?",
+          a: "[TRANSLATE] Our team is bilingual. The site is professionally translated. We work with local legal and accounting partners who know Costa Rican tourism law.",
+        },
+      ],
+    },
     contact: {
       pageTitle: "Contacto HLPFL",
       pageSubtitle: "Completa el formulario o envíanos un WhatsApp. Respondemos en 24 horas.",
-      formTitle: "Cuéntanos sobre tu Operación",
+      formTitle: "[TRANSLATE] Get Clarity on Your Operation",
       whatsappTitle: "¿Prefieres WhatsApp?",
       whatsappDesc: "La mayoría de nuestros clientes del corredor nos contactan así. Envía un mensaje en cualquier momento.",
       whatsappButton: "Abrir Chat de WhatsApp",

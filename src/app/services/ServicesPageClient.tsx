@@ -5,6 +5,24 @@ import { ScrollReveal } from "@/components/ui";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { services } from "@/lib/data";
 
+const beforeAfters = [
+  {
+    service: "Custom E-Commerce / Online Booking",
+    before: "Taking reservations via WhatsApp at midnight. Guests lose the thread and never follow up.",
+    after: "Clean booking page where guests reserve and pay in any currency, any time zone — while you sleep.",
+  },
+  {
+    service: "Digital Marketing",
+    before: "Posting to Instagram occasionally. No strategy. Followers but no bookings.",
+    after: "Targeted campaigns reaching travelers actively planning their Caribbean coast trip. Real inquiries, not just likes.",
+  },
+  {
+    service: "Systems, Processes & Logistics",
+    before: "Every check-in is different. Housekeeping is ad hoc. You can't leave the property.",
+    after: "Documented SOPs that run the same whether you're on-site or back in the city. Five-star consistency.",
+  },
+];
+
 export default function ServicesPageClient() {
   const { t, lang } = useLanguage();
   const pageT = t("services");
@@ -38,20 +56,23 @@ export default function ServicesPageClient() {
 
               return (
                 <ScrollReveal key={i} delay={i * 0.06}>
-                  <div className="bg-void-light border border-void-lighter p-8 h-full group transition-all duration-300 hover:border-gold/25 hover:-translate-y-1">
+                  <div className="bg-void-light border border-void-lighter p-8 h-full group transition-all duration-300 hover:border-gold/25 hover:-translate-y-1 flex flex-col">
                     <div className="w-10 h-10 flex items-center justify-center border border-gold/20 mb-6 group-hover:border-gold/50 transition-colors">
                       <Icon className="w-5 h-5 text-gold" />
                     </div>
                     <div className="text-gold text-xs tracking-[0.2em] uppercase mb-2">0{i + 1}</div>
                     <h2 className="font-display text-2xl md:text-3xl text-white tracking-wide mb-4">{title}</h2>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-6">{description}</p>
-                    <div className="flex flex-wrap gap-2">
+                    <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-1">{description}</p>
+                    <div className="flex flex-wrap gap-2 mb-6">
                       {tags.map((tag, j) => (
                         <span key={j} className="text-[11px] text-gold/70 border border-gold/15 px-2 py-0.5 tracking-wider">
                           {tag}
                         </span>
                       ))}
                     </div>
+                    <Link href="/contact" className="text-gold text-sm tracking-wider hover:text-gold-light transition-colors">
+                      Learn More / Get Started →
+                    </Link>
                   </div>
                 </ScrollReveal>
               );
@@ -60,8 +81,40 @@ export default function ServicesPageClient() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Before vs After */}
       <section className="section bg-void-light">
+        <div className="container-custom">
+          <ScrollReveal>
+            <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block text-center">Transformation</span>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wide leading-none">
+              Before vs. <span className="text-gradient">After</span>
+            </h2>
+          </ScrollReveal>
+
+          <div className="space-y-8">
+            {beforeAfters.map((item, i) => (
+              <ScrollReveal key={i} delay={i * 0.1}>
+                <div className="bg-void border border-void-lighter p-8">
+                  <h3 className="font-display text-xl text-gold tracking-wide mb-6">{item.service}</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <span className="text-red-400/70 text-xs tracking-[0.2em] uppercase mb-2 block">Before</span>
+                      <p className="text-gray-400 text-sm leading-relaxed">{item.before}</p>
+                    </div>
+                    <div>
+                      <span className="text-turquoise text-xs tracking-[0.2em] uppercase mb-2 block">After</span>
+                      <p className="text-gray-300 text-sm leading-relaxed">{item.after}</p>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section">
         <div className="container-custom text-center">
           <ScrollReveal>
             <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4">
