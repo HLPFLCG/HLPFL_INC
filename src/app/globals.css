@@ -3,71 +3,38 @@
 @tailwind utilities;
 
 /* ===================================
-   Caribe Sur CR - Global Design System
+   HLPFL — Global Design System
+   Dark luxury B2B consulting agency
    ===================================
-
-   Design Philosophy:
-   - Warm tropical aesthetic with turquoise and coral accents
-   - Community-rooted Caribbean coast tourism
-   - Light, airy, welcoming
-
-   Color Palette:
-   - Deep Jungle Green: #1B4332 (primary dark accent)
-   - Caribbean Turquoise: #0E9AA7 (primary accent)
-   - Sandy Cream: #F5E6C8 (primary background)
-   - Sunset Coral: #E07A5F (secondary accent)
-   - White: #FFFFFF
-   - Dark text: #1A1A1A
-
+   Colors:
+   - Void Black: #0a0a0a (primary bg)
+   - Gold: #c87941 (primary accent)
+   - Turquoise: #0E9AA7 (Caribbean accent)
+   - Coconut Cream: #F5E6C8 (light accent)
    Typography:
-   - Headings: Playfair Display (elegant serif)
-   - Body: Inter (clean, readable sans-serif)
+   - Headings: Bebas Neue
+   - Body: Space Grotesk
 */
 
-/* ===== CSS Custom Properties ===== */
 :root {
-  /* Colors */
-  --color-jungle: #1B4332;
-  --color-jungle-light: #2D6A4F;
-  --color-jungle-dark: #0F2D1F;
+  --color-void: #0a0a0a;
+  --color-void-light: #111111;
+  --color-void-lighter: #1a1a1a;
+  --color-gold: #c87941;
+  --color-gold-light: #d4924f;
+  --color-gold-dark: #a8622e;
   --color-turquoise: #0E9AA7;
   --color-turquoise-light: #1BB5C4;
-  --color-turquoise-dark: #0A7A85;
-  --color-turquoise-muted: rgba(14, 154, 167, 0.15);
-  --color-sandy: #F5E6C8;
-  --color-sandy-light: #FAF2E2;
-  --color-sandy-dark: #E8D4A8;
-  --color-coral: #E07A5F;
-  --color-coral-light: #E8947C;
-  --color-coral-dark: #C4614A;
+  --color-cream: #F5E6C8;
   --color-white: #ffffff;
-  --color-dark: #1A1A1A;
-  --color-gray: #6B7280;
-  --color-gray-light: #9CA3AF;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
 
-  /* Spacing */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
-  --space-2xl: 4rem;
-
-  /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.4s ease;
-  --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-
-  /* Borders */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
-  --radius-full: 9999px;
 }
 
-/* ===== Base Styles ===== */
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -75,105 +42,75 @@ html {
 }
 
 body {
-  background-color: var(--color-sandy-light);
-  color: var(--color-dark);
-  font-family: "Inter", system-ui, sans-serif;
+  background-color: var(--color-void);
+  color: var(--color-white);
+  font-family: "Space Grotesk", system-ui, sans-serif;
   line-height: 1.6;
   min-height: 100vh;
 }
 
-/* ===== Selection Highlight ===== */
 ::selection {
-  background-color: var(--color-turquoise);
-  color: var(--color-white);
+  background-color: var(--color-gold);
+  color: var(--color-void);
 }
 
-::-moz-selection {
-  background-color: var(--color-turquoise);
-  color: var(--color-white);
-}
-
-/* ===== Typography ===== */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", Georgia, serif;
-  line-height: 1.25;
-  font-weight: 700;
-  color: var(--color-jungle);
-}
-
-/* ===== Links ===== */
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-a:hover {
-  color: var(--color-turquoise);
-}
-
-/* ===== Focus Styles ===== */
-:focus-visible {
-  outline: 2px solid var(--color-turquoise);
-  outline-offset: 2px;
-}
-
-/* ===== Scrollbar Styling ===== */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-sandy);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-turquoise-dark);
-  border-radius: var(--radius-full);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-turquoise);
+  font-family: "Bebas Neue", Impact, sans-serif;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
 }
 
 /* ===== Utility Classes ===== */
-
-/* Glass morphism effect for header/cards */
-.glass {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(14, 154, 167, 0.15);
-}
-
-.glass-dark {
-  background: rgba(27, 67, 50, 0.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
-/* Turquoise gradient text */
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-turquoise-light), var(--color-turquoise), var(--color-jungle-light));
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Turquoise underline animation for nav links */
+.section {
+  padding: 5rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 7rem 1rem;
+  }
+}
+
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ===== Glass Effect ===== */
+.glass {
+  background: rgba(10, 10, 10, 0.0);
+  backdrop-filter: none;
+}
+
+.glass-dark {
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(200, 121, 65, 0.08);
+}
+
+/* ===== Navigation ===== */
 .nav-link {
   position: relative;
+  transition: color var(--transition-fast);
 }
 
 .nav-link::after {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: -4px;
   left: 0;
   width: 0;
-  height: 2px;
-  background: var(--color-turquoise);
+  height: 1px;
+  background: var(--color-gold);
   transition: width var(--transition-normal);
 }
 
@@ -181,180 +118,112 @@ a:hover {
   width: 100%;
 }
 
-/* Card hover effect */
-.card-hover {
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-}
-
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(14, 154, 167, 0.15);
-}
-
-/* Turquoise border glow */
-.border-glow {
-  border: 1px solid var(--color-turquoise-muted);
-  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
-}
-
-.border-glow:hover {
-  border-color: var(--color-turquoise);
-  box-shadow: 0 0 20px rgba(14, 154, 167, 0.25);
-}
-
-/* Button base styles */
+/* ===== Buttons ===== */
 .btn-primary {
-  background: var(--color-turquoise);
-  color: var(--color-white);
+  background: var(--color-gold);
+  color: var(--color-void);
+  padding: 0.75rem 1.75rem;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
   transition: all var(--transition-normal);
   display: inline-block;
+  text-decoration: none;
 }
 
 .btn-primary:hover {
-  background: var(--color-turquoise-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(14, 154, 167, 0.35);
-  color: var(--color-white);
+  background: var(--color-gold-light);
+  transform: translateY(-1px);
 }
 
-.btn-secondary {
-  background: var(--color-coral);
-  color: var(--color-white);
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-md);
-  transition: all var(--transition-normal);
-  display: inline-block;
-}
-
-.btn-secondary:hover {
-  background: var(--color-coral-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(224, 122, 95, 0.35);
-  color: var(--color-white);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--color-jungle);
-  border: 2px solid var(--color-jungle);
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-md);
-  transition: all var(--transition-normal);
-  display: inline-block;
-}
-
-.btn-outline:hover {
-  background: var(--color-jungle);
-  color: var(--color-white);
-}
-
-.btn-outline-white {
+.btn-ghost {
   background: transparent;
   color: var(--color-white);
-  border: 2px solid var(--color-white);
+  padding: 0.75rem 1.75rem;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
   transition: all var(--transition-normal);
   display: inline-block;
+  text-decoration: none;
 }
 
-.btn-outline-white:hover {
-  background: var(--color-white);
-  color: var(--color-jungle);
+.btn-ghost:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
 }
 
-/* Section spacing */
-.section {
-  padding: var(--space-2xl) 0;
-}
-
-@media (min-width: 768px) {
-  .section {
-    padding: 6rem 0;
-  }
-}
-
-/* Container */
-.container-custom {
+/* ===== Form Styles ===== */
+.form-input {
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 var(--space-md);
+  background: var(--color-void-light);
+  border: 1px solid var(--color-void-lighter);
+  color: var(--color-white);
+  padding: 0.875rem 1rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.875rem;
+  transition: border-color var(--transition-fast);
+  outline: none;
 }
 
-@media (min-width: 768px) {
-  .container-custom {
-    padding: 0 var(--space-lg);
-  }
+.form-input:focus {
+  border-color: var(--color-gold);
 }
 
-/* ===== Animation Classes ===== */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+.form-input::placeholder {
+  color: var(--color-gray-500);
 }
 
-.animate-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Stagger animations for lists */
-.stagger-item {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.stagger-item.visible {
-  animation: staggerFadeIn 0.5s ease forwards;
-}
-
-@keyframes staggerFadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Scrollbar hide utility */
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hero gradient overlays */
-.hero-gradient {
-  background: linear-gradient(
-    135deg,
-    rgba(27, 67, 50, 0.85) 0%,
-    rgba(14, 154, 167, 0.4) 60%,
-    rgba(224, 122, 95, 0.3) 100%
-  );
-}
-
-/* Category tag pill */
-.tag-pill {
-  background: var(--color-turquoise-muted);
-  color: var(--color-turquoise-dark);
+.form-label {
+  display: block;
+  color: var(--color-gray-400);
   font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.375rem;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-void-lighter);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* ===== WhatsApp Button ===== */
+.whatsapp-btn {
+  background: #25D366;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
   font-weight: 600;
-  padding: 0.2rem 0.6rem;
-  border-radius: var(--radius-full);
-  display: inline-block;
+  font-size: 0.875rem;
+  border-radius: 0;
+  text-decoration: none;
+  transition: all var(--transition-fast);
 }
 
-/* Star rating color */
-.star-filled {
-  color: #F59E0B;
+.whatsapp-btn:hover {
+  background: #1da851;
+  transform: translateY(-1px);
 }
-

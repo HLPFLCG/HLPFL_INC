@@ -15,80 +15,55 @@ export default function Header() {
 
   const navLinks = [
     { href: "/", label: nav.home },
-    { href: "/explore", label: nav.explore },
-    { href: "/stay", label: nav.stay },
-    { href: "/eat-drink", label: nav.eatDrink },
-    { href: "/plan", label: nav.plan },
-    { href: "/list-with-us", label: nav.listWithUs },
+    { href: "/services", label: nav.services },
     { href: "/about", label: nav.about },
+    { href: "/contact", label: nav.contact },
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
   }, []);
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass-dark text-white" : "glass text-dark"
+        isScrolled ? "glass-dark" : ""
       }`}
     >
       <div className="container-custom">
         <nav className="flex items-center justify-between h-16" aria-label="Main navigation">
           {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
-            aria-label="Caribe Sur CR — home"
-          >
-            <span
-              className={`font-display text-2xl font-bold ${
-                isScrolled ? "text-sandy" : "text-jungle"
-              }`}
-            >
-              Caribe Sur{" "}
-              <span className="text-turquoise">CR</span>
-            </span>
+          <Link href="/" className="flex items-center gap-1 hover:opacity-80 transition-opacity" aria-label="HLPFL — home">
+            <span className="font-display text-2xl tracking-widest text-white">HLPFL</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-gold mb-0.5" />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6">
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`nav-link text-sm font-medium transition-colors ${
-                  isScrolled
-                    ? "text-white/90 hover:text-turquoise-light"
-                    : "text-dark hover:text-turquoise"
-                }`}
+                className="nav-link text-sm text-white/80 hover:text-white transition-colors"
               >
                 {link.label}
               </Link>
             ))}
           </div>
 
-          {/* Language Toggle + Mobile Button */}
-          <div className="flex items-center gap-3">
-            <div className={isScrolled ? "[&_button]:text-white [&_button:not([aria-pressed=true])]:text-white/70 [&_span]:text-white/30" : ""}>
-              <LanguageToggle />
-            </div>
+          {/* Right side */}
+          <div className="flex items-center gap-4">
+            <LanguageToggle />
+            <Link href="/contact" className="hidden md:inline-block btn-primary text-sm py-2 px-4">
+              {nav.getStarted}
+            </Link>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`lg:hidden p-2 transition-colors ${
-                isScrolled ? "text-white hover:text-turquoise-light" : "text-jungle hover:text-turquoise"
-              }`}
+              className="lg:hidden p-2 text-white hover:text-gold transition-colors"
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileMenuOpen}
             >
@@ -102,60 +77,43 @@ export default function Header() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-jungle/80 backdrop-blur-sm lg:hidden z-[55]"
+              className="fixed inset-0 bg-void/80 backdrop-blur-sm lg:hidden z-[55]"
               onClick={() => setIsMobileMenuOpen(false)}
             />
-
-            {/* Slide-out Menu */}
             <motion.div
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 left-0 bottom-0 w-72 bg-sandy-light border-r border-jungle/20 lg:hidden z-[60]"
+              className="fixed top-0 left-0 bottom-0 w-72 bg-void-light border-r border-void-lighter lg:hidden z-[60]"
             >
               <div className="flex flex-col h-full">
-                {/* Mobile Menu Header */}
-                <div className="flex items-center justify-between p-4 border-b border-jungle/20">
-                  <span className="font-display text-xl font-bold text-jungle">
-                    Caribe Sur <span className="text-turquoise">CR</span>
+                <div className="flex items-center justify-between p-4 border-b border-void-lighter">
+                  <span className="font-display text-xl tracking-widest text-white">
+                    HLPFL<span className="inline-block w-1.5 h-1.5 rounded-full bg-gold ml-0.5 mb-0.5" />
                   </span>
-                  <button
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="p-2 text-jungle hover:text-turquoise transition-colors"
-                    aria-label="Close menu"
-                  >
+                  <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 text-white hover:text-gold" aria-label="Close menu">
                     <X size={20} />
                   </button>
                 </div>
-
-                {/* Mobile Nav Links */}
                 <nav className="flex-1 py-6" aria-label="Mobile navigation">
                   {navLinks.map((link, index) => (
-                    <motion.div
-                      key={link.href}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.05 }}
-                    >
+                    <motion.div key={link.href} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.05 }}>
                       <Link
                         href={link.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="flex items-center gap-3 px-6 py-3 text-base text-dark hover:text-turquoise hover:bg-turquoise/5 transition-all border-l-2 border-transparent hover:border-turquoise"
+                        className="flex items-center gap-3 px-6 py-3 text-base text-white/80 hover:text-gold hover:bg-gold/5 transition-all border-l-2 border-transparent hover:border-gold"
                       >
                         {link.label}
                       </Link>
                     </motion.div>
                   ))}
                 </nav>
-
-                {/* Mobile Menu Footer */}
-                <div className="p-6 border-t border-jungle/20">
+                <div className="p-6 border-t border-void-lighter">
                   <LanguageToggle />
                 </div>
               </div>
