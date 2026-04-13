@@ -5,11 +5,12 @@ import { ScrollReveal } from "@/components/ui";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { MessageCircle } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { submitForm } from "@/lib/web3forms";
 
 const WHATSAPP_CONTACT_METHOD = "whatsapp";
 
 export default function ContactPageClient() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const contact = t("contact");
   const home = t("home");
   const labels = home.ctaFormLabels;
@@ -26,10 +27,38 @@ export default function ContactPageClient() {
     email: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+
+    const result = await submitForm({
+      businessName: form.businessName,
+      yourName: form.yourName,
+      businessType: form.businessType,
+      location: form.location,
+      challenge: form.challenge,
+      revenue: form.revenue,
+      contactMethod: form.contactMethod,
+      whatsappNumber: form.whatsappNumber,
+      email: form.email,
+      language: lang,
+    });
+
+    setSubmitting(false);
+
+    if (result.success) {
+      setSubmitted(true);
+    } else {
+      setError(
+        lang === "es"
+          ? "No se pudo enviar. Intenta por WhatsApp."
+          : "Could not send. Please try WhatsApp instead."
+      );
+    }
   };
 
   const whatsappUrl = getWhatsAppUrl();
@@ -133,7 +162,14 @@ export default function ContactPageClient() {
                       <label htmlFor="contact-email" className="form-label">{labels.email}</label>
                       <input id="contact-email" type="email" className="form-input" placeholder="you@yourbusiness.com" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required />
                     </div>
-                    <button type="submit" className="btn-primary w-full">{labels.submit}</button>
+                    {error && (
+                      <p className="text-red-600 text-sm text-center">{error}</p>
+                    )}
+                    <button type="submit" disabled={submitting} className="btn-primary w-full disabled:opacity-50">
+                      {submitting
+                        ? lang === "es" ? "Enviando…" : "Sending…"
+                        : labels.submit}
+                    </button>
                     <div className="text-center space-y-1 pt-2">
                       <p className="text-bark text-xs">{home.ctaLowPressure}</p>
                       <p className="text-bark text-xs">{home.ctaResponse}</p>
