@@ -317,9 +317,7 @@ export const translations = {
   },
 
   // ============================================================
-  // SPANISH TRANSLATIONS — [TRANSLATE] all sections below
-  // These are structural placeholders. Professional human
-  // review required before publishing.
+  // SPANISH TRANSLATIONS
   // ============================================================
   es: {
     nav: {
@@ -344,20 +342,20 @@ export const translations = {
       heroChaos: "Caos → Claridad.",
       heroSubhead:
         "HLPFL ayuda a hoteles, lodges, restaurantes y operadores de tours entre Cahuita y Manzanillo a convertir operaciones hermosas en consistentemente reservadas — con sistemas, marca e infraestructura digital construida para cómo esta región realmente funciona.",
-      heroCredibility: "[TRANSLATE] Built exclusively for Costa Rica's Caribbean coast operators.",
+      heroCredibility: "Construido exclusivamente para operadores de la costa Caribe de Costa Rica.",
       heroCta1: "Comenzar",
       heroCta2: "Ver Servicios",
-      offSeasonBanner: "[TRANSLATE] Low season coming? Let's build your fill-the-calendar plan before it hits.",
+      offSeasonBanner: "¿Se acerca la temporada baja? Construyamos tu plan para llenar el calendario antes de que llegue.",
 
-      painOverline: "[TRANSLATE] Sound Familiar?",
-      painTitle: "[TRANSLATE] Does This Sound",
-      painTitleAccent: "[TRANSLATE] Like You?",
+      painOverline: "¿Te Suena Familiar?",
+      painTitle: "¿Esto Te Suena",
+      painTitleAccent: "Como Tú?",
       painPoints: [
-        "[TRANSLATE] High season is chaos. Low season is silence.",
-        "[TRANSLATE] Your WhatsApp is your booking system. It shouldn't be.",
-        "[TRANSLATE] Beautiful operation, terrible photos, zero social presence.",
-        "[TRANSLATE] You're competing against large resorts and OTAs with a fraction of the budget.",
-        "[TRANSLATE] Solo-operator burnout — no team, no process, no time.",
+        "La temporada alta es caos. La temporada baja es silencio.",
+        "Tu WhatsApp es tu sistema de reservas. No debería serlo.",
+        "Operación hermosa, fotos terribles, cero presencia en redes.",
+        "Compites contra grandes resorts y OTAs con una fracción del presupuesto.",
+        "Agotamiento de operador solo — sin equipo, sin procesos, sin tiempo.",
       ],
 
       trustStat1: "9",
@@ -408,32 +406,32 @@ export const translations = {
       servicesSubtitle:
         "Nueve servicios principales, todos rediseñados para operadores de hospitalidad y turismo en la costa Caribe de Costa Rica.",
 
-      resultsOverline: "[TRANSLATE] Real Results",
-      resultsTitle: "[TRANSLATE] Numbers That",
-      resultsTitleAccent: "[TRANSLATE] Matter",
+      resultsOverline: "Resultados Reales",
+      resultsTitle: "Números que",
+      resultsTitleAccent: "Importan",
       resultsMetrics: [
-        { stat: "+40%", desc: "[TRANSLATE] Increased direct bookings in low season" },
-        { stat: "5%", desc: "[TRANSLATE] Average OTA commission — down from 18%" },
-        { stat: "10+", desc: "[TRANSLATE] Hours saved per week on manual reservation management" },
-        { stat: "12→87", desc: "[TRANSLATE] Google Reviews growth in six months" },
-        { stat: "+$35", desc: "[TRANSLATE] Higher average nightly rate without lowering occupancy" },
+        { stat: "+40%", desc: "Aumento en reservas directas en temporada baja" },
+        { stat: "5%", desc: "Comisión promedio OTA — antes 18%" },
+        { stat: "10+", desc: "Horas ahorradas por semana en gestión manual de reservas" },
+        { stat: "12→87", desc: "Crecimiento de reseñas en Google en seis meses" },
+        { stat: "+$35", desc: "Mayor tarifa promedio por noche sin bajar ocupación" },
       ],
 
-      competitorOverline: "[TRANSLATE] The Difference",
-      competitorTitle: "[TRANSLATE] Why",
+      competitorOverline: "La Diferencia",
+      competitorTitle: "¿Por Qué",
       competitorTitleAccent: "HLPFL?",
       competitorItems: [
         {
-          vs: "[TRANSLATE] vs. Generic Agencies",
-          desc: "[TRANSLATE] They build pretty websites. We build booking engines that work in low-connectivity zones.",
+          vs: "vs. Agencias Genéricas",
+          desc: "Ellos construyen sitios web bonitos. Nosotros construimos motores de reservas que funcionan en zonas de baja conectividad.",
         },
         {
-          vs: "[TRANSLATE] vs. OTAs",
-          desc: "[TRANSLATE] They take 15–20% per booking. We help you own your guest relationship directly.",
+          vs: "vs. OTAs",
+          desc: "Ellos cobran 15–20% por reserva. Nosotros te ayudamos a ser dueño de la relación con tu huésped directamente.",
         },
         {
-          vs: "[TRANSLATE] vs. Local Freelancers",
-          desc: "[TRANSLATE] We don't just design a logo. We integrate OTA listings, legal setup, and staff training.",
+          vs: "vs. Freelancers Locales",
+          desc: "No solo diseñamos un logotipo. Integramos listados de OTAs, configuración legal y capacitación de personal.",
         },
       ],
 
@@ -484,20 +482,20 @@ export const translations = {
         },
       ],
       ctaOverline: "Comenzar",
-      ctaTitle: "[TRANSLATE] Get Clarity on",
-      ctaTitleAccent: "[TRANSLATE] Your Operation",
+      ctaTitle: "Obtén Claridad sobre",
+      ctaTitleAccent: "Tu Operación",
       ctaSubtitle:
         "Completa el formulario y te contactaremos en 24 horas. O simplemente escríbenos por WhatsApp — esta región funciona en WhatsApp.",
       ctaFormLabels: {
         businessName: "Nombre del Negocio",
-        yourName: "[TRANSLATE] Your Name",
+        yourName: "Tu Nombre",
         businessType: "Tipo de Negocio",
         location: "Ubicación en el Corredor",
         challenge: "Mayor Desafío Actual",
         revenue: "Rango de Ingresos Mensuales (opcional)",
         contactMethod: "Método de Contacto Preferido",
-        whatsappNumber: "[TRANSLATE] WhatsApp Number",
-        email: "[TRANSLATE] Email Address",
+        whatsappNumber: "Número de WhatsApp",
+        email: "Correo Electrónico",
         submit: "Enviar Consulta",
         whatsapp: "Escribirnos por WhatsApp",
       },
@@ -507,7 +505,7 @@ export const translations = {
         "Operador de Tours",
         "Surf / Yoga / Bienestar",
         "Alquiler Vacacional",
-        "[TRANSLATE] Artisan / Agritourism",
+        "Artesanía / Agroturismo",
         "Otro",
       ],
       ctaLocations: [
@@ -519,15 +517,15 @@ export const translations = {
         "Otro",
       ],
       ctaRevenues: [
-        "[TRANSLATE] Under $5,000",
+        "Menos de $5,000",
         "$5,000 – $15,000",
         "$15,000 – $30,000",
         "$30,000+",
         "Prefiero no decir",
       ],
       ctaContactMethods: ["WhatsApp", "Correo Electrónico", "Videollamada"],
-      ctaLowPressure: "[TRANSLATE] No long-term contracts. Built for small teams. Works even with limited internet.",
-      ctaResponse: "[TRANSLATE] We respond within 24 hours — usually much faster on WhatsApp.",
+      ctaLowPressure: "Sin contratos a largo plazo. Diseñado para equipos pequeños. Funciona incluso con internet limitado.",
+      ctaResponse: "Respondemos en 24 horas — generalmente mucho más rápido por WhatsApp.",
       ctaSuccessTitle: "Mensaje Recibido",
       ctaSuccessDesc:
         "Nos comunicaremos en 24 horas. Si prefiere hablar ahora, presione el botón de WhatsApp.",
@@ -543,9 +541,9 @@ export const translations = {
     about: {
       pageTitle: "Acerca de HLPFL",
       pageSubtitle: "Existimos para ayudar a los operadores de hospitalidad de la costa Caribe a hacer crecer sus negocios.",
-      storyTitle: "[TRANSLATE] Our Story",
+      storyTitle: "Nuestra Historia",
       storyDesc:
-        "[TRANSLATE] We saw too many incredible lodges and tour operators on the Caribbean coast losing money because they had no systems — only chaos. So we pivoted to serve this region exclusively. We know the seasonal swings, the ICT paperwork, the WhatsApp culture, and the road conditions. We work here.",
+        "Vimos demasiados lodges y operadores de tours increíbles en la costa Caribe perdiendo dinero porque no tenían sistemas — solo caos. Así que decidimos servir exclusivamente a esta región. Conocemos los cambios estacionales, el papeleo del ICT, la cultura de WhatsApp y las condiciones de las carreteras. Trabajamos aquí.",
       missionTitle: "Nuestra Misión",
       missionDesc:
         "La costa Caribe de Costa Rica es uno de los destinos más biodiversos, culturalmente ricos y naturalmente hermosos de las Américas. Los pequeños lodges, restaurantes familiares, guías independientes y escuelas de surf que hacen especial este corredor compiten contra plataformas internacionales de reservas y grandes cadenas hoteleras con una fracción de los recursos. HLPFL cierra esa brecha.",
@@ -558,35 +556,35 @@ export const translations = {
       ],
     },
     faq: {
-      pageTitle: "[TRANSLATE] Frequently Asked Questions",
-      pageSubtitle: "[TRANSLATE] Common questions from operators in the Cahuita–Manzanillo corridor.",
+      pageTitle: "Preguntas Frecuentes",
+      pageSubtitle: "Preguntas comunes de operadores en el corredor Cahuita–Manzanillo.",
       items: [
         {
-          q: "[TRANSLATE] Do you only work with businesses in the Cahuita–Manzanillo corridor?",
-          a: "[TRANSLATE] Yes. We live and work here. If you're outside that area, we'll refer you elsewhere.",
+          q: "¿Solo trabajan con negocios en el corredor Cahuita–Manzanillo?",
+          a: "Sí. Vivimos y trabajamos aquí. Si estás fuera de esa zona, te referiremos a otra parte.",
         },
         {
-          q: "[TRANSLATE] How is this different from hiring a local social media manager?",
-          a: "[TRANSLATE] A social media manager posts photos. We build the underlying systems — booking, OTA integration, pricing, legal, staff training. Instagram is the tip of the iceberg.",
+          q: "¿En qué se diferencia esto de contratar un community manager local?",
+          a: "Un community manager publica fotos. Nosotros construimos los sistemas subyacentes — reservas, integración OTA, precios, legal, capacitación de personal. Instagram es la punta del iceberg.",
         },
         {
-          q: "[TRANSLATE] My property is already on Booking.com. Why do I need you?",
-          a: "[TRANSLATE] Booking.com brings guests but you pay 15%+ and own none of the relationship. We help you capture direct bookings — higher margin, repeat guests, and control over your brand.",
+          q: "Mi propiedad ya está en Booking.com. ¿Para qué los necesito?",
+          a: "Booking.com trae huéspedes pero pagas 15%+ y no eres dueño de la relación. Te ayudamos a capturar reservas directas — mayor margen, huéspedes que regresan y control sobre tu marca.",
         },
         {
-          q: "[TRANSLATE] How long until I see results?",
-          a: "[TRANSLATE] Booking system: 2–3 weeks. First campaigns: live in 10 days. Most clients see more direct inquiries within the first month. Full operational systems: 2–4 months.",
+          q: "¿Cuánto tiempo hasta que vea resultados?",
+          a: "Sistema de reservas: 2–3 semanas. Primeras campañas: activas en 10 días. La mayoría de clientes ven más consultas directas en el primer mes. Sistemas operativos completos: 2–4 meses.",
         },
         {
-          q: "[TRANSLATE] Do you speak Spanish?",
-          a: "[TRANSLATE] Our team is bilingual. The site is professionally translated. We work with local legal and accounting partners who know Costa Rican tourism law.",
+          q: "¿Hablan español?",
+          a: "Nuestro equipo es bilingüe. El sitio está traducido profesionalmente. Trabajamos con socios legales y contables locales que conocen la ley de turismo costarricense.",
         },
       ],
     },
     contact: {
       pageTitle: "Contacto HLPFL",
       pageSubtitle: "Completa el formulario o envíanos un WhatsApp. Respondemos en 24 horas.",
-      formTitle: "[TRANSLATE] Get Clarity on Your Operation",
+      formTitle: "Obtén Claridad sobre Tu Operación",
       whatsappTitle: "¿Prefieres WhatsApp?",
       whatsappDesc: "La mayoría de nuestros clientes del corredor nos contactan así. Envía un mensaje en cualquier momento.",
       whatsappButton: "Abrir Chat de WhatsApp",
