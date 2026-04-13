@@ -4,13 +4,15 @@
  * How it works:
  *  1. Sign up at https://web3forms.com/ (free, no credit card).
  *  2. You receive an access key tied to your email.
- *  3. Replace the placeholder below with that key.
+ *  3. Set the NEXT_PUBLIC_WEB3FORMS_KEY environment variable, or
+ *     replace the fallback below with your key.
  *  4. Every form submission is emailed to you — no backend needed.
  *
  * Docs: https://docs.web3forms.com/
  */
 
-export const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE"; // ← replace with your key from web3forms.com
+const WEB3FORMS_ACCESS_KEY =
+  process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "YOUR_ACCESS_KEY_HERE";
 
 export const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 
@@ -48,7 +50,10 @@ export async function submitForm(
       success: result.success === true,
       message: result.message || "Something went wrong.",
     };
-  } catch {
+  } catch (err) {
+    if (process.env.NODE_ENV === "development") {
+      console.error("[web3forms] submission failed:", err);
+    }
     return {
       success: false,
       message: "Network error. Please try WhatsApp instead.",

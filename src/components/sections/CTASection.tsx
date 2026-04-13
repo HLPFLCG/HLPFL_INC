@@ -250,7 +250,7 @@ export default function CTASection() {
               <p className="text-red-600 text-sm text-center">{error}</p>
             )}
 
-            <button type="submit" disabled={submitting} className="btn-primary w-full disabled:opacity-50">
+            <button type="submit" disabled={submitting} aria-busy={submitting} className="btn-primary w-full disabled:opacity-50">
               {submitting
                 ? lang === "es" ? "Enviando…" : "Sending…"
                 : labels.submit}
