@@ -20,7 +20,7 @@
 
 ---
 
-## Complete File List (66 files)
+## Complete File List (72 files)
 
 ### 🔧 Root — Config Files
 
@@ -68,6 +68,7 @@ Each route is a folder with `page.tsx` (server component for SEO metadata) and a
 | `/services` | `src/app/services/page.tsx` | `src/app/services/ServicesPageClient.tsx` |
 | `/contact` | `src/app/contact/page.tsx` | `src/app/contact/ContactPageClient.tsx` |
 | `/faq` | `src/app/faq/page.tsx` | `src/app/faq/FAQPageClient.tsx` |
+| `/blog` | `src/app/blog/page.tsx` | *(server-only — see Blog Pages below)* |
 | `/privacy` | `src/app/privacy/page.tsx` | *(server-only)* |
 | `/terms` | `src/app/terms/page.tsx` | *(server-only)* |
 

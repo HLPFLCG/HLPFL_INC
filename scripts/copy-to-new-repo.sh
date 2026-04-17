@@ -150,7 +150,8 @@ cp "$SOURCE/scripts/copy-to-new-repo.sh" "$TARGET/scripts/"
 
 # ── Done ───────────────────────────────────────────────────────────────
 echo ""
-echo "✅ All 66 files copied to $TARGET"
+COPIED=$(find "$TARGET" -type f | wc -l)
+echo "✅ $COPIED files copied to $TARGET"
 echo ""
 echo "Next steps:"
 echo "  cd $TARGET"
