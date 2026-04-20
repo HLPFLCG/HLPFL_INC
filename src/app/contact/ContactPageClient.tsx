@@ -205,7 +205,7 @@ export default function ContactPageClient() {
                   </h2>
                   <a
                     href="mailto:hello@hlpfl.org"
-                    className="inline-flex items-center gap-2 text-turquoise hover:text-void-lighter transition-colors font-semibold"
+                    className="inline-flex items-center gap-2 text-turquoise hover:text-gold transition-colors font-semibold"
                   >
                     <Mail size={18} />
                     hello@hlpfl.org

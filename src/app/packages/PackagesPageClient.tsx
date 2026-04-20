@@ -43,7 +43,7 @@ export default function PackagesPageClient() {
               {pkgT.customNote}{" "}
               <Link
                 href="/contact/"
-                className="text-turquoise hover:text-void-lighter font-semibold transition-colors"
+                className="text-turquoise hover:text-gold font-semibold transition-colors"
               >
                 {pkgT.customCTA}
               </Link>

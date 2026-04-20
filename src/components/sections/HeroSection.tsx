@@ -101,7 +101,7 @@ export default function HeroSection() {
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <div className="w-px h-12 bg-gradient-to-b from-transparent to-wave/40" />
+            <div className="w-px h-12 bg-gradient-to-b from-transparent to-gold/40" />
             <span className="text-gold/40 text-[10px] tracking-[0.3em] uppercase">Scroll</span>
           </motion.div>
         </ScrollReveal>

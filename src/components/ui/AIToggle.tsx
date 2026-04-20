@@ -38,7 +38,7 @@ export default function AIToggle({ useAI, setUseAI }: AIToggleProps) {
           aria-label={global.aiToggleLabel}
           onClick={() => setUseAI(!useAI)}
           className={`relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-void ${
-            useAI ? "bg-gold" : "bg-gold"
+            useAI ? "bg-turquoise" : "bg-gold"
           }`}
         >
           <span
