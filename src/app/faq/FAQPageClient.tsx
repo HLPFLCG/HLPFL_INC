@@ -7,8 +7,9 @@ import { ScrollReveal } from "@/components/ui";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function FAQPageClient() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const faq = t("faq");
+  const global = t("global");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (i: number) => {
@@ -21,12 +22,11 @@ export default function FAQPageClient() {
       <section className="section pb-12">
         <div className="container-custom">
           <ScrollReveal>
-            <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block">FAQ</span>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide leading-none mb-6 text-night">
-              {faq.pageTitle}
+            <h1 className="font-display text-5xl md:text-7xl tracking-wide leading-none mb-4 text-night">
+              {faq.headline}
             </h1>
             <p className="text-fog text-base md:text-lg leading-relaxed max-w-2xl">
-              {faq.pageSubtitle}
+              {faq.sub}
             </p>
           </ScrollReveal>
         </div>
@@ -70,14 +70,18 @@ export default function FAQPageClient() {
         <div className="container-custom text-center">
           <ScrollReveal>
             <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4 text-night">
-              Still Have Questions?
+              {lang === "es" ? "¿Aún tienes preguntas?" : "Still have questions?"}
             </h2>
             <p className="text-fog mb-8 max-w-xl mx-auto">
-              Reach out directly — we respond within 24 hours.
+              {lang === "es"
+                ? "Escríbenos directamente — respondemos en 24 horas."
+                : "Reach out directly — we respond within 24 hours."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="btn-primary">Get in Touch</Link>
-              <Link href="/services" className="btn-ghost">View Services</Link>
+              <Link href="/contact/" className="btn-primary">{global.contactUs}</Link>
+              <Link href="/services/" className="btn-ghost">
+                {lang === "es" ? "Ver Servicios" : "View Services"}
+              </Link>
             </div>
           </ScrollReveal>
         </div>

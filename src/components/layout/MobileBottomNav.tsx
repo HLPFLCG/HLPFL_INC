@@ -1,17 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { Home, Briefcase, Mail, MessageCircle } from "lucide-react";
-import { getWhatsAppUrl } from "@/lib/whatsapp";
-
-const navItems = [
-  { href: "/", label: "Home", icon: Home },
-  { href: "/services", label: "Services", icon: Briefcase },
-  { href: "/contact", label: "Contact", icon: Mail },
-];
+import { Briefcase, Package, Users, Mail } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function MobileBottomNav() {
-  const whatsappUrl = getWhatsAppUrl();
+  const { t } = useLanguage();
+  const nav = t("nav");
+
+  const navItems = [
+    { href: "/services", label: nav.services, icon: Briefcase },
+    { href: "/packages", label: nav.packages, icon: Package },
+    { href: "/about", label: nav.about, icon: Users },
+    { href: "/contact", label: nav.contact, icon: Mail },
+  ];
 
   return (
     <nav
@@ -28,16 +30,6 @@ export default function MobileBottomNav() {
           <span className="text-[10px] tracking-wider">{label}</span>
         </Link>
       ))}
-      <a
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mobile-bottom-nav-item text-wa"
-        aria-label="Chat with HLPFL on WhatsApp"
-      >
-        <MessageCircle className="w-5 h-5" />
-        <span className="text-[10px] tracking-wider">WhatsApp</span>
-      </a>
     </nav>
   );
 }

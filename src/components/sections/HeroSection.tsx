@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ScrollReveal } from "@/components/ui";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -7,10 +8,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 export default function HeroSection() {
   const { t } = useLanguage();
   const home = t("home");
-
-  const scrollToApply = () => {
-    document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -53,40 +50,47 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative container-custom text-center px-4 pt-20 pb-16">
         <ScrollReveal>
-          <span className="text-wave uppercase tracking-[0.25em] text-xs mb-6 block">
-            Cahuita · Puerto Viejo · Manzanillo
+          <span className="eyebrow text-wave mb-6 block">
+            {home.heroEyebrow}
           </span>
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide leading-none mb-4 text-sand">
-            {home.heroHeadline}
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide leading-none mb-8 text-sand">
+            {home.heroHeadline.split("\n").map((line, i) => (
+              <span key={i}>
+                {i > 0 && <br />}
+                <span className={i > 0 ? "text-gold" : ""}>{line}</span>
+              </span>
+            ))}
           </h1>
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
-          <h2 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide leading-none mb-8">
-            <span className="text-gold">{home.heroChaos}</span>
-          </h2>
+          <p className="text-sand/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+            {home.heroSub}
+          </p>
         </ScrollReveal>
 
         <ScrollReveal delay={0.3}>
-          <p className="text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-4" style={{ color: "rgba(242,228,192,0.80)" }}>
-            {home.heroSubhead}
-          </p>
-          <p className="text-wave text-sm tracking-wider mb-10">
-            {home.heroCredibility}
-          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
+            <Link href="/services#website" className="btn-primary">
+              {home.heroCTA}
+            </Link>
+            <Link href="/packages" className="btn-ghost">
+              {home.heroSecondaryCTA}
+            </Link>
+          </div>
         </ScrollReveal>
 
+        {/* Price card */}
         <ScrollReveal delay={0.4}>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onClick={scrollToApply} className="btn-primary">
-              {home.heroCta1}
-            </button>
-            <a href="#services" className="btn-ghost">
-              {home.heroCta2}
-            </a>
+          <div className="inline-flex flex-col items-center bg-jungle/60 border border-sea/20 rounded-lg px-8 py-5 backdrop-blur-sm">
+            <span className="text-sand/60 text-xs tracking-[0.15em] uppercase mb-1">
+              {home.heroPriceFrom}
+            </span>
+            <span className="font-display text-5xl text-gold tracking-wide">$49</span>
+            <span className="text-sand/50 text-xs mt-1">{home.heroPriceNote}</span>
           </div>
         </ScrollReveal>
 

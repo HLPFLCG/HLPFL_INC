@@ -10,12 +10,14 @@ import React, {
 } from "react";
 import { translations, type Lang } from "@/lib/translations";
 
+type TranslationKey = keyof typeof translations;
+
 interface LanguageContextValue {
   lang: Lang;
   setLang: (lang: Lang) => void;
-  t: <S extends keyof typeof translations.en>(
+  t: <S extends TranslationKey>(
     section: S
-  ) => (typeof translations.en)[S];
+  ) => (typeof translations)[S]["en"];
 }
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
@@ -29,7 +31,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       setLangState(stored);
       document.documentElement.lang = stored;
     } else {
-      // Spanish-first: detect Costa Rican users by timezone, browser language, or referrer
       const preferSpanish =
         typeof navigator !== "undefined" &&
         (navigator.language?.startsWith("es") ||
@@ -47,8 +48,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const t = useCallback(
-    <S extends keyof typeof translations.en>(section: S) => {
-      return (translations[lang] as typeof translations.en)[section];
+    <S extends TranslationKey>(section: S) => {
+      return translations[section][lang] as (typeof translations)[S]["en"];
     },
     [lang]
   );
