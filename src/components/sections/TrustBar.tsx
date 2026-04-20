@@ -1,31 +1,36 @@
 "use client";
 
-import { ScrollReveal } from "@/components/ui";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function TrustBar() {
   const { t } = useLanguage();
   const home = t("home");
 
-  const TRUST = [
-    { stat: home.trustStat1, label: home.trustLabel1, sub: home.trustSub1 },
-    { stat: home.trustStat2, label: home.trustLabel2, sub: home.trustSub2 },
-    { stat: home.trustStat3, label: home.trustLabel3, sub: home.trustSub3 },
-    { stat: home.trustStat4, label: home.trustLabel4, sub: home.trustSub4 },
-  ];
+  const items = home.trustBarItems;
+  // Duplicate for seamless loop
+  const ticker = [...items, ...items];
 
   return (
-    <section className="bg-jungle border-y border-sea/15 py-12 px-4">
-      <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
-        {TRUST.map((item, i) => (
-          <ScrollReveal key={i} delay={i * 0.08}>
-            <div className="text-center">
-              <div className="font-display text-3xl md:text-4xl text-gold tracking-wide">{item.stat}</div>
-              <div className="text-sand text-xs tracking-[0.15em] uppercase mt-1 mb-0.5">{item.label}</div>
-              <div className="text-sand/60 text-[11px] tracking-wider">{item.sub}</div>
-            </div>
-          </ScrollReveal>
-        ))}
+    <section className="bg-jungle border-y border-sea/15 py-4 overflow-hidden">
+      <div className="flex items-center gap-4 px-4">
+        <span className="text-sand/60 text-xs tracking-[0.15em] uppercase whitespace-nowrap flex-shrink-0">
+          {home.trustBarLabel}
+        </span>
+        <div className="relative flex-1 overflow-hidden">
+          <motion.div
+            className="flex items-center gap-0 whitespace-nowrap"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          >
+            {ticker.map((item, i) => (
+              <span key={i} className="flex items-center gap-4 text-gold text-sm tracking-wider">
+                <span>{item}</span>
+                <span className="text-wave/40 text-xs">·</span>
+              </span>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

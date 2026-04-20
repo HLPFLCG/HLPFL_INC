@@ -3,25 +3,22 @@ import {
   HeroSection,
   TrustBar,
   PainSection,
-  HowItWorks,
-  ValueStack,
-  ServicesSection,
-  ResultsSection,
-  CompetitorSection,
-  AboutSection,
+  ServicesPreview,
+  PackagesPreview,
+  WhyHLPFL,
   TestimonialsSection,
-  CTASection,
+  HomeCTA,
 } from "@/components/sections";
 
 export const metadata: Metadata = {
-  title: "HLPFL | Caribbean Coast Hospitality Marketing & Systems",
+  title: "HLPFL | Modern Services. Local Prices.",
   description:
-    "HLPFL helps hotels, lodges & tour operators from Cahuita to Manzanillo turn chaos into clarity. Booking systems, branding, digital marketing. Bilingual. Costa Rica Caribbean coast.",
+    "Websites, Google presence, branding, and more — built by hand, delivered fast, priced for real business. Starting at $49.",
   alternates: { canonical: "https://hlpfl.org/" },
   openGraph: {
-    title: "HLPFL | Chaos → Clarity for Caribbean Coast Hospitality",
+    title: "HLPFL | Modern Services. Local Prices.",
     description:
-      "Systems, branding, and digital marketing built exclusively for hospitality operators in Limón Province, Costa Rica.",
+      "Your website, Google presence, and brand — built by hand, delivered fast, priced for real business. Starting at $49.",
     images: [{ url: "/images/og-caribbean-coast.webp" }],
   },
 };
@@ -32,14 +29,11 @@ export default function Home() {
       <HeroSection />
       <TrustBar />
       <PainSection />
-      <HowItWorks />
-      <ValueStack />
-      <ServicesSection />
-      <ResultsSection />
-      <CompetitorSection />
-      <AboutSection />
+      <ServicesPreview />
+      <PackagesPreview />
+      <WhyHLPFL />
       <TestimonialsSection />
-      <CTASection />
+      <HomeCTA />
     </>
   );
 }
