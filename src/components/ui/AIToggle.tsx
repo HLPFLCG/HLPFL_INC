@@ -61,7 +61,7 @@ export default function AIToggle({ useAI, setUseAI }: AIToggleProps) {
         <div className="relative">
           <button
             type="button"
-            aria-label="Toggle info"
+            aria-label={`${global.humanMade} vs ${global.aiAssisted} — info`}
             onClick={() => setShowTooltip(!showTooltip)}
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
