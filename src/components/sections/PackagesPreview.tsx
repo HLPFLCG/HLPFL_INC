@@ -10,13 +10,13 @@ export default function PackagesPreview() {
   const home = t("home");
 
   return (
-    <section className="section bg-sand" id="packages">
+    <section className="section bg-void-light" id="packages">
       <div className="container-custom">
         <ScrollReveal>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-4 tracking-wide leading-none text-night">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-4 tracking-wide leading-none text-white">
             {home.packagesHeadline}
           </h2>
-          <p className="text-fog text-base leading-relaxed mb-16 max-w-2xl">
+          <p className="text-gray-500 text-base leading-relaxed mb-16 max-w-2xl">
             {home.packagesSub}
           </p>
         </ScrollReveal>
@@ -31,7 +31,7 @@ export default function PackagesPreview() {
 
         <ScrollReveal delay={0.3}>
           <div className="text-center mt-12">
-            <Link href="/packages" className="text-sea font-semibold text-sm tracking-wider hover:text-wave transition-colors">
+            <Link href="/packages" className="text-turquoise font-semibold text-sm tracking-wider hover:text-gold transition-colors">
               {home.packagesViewAll}
             </Link>
           </div>

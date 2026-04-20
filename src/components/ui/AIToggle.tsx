@@ -16,7 +16,7 @@ export default function AIToggle({ useAI, setUseAI }: AIToggleProps) {
 
   return (
     <div className="flex flex-col items-center gap-2">
-      <span className="text-sm font-semibold text-fog tracking-wide uppercase">
+      <span className="text-sm font-semibold text-gray-500 tracking-wide uppercase">
         {global.aiToggleLabel}
       </span>
 
@@ -24,7 +24,7 @@ export default function AIToggle({ useAI, setUseAI }: AIToggleProps) {
         {/* Human-Made label */}
         <span
           className={`text-sm font-bold transition-colors duration-200 ${
-            !useAI ? "text-gold" : "text-fog"
+            !useAI ? "text-gold" : "text-gray-500"
           }`}
         >
           {global.humanMade}
@@ -37,8 +37,8 @@ export default function AIToggle({ useAI, setUseAI }: AIToggleProps) {
           aria-checked={useAI}
           aria-label={global.aiToggleLabel}
           onClick={() => setUseAI(!useAI)}
-          className={`relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wave focus-visible:ring-offset-2 focus-visible:ring-offset-cream ${
-            useAI ? "bg-wave" : "bg-gold"
+          className={`relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-void ${
+            useAI ? "bg-turquoise" : "bg-gold"
           }`}
         >
           <span
@@ -51,7 +51,7 @@ export default function AIToggle({ useAI, setUseAI }: AIToggleProps) {
         {/* AI-Assisted label */}
         <span
           className={`text-sm font-bold transition-colors duration-200 ${
-            useAI ? "text-wave" : "text-fog"
+            useAI ? "text-gold" : "text-gray-500"
           }`}
         >
           {global.aiAssisted}
@@ -65,14 +65,14 @@ export default function AIToggle({ useAI, setUseAI }: AIToggleProps) {
             onClick={() => setShowTooltip(!showTooltip)}
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
-            className="text-fog hover:text-sea transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wave rounded-full"
+            className="text-gray-500 hover:text-turquoise transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-full"
           >
             <Info size={16} />
           </button>
 
           {showTooltip && (
-            <div className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 rounded-lg bg-jungle text-sand text-xs leading-relaxed p-3 shadow-lg">
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2 bg-jungle" />
+            <div className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 rounded-lg bg-void text-cream text-xs leading-relaxed p-3 shadow-lg">
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2 bg-void" />
               {global.aiToggleNote}
             </div>
           )}

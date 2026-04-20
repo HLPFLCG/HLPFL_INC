@@ -19,13 +19,13 @@ export default function PackageCard({ pkg, lang }: PackageCardProps) {
 
   return (
     <div
-      className={`relative flex flex-col rounded-2xl border bg-mist shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg overflow-hidden ${
-        pkg.featured ? "border-gold border-2" : "border-sea/15"
+      className={`relative flex flex-col rounded-2xl border bg-void-lighter shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg overflow-hidden ${
+        pkg.featured ? "border-gold border-2" : "border-gold/15"
       }`}
     >
       {/* Featured badge */}
       {pkg.featured && (
-        <div className="absolute top-3 right-3 bg-gold text-night text-xs font-bold px-2.5 py-0.5 rounded-full">
+        <div className="absolute top-3 right-3 bg-gold text-white text-xs font-bold px-2.5 py-0.5 rounded-full">
           {global.featured}
         </div>
       )}
@@ -36,22 +36,22 @@ export default function PackageCard({ pkg, lang }: PackageCardProps) {
           <span className="text-3xl" role="img" aria-hidden="true">
             {pkg.emoji}
           </span>
-          <h3 className="font-display text-xl font-bold text-night mt-2">
+          <h3 className="font-display text-xl font-bold text-white mt-2">
             {name}
           </h3>
-          <p className="text-sm text-sea font-semibold italic mt-1">
+          <p className="text-sm text-turquoise font-semibold italic mt-1">
             &ldquo;{tagLine}&rdquo;
           </p>
         </div>
 
         {/* Description */}
-        <p className="text-sm text-fog leading-relaxed mb-4">{desc}</p>
+        <p className="text-sm text-gray-500 leading-relaxed mb-4">{desc}</p>
 
         {/* Price and savings */}
         <div className="mb-4">
-          <span className="text-3xl font-bold text-night">${pkg.price}</span>
+          <span className="text-3xl font-bold text-white">${pkg.price}</span>
           {pkg.savingsVsALaCarte > 0 && (
-            <span className="ml-2 inline-flex items-center bg-wave/15 text-wave text-xs font-bold px-2 py-0.5 rounded-full">
+            <span className="ml-2 inline-flex items-center bg-gold/15 text-gold text-xs font-bold px-2 py-0.5 rounded-full">
               {global.save} ${pkg.savingsVsALaCarte} {global.vsAlaCarte}
             </span>
           )}
@@ -60,10 +60,10 @@ export default function PackageCard({ pkg, lang }: PackageCardProps) {
         {/* Included items */}
         <ul className="flex flex-col gap-2 mb-6 flex-1">
           {includes.map((item, i) => (
-            <li key={i} className="flex items-start gap-2 text-sm text-night">
+            <li key={i} className="flex items-start gap-2 text-sm text-white">
               <Check
                 size={16}
-                className="text-wave flex-shrink-0 mt-0.5"
+                className="text-gold flex-shrink-0 mt-0.5"
               />
               <span>{item}</span>
             </li>

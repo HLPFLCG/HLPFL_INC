@@ -14,10 +14,10 @@ interface CardProps extends Omit<HTMLMotionProps<"div">, "ref"> {
 }
 
 const variants = {
-  default: "bg-cream",
-  bordered: "bg-cream border border-sea/15",
-  elevated: "bg-cream shadow-card",
-  glass: "bg-mist/50 backdrop-blur-lg border border-sea/15",
+  default: "bg-void",
+  bordered: "bg-void border border-gold/15",
+  elevated: "bg-void shadow-card",
+  glass: "bg-void-lighter/50 backdrop-blur-lg border border-gold/15",
 };
 
 const paddings = {
@@ -46,7 +46,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
           hover
             ? {
                 y: -4,
-                boxShadow: "0 20px 40px rgba(11, 122, 122, 0.12)",
+                boxShadow: "0 20px 40px rgba(200, 121, 65, 0.12)",
               }
             : undefined
         }

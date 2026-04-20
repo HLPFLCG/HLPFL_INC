@@ -12,13 +12,13 @@ export default function ServicesPreview() {
   const featured = services.filter((s) => s.featured).slice(0, 6);
 
   return (
-    <section className="section bg-cream" id="services">
+    <section className="section bg-void" id="services">
       <div className="container-custom">
         <ScrollReveal>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-4 tracking-wide leading-none text-night">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-4 tracking-wide leading-none text-white">
             {home.servicesHeadline}
           </h2>
-          <p className="text-fog text-base leading-relaxed mb-16 max-w-2xl">
+          <p className="text-gray-500 text-base leading-relaxed mb-16 max-w-2xl">
             {home.servicesSub}
           </p>
         </ScrollReveal>
@@ -33,7 +33,7 @@ export default function ServicesPreview() {
 
         <ScrollReveal delay={0.3}>
           <div className="text-center mt-12">
-            <Link href="/services" className="text-sea font-semibold text-sm tracking-wider hover:text-wave transition-colors">
+            <Link href="/services" className="text-turquoise font-semibold text-sm tracking-wider hover:text-gold transition-colors">
               {home.servicesViewAll}
             </Link>
           </div>

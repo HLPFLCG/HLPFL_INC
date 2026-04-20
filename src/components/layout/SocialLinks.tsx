@@ -17,7 +17,7 @@ export default function SocialLinks() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
-          className="w-10 h-10 rounded-full border border-wave/20 text-sand flex items-center justify-center hover:border-wave hover:text-wave transition-colors"
+          className="w-10 h-10 rounded-full border border-gold/20 text-cream flex items-center justify-center hover:border-gold hover:text-gold transition-colors"
         >
           <Icon size={18} />
         </a>

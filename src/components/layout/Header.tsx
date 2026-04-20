@@ -38,7 +38,7 @@ export default function Header() {
         <nav className="flex items-center justify-between h-16" aria-label="Main navigation">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-1 hover:opacity-80 transition-opacity" aria-label="HLPFL — home">
-            <span className="font-display text-2xl tracking-widest text-sand">HLPFL</span>
+            <span className="font-display text-2xl tracking-widest text-cream">HLPFL</span>
             <span className="w-1.5 h-1.5 rounded-full bg-gold mb-0.5" />
           </Link>
 
@@ -48,7 +48,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="nav-link text-sm text-sand/75 hover:text-wave transition-colors"
+                className="nav-link text-sm text-cream/75 hover:text-gold transition-colors"
               >
                 {link.label}
               </Link>
@@ -65,7 +65,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-wave hover:text-gold transition-colors"
+              className="lg:hidden p-2 text-gold hover:text-gold transition-colors"
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileMenuOpen}
             >
@@ -83,7 +83,7 @@ export default function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-jungle/80 backdrop-blur-sm lg:hidden z-[55]"
+              className="fixed inset-0 bg-void/80 backdrop-blur-sm lg:hidden z-[55]"
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.div
@@ -91,14 +91,14 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 left-0 bottom-0 w-72 bg-jungle border-r border-sea/15 lg:hidden z-[60]"
+              className="fixed top-0 left-0 bottom-0 w-72 bg-void border-r border-gold/15 lg:hidden z-[60]"
             >
               <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between p-4 border-b border-sea/15">
-                  <span className="font-display text-xl tracking-widest text-sand">
+                <div className="flex items-center justify-between p-4 border-b border-gold/15">
+                  <span className="font-display text-xl tracking-widest text-cream">
                     HLPFL<span className="inline-block w-1.5 h-1.5 rounded-full bg-gold ml-0.5 mb-0.5" />
                   </span>
-                  <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 text-sand hover:text-wave" aria-label="Close menu">
+                  <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 text-cream hover:text-gold" aria-label="Close menu">
                     <X size={20} />
                   </button>
                 </div>
@@ -108,14 +108,14 @@ export default function Header() {
                       <Link
                         href={link.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="flex items-center gap-3 px-6 py-3 text-base text-sand/75 hover:text-wave hover:bg-wave/5 transition-all border-l-2 border-transparent hover:border-wave"
+                        className="flex items-center gap-3 px-6 py-3 text-base text-cream/75 hover:text-gold hover:bg-gold/5 transition-all border-l-2 border-transparent hover:border-gold"
                       >
                         {link.label}
                       </Link>
                     </motion.div>
                   ))}
                 </nav>
-                <div className="p-6 border-t border-sea/15">
+                <div className="p-6 border-t border-gold/15">
                   <LanguageToggle />
                 </div>
               </div>
