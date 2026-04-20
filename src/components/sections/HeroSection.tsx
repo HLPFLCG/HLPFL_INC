@@ -14,27 +14,27 @@ export default function HeroSection() {
       {/* Background */}
       <div
         className="absolute inset-0"
-        style={{ backgroundImage: "linear-gradient(155deg, #1A3728 0%, #2D6A4F 100%)" }}
+        style={{ backgroundImage: "linear-gradient(155deg, #0a0a0a 0%, #111111 100%)" }}
       />
 
-      {/* Subtle sea tint glow */}
+      {/* Subtle gold glow */}
       <div
         className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(11,122,122,0.06) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, rgba(200,121,65,0.06) 0%, transparent 70%)" }}
       />
 
       {/* Animated accent lines */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-1/4 left-0 w-full h-px"
-          style={{ backgroundImage: "linear-gradient(to right, transparent, rgba(201,148,26,0.3), transparent)" }}
+          style={{ backgroundImage: "linear-gradient(to right, transparent, rgba(200,121,65,0.3), transparent)" }}
           initial={{ x: "-100%" }}
           animate={{ x: "100%" }}
           transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
         />
         <motion.div
           className="absolute top-3/4 left-0 w-full h-px"
-          style={{ backgroundImage: "linear-gradient(to right, transparent, rgba(201,148,26,0.2), transparent)" }}
+          style={{ backgroundImage: "linear-gradient(to right, transparent, rgba(200,121,65,0.2), transparent)" }}
           initial={{ x: "100%" }}
           animate={{ x: "-100%" }}
           transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
@@ -44,19 +44,19 @@ export default function HeroSection() {
       {/* Diagonal lines */}
       <div
         className="absolute top-0 right-0 w-[400px] h-full opacity-[0.025] pointer-events-none"
-        style={{ background: "repeating-linear-gradient(45deg, transparent, transparent 40px, #F2E4C0 40px, #F2E4C0 41px)" }}
+        style={{ background: "repeating-linear-gradient(45deg, transparent, transparent 40px, #F5E6C8 40px, #F5E6C8 41px)" }}
       />
 
       {/* Content */}
       <div className="relative container-custom text-center px-4 pt-20 pb-16">
         <ScrollReveal>
-          <span className="eyebrow text-wave mb-6 block">
+          <span className="eyebrow text-gold mb-6 block">
             {home.heroEyebrow}
           </span>
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide leading-none mb-8 text-sand">
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide leading-none mb-8 text-cream">
             {home.heroHeadline.split("\n").map((line, i) => (
               <span key={i}>
                 {i > 0 && <br />}
@@ -67,7 +67,7 @@ export default function HeroSection() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
-          <p className="text-sand/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+          <p className="text-cream/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
             {home.heroSub}
           </p>
         </ScrollReveal>
@@ -85,12 +85,12 @@ export default function HeroSection() {
 
         {/* Price card */}
         <ScrollReveal delay={0.4}>
-          <div className="inline-flex flex-col items-center bg-jungle/60 border border-sea/20 rounded-lg px-8 py-5 backdrop-blur-sm">
-            <span className="text-sand/60 text-xs tracking-[0.15em] uppercase mb-1">
+          <div className="inline-flex flex-col items-center bg-void/60 border border-gold/20 rounded-lg px-8 py-5 backdrop-blur-sm">
+            <span className="text-cream/60 text-xs tracking-[0.15em] uppercase mb-1">
               {home.heroPriceFrom}
             </span>
             <span className="font-display text-5xl text-gold tracking-wide">$49</span>
-            <span className="text-sand/50 text-xs mt-1">{home.heroPriceNote}</span>
+            <span className="text-cream/50 text-xs mt-1">{home.heroPriceNote}</span>
           </div>
         </ScrollReveal>
 
@@ -102,7 +102,7 @@ export default function HeroSection() {
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
             <div className="w-px h-12 bg-gradient-to-b from-transparent to-wave/40" />
-            <span className="text-wave/40 text-[10px] tracking-[0.3em] uppercase">Scroll</span>
+            <span className="text-gold/40 text-[10px] tracking-[0.3em] uppercase">Scroll</span>
           </motion.div>
         </ScrollReveal>
       </div>

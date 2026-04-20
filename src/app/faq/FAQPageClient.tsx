@@ -17,15 +17,15 @@ export default function FAQPageClient() {
   };
 
   return (
-    <div className="pt-24 min-h-screen bg-cream">
+    <div className="pt-24 min-h-screen bg-void">
       {/* Hero */}
       <section className="section pb-12">
         <div className="container-custom">
           <ScrollReveal>
-            <h1 className="font-display text-5xl md:text-7xl tracking-wide leading-none mb-4 text-night">
+            <h1 className="font-display text-5xl md:text-7xl tracking-wide leading-none mb-4 text-white">
               {faq.headline}
             </h1>
-            <p className="text-fog text-base md:text-lg leading-relaxed max-w-2xl">
+            <p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-2xl">
               {faq.sub}
             </p>
           </ScrollReveal>
@@ -37,17 +37,17 @@ export default function FAQPageClient() {
         <div className="max-w-[800px] mx-auto px-4">
           {faq.items.map((item, i) => (
             <ScrollReveal key={i} delay={i * 0.05}>
-              <div className="border-b border-sea/15">
+              <div className="border-b border-gold/15">
                 <button
                   onClick={() => toggle(i)}
                   className="w-full flex items-center justify-between py-6 text-left group"
                   aria-expanded={openIndex === i}
                 >
-                  <span className="text-night text-sm md:text-base font-medium pr-4 group-hover:text-gold transition-colors">
+                  <span className="text-white text-sm md:text-base font-medium pr-4 group-hover:text-gold transition-colors">
                     {item.q}
                   </span>
                   <ChevronDown
-                    className={`w-5 h-5 text-sea shrink-0 transition-transform duration-300 ${
+                    className={`w-5 h-5 text-turquoise shrink-0 transition-transform duration-300 ${
                       openIndex === i ? "rotate-180" : ""
                     }`}
                   />
@@ -57,7 +57,7 @@ export default function FAQPageClient() {
                     openIndex === i ? "max-h-96 pb-6" : "max-h-0"
                   }`}
                 >
-                  <p className="text-fog text-sm leading-relaxed">{item.a}</p>
+                  <p className="text-gray-500 text-sm leading-relaxed">{item.a}</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -66,13 +66,13 @@ export default function FAQPageClient() {
       </section>
 
       {/* CTA */}
-      <section className="section bg-sand">
+      <section className="section bg-void-light">
         <div className="container-custom text-center">
           <ScrollReveal>
-            <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4 text-night">
+            <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4 text-white">
               {lang === "es" ? "¿Aún tienes preguntas?" : "Still have questions?"}
             </h2>
-            <p className="text-fog mb-8 max-w-xl mx-auto">
+            <p className="text-gray-500 mb-8 max-w-xl mx-auto">
               {lang === "es"
                 ? "Escríbenos directamente — respondemos en 24 horas."
                 : "Reach out directly — we respond within 24 hours."}

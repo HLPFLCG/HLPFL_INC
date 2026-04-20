@@ -49,33 +49,33 @@ export default function ContactPageClient() {
   const whatsappUrl = getWhatsAppUrl();
 
   return (
-    <div className="pt-24 min-h-screen bg-cream">
+    <div className="pt-24 min-h-screen bg-void">
       <section className="section">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Left: Form */}
             <div>
               <ScrollReveal>
-                <h1 className="font-display text-5xl md:text-7xl tracking-wide leading-none mb-4 text-night">
+                <h1 className="font-display text-5xl md:text-7xl tracking-wide leading-none mb-4 text-white">
                   {contact.headline}
                 </h1>
-                <p className="text-fog text-base leading-relaxed mb-10">
+                <p className="text-gray-500 text-base leading-relaxed mb-10">
                   {contact.sub}
                 </p>
               </ScrollReveal>
 
               {submitted ? (
                 <ScrollReveal>
-                  <div className="text-center py-16 bg-mist rounded-2xl border border-sea/15">
+                  <div className="text-center py-16 bg-void-lighter rounded-2xl border border-gold/15">
                     <div className="text-5xl mb-6">✓</div>
-                    <h2 className="font-display text-2xl text-night mb-3 tracking-wide">
+                    <h2 className="font-display text-2xl text-white mb-3 tracking-wide">
                       {contact.successMessage}
                     </h2>
                   </div>
                 </ScrollReveal>
               ) : (
                 <ScrollReveal delay={0.05}>
-                  <h2 className="font-body text-xl font-bold mb-6 text-night">
+                  <h2 className="font-body text-xl font-bold mb-6 text-white">
                     {contact.formHeadline}
                   </h2>
                   <form onSubmit={handleSubmit} className="space-y-5">
@@ -171,7 +171,7 @@ export default function ContactPageClient() {
                         : contact.submitButton}
                     </button>
 
-                    <p className="text-bark text-xs text-center pt-1">
+                    <p className="text-gray-400 text-xs text-center pt-1">
                       {contact.noSpam}
                     </p>
                   </form>
@@ -182,8 +182,8 @@ export default function ContactPageClient() {
             {/* Right: Alternative contact methods */}
             <div className="flex flex-col gap-6 lg:pt-32">
               <ScrollReveal delay={0.1}>
-                <div className="bg-jungle rounded-2xl border border-sea/15 p-8">
-                  <h2 className="font-body text-xl font-bold text-sand mb-3">
+                <div className="bg-void rounded-2xl border border-gold/15 p-8">
+                  <h2 className="font-body text-xl font-bold text-cream mb-3">
                     {contact.whatsappLabel}
                   </h2>
                   <a
@@ -199,13 +199,13 @@ export default function ContactPageClient() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.2}>
-                <div className="bg-mist rounded-2xl border border-sea/15 p-8">
-                  <h2 className="font-body text-xl font-bold text-night mb-3">
+                <div className="bg-void-lighter rounded-2xl border border-gold/15 p-8">
+                  <h2 className="font-body text-xl font-bold text-white mb-3">
                     {contact.emailDirectLabel}
                   </h2>
                   <a
                     href="mailto:hello@hlpfl.org"
-                    className="inline-flex items-center gap-2 text-sea hover:text-canopy transition-colors font-semibold"
+                    className="inline-flex items-center gap-2 text-turquoise hover:text-void-lighter transition-colors font-semibold"
                   >
                     <Mail size={18} />
                     hello@hlpfl.org

@@ -12,15 +12,15 @@ export default function PackagesPageClient() {
   const global = t("global");
 
   return (
-    <div className="pt-24 min-h-screen bg-cream">
+    <div className="pt-24 min-h-screen bg-void">
       {/* Hero */}
-      <section className="section pb-12 bg-jungle">
+      <section className="section pb-12 bg-void">
         <div className="container-custom">
           <ScrollReveal>
-            <h1 className="font-display text-5xl md:text-7xl tracking-wide leading-none mb-4 text-sand">
+            <h1 className="font-display text-5xl md:text-7xl tracking-wide leading-none mb-4 text-cream">
               {pkgT.headline}
             </h1>
-            <p className="text-sand/70 text-base md:text-lg leading-relaxed max-w-2xl">
+            <p className="text-cream/70 text-base md:text-lg leading-relaxed max-w-2xl">
               {pkgT.sub}
             </p>
           </ScrollReveal>
@@ -39,11 +39,11 @@ export default function PackagesPageClient() {
           </div>
 
           <ScrollReveal delay={0.3}>
-            <p className="text-center text-fog text-sm mt-8">
+            <p className="text-center text-gray-500 text-sm mt-8">
               {pkgT.customNote}{" "}
               <Link
                 href="/contact/"
-                className="text-sea hover:text-canopy font-semibold transition-colors"
+                className="text-turquoise hover:text-void-lighter font-semibold transition-colors"
               >
                 {pkgT.customCTA}
               </Link>
@@ -53,13 +53,13 @@ export default function PackagesPageClient() {
       </section>
 
       {/* Retainers */}
-      <section className="section bg-sand">
+      <section className="section bg-void-light">
         <div className="container-custom">
           <ScrollReveal>
-            <h2 className="font-display text-3xl md:text-5xl tracking-wide mb-4 text-night text-center">
+            <h2 className="font-display text-3xl md:text-5xl tracking-wide mb-4 text-white text-center">
               {retT.headline}
             </h2>
-            <p className="text-fog text-base md:text-lg leading-relaxed max-w-2xl mx-auto text-center mb-12">
+            <p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto text-center mb-12">
               {retT.sub}
             </p>
           </ScrollReveal>
@@ -73,7 +73,7 @@ export default function PackagesPageClient() {
           </div>
 
           <ScrollReveal delay={0.3}>
-            <p className="text-center text-fog text-sm mt-8">
+            <p className="text-center text-gray-500 text-sm mt-8">
               {retT.cancelAnytime}
             </p>
           </ScrollReveal>
@@ -81,13 +81,13 @@ export default function PackagesPageClient() {
       </section>
 
       {/* CTA */}
-      <section className="section bg-cream">
+      <section className="section bg-void">
         <div className="container-custom text-center">
           <ScrollReveal>
-            <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4 text-night">
+            <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4 text-white">
               {lang === "es" ? "¿Listo para comenzar?" : "Ready to get started?"}
             </h2>
-            <p className="text-fog mb-8 max-w-xl mx-auto">
+            <p className="text-gray-500 mb-8 max-w-xl mx-auto">
               {lang === "es"
                 ? "Elige un paquete o arma el tuyo propio."
                 : "Pick a package or build your own."}

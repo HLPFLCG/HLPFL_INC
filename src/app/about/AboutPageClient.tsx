@@ -28,15 +28,15 @@ export default function AboutPageClient() {
   const global = t("global");
 
   return (
-    <div className="pt-24 min-h-screen bg-cream">
+    <div className="pt-24 min-h-screen bg-void">
       {/* Hero */}
-      <section className="section pb-12 bg-jungle">
+      <section className="section pb-12 bg-void">
         <div className="container-custom">
           <ScrollReveal>
-            <h1 className="font-display text-5xl md:text-7xl tracking-wide leading-none mb-4 text-sand">
+            <h1 className="font-display text-5xl md:text-7xl tracking-wide leading-none mb-4 text-cream">
               {about.headline}
             </h1>
-            <p className="text-sand/70 text-base md:text-lg leading-relaxed max-w-2xl">
+            <p className="text-cream/70 text-base md:text-lg leading-relaxed max-w-2xl">
               {about.sub}
             </p>
           </ScrollReveal>
@@ -44,16 +44,16 @@ export default function AboutPageClient() {
       </section>
 
       {/* Story */}
-      <section className="section bg-sand">
+      <section className="section bg-void-light">
         <div className="max-w-[800px] mx-auto px-4">
           <ScrollReveal>
-            <h2 className="font-display text-3xl md:text-4xl tracking-wide mb-8 text-night">
+            <h2 className="font-display text-3xl md:text-4xl tracking-wide mb-8 text-white">
               {about.storyHeadline}
             </h2>
           </ScrollReveal>
           {about.story.map((paragraph, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>
-              <p className="text-fog text-base leading-relaxed mb-6">
+              <p className="text-gray-500 text-base leading-relaxed mb-6">
                 {paragraph}
               </p>
             </ScrollReveal>
@@ -62,10 +62,10 @@ export default function AboutPageClient() {
       </section>
 
       {/* Values */}
-      <section className="section bg-mist">
+      <section className="section bg-void-lighter">
         <div className="container-custom">
           <ScrollReveal>
-            <h2 className="font-display text-3xl md:text-4xl tracking-wide mb-12 text-night text-center">
+            <h2 className="font-display text-3xl md:text-4xl tracking-wide mb-12 text-white text-center">
               {about.valuesHeadline}
             </h2>
           </ScrollReveal>
@@ -74,16 +74,16 @@ export default function AboutPageClient() {
               const Icon = iconMap[value.icon];
               return (
                 <ScrollReveal key={i} delay={i * 0.08}>
-                  <div className="bg-cream rounded-2xl border border-sea/15 p-6 h-full">
+                  <div className="bg-void rounded-2xl border border-gold/15 p-6 h-full">
                     {Icon && (
-                      <div className="w-10 h-10 rounded-lg bg-sea/10 flex items-center justify-center mb-4">
-                        <Icon size={20} className="text-sea" />
+                      <div className="w-10 h-10 rounded-lg bg-turquoise/10 flex items-center justify-center mb-4">
+                        <Icon size={20} className="text-turquoise" />
                       </div>
                     )}
-                    <h3 className="font-body text-lg font-bold text-night mb-2">
+                    <h3 className="font-body text-lg font-bold text-white mb-2">
                       {value.title}
                     </h3>
-                    <p className="text-fog text-sm leading-relaxed">
+                    <p className="text-gray-500 text-sm leading-relaxed">
                       {value.desc}
                     </p>
                   </div>
@@ -95,18 +95,18 @@ export default function AboutPageClient() {
       </section>
 
       {/* Tools / Stack */}
-      <section className="section bg-cream">
+      <section className="section bg-void">
         <div className="max-w-[800px] mx-auto px-4">
           <ScrollReveal>
-            <h2 className="font-display text-3xl md:text-4xl tracking-wide mb-8 text-night">
+            <h2 className="font-display text-3xl md:text-4xl tracking-wide mb-8 text-white">
               {about.toolsHeadline}
             </h2>
           </ScrollReveal>
           <ul className="space-y-3">
             {about.tools.map((tool, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
-                <li className="flex items-center gap-3 text-fog text-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-wave flex-shrink-0" />
+                <li className="flex items-center gap-3 text-gray-500 text-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
                   {tool}
                 </li>
               </ScrollReveal>
@@ -116,10 +116,10 @@ export default function AboutPageClient() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="section bg-jungle">
+      <section className="section bg-void">
         <div className="max-w-[800px] mx-auto px-4">
           <ScrollReveal>
-            <h2 className="font-display text-3xl md:text-4xl tracking-wide mb-8 text-sand">
+            <h2 className="font-display text-3xl md:text-4xl tracking-wide mb-8 text-cream">
               {about.missionHeadline}
             </h2>
           </ScrollReveal>
@@ -128,7 +128,7 @@ export default function AboutPageClient() {
               <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">
                 {lang === "es" ? "Misión" : "Mission"}
               </p>
-              <p className="text-sand text-lg leading-relaxed">
+              <p className="text-cream text-lg leading-relaxed">
                 {about.mission}
               </p>
             </div>
@@ -138,7 +138,7 @@ export default function AboutPageClient() {
               <p className="text-gold text-xs uppercase tracking-[0.2em] mb-2">
                 {lang === "es" ? "Visión" : "Vision"}
               </p>
-              <p className="text-sand text-lg leading-relaxed">
+              <p className="text-cream text-lg leading-relaxed">
                 {about.vision}
               </p>
             </div>
@@ -147,13 +147,13 @@ export default function AboutPageClient() {
       </section>
 
       {/* CTA */}
-      <section className="section bg-cream">
+      <section className="section bg-void">
         <div className="container-custom text-center">
           <ScrollReveal>
-            <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4 text-night">
+            <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4 text-white">
               {lang === "es" ? "¿Listo para hablar?" : "Ready to talk?"}
             </h2>
-            <p className="text-fog mb-8 max-w-xl mx-auto">
+            <p className="text-gray-500 mb-8 max-w-xl mx-auto">
               {lang === "es"
                 ? "Cuéntanos sobre tu negocio. Sin presión — solo una conversación."
                 : "Tell us about your business. No pressure — just a conversation."}

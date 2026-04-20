@@ -14,10 +14,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variantClasses: Record<ButtonVariant, string> = {
-  primary: "bg-gold text-night hover:bg-gold-hover shadow-sm hover:shadow-cta",
-  secondary: "bg-sea text-night hover:bg-sea/90 shadow-sm hover:shadow-md",
-  outline: "border-2 border-wave text-wave hover:bg-wave/10",
-  ghost: "bg-jungle text-sand hover:bg-jungle/80",
+  primary: "bg-gold text-white hover:bg-gold-hover shadow-sm hover:shadow-cta",
+  secondary: "bg-turquoise text-white hover:bg-turquoise/90 shadow-sm hover:shadow-md",
+  outline: "border-2 border-gold text-gold hover:bg-gold/10",
+  ghost: "bg-void text-cream hover:bg-void/80",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

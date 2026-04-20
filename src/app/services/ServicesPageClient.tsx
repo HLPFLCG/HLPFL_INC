@@ -23,15 +23,15 @@ export default function ServicesPageClient() {
   const categories = Object.keys(categoryLabels) as ServiceCategory[];
 
   return (
-    <div className="pt-24 min-h-screen bg-cream">
+    <div className="pt-24 min-h-screen bg-void">
       {/* Hero */}
-      <section className="section pb-12 bg-jungle">
+      <section className="section pb-12 bg-void">
         <div className="container-custom">
           <ScrollReveal>
-            <h1 className="font-display text-5xl md:text-7xl tracking-wide leading-none mb-4 text-sand">
+            <h1 className="font-display text-5xl md:text-7xl tracking-wide leading-none mb-4 text-cream">
               {pageT.headline}
             </h1>
-            <p className="text-sand/70 text-base md:text-lg leading-relaxed max-w-2xl">
+            <p className="text-cream/70 text-base md:text-lg leading-relaxed max-w-2xl">
               {pageT.sub}
             </p>
           </ScrollReveal>
@@ -39,7 +39,7 @@ export default function ServicesPageClient() {
       </section>
 
       {/* AI Toggle — sticky */}
-      <div className="sticky top-16 z-30 bg-cream/95 backdrop-blur-sm border-b border-sea/10 py-4">
+      <div className="sticky top-16 z-30 bg-void/95 backdrop-blur-sm border-b border-gold/10 py-4">
         <div className="container-custom flex flex-col sm:flex-row items-center justify-between gap-4">
           <AIToggle useAI={useAI} setUseAI={setUseAI} />
         </div>
@@ -53,8 +53,8 @@ export default function ServicesPageClient() {
               onClick={() => setActiveCategory("all")}
               className={`px-4 py-2 text-sm font-semibold rounded-full border transition-all duration-200 ${
                 activeCategory === "all"
-                  ? "bg-gold text-night border-gold"
-                  : "border-sea/20 text-fog hover:border-sea/40"
+                  ? "bg-gold text-white border-gold"
+                  : "border-gold/20 text-gray-500 hover:border-gold/40"
               }`}
             >
               {pageT.filterAll}
@@ -65,8 +65,8 @@ export default function ServicesPageClient() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-2 text-sm font-semibold rounded-full border transition-all duration-200 ${
                   activeCategory === cat
-                    ? "bg-gold text-night border-gold"
-                    : "border-sea/20 text-fog hover:border-sea/40"
+                    ? "bg-gold text-white border-gold"
+                    : "border-gold/20 text-gray-500 hover:border-gold/40"
                 }`}
               >
                 {lang === "es" ? categoryLabels[cat].es : categoryLabels[cat].en}
@@ -90,13 +90,13 @@ export default function ServicesPageClient() {
       </section>
 
       {/* CTA */}
-      <section className="section bg-sand">
+      <section className="section bg-void-light">
         <div className="container-custom text-center">
           <ScrollReveal>
-            <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4 text-night">
+            <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4 text-white">
               {lang === "es" ? "¿No ves lo que necesitas?" : "Don't see what you need?"}
             </h2>
-            <p className="text-fog mb-8 max-w-xl mx-auto">
+            <p className="text-gray-500 mb-8 max-w-xl mx-auto">
               {lang === "es"
                 ? "Cotización personalizada en 24 horas."
                 : "Custom quote within 24 hours."}

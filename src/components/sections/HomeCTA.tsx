@@ -9,13 +9,13 @@ export default function HomeCTA() {
   const home = t("home");
 
   return (
-    <section className="section bg-jungle" id="cta">
+    <section className="section bg-void" id="cta">
       <div className="max-w-[700px] mx-auto px-4 text-center">
         <ScrollReveal>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-4 tracking-wide leading-none text-sand">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-4 tracking-wide leading-none text-cream">
             {home.ctaHeadline}
           </h2>
-          <p className="text-sand/70 text-base leading-relaxed mb-10">
+          <p className="text-cream/70 text-base leading-relaxed mb-10">
             {home.ctaSub}
           </p>
         </ScrollReveal>
@@ -25,7 +25,7 @@ export default function HomeCTA() {
             <Link href="/services" className="btn-primary">
               {home.ctaButton}
             </Link>
-            <Link href="/contact" className="text-wave text-sm font-semibold hover:text-sand transition-colors">
+            <Link href="/contact" className="text-gold text-sm font-semibold hover:text-cream transition-colors">
               {home.ctaSecondary}
             </Link>
           </div>

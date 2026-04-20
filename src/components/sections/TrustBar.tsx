@@ -21,9 +21,9 @@ export default function TrustBar() {
   const ticker = [...items, ...items];
 
   return (
-    <section className="bg-jungle border-y border-sea/15 py-4 overflow-hidden">
+    <section className="bg-void border-y border-gold/15 py-4 overflow-hidden">
       <div className="flex items-center gap-4 px-4">
-        <span className="text-sand/60 text-xs tracking-[0.15em] uppercase whitespace-nowrap flex-shrink-0">
+        <span className="text-cream/60 text-xs tracking-[0.15em] uppercase whitespace-nowrap flex-shrink-0">
           {home.trustBarLabel}
         </span>
         <div className="relative flex-1 overflow-hidden">
@@ -35,7 +35,7 @@ export default function TrustBar() {
             {ticker.map((item, i) => (
               <span key={i} className="flex items-center gap-4 text-gold text-sm tracking-wider">
                 <span>{item}</span>
-                <span className="text-wave/40 text-xs">·</span>
+                <span className="text-gold/40 text-xs">·</span>
               </span>
             ))}
           </motion.div>

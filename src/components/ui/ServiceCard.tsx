@@ -111,10 +111,10 @@ export default function ServiceCard({
   const isContent = isContentPricing(service.price);
 
   return (
-    <div className="relative flex flex-col rounded-2xl border border-sea/15 bg-mist shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg overflow-hidden">
+    <div className="relative flex flex-col rounded-2xl border border-gold/15 bg-void-lighter shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg overflow-hidden">
       {/* Featured badge */}
       {service.featured && (
-        <div className="absolute top-3 right-3 bg-gold text-night text-xs font-bold px-2.5 py-0.5 rounded-full">
+        <div className="absolute top-3 right-3 bg-gold text-white text-xs font-bold px-2.5 py-0.5 rounded-full">
           {global.featured}
         </div>
       )}
@@ -123,17 +123,17 @@ export default function ServiceCard({
         {/* Icon and name */}
         <div className="flex items-start gap-3 mb-3">
           {Icon && (
-            <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-sea/10 flex items-center justify-center">
-              <Icon size={20} className="text-sea" />
+            <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-turquoise/10 flex items-center justify-center">
+              <Icon size={20} className="text-turquoise" />
             </div>
           )}
-          <h3 className="font-body text-lg font-bold text-night leading-snug">
+          <h3 className="font-body text-lg font-bold text-white leading-snug">
             {name}
           </h3>
         </div>
 
         {/* Description */}
-        <p className="text-sm text-fog leading-relaxed mb-4 flex-1">{desc}</p>
+        <p className="text-sm text-gray-500 leading-relaxed mb-4 flex-1">{desc}</p>
 
         {/* Price display */}
         <div className="mb-4">
@@ -143,7 +143,7 @@ export default function ServiceCard({
                 className={`text-sm font-semibold transition-colors duration-200 ${
                   !useAI
                     ? "text-gold"
-                    : "text-fog/50 line-through"
+                    : "text-gray-500/50 line-through"
                 }`}
               >
                 ${service.price.human}
@@ -154,8 +154,8 @@ export default function ServiceCard({
               <span
                 className={`text-sm font-semibold transition-colors duration-200 ${
                   useAI
-                    ? "text-wave"
-                    : "text-fog/50 line-through"
+                    ? "text-gold"
+                    : "text-gray-500/50 line-through"
                 }`}
               >
                 ${service.price.ai}
@@ -165,12 +165,12 @@ export default function ServiceCard({
               </span>
             </div>
           ) : isQuote ? (
-            <span className="text-lg font-bold text-sea">{global.custom}</span>
+            <span className="text-lg font-bold text-turquoise">{global.custom}</span>
           ) : (
-            <span className="text-2xl font-bold text-night">
+            <span className="text-2xl font-bold text-white">
               ${price as number}
               {service.isRecurring && (
-                <span className="text-sm font-normal text-fog">
+                <span className="text-sm font-normal text-gray-500">
                   {global.perMonth}
                 </span>
               )}
@@ -179,14 +179,14 @@ export default function ServiceCard({
 
           {/* Price note */}
           {service.priceNote && (
-            <p className="text-xs text-bark mt-1">{service.priceNote}</p>
+            <p className="text-xs text-gray-400 mt-1">{service.priceNote}</p>
           )}
         </div>
 
         {/* Delivery days */}
         {service.deliveryDays && (
-          <div className="flex items-center gap-1.5 text-xs text-fog mb-4">
-            <Clock size={14} className="text-wave" />
+          <div className="flex items-center gap-1.5 text-xs text-gray-500 mb-4">
+            <Clock size={14} className="text-gold" />
             <span>
               {global.delivery}: {service.deliveryDays} {global.days}
             </span>
