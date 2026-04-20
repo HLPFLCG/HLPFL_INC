@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import AboutPageClient from "./AboutPageClient";
 
 export const metadata: Metadata = {
-  title: "About HLPFL",
+  title: "About — HLPFL",
   description:
-    "HLPFL is a B2B consulting agency focused exclusively on hospitality and tourism operators in the Cahuita–Manzanillo corridor of Costa Rica's Caribbean coast.",
-  alternates: { canonical: "https://hlpfl.org/about" },
+    "Built by someone who's been there. 7 years as an entrepreneur.",
+  alternates: { canonical: "https://hlpfl.org/about/" },
 };
 
 export default function AboutPage() {

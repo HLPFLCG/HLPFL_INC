@@ -6,7 +6,3 @@ export { default as PackagesPreview } from "./PackagesPreview";
 export { default as WhyHLPFL } from "./WhyHLPFL";
 export { default as TestimonialsSection } from "./TestimonialsSection";
 export { default as HomeCTA } from "./HomeCTA";
-export { default as HowItWorks } from "./HowItWorks";
-export { default as ValueStack } from "./ValueStack";
-export { default as ResultsSection } from "./ResultsSection";
-export { default as AboutSection } from "./AboutSection";

@@ -1,31 +1,26 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { ScrollReveal } from "@/components/ui";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { services } from "@/lib/data";
+import { services, categoryLabels, type ServiceCategory, getServicePrice, getStripeLink } from "@/lib/data";
+import { AIToggle, ScrollReveal, ServiceCard } from "@/components/ui";
 
-const beforeAfters = [
-  {
-    service: "Custom E-Commerce / Online Booking",
-    before: "Taking reservations via WhatsApp at midnight. Guests lose the thread and never follow up.",
-    after: "Clean booking page where guests reserve and pay in any currency, any time zone — while you sleep.",
-  },
-  {
-    service: "Digital Marketing",
-    before: "Posting to Instagram occasionally. No strategy. Followers but no bookings.",
-    after: "Targeted campaigns reaching travelers actively planning their Caribbean coast trip. Real inquiries, not just likes.",
-  },
-  {
-    service: "Systems, Processes & Logistics",
-    before: "Every check-in is different. Housekeeping is ad hoc. You can't leave the property.",
-    after: "Documented SOPs that run the same whether you're on-site or back in the city. Five-star consistency.",
-  },
-];
+type FilterCategory = ServiceCategory | "all";
 
 export default function ServicesPageClient() {
   const { t, lang } = useLanguage();
   const pageT = t("services");
+  const global = t("global");
+
+  const [useAI, setUseAI] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<FilterCategory>("all");
+
+  const filtered = services.filter(
+    (s) => activeCategory === "all" || s.category === activeCategory
+  );
+
+  const categories = Object.keys(categoryLabels) as ServiceCategory[];
 
   return (
     <div className="pt-24 min-h-screen bg-cream">
@@ -33,80 +28,61 @@ export default function ServicesPageClient() {
       <section className="section pb-12 bg-jungle">
         <div className="container-custom">
           <ScrollReveal>
-            <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block">What We Build</span>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wide leading-none mb-6 text-sand">
-              {pageT.pageTitle}
+            <h1 className="font-display text-5xl md:text-7xl tracking-wide leading-none mb-4 text-sand">
+              {pageT.headline}
             </h1>
             <p className="text-sand/70 text-base md:text-lg leading-relaxed max-w-2xl">
-              {pageT.pageSubtitle}
+              {pageT.sub}
             </p>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="pb-20">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, i) => {
-              const Icon = service.icon;
-              const title = lang === "es" ? service.titleEs : service.title;
-              const description = lang === "es" ? service.descriptionEs : service.description;
-              const tags = lang === "es" ? service.tagsEs : service.tags;
+      {/* AI Toggle — sticky */}
+      <div className="sticky top-16 z-30 bg-cream/95 backdrop-blur-sm border-b border-sea/10 py-4">
+        <div className="container-custom flex flex-col sm:flex-row items-center justify-between gap-4">
+          <AIToggle useAI={useAI} setUseAI={setUseAI} />
+        </div>
+      </div>
 
-              return (
-                <ScrollReveal key={i} delay={i * 0.06}>
-                  <div className="bg-mist border border-sea/15 p-8 h-full group transition-all duration-300 hover:border-sea/40 hover:-translate-y-1 flex flex-col">
-                    <div className="w-10 h-10 flex items-center justify-center border border-gold/20 mb-6 group-hover:border-gold/50 transition-colors">
-                      <Icon className="w-5 h-5 text-gold" />
-                    </div>
-                    <div className="text-gold text-xs tracking-[0.2em] uppercase mb-2">0{i + 1}</div>
-                    <h2 className="font-display text-2xl md:text-3xl text-night tracking-wide mb-4">{title}</h2>
-                    <p className="text-fog text-sm leading-relaxed mb-6 flex-1">{description}</p>
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {tags.map((tag, j) => (
-                        <span key={j} className="text-[11px] text-gold/70 border border-gold/15 px-2 py-0.5 tracking-wider">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <Link href="/contact" className="text-sea text-sm tracking-wider hover:text-canopy transition-colors">
-                      Learn More / Get Started →
-                    </Link>
-                  </div>
-                </ScrollReveal>
-              );
-            })}
+      {/* Category filter tabs */}
+      <section className="pt-8 pb-4">
+        <div className="container-custom">
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => setActiveCategory("all")}
+              className={`px-4 py-2 text-sm font-semibold rounded-full border transition-all duration-200 ${
+                activeCategory === "all"
+                  ? "bg-gold text-night border-gold"
+                  : "border-sea/20 text-fog hover:border-sea/40"
+              }`}
+            >
+              {pageT.filterAll}
+            </button>
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-4 py-2 text-sm font-semibold rounded-full border transition-all duration-200 ${
+                  activeCategory === cat
+                    ? "bg-gold text-night border-gold"
+                    : "border-sea/20 text-fog hover:border-sea/40"
+                }`}
+              >
+                {lang === "es" ? categoryLabels[cat].es : categoryLabels[cat].en}
+              </button>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Before vs After */}
-      <section className="section bg-sand">
+      {/* Service grid */}
+      <section className="pb-20">
         <div className="container-custom">
-          <ScrollReveal>
-            <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block text-center">Transformation</span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-center mb-16 tracking-wide leading-none text-night">
-              Before vs. <span className="text-gradient">After</span>
-            </h2>
-          </ScrollReveal>
-
-          <div className="space-y-8">
-            {beforeAfters.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="bg-mist border border-sea/15 p-8">
-                  <h3 className="font-display text-xl text-gold tracking-wide mb-6">{item.service}</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <span className="text-red-400/70 text-xs tracking-[0.2em] uppercase mb-2 block">Before</span>
-                      <p className="text-fog text-sm leading-relaxed">{item.before}</p>
-                    </div>
-                    <div>
-                      <span className="text-wave text-xs tracking-[0.2em] uppercase mb-2 block">After</span>
-                      <p className="text-night text-sm leading-relaxed">{item.after}</p>
-                    </div>
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filtered.map((service, i) => (
+              <ScrollReveal key={service.id} delay={i * 0.04}>
+                <ServiceCard service={service} useAI={useAI} lang={lang} />
               </ScrollReveal>
             ))}
           </div>
@@ -118,10 +94,19 @@ export default function ServicesPageClient() {
         <div className="container-custom text-center">
           <ScrollReveal>
             <h2 className="font-display text-4xl md:text-5xl tracking-wide mb-4 text-night">
-              {pageT.ctaTitle}
+              {lang === "es" ? "¿No ves lo que necesitas?" : "Don't see what you need?"}
             </h2>
-            <p className="text-fog mb-8 max-w-xl mx-auto">{pageT.ctaDesc}</p>
-            <Link href="/contact" className="btn-primary">{pageT.ctaButton}</Link>
+            <p className="text-fog mb-8 max-w-xl mx-auto">
+              {lang === "es"
+                ? "Cotización personalizada en 24 horas."
+                : "Custom quote within 24 hours."}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact/" className="btn-primary">{global.contactUs}</Link>
+              <Link href="/packages/" className="btn-ghost">
+                {lang === "es" ? "Ver Paquetes" : "View Packages"}
+              </Link>
+            </div>
           </ScrollReveal>
         </div>
       </section>

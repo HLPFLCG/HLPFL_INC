@@ -735,6 +735,86 @@ const translations = {
       ],
     },
   },
+  // ─── TERMS ──────────────────────────────────────────────────────────────
+
+  terms: {
+    en: {
+      headline: "Terms of Service",
+      lastUpdated: "Last updated: 2025",
+      content: [
+        {
+          heading: "Services",
+          body: "HLPFL INC provides à la carte web services including website development, branding, SEO, Shopify store setup, social media content, and related digital services. All services are listed on the Services page with transparent pricing.",
+        },
+        {
+          heading: "Payment",
+          body: "All one-time services are paid upfront via Stripe before work begins. Retainers are monthly subscriptions billed through Stripe. You receive a receipt after every payment. No work is started until payment is confirmed.",
+        },
+        {
+          heading: "Delivery",
+          body: "Delivery timelines are listed on each service. Standard website delivery is 5–7 business days. Rush delivery (48hr) is available as an add-on. Each project includes one round of revisions.",
+        },
+        {
+          heading: "Ownership",
+          body: "All work product — websites, logos, brand assets, code, and content — belongs to you upon full payment. Domains, hosting accounts, and third-party accounts are set up under your name. HLPFL retains no ownership rights.",
+        },
+        {
+          heading: "Retainers",
+          body: "Monthly retainers are month-to-month with no long-term contracts. Cancel with 30 days written notice via email. No penalties, no fees.",
+        },
+        {
+          heading: "AI Disclosure",
+          body: "Website development, logo design, and setup services are always done by hand. Content services (social media posts, blog posts, newsletters) offer both human-made and AI-assisted options at different price points. AI-assisted content is always reviewed and edited by a person before delivery.",
+        },
+        {
+          heading: "Limitation of Liability",
+          body: "HLPFL's liability is limited to the fees paid for the specific service in question. We do not guarantee specific business outcomes, traffic numbers, or revenue increases.",
+        },
+        {
+          heading: "Contact",
+          body: "Questions about these terms? Email hello@hlpfl.org. Response within 24 hours.",
+        },
+      ],
+    },
+    es: {
+      headline: "Términos de Servicio",
+      lastUpdated: "Última actualización: 2025",
+      content: [
+        {
+          heading: "Servicios",
+          body: "HLPFL INC proporciona servicios web à la carte incluyendo desarrollo de sitios web, branding, SEO, configuración de tiendas Shopify, contenido para redes sociales y servicios digitales relacionados. Todos los servicios están listados en la página de Servicios con precios transparentes.",
+        },
+        {
+          heading: "Pagos",
+          body: "Todos los servicios únicos se pagan por adelantado vía Stripe antes de comenzar el trabajo. Las retenciones son suscripciones mensuales facturadas a través de Stripe. Recibes un recibo después de cada pago. No se inicia ningún trabajo hasta que se confirme el pago.",
+        },
+        {
+          heading: "Entrega",
+          body: "Los plazos de entrega están listados en cada servicio. La entrega estándar de sitios web es de 5–7 días hábiles. La entrega express (48hr) está disponible como complemento. Cada proyecto incluye una ronda de revisiones.",
+        },
+        {
+          heading: "Propiedad",
+          body: "Todo el trabajo — sitios web, logos, activos de marca, código y contenido — te pertenece al completar el pago. Los dominios, cuentas de hosting y cuentas de terceros se configuran a tu nombre. HLPFL no retiene derechos de propiedad.",
+        },
+        {
+          heading: "Retenciones",
+          body: "Las retenciones mensuales son mes a mes sin contratos a largo plazo. Cancela con 30 días de aviso por escrito vía email. Sin penalizaciones, sin cargos.",
+        },
+        {
+          heading: "Divulgación de IA",
+          body: "El desarrollo de sitios web, diseño de logos y servicios de configuración siempre se hacen a mano. Los servicios de contenido (publicaciones en redes sociales, entradas de blog, newsletters) ofrecen opciones hechas por humanos y asistidas por IA a diferentes precios. El contenido asistido por IA siempre es revisado y editado por una persona antes de la entrega.",
+        },
+        {
+          heading: "Limitación de Responsabilidad",
+          body: "La responsabilidad de HLPFL se limita a las tarifas pagadas por el servicio específico en cuestión. No garantizamos resultados comerciales específicos, números de tráfico ni aumentos de ingresos.",
+        },
+        {
+          heading: "Contacto",
+          body: "¿Preguntas sobre estos términos? Escribe a hello@hlpfl.org. Respuesta en 24 horas.",
+        },
+      ],
+    },
+  },
 } as const;
 
 // ─── t() HELPER — same interface as your existing build ───────────────────────
@@ -744,8 +824,8 @@ type TranslationKey = keyof typeof translations;
 export function getTranslations<K extends TranslationKey>(
   key: K,
   lang: Lang
-): (typeof translations)[K][Lang] {
-  return translations[key][lang];
+): (typeof translations)[K]["en"] {
+  return translations[key][lang] as (typeof translations)[K]["en"];
 }
 
 export { translations };

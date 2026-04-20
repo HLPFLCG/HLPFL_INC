@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import FAQPageClient from "./FAQPageClient";
 
 export const metadata: Metadata = {
-  title: "FAQ",
+  title: "FAQ — HLPFL",
   description:
-    "Frequently asked questions about HLPFL services for hospitality operators in the Cahuita–Manzanillo corridor, Costa Rica Caribbean coast.",
+    "Frequently asked questions about HLPFL web services, pricing, delivery, and policies.",
   alternates: { canonical: "https://hlpfl.org/faq/" },
 };
 
