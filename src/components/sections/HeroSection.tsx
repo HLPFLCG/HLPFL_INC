@@ -67,7 +67,7 @@ export default function HeroSection() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
-          <p className="text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10" style={{ color: "rgba(242,228,192,0.80)" }}>
+          <p className="text-sand/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
             {home.heroSub}
           </p>
         </ScrollReveal>

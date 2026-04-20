@@ -26,11 +26,13 @@ export default function TestimonialsSection() {
                 <p className="text-night text-sm leading-relaxed mb-6 italic">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
-                <div className="border-t border-sea/15 pt-4">
-                  <div className="text-bark text-sm font-medium">— {testimonial.name}</div>
-                  <div className="text-fog text-xs mt-0.5">{testimonial.business}</div>
+                <footer className="border-t border-sea/15 pt-4">
+                  <cite className="not-italic">
+                    <div className="text-bark text-sm font-medium">— {testimonial.name}</div>
+                    <div className="text-fog text-xs mt-0.5">{testimonial.business}</div>
+                  </cite>
                   <div className="text-wave text-xs tracking-wider mt-1">{testimonial.service}</div>
-                </div>
+                </footer>
               </div>
             </ScrollReveal>
           ))}

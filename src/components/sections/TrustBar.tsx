@@ -1,14 +1,23 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function TrustBar() {
   const { t } = useLanguage();
   const home = t("home");
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
 
   const items = home.trustBarItems;
-  // Duplicate for seamless loop
   const ticker = [...items, ...items];
 
   return (
@@ -20,8 +29,8 @@ export default function TrustBar() {
         <div className="relative flex-1 overflow-hidden">
           <motion.div
             className="flex items-center gap-0 whitespace-nowrap"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            animate={reducedMotion ? undefined : { x: ["0%", "-50%"] }}
+            transition={reducedMotion ? undefined : { duration: 30, repeat: Infinity, ease: "linear" }}
           >
             {ticker.map((item, i) => (
               <span key={i} className="flex items-center gap-4 text-gold text-sm tracking-wider">
