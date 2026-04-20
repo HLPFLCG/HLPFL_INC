@@ -14,9 +14,10 @@ export default function Header() {
   const nav = t("nav");
 
   const navLinks = [
-    { href: "/", label: nav.home },
     { href: "/services", label: nav.services },
+    { href: "/packages", label: nav.packages },
     { href: "/about", label: nav.about },
+    { href: "/testimonials", label: nav.testimonials },
     { href: "/faq", label: nav.faq },
     { href: "/contact", label: nav.contact },
   ];
@@ -57,7 +58,7 @@ export default function Header() {
           {/* Right side */}
           <div className="flex items-center gap-4">
             <LanguageToggle />
-            <Link href="/contact" className="hidden md:inline-block btn-primary text-sm py-2 px-4">
+            <Link href="/services" className="hidden md:inline-block btn-primary text-sm py-2 px-4">
               {nav.getStarted}
             </Link>
 

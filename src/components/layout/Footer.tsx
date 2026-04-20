@@ -1,22 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import { Instagram, Facebook, Youtube, Twitter, MessageCircle } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
-const footerLinks = {
-  services: [
-    { label: "Digital Marketing", href: "/services#digital-marketing" },
-    { label: "Online Booking", href: "/services#booking" },
-    { label: "Visual Identity", href: "/services#branding" },
-    { label: "Professional Website", href: "/services#website" },
-    { label: "Business Strategy", href: "/services#strategy" },
-  ],
-  company: [
-    { label: "About", href: "/about" },
-    { label: "FAQ", href: "/faq" },
-    { label: "Contact", href: "/contact" },
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms", href: "/terms" },
-  ],
-};
+const navHrefs = ["/services", "/packages", "/about", "/faq", "/contact"];
+const legalHrefs = ["/privacy", "/terms"];
 
 const socialLinks = [
   { icon: Instagram, label: "Instagram", href: "https://instagram.com/hlpfl" },
@@ -27,6 +17,9 @@ const socialLinks = [
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
+  const footer = t("footer");
+  const whatsappUrl = getWhatsAppUrl();
 
   return (
     <footer className="bg-night border-t border-wave/20 text-sand">
@@ -39,10 +32,10 @@ export default function Footer() {
               <span className="w-2 h-2 rounded-full bg-gold ml-0.5" />
             </Link>
             <p className="mt-4 text-sand/75 max-w-sm leading-relaxed text-sm">
-              B2B consulting for hotels, eco-lodges, restaurants, and tour operators in the Cahuita → Puerto Viejo → Manzanillo corridor. Chaos → Clarity.
+              {footer.tagline}
             </p>
             <p className="mt-2 text-bark text-sm italic">
-              Consultoría para hoteles, lodges, restaurantes y operadores de tours en la costa Caribe de Costa Rica.
+              {footer.mission}
             </p>
             <div className="flex gap-4 mt-6" aria-label="Social media links">
               {socialLinks.map(({ icon: Icon, label, href }) => (
@@ -54,41 +47,41 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Navigation */}
           <div>
-            <h4 className="font-display text-lg tracking-wider text-gold mb-4">Services</h4>
+            <h4 className="font-display text-lg tracking-wider text-gold mb-4">HLPFL</h4>
             <ul className="space-y-3">
-              {footerLinks.services.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-wave hover:text-gold transition-colors text-sm">
-                    {link.label}
+              {footer.nav.map((label, i) => (
+                <li key={navHrefs[i]}>
+                  <Link href={navHrefs[i]} className="text-wave hover:text-gold transition-colors text-sm">
+                    {label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Legal & WhatsApp */}
           <div>
-            <h4 className="font-display text-lg tracking-wider text-gold mb-4">Company</h4>
+            <h4 className="font-display text-lg tracking-wider text-gold mb-4">Legal</h4>
             <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-wave hover:text-gold transition-colors text-sm">
-                    {link.label}
+              {footer.legal.map((label, i) => (
+                <li key={legalHrefs[i]}>
+                  <Link href={legalHrefs[i]} className="text-wave hover:text-gold transition-colors text-sm">
+                    {label}
                   </Link>
                 </li>
               ))}
             </ul>
             <div className="mt-6">
               <a
-                href="https://wa.me/50688888888"
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-wa hover:text-wa/80 transition-colors text-sm"
               >
                 <MessageCircle size={16} />
-                WhatsApp Us
+                WhatsApp
               </a>
             </div>
           </div>
@@ -96,8 +89,8 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-wave/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-bark text-sm">© {currentYear} HLPFL. All rights reserved.</p>
-            <p className="text-fog text-xs">Serving the Cahuita → Puerto Viejo → Manzanillo corridor, Limón Province, Costa Rica.</p>
+            <p className="text-bark text-sm">© {currentYear} {footer.copyright}</p>
+            <p className="text-fog text-xs">{footer.builtNote}</p>
           </div>
         </div>
       </div>
