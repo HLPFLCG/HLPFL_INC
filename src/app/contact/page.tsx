@@ -30,7 +30,7 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-semibold tracking-widest text-gold uppercase mb-3">Contact</p>
           <h1 className="font-display text-[clamp(2.5rem,7vw,5.5rem)] tracking-wider text-white mb-6">
-            LET'S TALK<br />
+            LET&apos;S TALK<br />
             <span className="text-gold">BUSINESS.</span>
           </h1>
           <p className="text-white/50 text-lg max-w-xl">
@@ -49,7 +49,7 @@ export default function ContactPage() {
               <div className="border border-gold/30 bg-gold/5 p-8">
                 <p className="font-display text-3xl text-gold tracking-wider mb-3">GOT IT.</p>
                 <p className="text-white/60">
-                  We'll respond within 24 hours. Check WhatsApp if you need a faster reply.
+                  We&apos;ll respond within 24 hours. Check WhatsApp if you need a faster reply.
                 </p>
               </div>
             ) : (

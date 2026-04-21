@@ -26,7 +26,7 @@ export default function AboutPage() {
           <p className="text-xs font-semibold tracking-widest text-gold uppercase mb-3">About</p>
           <h1 className="font-display text-[clamp(2.5rem,7vw,5.5rem)] tracking-wider text-white mb-6">
             BUILT BY SOMEONE<br />
-            <span className="text-gold">WHO'S BEEN THERE.</span>
+            <span className="text-gold">WHO&apos;S BEEN THERE.</span>
           </h1>
         </div>
       </section>
@@ -40,7 +40,7 @@ export default function AboutPage() {
               watching business owners get overcharged for work done by software.
             </p>
             <p className="text-white/50 leading-relaxed mb-6">
-              Every agency charges $2,000–$10,000 for a website. Every "guru" uses AI,
+              Every agency charges $2,000–$10,000 for a website. Every &quot;guru&quot; uses AI,
               slaps their name on it, and charges like they built it by hand.
               HLPFL does the opposite: every deliverable is human-made, fast-turnaround,
               and priced for the business owner who built something real — not the one with an investor.
@@ -48,7 +48,7 @@ export default function AboutPage() {
             <p className="text-white/50 leading-relaxed">
               We operate from Costa Rica, serving local business owners in Manzanillo, Puerto Viejo,
               and the wider Caribbean coast — and globally via referral.
-              The model is simple: charge what's fair, deliver what you promised, do it fast.
+              The model is simple: charge what&apos;s fair, deliver what you promised, do it fast.
             </p>
           </div>
           <div className="space-y-4">

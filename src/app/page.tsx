@@ -210,7 +210,7 @@ export default function HomePage() {
             YOU BUILT SOMETHING REAL.
           </h2>
           <p className="text-xl text-gold mb-16">
-            Your online presence shouldn't look like it was an afterthought.
+            Your online presence shouldn&apos;t look like it was an afterthought.
           </p>
           <div className="grid md:grid-cols-3 gap-px bg-void-border">
             {[
@@ -287,7 +287,7 @@ export default function HomePage() {
           </h2>
           <p className="text-white/50 mb-12 max-w-xl">
             Other companies charge agency prices for work done by software.
-            Here's what the same deliverables cost at HLPFL.
+            Here&apos;s what the same deliverables cost at HLPFL.
           </p>
 
           <div className="border border-void-border">
@@ -384,7 +384,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-px bg-void-border">
             {testimonials.map((t) => (
               <div key={t.name} className="bg-void p-8 flex flex-col">
-                <p className="text-gold text-3xl font-display mb-4">"</p>
+                <p className="text-gold text-3xl font-display mb-4">&quot;</p>
                 <p className="text-white/70 text-sm leading-relaxed flex-1 mb-6 italic">
                   {t.quote}
                 </p>
