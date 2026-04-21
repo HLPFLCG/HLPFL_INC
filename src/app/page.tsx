@@ -267,12 +267,12 @@ export default function HomePage() {
                 head: "Everyone's using AI now",
                 body: "Your competitors got a site that looks like everyone else's. Yours won't.",
               },
-            ].map((p, i) => (
+            ].map((problem, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
                 <div className="bg-void-light border border-gold/15 p-8 h-full group transition-all duration-300 hover:border-gold hover:-translate-y-1">
                   <p className="text-xs font-semibold tracking-widest text-gold/60 uppercase mb-3">Problem {String(i + 1).padStart(2, '0')}</p>
-                  <h3 className="font-body font-semibold text-white text-lg mb-3">{p.head}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">{p.body}</p>
+                  <h3 className="font-body font-semibold text-white text-lg mb-3">{problem.head}</h3>
+                  <p className="text-white/50 text-sm leading-relaxed">{problem.body}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -428,15 +428,15 @@ export default function HomePage() {
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {values.map((v, i) => (
-              <ScrollReveal key={v.num} delay={i * 0.1}>
+            {values.map((value, i) => (
+              <ScrollReveal key={value.num} delay={i * 0.1}>
                 <div className="bg-void border border-void-lighter p-10 relative overflow-hidden group transition-all duration-300 hover:border-gold/25 hover:-translate-y-1">
                   <div className="absolute top-4 right-4 font-display text-6xl text-gold/[0.06] select-none leading-none">
-                    {v.num}
+                    {value.num}
                   </div>
-                  <div className="font-display text-4xl text-gold/30 tracking-wider mb-4">{v.num}</div>
-                  <h3 className="font-body font-semibold text-white text-xl mb-3">{v.title}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">{v.desc}</p>
+                  <div className="font-display text-4xl text-gold/30 tracking-wider mb-4">{value.num}</div>
+                  <h3 className="font-body font-semibold text-white text-xl mb-3">{value.title}</h3>
+                  <p className="text-white/50 text-sm leading-relaxed">{value.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -457,18 +457,18 @@ export default function HomePage() {
           </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <ScrollReveal key={t.name} delay={i * 0.1}>
+            {testimonials.map((testimonial, i) => (
+              <ScrollReveal key={testimonial.name} delay={i * 0.1}>
                 <div className="bg-void-light border-l-4 border-gold p-8 h-full flex flex-col">
                   <span className="text-gold font-display text-4xl mb-4 leading-none">&quot;</span>
                   <p className="text-white/70 text-sm leading-relaxed flex-1 mb-6 italic">
-                    {t.quote}
+                    {testimonial.quote}
                   </p>
                   <div className="border-t border-gold/15 pt-5">
-                    <p className="font-semibold text-white text-sm">{t.name}</p>
-                    <p className="text-white/40 text-xs mt-1">{t.biz}</p>
+                    <p className="font-semibold text-white text-sm">{testimonial.name}</p>
+                    <p className="text-white/40 text-xs mt-1">{testimonial.biz}</p>
                     <span className="inline-block mt-3 text-xs text-gold/70 border border-gold/20 px-2 py-1">
-                      {t.service}
+                      {testimonial.service}
                     </span>
                   </div>
                 </div>

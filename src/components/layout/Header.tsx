@@ -93,6 +93,9 @@ export default function Header() {
               exit={{ x: '-100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
               className="fixed top-0 left-0 bottom-0 w-72 bg-void-dark border-r border-gold/20 md:hidden z-[60]"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Navigation menu"
             >
               <div className="flex flex-col h-full">
                 {/* Panel header */}
