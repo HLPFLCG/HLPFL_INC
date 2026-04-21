@@ -2,20 +2,20 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="bg-void-dark border-t border-void-border">
-      <div className="max-w-6xl mx-auto px-6 py-16">
+    <footer className="bg-void-dark border-t border-gold/10">
+      <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
 
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link href="/" className="font-display text-2xl tracking-widest text-white hover:text-gold transition-colors">
+            <Link href="/" className="font-display text-3xl tracking-wider hover:text-gold transition-colors">
               HLPFL<span className="text-gold">.</span>
             </Link>
-            <p className="mt-3 text-white/50 text-sm leading-relaxed max-w-xs">
+            <p className="mt-4 text-white/50 text-sm leading-relaxed max-w-xs">
               Modern Services. Local Prices.<br />
               Built by hand. No AI. No tracking. Fast.
             </p>
-            <p className="mt-4 text-white/30 text-xs">
+            <p className="mt-3 text-white/30 text-xs">
               Serving small business owners globally —<br />
               especially Latin America & the Caribbean.
             </p>
@@ -23,7 +23,7 @@ export default function Footer() {
 
           {/* HLPFL links */}
           <div>
-            <p className="text-xs font-semibold tracking-widest text-gold uppercase mb-4">HLPFL</p>
+            <p className="eyebrow mb-4">HLPFL</p>
             <ul className="space-y-3">
               {[
                 { href: '/services', label: 'Services' },
@@ -33,7 +33,7 @@ export default function Footer() {
                 { href: '/contact', label: 'Contact' },
               ].map(link => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-white/50 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-sm text-white/50 hover:text-gold transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -43,14 +43,14 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <p className="text-xs font-semibold tracking-widest text-gold uppercase mb-4">Legal</p>
+            <p className="eyebrow mb-4">Legal</p>
             <ul className="space-y-3">
               {[
                 { href: '/privacy', label: 'Privacy Policy' },
                 { href: '/terms', label: 'Terms of Service' },
               ].map(link => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-white/50 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-sm text-white/50 hover:text-gold transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -72,7 +72,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-void-border pt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div className="border-t border-gold/10 pt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <p className="text-white/30 text-xs">© 2026 HLPFL INC. All rights reserved.</p>
           <p className="text-white/20 text-xs">Hand-built. No AI. No tracking. Fast.</p>
         </div>
