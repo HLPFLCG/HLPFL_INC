@@ -33,7 +33,7 @@ export default function ServicesPreview() {
 
         <ScrollReveal delay={0.3}>
           <div className="text-center mt-12">
-            <Link href="/services" className="text-turquoise font-semibold text-sm tracking-wider hover:text-gold transition-colors">
+            <Link href="/services" className="text-gold font-semibold text-sm tracking-wider hover:text-gold-light transition-colors">
               {home.servicesViewAll}
             </Link>
           </div>

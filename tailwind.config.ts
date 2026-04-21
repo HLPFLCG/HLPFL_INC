@@ -9,13 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        void: '#344968',           // primary background — navy blue
-        'void-dark': '#273856',    // deeper navy for contrast sections
-        'void-light': '#3e5578',   // lighter navy for card surfaces
-        'void-border': '#4a6285',  // subtle border color
-        gold: '#ab6c3d',           // primary accent — copper/amber
-        'gold-light': '#c47d4a',   // hover states
-        'gold-dim': '#1e2e42',     // very subtle gold tint bg
+        void: '#344968',            // primary background — navy blue
+        'void-dark': '#273856',     // deeper navy for contrast sections
+        'void-light': '#3e5578',    // lighter navy for card surfaces
+        'void-lighter': '#4a6484',  // even lighter navy for subtle borders
+        'void-border': '#4a6285',   // subtle border color
+        gold: '#ab6c3d',            // primary accent — copper/amber
+        'gold-light': '#c47d4a',    // hover states
+        'gold-dark': '#8a5230',     // depth / darker gold
+        'gold-dim': '#1e2e42',      // very subtle gold tint bg
+        turquoise: '#5b8fa8',       // secondary accent for links
       },
       fontFamily: {
         display: ['"Bebas Neue"', 'sans-serif'],
