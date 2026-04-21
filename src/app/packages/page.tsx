@@ -198,7 +198,7 @@ export default function PackagesPage() {
             NOT SURE WHICH ONE?
           </h2>
           <p className="text-white/50 mb-8">
-            Tell us about your business — we'll tell you exactly what you need (and what you don't).
+            Tell us about your business — we&apos;ll tell you exactly what you need (and what you don&apos;t).
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link

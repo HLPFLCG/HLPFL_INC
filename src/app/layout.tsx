@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import { LanguageProvider } from '@/contexts/LanguageContext'
 
 export const metadata: Metadata = {
   title: 'HLPFL | Modern Services. Local Prices.',
@@ -26,9 +27,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="bg-void text-white font-body antialiased">
-        <Header />
-        <main id="main-content">{children}</main>
-        <Footer />
+        <LanguageProvider>
+          <Header />
+          <main id="main-content">{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   )
