@@ -55,7 +55,7 @@ export default function ContactPage() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 {/* Web3Forms access key — replace with your actual key */}
-                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY_HERE" />
+                <input type="hidden" name="access_key" value="8538d71e-0d72-4290-a03b-165ae03d4c5a" />
                 <input type="hidden" name="subject" value="New HLPFL inquiry" />
                 <input type="checkbox" name="botcheck" className="hidden" />
 
