@@ -29,6 +29,7 @@ export type Service = {
   isRecurring?: boolean;
   stripeLink: string; // Replace with your Stripe Payment Links
   stripeLinkAI?: string; // Only for content services with AI variant
+  stripeLinkVariants?: { labelEn: string; labelEs: string; price: number; link: string }[]; // Two-tier pricing (e.g. simple/complex)
   featured?: boolean;
   deliveryDays?: number;
 };
@@ -408,6 +409,20 @@ export const services: Service[] = [
     price: 149,
     priceNote: "per connection ($99 for simple / $199 for complex)",
     stripeLink: "https://buy.stripe.com/PLACEHOLDER_API",
+    stripeLinkVariants: [
+      {
+        labelEn: "Simple — $99",
+        labelEs: "Simple — $99",
+        price: 99,
+        link: "https://buy.stripe.com/PLACEHOLDER_API_SIMPLE",
+      },
+      {
+        labelEn: "Complex — $199",
+        labelEs: "Complejo — $199",
+        price: 199,
+        link: "https://buy.stripe.com/PLACEHOLDER_API_COMPLEX",
+      },
+    ],
     deliveryDays: 7,
   },
   {
