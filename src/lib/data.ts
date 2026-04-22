@@ -8,7 +8,6 @@ export type ServiceCategory =
   | "presence"
   | "commerce"
   | "growth"
-  | "content"
   | "intelligence";
 
 export type ContentPricing = {
@@ -50,7 +49,7 @@ export const services: Service[] = [
       "Un sitio web rápido, limpio y mobile-first construido a mano. Sin plantillas, sin constructores de páginas, sin IA. Incluye Inicio, Acerca de, Servicios, Contacto y una página personalizada.",
     price: 49,
     priceNote: "+ domain (client pays ~$12–15/yr)",
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_WEBSITE",
+    stripeLink: "https://buy.stripe.com/fZubJ0dFCeCAaCiboqbQY0b",
     featured: true,
     deliveryDays: 7,
   },
@@ -65,7 +64,7 @@ export const services: Service[] = [
     descEs: "¿Necesitas más de 5 páginas? Cada página adicional se construye para coincidir con tu sitio existente.",
     price: 15,
     priceNote: "per page",
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_EXTRA_PAGE",
+    stripeLink: "https://buy.stripe.com/6oU00ibxuamk7q6gIKbQY0c",
     deliveryDays: 2,
   },
   {
@@ -79,7 +78,7 @@ export const services: Service[] = [
     descEs: "¿Lo necesitas ahora? Agrega entrega express a cualquier servicio para una garantía de entrega en 48 horas.",
     price: 29,
     priceNote: "add-on to any service",
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_RUSH",
+    stripeLink: "https://buy.stripe.com/14AeVc9pmeCA25M1NQbQY0d",
   },
   {
     id: "hosting-setup",
@@ -93,7 +92,7 @@ export const services: Service[] = [
     descEs:
       "Configuración profesional de tu hosting en Cloudflare Pages — configuración DNS, pipeline de construcción, optimización de rendimiento y cabeceras de seguridad.",
     price: 29,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_HOSTING",
+    stripeLink: "https://buy.stripe.com/4gM4gyatqeCAbGmdwybQY0e",
     deliveryDays: 1,
   },
   {
@@ -108,7 +107,7 @@ export const services: Service[] = [
     descEs:
       "Diseño profesional de logotipo en Adobe Illustrator. Entregado en formatos SVG, PNG y PDF. 2 conceptos, 2 rondas de revisión incluidas.",
     price: 75,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_LOGO",
+    stripeLink: "https://buy.stripe.com/28E28qatqgKI5hYfEGbQY0f",
     deliveryDays: 5,
   },
   {
@@ -123,7 +122,7 @@ export const services: Service[] = [
     descEs:
       "Logotipo + paleta de colores + guía tipográfica + reglas de uso. Todo lo que necesitas para mantenerte visualmente consistente en cada plataforma.",
     price: 149,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_BRAND_KIT",
+    stripeLink: "https://buy.stripe.com/8x24gycBy664fWC2RUbQY0g",
     featured: true,
     deliveryDays: 7,
   },
@@ -139,7 +138,7 @@ export const services: Service[] = [
     descEs:
       "Firma de correo HTML diseñada a medida con tu logotipo, información de contacto y enlaces sociales. Funciona en Gmail, Outlook, Apple Mail.",
     price: 25,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_EMAIL_SIG",
+    stripeLink: "https://buy.stripe.com/dRm7sK0SQeCAfWC2RUbQY0h",
     deliveryDays: 2,
   },
   {
@@ -154,7 +153,7 @@ export const services: Service[] = [
     descEs:
       "Diseño de tarjeta de presentación listo para imprimir en Illustrator. Entregado en formato PDF, PNG y AI. Listo para enviar a cualquier imprenta.",
     price: 35,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_BIZ_CARD",
+    stripeLink: "https://buy.stripe.com/bJeaEW8lidywdOu2RUbQY0i",
     deliveryDays: 3,
   },
   {
@@ -170,7 +169,7 @@ export const services: Service[] = [
       "Código QR personalizado con marca en formato SVG. Puede enlazar a tu sitio web, menú, WhatsApp, Google Reviews o cualquier URL.",
     price: 20,
     priceNote: "each / $49 for 3",
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_QR",
+    stripeLink: "https://buy.stripe.com/6oUdR86dacush0GcsubQY0j",
     deliveryDays: 1,
   },
   {
@@ -186,7 +185,7 @@ export const services: Service[] = [
       "Configuración y programación de etiquetas NFC para funcionalidad de toque y enlace. Las etiquetas físicas se venden por separado (~$3–5/cada una).",
     price: 35,
     priceNote: "+ cost of physical tags",
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_NFC",
+    stripeLink: "https://buy.stripe.com/28E28qdFC3XW11I2RUbQY0k",
     deliveryDays: 2,
   },
 
@@ -204,7 +203,7 @@ export const services: Service[] = [
     descEs:
       "Configuración y optimización completa del perfil GMB — categorías, fotos, horarios, servicios, preguntas y respuestas, y estrategia inicial de reseñas.",
     price: 59,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_GMB",
+    stripeLink: "https://buy.stripe.com/28E7sK9pm664bGmcsubQY0l",
     featured: true,
     deliveryDays: 2,
   },
@@ -220,7 +219,7 @@ export const services: Service[] = [
     descEs:
       "Configuración del perfil de WhatsApp Business con catálogo, respuestas rápidas, mensajes de ausencia y horarios de negocio configurados.",
     price: 35,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_WHATSAPP",
+    stripeLink: "https://buy.stripe.com/5kQfZg8licus9yegIKbQY0m",
     deliveryDays: 1,
   },
   {
@@ -235,7 +234,7 @@ export const services: Service[] = [
     descEs:
       "Configura tu cuenta profesional de Google Workspace — dominio de correo personalizado, Google Drive, Calendar, Meet. Incluye configuración DNS.",
     price: 49,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_GSUITE",
+    stripeLink: "https://buy.stripe.com/cNi00idFCfGEdOugIKbQY0n",
     deliveryDays: 2,
   },
   {
@@ -248,7 +247,7 @@ export const services: Service[] = [
     descEn: "Claim and optimize your Apple Maps listing so iPhone users can find you too.",
     descEs: "Reclama y optimiza tu listing en Apple Maps para que los usuarios de iPhone también puedan encontrarte.",
     price: 25,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_APPLE",
+    stripeLink: "https://buy.stripe.com/8x29AS6da0LKeSyboqbQY0o",
     deliveryDays: 2,
   },
   {
@@ -264,7 +263,7 @@ export const services: Service[] = [
       "Reclama y optimiza tu listing en Yelp, TripAdvisor o cualquier otro directorio. Información consistente = mejor SEO local.",
     price: 25,
     priceNote: "per platform",
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_DIRECTORY",
+    stripeLink: "https://buy.stripe.com/eVq9AScBy9ig7q6gIKbQY0p",
     deliveryDays: 2,
   },
 
@@ -282,7 +281,7 @@ export const services: Service[] = [
     descEs:
       "Hasta 20 productos, configuración de tema, configuración de pagos, ajustes de envío y conexión de dominio.",
     price: 149,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_SHOPIFY_BASIC",
+    stripeLink: "https://buy.stripe.com/4gMfZg6dacusaCi9gibQY0q",
     deliveryDays: 7,
   },
   {
@@ -297,7 +296,7 @@ export const services: Service[] = [
     descEs:
       "Diseño de tema personalizado, catálogo de productos completo, integración de apps y experiencia con marca. Todo lo que una tienda seria necesita.",
     price: 249,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_SHOPIFY_FULL",
+    stripeLink: "https://buy.stripe.com/00wcN48ligKI6m28cebQY0r",
     featured: true,
     deliveryDays: 14,
   },
@@ -313,7 +312,7 @@ export const services: Service[] = [
     descEs:
       "Integración de Stripe y/o PayPal en tu sitio existente. Incluye configuración en modo de prueba, webhooks y checkout en vivo.",
     price: 59,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_PAYMENTS",
+    stripeLink: "https://buy.stripe.com/28EdR86dacus4dUeACbQY05",
     deliveryDays: 3,
   },
   {
@@ -328,7 +327,7 @@ export const services: Service[] = [
     descEs:
       "Configuración de tienda de impresión bajo demanda a través de Printful o Printify. Conectada a tu sitio o Shopify. Sin inventario requerido.",
     price: 79,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_MERCH",
+    stripeLink: "https://buy.stripe.com/7sY6oG7he664eSyfEGbQY0s",
     deliveryDays: 5,
   },
 
@@ -346,7 +345,7 @@ export const services: Service[] = [
     descEs:
       "Una auditoría completa del sitio que cubre SEO técnico, factores on-page, SEO local y una lista priorizada de correcciones. Entregado como informe PDF.",
     price: 79,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_SEO_AUDIT",
+    stripeLink: "https://buy.stripe.com/8x23cueJGcusfWCgIKbQY01",
     deliveryDays: 5,
   },
   {
@@ -361,7 +360,7 @@ export const services: Service[] = [
     descEs:
       "Meta tags, schema markup, sitemap.xml, robots.txt, texto alternativo de imágenes, estructura de encabezados, enlazado interno — todo hecho correctamente.",
     price: 99,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_SEO_SETUP",
+    stripeLink: "https://buy.stripe.com/6oU9ASatq2TS6m2akmbQY02",
     featured: true,
     deliveryDays: 4,
   },
@@ -377,7 +376,7 @@ export const services: Service[] = [
     descEs:
       "Un chatbot simple y ligero que maneja tus preguntas más comunes. Sin tarifas de suscripción, sin bloqueo de plataforma de terceros.",
     price: 99,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_CHATBOT_BASIC",
+    stripeLink: "https://buy.stripe.com/aFaaEW1WU9igbGm0JMbQY03",
     deliveryDays: 5,
   },
   {
@@ -392,7 +391,7 @@ export const services: Service[] = [
     descEs:
       "Flujos de conversación de múltiples pasos, captura de prospectos, reserva de citas y lógica personalizada adaptada a tu negocio.",
     price: 149,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_CHATBOT_CUSTOM",
+    stripeLink: "https://buy.stripe.com/6oU9AS0SQ1PO9ye3VYbQY04",
     deliveryDays: 7,
   },
   {
@@ -423,7 +422,7 @@ export const services: Service[] = [
     descEs:
       "Revisión de SSL, cabeceras, manejo de formularios, scripts de terceros y exposición de datos. Entregado como informe con elementos de acción.",
     price: 49,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_SECURITY_BASIC",
+    stripeLink: "https://buy.stripe.com/00wdR8dFC66439Q0JMbQY06",
     deliveryDays: 3,
   },
   {
@@ -438,7 +437,7 @@ export const services: Service[] = [
     descEs:
       "Todo en Básico + auditoría de dependencias, configuración CSP, reglas de firewall e implementación de todas las correcciones.",
     price: 99,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_SECURITY_ADV",
+    stripeLink: "https://buy.stripe.com/5kQcN4cBydyweSyfEGbQY07",
     deliveryDays: 5,
   },
   {
@@ -453,7 +452,7 @@ export const services: Service[] = [
     descEs:
       "Velocidad y Seguridad: optimización de imágenes, cabeceras de caché, fortalecimiento de seguridad, mejoras de Core Web Vitals.",
     price: 29,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_WEB_L1",
+    stripeLink: "https://buy.stripe.com/00w8wO1WUamkeSyakmbQY08",
     deliveryDays: 2,
   },
   {
@@ -468,7 +467,7 @@ export const services: Service[] = [
     descEs:
       "SEO y Visibilidad: schema markup, sitemap, robots.txt, analíticas que respetan la privacidad, datos estructurados para resultados enriquecidos.",
     price: 59,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_WEB_L2",
+    stripeLink: "https://buy.stripe.com/00wdR830Y9igcKq78abQY09",
     deliveryDays: 3,
   },
   {
@@ -484,110 +483,8 @@ export const services: Service[] = [
       "Funciones y Estilo: animaciones, interacciones JS personalizadas, integraciones de terceros, UX avanzada. Cotizado por proyecto.",
     price: 99,
     priceNote: "starting at",
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_WEB_L3",
+    stripeLink: "https://buy.stripe.com/6oUdR87he1POh0G8cebQY0a",
     deliveryDays: 7,
-  },
-
-  // ─── CONTENT (AI toggle applies) ──────────────────────────────────────────
-
-  {
-    id: "social-4posts",
-    category: "content",
-    slug: "social-4-posts",
-    icon: "Instagram",
-    nameEn: "Social Media — 4 Posts",
-    nameEs: "Redes Sociales — 4 Publicaciones",
-    descEn:
-      "4 custom posts (caption + image concept) for Instagram, Facebook, or both. Designed for your brand and voice.",
-    descEs:
-      "4 publicaciones personalizadas (pie de foto + concepto de imagen) para Instagram, Facebook o ambos. Diseñadas para tu marca y voz.",
-    price: { human: 49, ai: 25 },
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_SOCIAL4_HUMAN",
-    stripeLinkAI: "https://buy.stripe.com/PLACEHOLDER_SOCIAL4_AI",
-    deliveryDays: 3,
-  },
-  {
-    id: "social-8posts-mo",
-    category: "content",
-    slug: "social-8-posts-monthly",
-    icon: "Calendar",
-    nameEn: "Social Media — 8 Posts/Mo",
-    nameEs: "Redes Sociales — 8 Publicaciones/Mes",
-    descEn:
-      "Monthly content package: 8 posts, 2 per week. Includes caption writing, image direction, and scheduling recommendations.",
-    descEs:
-      "Paquete de contenido mensual: 8 publicaciones, 2 por semana. Incluye redacción de pies de foto, dirección de imagen y recomendaciones de programación.",
-    price: { human: 85, ai: 45 },
-    isRecurring: true,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_SOCIAL8_HUMAN",
-    stripeLinkAI: "https://buy.stripe.com/PLACEHOLDER_SOCIAL8_AI",
-    deliveryDays: 5,
-  },
-  {
-    id: "social-16posts-mo",
-    category: "content",
-    slug: "social-16-posts-monthly",
-    icon: "Layers",
-    nameEn: "Social Media — 16 Posts/Mo",
-    nameEs: "Redes Sociales — 16 Publicaciones/Mes",
-    descEn:
-      "Daily presence: 16 posts per month (4/week). Best for businesses that want to stay consistently visible on social.",
-    descEs:
-      "Presencia diaria: 16 publicaciones por mes (4/semana). Ideal para negocios que quieren mantenerse consistentemente visibles en redes sociales.",
-    price: { human: 150, ai: 79 },
-    isRecurring: true,
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_SOCIAL16_HUMAN",
-    stripeLinkAI: "https://buy.stripe.com/PLACEHOLDER_SOCIAL16_AI",
-    deliveryDays: 7,
-    featured: true,
-  },
-  {
-    id: "blog-post",
-    category: "content",
-    slug: "blog-post",
-    icon: "FileText",
-    nameEn: "Blog Post (500–700 words)",
-    nameEs: "Entrada de Blog (500–700 palabras)",
-    descEn:
-      "SEO-optimized blog post written in your voice. Topic research included. Delivered in your preferred format (HTML, MD, or Google Doc).",
-    descEs:
-      "Entrada de blog optimizada para SEO escrita en tu voz. Incluye investigación de tema. Entregado en tu formato preferido (HTML, MD o Google Doc).",
-    price: { human: 65, ai: 35 },
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_BLOG_HUMAN",
-    stripeLinkAI: "https://buy.stripe.com/PLACEHOLDER_BLOG_AI",
-    deliveryDays: 3,
-  },
-  {
-    id: "email-newsletter",
-    category: "content",
-    slug: "email-newsletter",
-    icon: "Send",
-    nameEn: "Email Newsletter",
-    nameEs: "Newsletter por Email",
-    descEn:
-      "Custom email newsletter written and designed for your brand. Delivered in HTML format compatible with Mailchimp, Klaviyo, or any platform.",
-    descEs:
-      "Newsletter personalizado escrito y diseñado para tu marca. Entregado en formato HTML compatible con Mailchimp, Klaviyo o cualquier plataforma.",
-    price: { human: 55, ai: 29 },
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_EMAIL_HUMAN",
-    stripeLinkAI: "https://buy.stripe.com/PLACEHOLDER_EMAIL_AI",
-    deliveryDays: 3,
-  },
-  {
-    id: "product-descriptions",
-    category: "content",
-    slug: "product-descriptions",
-    icon: "Tag",
-    nameEn: "Product Descriptions (5 items)",
-    nameEs: "Descripciones de Producto (5 artículos)",
-    descEn:
-      "Conversion-focused product descriptions for your store. Written to sell, not just describe.",
-    descEs:
-      "Descripciones de productos enfocadas en conversión para tu tienda. Escritas para vender, no solo describir.",
-    price: { human: 45, ai: 25 },
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_PROD_DESC_HUMAN",
-    stripeLinkAI: "https://buy.stripe.com/PLACEHOLDER_PROD_DESC_AI",
-    deliveryDays: 2,
   },
 
   // ─── BUSINESS INTELLIGENCE ────────────────────────────────────────────────
@@ -619,52 +516,9 @@ export const services: Service[] = [
       "7 years of entrepreneurship, zero fluff. Pick a problem, bring it to a session, leave with a real solution.",
     descEs:
       "7 años de emprendimiento, cero relleno. Elige un problema, tráelo a una sesión, sal con una solución real.",
-    price: 75,
+    price: 99,
     priceNote: "per hour",
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_CONSULTING",
-  },
-  {
-    id: "custom-quote",
-    category: "intelligence",
-    slug: "custom-quote",
-    icon: "FileQuestion",
-    nameEn: "Custom Quote",
-    nameEs: "Cotización Personalizada",
-    descEn:
-      "Have a project that doesn't fit a preset service? Describe what you need and you'll get a quote within 24 hours.",
-    descEs:
-      "¿Tienes un proyecto que no encaja en un servicio predefinido? Describe lo que necesitas y recibirás una cotización en 24 horas.",
-    price: "quote",
-    stripeLink: "/contact",
-  },
-  {
-    id: "photography",
-    category: "intelligence",
-    slug: "photography",
-    icon: "Camera",
-    nameEn: "Photography",
-    nameEs: "Fotografía",
-    descEn:
-      "Product, brand, or event photography. Pricing based on session type, location, and deliverables. Contact for a quote.",
-    descEs:
-      "Fotografía de productos, marca o eventos. Precio según tipo de sesión, ubicación y entregables. Contacta para cotizar.",
-    price: "quote",
-    stripeLink: "/contact",
-  },
-  {
-    id: "video",
-    category: "intelligence",
-    slug: "video",
-    icon: "Video",
-    nameEn: "Video Production / Editing",
-    nameEs: "Producción / Edición de Video",
-    descEn:
-      "Reels, promos, or testimonial videos. Editing-only starts at $99 (you provide footage). Full production quoted per project.",
-    descEs:
-      "Reels, promos o videos de testimonios. Solo edición desde $99 (tú proporcionas el material). Producción completa cotizada por proyecto.",
-    price: "quote",
-    priceNote: "editing from $99",
-    stripeLink: "/contact",
+    stripeLink: "https://buy.stripe.com/7sY5kCcByamk4dUcsubQY0u",
   },
 ];
 
@@ -703,28 +557,26 @@ export const retainers: Retainer[] = [
       "Correcciones menores de errores",
       "Respuesta prioritaria por email",
     ],
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_RETAINER_25",
+    stripeLink: "https://buy.stripe.com/8x2cN4452gKI5hY0JMbQY0z",
   },
   {
     id: "retainer-growth",
     nameEn: "Growth Retainer",
     nameEs: "Retención de Crecimiento",
     price: 75,
-    descEn: "Updates plus consistent social media presence.",
-    descEs: "Actualizaciones más presencia constante en redes sociales.",
+    descEn: "Updates plus consistent digital presence.",
+    descEs: "Actualizaciones más presencia digital constante.",
     includes: [
       "Up to 4 hours of updates/month",
-      "8 social media posts/month",
-      "AI-assisted content (Human upgrade available)",
+      "Content strategy & direction",
       "Priority response",
     ],
     includesEs: [
       "Hasta 4 horas de actualizaciones/mes",
-      "8 publicaciones en redes sociales/mes",
-      "Contenido asistido por IA (actualización a Humano disponible)",
+      "Estrategia y dirección de contenido",
       "Respuesta prioritaria",
     ],
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_RETAINER_75",
+    stripeLink: "https://buy.stripe.com/eVqbJ07he8ecdOu3VYbQY0A",
     featured: true,
   },
   {
@@ -736,19 +588,17 @@ export const retainers: Retainer[] = [
     descEs: "Gestión digital completa para negocios serios.",
     includes: [
       "Up to 8 hours of updates/month",
-      "16 social media posts/month",
       "Monthly performance report",
       "1 hour consulting session/month",
       "Priority everything",
     ],
     includesEs: [
       "Hasta 8 horas de actualizaciones/mes",
-      "16 publicaciones en redes sociales/mes",
       "Informe de rendimiento mensual",
       "1 hora de sesión de consultoría/mes",
       "Prioridad en todo",
     ],
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_RETAINER_149",
+    stripeLink: "https://buy.stripe.com/3cI4gy452664bGm8cebQY0B",
   },
 ];
 
@@ -797,7 +647,7 @@ export const packages: Package[] = [
       "Configuración de Google My Business",
       "Configuración de WhatsApp Business",
     ],
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_PKG_ONLINE",
+    stripeLink: "https://buy.stripe.com/14AbJ030YgKI11IeACbQY0v",
     emoji: "🔥",
   },
   {
@@ -826,7 +676,7 @@ export const packages: Package[] = [
       "Informe de Auditoría SEO",
       "Primer mes de Retención Inicial ($25)",
     ],
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_PKG_LOCAL_PRO",
+    stripeLink: "https://buy.stripe.com/14A7sK8li2TS8uaakmbQY0w",
     emoji: "🚀",
     featured: true,
   },
@@ -856,7 +706,7 @@ export const packages: Package[] = [
       "Chatbot (FAQ Básico)",
       "Primer mes de Retención de Crecimiento ($75)",
     ],
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_PKG_STOREFRONT",
+    stripeLink: "https://buy.stripe.com/28EaEW5969igcKq0JMbQY0x",
     emoji: "🛒",
   },
   {
@@ -874,7 +724,6 @@ export const packages: Package[] = [
       "Full Brand Kit (logo + colors + fonts)",
       "Privacy & Security Audit (Basic)",
       "Business Analysis Session (1hr)",
-      "3 months of Social Media content (8 posts/mo)",
       "First month of Partner Retainer ($149)",
     ],
     includesEs: [
@@ -882,10 +731,9 @@ export const packages: Package[] = [
       "Kit de Marca Completo (logo + colores + fuentes)",
       "Auditoría de Privacidad y Seguridad (Básico)",
       "Sesión de Análisis de Negocio (1hr)",
-      "3 meses de contenido de Redes Sociales (8 publicaciones/mes)",
       "Primer mes de Retención de Socio ($149)",
     ],
-    stripeLink: "https://buy.stripe.com/PLACEHOLDER_PKG_FULL_BRAND",
+    stripeLink: "https://buy.stripe.com/aFa00i8li3XWdOugIKbQY0y",
     emoji: "💼",
   },
 ];
@@ -900,7 +748,6 @@ export const categoryLabels: Record<
   presence: { en: "Presence", es: "Presencia", icon: "MapPin" },
   commerce: { en: "Commerce", es: "Comercio", icon: "ShoppingBag" },
   growth: { en: "Growth", es: "Crecimiento", icon: "TrendingUp" },
-  content: { en: "Content", es: "Contenido", icon: "PenTool" },
   intelligence: {
     en: "Business Intelligence",
     es: "Inteligencia de Negocios",

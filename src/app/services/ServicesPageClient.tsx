@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { services, categoryLabels, type ServiceCategory, getServicePrice, getStripeLink } from "@/lib/data";
-import { AIToggle, ScrollReveal, ServiceCard } from "@/components/ui";
+import { ScrollReveal, ServiceCard } from "@/components/ui";
 
 type FilterCategory = ServiceCategory | "all";
 
@@ -13,7 +13,6 @@ export default function ServicesPageClient() {
   const pageT = t("services");
   const global = t("global");
 
-  const [useAI, setUseAI] = useState(false);
   const [activeCategory, setActiveCategory] = useState<FilterCategory>("all");
 
   const filtered = services.filter(
@@ -37,13 +36,6 @@ export default function ServicesPageClient() {
           </ScrollReveal>
         </div>
       </section>
-
-      {/* AI Toggle — sticky */}
-      <div className="sticky top-16 z-30 bg-void/95 backdrop-blur-sm border-b border-gold/10 py-4">
-        <div className="container-custom flex flex-col sm:flex-row items-center justify-between gap-4">
-          <AIToggle useAI={useAI} setUseAI={setUseAI} />
-        </div>
-      </div>
 
       {/* Category filter tabs */}
       <section className="pt-8 pb-4">
@@ -82,7 +74,7 @@ export default function ServicesPageClient() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((service, i) => (
               <ScrollReveal key={service.id} delay={i * 0.04}>
-                <ServiceCard service={service} useAI={useAI} lang={lang} />
+                <ServiceCard service={service} useAI={false} lang={lang} />
               </ScrollReveal>
             ))}
           </div>
