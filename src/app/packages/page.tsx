@@ -8,7 +8,7 @@ const packages = [
     price: 79,
     savings: 24,
     popular: false,
-    stripeLink: 'https://buy.stripe.com/PLACEHOLDER_PKG_ONLINE',
+    stripeLink: 'https://buy.stripe.com/14AbJ030YgKI11IeACbQY0v',
     retainer: null,
     includes: [
       '5-Page Website',
@@ -25,7 +25,7 @@ const packages = [
     price: 199,
     savings: 78,
     popular: true,
-    stripeLink: 'https://buy.stripe.com/PLACEHOLDER_PKG_LOCAL_PRO',
+    stripeLink: 'https://buy.stripe.com/14A7sK8li2TS8uaakmbQY0w',
     retainer: { name: 'Starter Retainer', price: 25 },
     includes: [
       'Everything in Get Online',
@@ -43,7 +43,7 @@ const packages = [
     price: 299,
     savings: 87,
     popular: false,
-    stripeLink: 'https://buy.stripe.com/PLACEHOLDER_PKG_STOREFRONT',
+    stripeLink: 'https://buy.stripe.com/28EaEW5969igcKq0JMbQY0x',
     retainer: { name: 'Growth Retainer', price: 75 },
     includes: [
       '5-Page Website',
@@ -61,14 +61,13 @@ const packages = [
     price: 499,
     savings: 150,
     popular: false,
-    stripeLink: 'https://buy.stripe.com/PLACEHOLDER_PKG_FULL_BRAND',
+    stripeLink: 'https://buy.stripe.com/aFa00i8li3XWdOugIKbQY0y',
     retainer: { name: 'Partner Retainer', price: 149 },
     includes: [
       'Everything in Digital Storefront',
       'Full Brand Kit (logo + colors + fonts + guide)',
       'Privacy & Security Audit (Basic)',
       'Business Analysis Session (1hr)',
-      '3 months of Social Media Content (8 posts/mo)',
       'First month of Partner Retainer ($149/mo)',
     ],
   },
@@ -83,12 +82,12 @@ const retainerTiers = [
   {
     name: 'Growth',
     price: 75,
-    desc: 'Updates + 8 social media posts/mo + basic reporting.',
+    desc: 'Updates + content strategy & direction + basic reporting.',
   },
   {
     name: 'Partner',
     price: 149,
-    desc: 'Updates + 16 posts + monthly performance report + 1hr consulting.',
+    desc: 'Updates + monthly performance report + 1hr consulting.',
   },
 ]
 
