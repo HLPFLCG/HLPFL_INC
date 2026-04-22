@@ -73,7 +73,7 @@ export default function HeroSection() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.3}>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
             <Link href="/services#website" className="btn-primary">
               {home.heroCTA}
             </Link>
@@ -81,6 +81,9 @@ export default function HeroSection() {
               {home.heroSecondaryCTA}
             </Link>
           </div>
+          <p className="text-cream/70 text-xs tracking-wide mb-8">
+            {home.heroTrustSignal}
+          </p>
         </ScrollReveal>
 
         {/* Price card */}

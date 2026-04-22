@@ -99,12 +99,13 @@ const translations = {
 
   home: {
     en: {
-      heroEyebrow: "No AI. No Agency. No Markup.",
-      heroHeadline: "Modern Services.\nLocal Prices.",
+      heroEyebrow: "Built for Small Business Owners",
+      heroHeadline: "Websites That Actually\nGenerate Revenue.",
       heroSub:
-        "Your website, Google presence, and brand — built by hand, delivered fast, priced for real business. Starting at $49.",
-      heroCTA: "Get Your Site for $49",
+        "Launch in 5 business days. Built by hand. Fully managed. No tech skills required.",
+      heroCTA: "Start My Website — $49",
       heroSecondaryCTA: "See Packages",
+      heroTrustSignal: "Trusted by 50+ business owners · 7-Day Money-Back Guarantee",
       heroPriceFrom: "Website from",
       heroPriceNote: "+ domain (you own it)",
 
@@ -178,12 +179,13 @@ const translations = {
       ctaSecondary: "or ask a question →",
     },
     es: {
-      heroEyebrow: "Sin IA. Sin Agencia. Sin Sobreprecios.",
-      heroHeadline: "Servicios Modernos.\nPrecios Locales.",
+      heroEyebrow: "Para Dueños de Pequeños Negocios",
+      heroHeadline: "Sitios Web Que\nRealmente Generan Ventas.",
       heroSub:
-        "Tu sitio web, presencia en Google y marca — construidos a mano, entregados rápido, con precios para negocios reales. Desde $49.",
-      heroCTA: "Obtén Tu Sitio por $49",
+        "Lanzamiento en 5 días hábiles. Hecho a mano. Totalmente gestionado. Sin conocimientos técnicos.",
+      heroCTA: "Iniciar Mi Sitio — $49",
       heroSecondaryCTA: "Ver Paquetes",
+      heroTrustSignal: "Confiado por 50+ emprendedores · Garantía de devolución de 7 días",
       heroPriceFrom: "Sitio web desde",
       heroPriceNote: "+ dominio (tuyo)",
 
