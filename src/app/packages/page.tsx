@@ -1,4 +1,17 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Packages — HLPFL',
+  description: 'Bundled website + digital presence packages for small businesses. Starting at $79. No contracts, no markup — you own everything.',
+  alternates: { canonical: 'https://hlpfl.org/packages/' },
+  openGraph: {
+    title: 'Packages — HLPFL',
+    description: 'Bundled website + digital presence packages for small businesses. Starting at $79.',
+    url: 'https://hlpfl.org/packages/',
+  },
+}
+
 
 const packages = [
   {
