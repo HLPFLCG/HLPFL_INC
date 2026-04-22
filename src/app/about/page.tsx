@@ -1,4 +1,17 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'About — HLPFL',
+  description: 'Learn how HLPFL builds hand-crafted websites, branding, and local SEO for small business owners — no AI, no contracts, no agency markup.',
+  alternates: { canonical: 'https://hlpfl.org/about/' },
+  openGraph: {
+    title: 'About HLPFL',
+    description: 'Hand-built digital services for real businesses. 7 years of entrepreneurship, zero fluff.',
+    url: 'https://hlpfl.org/about/',
+  },
+}
+
 
 const values = [
   { title: 'No AI on Deliverables', desc: 'Every site, logo, and piece of content is made by a person. Not generated. Not templated.' },

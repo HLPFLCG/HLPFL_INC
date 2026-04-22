@@ -30,7 +30,7 @@ export default function Header() {
       }`}
     >
       <div className="container-custom">
-        <nav className="flex items-center justify-between h-16">
+        <nav className="flex items-center justify-between h-16" aria-label="Main navigation">
 
           {/* Logo */}
           <Link
