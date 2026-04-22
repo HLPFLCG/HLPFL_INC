@@ -201,6 +201,20 @@ export default function ServiceCard({
           >
             {global.getAQuote}
           </a>
+        ) : service.stripeLinkVariants ? (
+          <div className="flex flex-col gap-2">
+            {service.stripeLinkVariants.map((variant) => (
+              <a
+                key={variant.link}
+                href={variant.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary text-center font-bold text-sm inline-flex items-center justify-center"
+              >
+                {lang === "es" ? variant.labelEs : variant.labelEn}
+              </a>
+            ))}
+          </div>
         ) : (
           <a
             href={link}
