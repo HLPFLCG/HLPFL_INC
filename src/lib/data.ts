@@ -406,8 +406,8 @@ export const services: Service[] = [
       "Connect your site to third-party services — booking systems, CRMs, inventory, loyalty platforms, and more.",
     descEs:
       "Conecta tu sitio a servicios de terceros — sistemas de reservas, CRMs, inventario, plataformas de lealtad y más.",
-    price: Starting at 99,
-    priceNote: "per connection ($99 for simple / $199 for complex)",
+    price: 99,
+    priceNote: "starting at $99 per connection",
     stripeLink: "https://buy.stripe.com/PLACEHOLDER_API",
     stripeLinkVariants: [
       {
