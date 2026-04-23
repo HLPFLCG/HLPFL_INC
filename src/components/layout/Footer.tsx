@@ -58,6 +58,7 @@ export default function Footer() {
               {[
                 { href: '/services', label: 'Services' },
                 { href: '/packages', label: 'Packages' },
+                { href: '/stays', label: 'Stays' },
                 { href: '/about', label: 'About' },
                 { href: '/faq', label: 'FAQ' },
                 { href: '/contact', label: 'Contact' },
@@ -78,6 +79,7 @@ export default function Footer() {
               {[
                 { href: '/privacy', label: 'Privacy Policy' },
                 { href: '/terms', label: 'Terms of Service' },
+                { href: '/stays/terms', label: 'Rental Agreement' },
               ].map(link => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-white/50 hover:text-gold transition-colors">
