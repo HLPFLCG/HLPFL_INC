@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ScrollReveal } from '@/components/ui'
 import SocialProofSection from '@/components/sections/SocialProofSection'
+import HowItWorksSection from '@/components/sections/HowItWorksSection'
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -19,27 +20,6 @@ const stats = [
   { value: '0', label: 'Contracts' },
   { value: '24hr', label: 'Response time' },
   { value: '100%', label: 'You own it' },
-]
-
-const steps = [
-  {
-    num: '01',
-    price: '$49',
-    title: 'Hook',
-    desc: 'A fast, clean, hand-built website. 5 pages, mobile-first, live on Cloudflare Pages. Delivered in 5–7 business days. Client owns the domain. Always.',
-  },
-  {
-    num: '02',
-    price: 'À la carte',
-    title: 'Upsell',
-    desc: 'Google My Business. Brand kit. On-page SEO. Shopify store. Email newsletter. They pick exactly what they need — nothing pushed, nothing bundled they didn\'t ask for.',
-  },
-  {
-    num: '03',
-    price: '$25–$149/mo',
-    title: 'Retainer',
-    desc: 'Monthly updates, content delivery, and ongoing support. The flywheel. Every project client converted to a retainer is recurring revenue with zero new acquisition cost.',
-  },
 ]
 
 const comparisonRows = [
@@ -274,34 +254,8 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      {/* ── HOW IT WORKS (3 STEPS) ───────────────────────────────────────── */}
-      <section className="section bg-void" id="how-it-works">
-        <div className="container-custom">
-          <ScrollReveal>
-            <span className="eyebrow mb-4 block">The Process</span>
-            <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] tracking-wider leading-none mb-16">
-              THREE STEPS TO
-              <br />
-              <span className="text-gradient">RECURRING REVENUE</span>
-            </h2>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {steps.map((step, i) => (
-              <ScrollReveal key={step.num} delay={i * 0.12}>
-                <div className="bg-void-light border border-void-lighter p-10 h-full group transition-all duration-300 hover:border-gold/25 hover:-translate-y-1 relative overflow-hidden">
-                  <div className="absolute top-3 right-4 font-display text-7xl text-gold/[0.06] leading-none select-none">
-                    {step.num}
-                  </div>
-                  <p className="eyebrow mb-2">{step.price}</p>
-                  <h3 className="font-display text-2xl md:text-3xl text-white mb-4 tracking-wide">{step.title}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">{step.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── HOW IT WORKS (CUSTOMER FUNNEL) ──────────────────────────────── */}
+      <HowItWorksSection />
 
       {/* ── PRICE COMPARISON ─────────────────────────────────────────────── */}
       <section className="section bg-void-dark" id="pricing">
