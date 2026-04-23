@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ScrollReveal } from '@/components/ui'
+import SocialProofSection from '@/components/sections/SocialProofSection'
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -110,27 +111,6 @@ const values = [
     num: '04',
     title: 'Prices That Make Sense',
     desc: 'We work with local business owners, not venture-backed startups. The pricing reflects that. Always.',
-  },
-]
-
-const testimonials = [
-  {
-    quote: 'I had been putting off building a website for 3 years because every quote I got was over $1,000. HLPFL built mine in a week and it actually looks better than the expensive ones I saw.',
-    name: 'Maria G.',
-    biz: 'Restaurant · Costa Rica',
-    service: 'Website + Google My Business',
-  },
-  {
-    quote: 'What I appreciate most is that I own everything. No dependency. He set it all up under my name, walked me through it, and now I know how it works.',
-    name: 'Carlos R.',
-    biz: 'Tour Operator · Caribbean Coast',
-    service: 'Full Brand Package',
-  },
-  {
-    quote: 'The Shopify setup was seamless. I was selling within 10 days of reaching out. The price I paid was a fraction of what the agency quoted me.',
-    name: 'Priya S.',
-    biz: 'Boutique · Online',
-    service: 'Shopify Store + Payment Integration',
   },
 ]
 
@@ -444,39 +424,8 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ─────────────────────────────────────────────────── */}
-      <section className="section bg-void" id="testimonials">
-        <div className="container-custom">
-          <ScrollReveal>
-            <span className="eyebrow mb-4 block">Real Results</span>
-            <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] tracking-wider leading-none text-white mb-16">
-              REAL BUSINESSES.
-              <br />
-              <span className="text-gradient">REAL RESULTS.</span>
-            </h2>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, i) => (
-              <ScrollReveal key={testimonial.name} delay={i * 0.1}>
-                <div className="bg-void-light border-l-4 border-gold p-8 h-full flex flex-col">
-                  <span className="text-gold font-display text-4xl mb-4 leading-none">&quot;</span>
-                  <p className="text-white/70 text-sm leading-relaxed flex-1 mb-6 italic">
-                    {testimonial.quote}
-                  </p>
-                  <div className="border-t border-gold/15 pt-5">
-                    <p className="font-semibold text-white text-sm">{testimonial.name}</p>
-                    <p className="text-white/40 text-xs mt-1">{testimonial.biz}</p>
-                    <span className="inline-block mt-3 text-xs text-gold/70 border border-gold/20 px-2 py-1">
-                      {testimonial.service}
-                    </span>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── SOCIAL PROOF (LOGOS + TESTIMONIALS + BEFORE/AFTER) ──────────── */}
+      <SocialProofSection />
 
       {/* ── FINAL CTA ────────────────────────────────────────────────────── */}
       <section className="section bg-void-dark border-t border-gold/10" id="cta">
