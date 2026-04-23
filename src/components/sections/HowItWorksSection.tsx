@@ -11,21 +11,18 @@ const steps = [
     icon: Package,
     title: "Choose Your Package",
     desc: "Pick the plan that fits where your business is right now. Start at $49 — upgrade whenever you're ready.",
-    cta: null,
   },
   {
     num: "02",
     icon: ClipboardList,
     title: "Submit Your Info",
     desc: "Fill out a short intake form. Tell us your brand, your goals, and any assets you already have. Takes under 10 minutes.",
-    cta: null,
   },
   {
     num: "03",
     icon: Zap,
     title: "We Build Your Site in 48 Hours",
     desc: "We handle everything — design, copy, hosting, and launch. You get a hand-built, mobile-first site with your domain. Done.",
-    cta: null,
   },
 ];
 
