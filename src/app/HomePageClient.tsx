@@ -137,7 +137,9 @@ export default function HomePageClient() {
         {/* Content */}
         <div className="relative container-custom text-center px-4 pt-20 pb-16">
           <ScrollReveal>
-            <span className="eyebrow mb-6 block">No AI. No Agency. No Markup.</span>
+            <span className="text-gold uppercase tracking-[0.25em] text-xs mb-8 block opacity-90">
+              No AI. No Agency. No Markup.
+            </span>
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
@@ -157,10 +159,16 @@ export default function HomePageClient() {
 
           <ScrollReveal delay={0.3}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Link href="/packages" className="btn-primary">
+              <Link
+                href="/packages"
+                className="bg-gold hover:bg-gold-light text-white font-semibold px-8 py-4 text-sm tracking-wide transition-colors"
+              >
                 Get Your Site for $49
               </Link>
-              <Link href="/services" className="btn-ghost">
+              <Link
+                href="/services"
+                className="border border-white/20 hover:border-white/50 text-white/70 hover:text-white font-medium px-8 py-4 text-sm tracking-wide transition-colors"
+              >
                 See All Services
               </Link>
             </div>
@@ -168,8 +176,8 @@ export default function HomePageClient() {
 
           {/* Price badge */}
           <ScrollReveal delay={0.4}>
-            <div className="inline-flex items-baseline gap-3 border-l-2 border-gold pl-5">
-              <span className="font-display text-5xl text-white tracking-wide">$49</span>
+            <div className="inline-flex items-baseline gap-2 border-l-2 border-gold pl-4">
+              <span className="font-display text-4xl text-white tracking-wide">$49</span>
               <span className="text-sm text-white/40">website + domain (you own it)</span>
             </div>
           </ScrollReveal>
@@ -178,8 +186,8 @@ export default function HomePageClient() {
           <ScrollReveal delay={0.6}>
             <motion.div
               className="mt-16 flex flex-col items-center gap-2"
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
             >
               <div className="w-px h-12 bg-gradient-to-b from-transparent to-gold/40" />
               <span className="text-gold/40 text-[10px] tracking-[0.3em] uppercase">Scroll</span>
@@ -204,7 +212,7 @@ export default function HomePageClient() {
       <section className="section bg-void" id="pain">
         <div className="container-custom">
           <ScrollReveal>
-            <span className="eyebrow mb-4 block">The Problem</span>
+            <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block">The Problem</span>
             <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] tracking-wider text-white mb-4 leading-none">
               YOU BUILT SOMETHING REAL.
             </h2>
@@ -229,7 +237,7 @@ export default function HomePageClient() {
               },
             ].map((problem, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="bg-void-light border border-gold/15 p-8 h-full group transition-all duration-300 hover:border-gold hover:-translate-y-1">
+                <div className="relative bg-void-light border border-void-lighter p-8 h-full group transition-all duration-300 hover:border-gold/25 hover:-translate-y-1 overflow-hidden">
                   <p className="text-xs font-semibold tracking-widest text-gold/60 uppercase mb-3">Problem {String(i + 1).padStart(2, '0')}</p>
                   <h3 className="font-body font-semibold text-white text-lg mb-3">{problem.head}</h3>
                   <p className="text-white/50 text-sm leading-relaxed">{problem.body}</p>
@@ -262,7 +270,7 @@ export default function HomePageClient() {
         <div className="container-custom">
           {/* Anchor pricing headline */}
           <ScrollReveal>
-            <span className="eyebrow mb-4 block">Transparent Pricing</span>
+            <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block">Transparent Pricing</span>
             <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] tracking-wider leading-none mb-4">
               START AT $49/MONTH
               <br />
@@ -277,7 +285,7 @@ export default function HomePageClient() {
           {/* What's included + Why it's affordable */}
           <div className="grid md:grid-cols-2 gap-6 mb-10">
             <ScrollReveal delay={0.05}>
-              <div className="bg-void border border-gold/20 p-8 h-full">
+              <div className="bg-void-light border border-void-lighter p-8 h-full">
                 <p className="text-xs font-semibold tracking-widest text-gold uppercase mb-5">What&apos;s Included</p>
                 <ul className="space-y-3">
                   {[
@@ -299,7 +307,7 @@ export default function HomePageClient() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <div className="bg-void border border-gold/20 p-8 h-full">
+              <div className="bg-void-light border border-void-lighter p-8 h-full">
                 <p className="text-xs font-semibold tracking-widest text-gold uppercase mb-5">Why It&apos;s This Affordable</p>
                 <ul className="space-y-3">
                   {[
@@ -344,10 +352,16 @@ export default function HomePageClient() {
           {/* CTA + Risk Reversal guarantee */}
           <ScrollReveal delay={0.2}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Link href="/packages" className="btn-primary">
+              <Link
+                href="/packages"
+                className="bg-gold hover:bg-gold-light text-white font-semibold px-8 py-4 text-sm tracking-wide transition-colors"
+              >
                 Get Your Site for $49
               </Link>
-              <Link href="/services" className="btn-ghost">
+              <Link
+                href="/services"
+                className="border border-white/20 hover:border-white/50 text-white/70 hover:text-white font-medium px-8 py-4 text-sm tracking-wide transition-colors"
+              >
                 See All Services
               </Link>
             </div>
@@ -373,7 +387,7 @@ export default function HomePageClient() {
       <section className="section bg-void" id="services">
         <div className="container-custom">
           <ScrollReveal>
-            <span className="eyebrow mb-4 block">What We Build</span>
+            <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block">What We Build</span>
             <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] tracking-wider leading-none mb-16">
               EVERYTHING A SMALL
               <br />
@@ -417,7 +431,7 @@ export default function HomePageClient() {
       <section className="section bg-void-dark" id="why">
         <div className="container-custom">
           <ScrollReveal>
-            <span className="eyebrow mb-4 block">Why Us</span>
+            <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block">Why Us</span>
             <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] tracking-wider leading-none mb-16">
               BUILT
               <br />
@@ -428,7 +442,7 @@ export default function HomePageClient() {
           <div className="grid md:grid-cols-2 gap-6">
             {values.map((value, i) => (
               <ScrollReveal key={value.num} delay={i * 0.1}>
-                <div className="bg-void border border-void-lighter p-10 relative overflow-hidden group transition-all duration-300 hover:border-gold/25 hover:-translate-y-1">
+                <div className="bg-void-light border border-void-lighter p-10 relative overflow-hidden group transition-all duration-300 hover:border-gold/25 hover:-translate-y-1">
                   <div className="absolute top-4 right-4 font-display text-6xl text-gold/[0.06] select-none leading-none">
                     {value.num}
                   </div>
@@ -449,7 +463,7 @@ export default function HomePageClient() {
       <section className="section bg-void-dark border-t border-gold/10" id="cta">
         <div className="max-w-[700px] mx-auto px-4 text-center">
           <ScrollReveal>
-            <span className="eyebrow mb-4 block">Get Started</span>
+            <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block">Get Started</span>
             <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] tracking-wider leading-none mb-6">
               READY TO
               <br />
@@ -462,10 +476,16 @@ export default function HomePageClient() {
 
           <ScrollReveal delay={0.1}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/packages" className="btn-primary">
+              <Link
+                href="/packages"
+                className="bg-gold hover:bg-gold-light text-white font-semibold px-10 py-4 text-sm tracking-wide transition-colors"
+              >
                 Get Your Site for $49
               </Link>
-              <Link href="/contact" className="btn-ghost">
+              <Link
+                href="/contact"
+                className="border border-white/20 hover:border-white/50 text-white/70 hover:text-white font-medium px-10 py-4 text-sm tracking-wide transition-colors"
+              >
                 Ask a Question
               </Link>
             </div>

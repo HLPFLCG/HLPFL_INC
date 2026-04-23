@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { Quote, TrendingUp, CheckCircle, XCircle, ArrowRight } from 'lucide-react'
 import { ScrollReveal } from '@/components/ui'
 
@@ -89,10 +88,9 @@ export default function SocialProofSection() {
           <div className="pointer-events-none absolute left-0 top-0 h-full w-24 z-10 bg-gradient-to-r from-void-dark to-transparent" />
           <div className="pointer-events-none absolute right-0 top-0 h-full w-24 z-10 bg-gradient-to-l from-void-dark to-transparent" />
 
-          <motion.div
+          <div
             className="flex items-center gap-0 w-max"
-            animate={{ x: ['0%', '-50%'] }}
-            transition={{ duration: 28, repeat: Infinity, ease: 'linear' }}
+            style={{ animation: 'scrollLeft 28s linear infinite' }}
           >
             {logoTrack.map((logo, i) => (
               <div
@@ -100,7 +98,7 @@ export default function SocialProofSection() {
                 className="inline-flex flex-col items-center justify-center gap-1 px-10 opacity-40 hover:opacity-80 transition-opacity duration-300 cursor-default select-none"
               >
                 <div
-                  className="w-10 h-10 rounded flex items-center justify-center font-display text-lg tracking-wider text-white bg-white/[0.06] border border-white/[0.08]"
+                  className="w-10 h-10 flex items-center justify-center font-display text-lg tracking-wider text-white bg-white/[0.06] border border-white/[0.08]"
                   aria-hidden="true"
                 >
                   {logo.abbr}
@@ -108,7 +106,7 @@ export default function SocialProofSection() {
                 <span className="text-[10px] font-medium text-white/60 tracking-wider whitespace-nowrap">{logo.name}</span>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -116,7 +114,7 @@ export default function SocialProofSection() {
       <section className="section bg-void" id="testimonials">
         <div className="container-custom">
           <ScrollReveal>
-            <span className="eyebrow mb-4 block">Real Results</span>
+            <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block">Real Results</span>
             <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] tracking-wider leading-none text-white mb-4">
               REAL BUSINESSES.
               <br />
@@ -175,7 +173,7 @@ export default function SocialProofSection() {
       <section className="section bg-void-dark" id="before-after">
         <div className="container-custom">
           <ScrollReveal>
-            <span className="eyebrow mb-4 block">The Transformation</span>
+            <span className="text-gold uppercase tracking-[0.25em] text-xs mb-4 block">The Transformation</span>
             <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] tracking-wider leading-none mb-4">
               BEFORE VS.
               <br />
