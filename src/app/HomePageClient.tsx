@@ -354,8 +354,11 @@ export default function HomePageClient() {
 
             {/* Risk reversal */}
             <div className="border border-gold/30 bg-gold/[0.06] px-6 py-5 text-center max-w-2xl mx-auto">
-              <p className="text-gold font-semibold text-sm tracking-wide mb-1">
-                🔒 No Contracts. Cancel Anytime. Full Refund Within 7 Days.
+              <p className="text-gold font-semibold text-sm tracking-wide mb-1 flex items-center justify-center gap-2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                </svg>
+                No Contracts. Cancel Anytime. Full Refund Within 7 Days.
               </p>
               <p className="text-white/40 text-xs leading-relaxed">
                 If you&apos;re not satisfied within the first 7 days of delivery, you get a full refund — no questions asked.
