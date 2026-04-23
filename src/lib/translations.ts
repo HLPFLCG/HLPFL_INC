@@ -392,6 +392,13 @@ const translations = {
       mission:
         "To help business owners affordably grow their digital presence.",
       vision: "To serve 1,000,000,000 small business owners worldwide.",
+      founderHeadline: "Built by HLPFL Consulting Group",
+      founderBio:
+        "7 years building businesses from the ground up across hospitality, e-commerce, and digital services — with zero outside funding and no agency safety net. HLPFL was born out of watching great business owners get taken advantage of by overpriced, underdelivering agencies. If you can build systems that work, you can charge what things actually cost.",
+      founderYears: "7+ Years",
+      founderYearsLabel: "as an entrepreneur",
+      founderLinkedIn: "Connect on LinkedIn",
+      founderPhotoAlt: "HLPFL Founder",
     },
     es: {
       headline: "Construido por alguien que ha estado ahí.",
@@ -451,6 +458,13 @@ const translations = {
         "Ayudar a los dueños de negocios a crecer digitalmente de forma asequible.",
       vision:
         "Servir a 1,000,000,000 dueños de pequeños negocios en todo el mundo.",
+      founderHeadline: "Construido por HLPFL Consulting Group",
+      founderBio:
+        "7 años construyendo negocios desde cero en hospitalidad, e-commerce y servicios digitales — sin financiamiento externo ni red de seguridad de agencia. HLPFL nació de ver a grandes dueños de negocios ser engañados por agencias sobrevaloradas que entregaban poco. Si puedes construir sistemas que funcionen, puedes cobrar lo que las cosas realmente cuestan.",
+      founderYears: "7+ Años",
+      founderYearsLabel: "como emprendedor",
+      founderLinkedIn: "Conectar en LinkedIn",
+      founderPhotoAlt: "Fundador de HLPFL",
     },
   },
 
@@ -461,6 +475,22 @@ const translations = {
       headline: "Frequently Asked Questions",
       sub: "Straight answers. No runaround.",
       items: [
+        {
+          q: "Is this legit?",
+          a: "Yes. HLPFL INC is a registered business. You can read the Terms of Service and Privacy Policy on this site. Every project delivers a live website under your own accounts — domain in your name, hosting in your name, code yours to keep. You're not trusting a promise; you're trusting a real deliverable. If you're still skeptical, read the testimonials from real clients or reach out before buying.",
+        },
+        {
+          q: "What's the catch with the $49 price?",
+          a: "There's no catch. The price is low because the workflow is efficient — systematized AI-assisted processes cut production time without cutting quality. No agency overhead, no account managers, no junior staff markups. The $49 covers a clean, fast, professional 5-page site with AI-assisted copy and Cloudflare hosting. The only 'catch' is that domain registration (~$12–15/year) is separate and registered directly under your name.",
+        },
+        {
+          q: "How fast do I see results?",
+          a: "Your site goes live within 5–7 business days. Google typically indexes a new site within 1–4 weeks. For local SEO impact (Google My Business, local search), most clients see movement within 30–60 days. Results depend on your market, competition, and how consistently you drive traffic — but the infrastructure is live and working from day one.",
+        },
+        {
+          q: "What if I don't like the site?",
+          a: "You get one round of revisions included in every project — that's your opportunity to request any changes. If after revisions you're genuinely not satisfied, we offer a full refund within 7 days of delivery, no questions asked. We don't want your money if you're not happy. That said, we gather your preferences and content before starting so surprises are rare.",
+        },
         {
           q: "Why is the website only $49?",
           a: "Because it doesn't need to cost more. A clean, fast, mobile-first 5-page website built on Next.js and hosted on Cloudflare takes a skilled person 3–5 hours. At $49, I make a fair margin, you get a professional site, and nobody gets ripped off. The agency markup is the con — not the price.",
@@ -511,6 +541,22 @@ const translations = {
       headline: "Preguntas Frecuentes",
       sub: "Respuestas directas. Sin rodeos.",
       items: [
+        {
+          q: "¿Es esto legítimo?",
+          a: "Sí. HLPFL INC es un negocio registrado. Puedes leer los Términos de Servicio y la Política de Privacidad en este sitio. Cada proyecto entrega un sitio web en vivo bajo tus propias cuentas — dominio a tu nombre, hosting a tu nombre, código tuyo para siempre. No estás confiando en una promesa; estás confiando en un entregable real. Si aún eres escéptico, lee los testimonios de clientes reales o contáctanos antes de comprar.",
+        },
+        {
+          q: "¿Cuál es la trampa del precio de $49?",
+          a: "No hay trampa. El precio es bajo porque el flujo de trabajo es eficiente — procesos sistematizados asistidos por IA reducen el tiempo de producción sin reducir la calidad. Sin gastos de agencia, sin gestores de cuentas, sin sobreprecios de personal junior. Los $49 cubren un sitio limpio, rápido y profesional de 5 páginas con copy asistido por IA y hosting en Cloudflare. La única 'trampa' es que el registro del dominio (~$12–15/año) es aparte y se registra directamente a tu nombre.",
+        },
+        {
+          q: "¿Qué tan rápido veo resultados?",
+          a: "Tu sitio está en vivo dentro de 5–7 días hábiles. Google normalmente indexa un nuevo sitio en 1–4 semanas. Para el impacto de SEO local (Google My Business, búsqueda local), la mayoría de clientes ven movimiento en 30–60 días. Los resultados dependen de tu mercado, competencia y cuán consistentemente generas tráfico — pero la infraestructura está activa y funcionando desde el primer día.",
+        },
+        {
+          q: "¿Qué pasa si no me gusta el sitio?",
+          a: "Cada proyecto incluye una ronda de revisiones — esa es tu oportunidad para solicitar cambios. Si después de las revisiones genuinamente no estás satisfecho, ofrecemos un reembolso completo dentro de los 7 días de la entrega, sin preguntas. No queremos tu dinero si no estás contento. Dicho esto, recopilamos tus preferencias y contenido antes de comenzar, así que las sorpresas son raras.",
+        },
         {
           q: "¿Por qué el sitio web cuesta solo $49?",
           a: "Porque no necesita costar más. Un sitio web limpio, rápido y mobile-first de 5 páginas construido en Next.js y alojado en Cloudflare toma a una persona capacitada 3–5 horas. A $49, obtengo un margen justo, tú obtienes un sitio profesional, y nadie sale estafado. El sobreprecio de la agencia es el engaño — no el precio.",

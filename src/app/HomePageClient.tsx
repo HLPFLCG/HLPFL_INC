@@ -257,24 +257,72 @@ export default function HomePageClient() {
       {/* ── HOW IT WORKS (CUSTOMER FUNNEL) ──────────────────────────────── */}
       <HowItWorksSection />
 
-      {/* ── PRICE COMPARISON ─────────────────────────────────────────────── */}
+      {/* ── PRICING & RISK REVERSAL ───────────────────────────────────────── */}
       <section className="section bg-void-dark" id="pricing">
         <div className="container-custom">
+          {/* Anchor pricing headline */}
           <ScrollReveal>
-            <span className="eyebrow mb-4 block">The Math</span>
+            <span className="eyebrow mb-4 block">Transparent Pricing</span>
             <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] tracking-wider leading-none mb-4">
-              $49 REPLACES
+              START AT $49/MONTH
               <br />
-              <span className="text-gradient">$2,000–$10,000</span>
+              <span className="text-gradient">(NORMALLY $1,500+ UPFRONT)</span>
             </h2>
             <p className="text-white/50 mb-12 max-w-xl">
-              Other companies charge agency prices for work done by software.
-              Here&apos;s what the same deliverables cost at HLPFL.
+              Agencies charge upfront because they can. We charge fairly because that&apos;s how it should be.
+              Systematized AI-assisted workflows keep our overhead low — and the savings go to you.
             </p>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.1}>
-            <div className="border border-gold/15">
+          {/* What's included + Why it's affordable */}
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
+            <ScrollReveal delay={0.05}>
+              <div className="bg-void border border-gold/20 p-8 h-full">
+                <p className="text-xs font-semibold tracking-widest text-gold uppercase mb-5">What&apos;s Included</p>
+                <ul className="space-y-3">
+                  {[
+                    'Professional 5-page website',
+                    'AI-assisted copy written for your business',
+                    'Cloudflare hosting + SSL certificate',
+                    'Mobile-first, fast-loading build',
+                    'Domain configuration (you own it)',
+                    'One round of revisions included',
+                    '24-hour response time',
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm text-white/70">
+                      <span className="text-gold mt-0.5 shrink-0">◆</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.1}>
+              <div className="bg-void border border-gold/20 p-8 h-full">
+                <p className="text-xs font-semibold tracking-widest text-gold uppercase mb-5">Why It&apos;s This Affordable</p>
+                <ul className="space-y-3">
+                  {[
+                    'Systematized AI-assisted workflows cut production time dramatically',
+                    'Zero agency overhead — no account managers, no junior staff markups',
+                    'You talk directly to the person doing the work',
+                    'Built on battle-tested open-source tools (Next.js, Cloudflare)',
+                    'Template-free but process-efficient — custom quality, lean cost',
+                    'Volume-based pricing: more clients = sustainable low rates',
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm text-white/70">
+                      <span className="text-gold mt-0.5 shrink-0">◆</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          {/* Price comparison table */}
+          <ScrollReveal delay={0.15}>
+            <div className="border border-gold/15 mb-8">
               <div className="grid grid-cols-3 bg-void-light px-6 py-3 border-b border-gold/15">
                 <span className="text-xs font-semibold tracking-widest text-white/40 uppercase">Service</span>
                 <span className="text-xs font-semibold tracking-widest text-white/40 uppercase">Agency Rate</span>
@@ -293,13 +341,26 @@ export default function HomePageClient() {
             </div>
           </ScrollReveal>
 
+          {/* CTA + Risk Reversal guarantee */}
           <ScrollReveal delay={0.2}>
-            <div className="mt-8 flex items-center justify-between border border-gold/30 bg-gold/5 px-6 py-4">
-              <span className="text-white/60 text-sm">Market value of Get Online + Local Pro package</span>
-              <div className="text-right">
-                <span className="text-white/30 line-through text-sm mr-4">$277</span>
-                <span className="text-gold font-bold text-xl">$199</span>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+              <Link href="/packages" className="btn-primary">
+                Get Your Site for $49
+              </Link>
+              <Link href="/services" className="btn-ghost">
+                See All Services
+              </Link>
+            </div>
+
+            {/* Risk reversal */}
+            <div className="border border-gold/30 bg-gold/[0.06] px-6 py-5 text-center max-w-2xl mx-auto">
+              <p className="text-gold font-semibold text-sm tracking-wide mb-1">
+                🔒 No Contracts. Cancel Anytime. Full Refund Within 7 Days.
+              </p>
+              <p className="text-white/40 text-xs leading-relaxed">
+                If you&apos;re not satisfied within the first 7 days of delivery, you get a full refund — no questions asked.
+                No lock-in. No fine print. Just good work or your money back.
+              </p>
             </div>
           </ScrollReveal>
         </div>
