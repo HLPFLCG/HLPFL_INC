@@ -23,13 +23,15 @@ const stats = [
 ]
 
 const comparisonRows = [
-  { item: '5-Page Website',      agency: '$2,000–$10,000', hlpfl: '$49' },
-  { item: 'Logo Design',         agency: '$500–$5,000',    hlpfl: '$75' },
-  { item: 'Full Brand Kit',      agency: '$2,000–$8,000',  hlpfl: '$149' },
-  { item: 'GMB Setup',           agency: '$200–$500',      hlpfl: '$59' },
-  { item: 'On-Page SEO',         agency: '$500–$2,000',    hlpfl: '$99' },
-  { item: 'Shopify Store',       agency: '$3,000–$10,000', hlpfl: '$149–$249' },
-  { item: 'Social Media (8/mo)', agency: '$500–$2,000/mo', hlpfl: '$45–$85/mo' },
+  { item: '5-Page Website',              agency: '$2,000–$10,000', hlpfl: '$49' },
+  { item: 'Logo Design',                 agency: '$500–$5,000',    hlpfl: '$75' },
+  { item: 'Full Brand Kit',              agency: '$2,000–$8,000',  hlpfl: '$149' },
+  { item: 'GMB Setup',                   agency: '$200–$500',      hlpfl: '$59' },
+  { item: 'On-Page SEO',                 agency: '$500–$2,000',    hlpfl: '$99' },
+  { item: 'Shopify Store',               agency: '$3,000–$10,000', hlpfl: '$149–$249' },
+  { item: 'Social Media (8/mo)',         agency: '$500–$2,000/mo', hlpfl: '$45–$85/mo' },
+  { item: 'Wyoming LLC + Travel Agency', agency: '$1,500–$5,000',  hlpfl: '$499' },
+  { item: 'Vacation Rental Platform',    agency: '$5,000–$20,000', hlpfl: '$299 + $29/mo' },
 ]
 
 const serviceCategories = [
@@ -68,6 +70,12 @@ const serviceCategories = [
     title: 'Business Intelligence',
     tags: ['Strategy Session', 'Consulting', 'Custom Projects'],
     desc: '7 years of entrepreneurship, zero fluff. Bring a problem, leave with a real solution and a prioritized action plan.',
+  },
+  {
+    icon: '✦',
+    title: 'Travel & Hospitality',
+    tags: ['Wyoming LLC', 'EIN Filing', 'Booking Platform', 'Stripe Setup', 'Seller of Travel'],
+    desc: 'Wyoming LLC formation, EIN, bank account, and a direct-booking vacation rental site. For Costa Rica hosts targeting American travelers.',
   },
 ]
 

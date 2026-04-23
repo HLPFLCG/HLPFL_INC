@@ -1,2 +1,19 @@
 name = "hlpfl-inc"
-pages_build_output_dir = "out"
+
+# NOTE: The booking platform requires server-side API routes.
+# Static Cloudflare Pages deployment is no longer sufficient.
+# Recommended options:
+#   A) Vercel (zero config, supports Next.js API routes natively)
+#   B) Cloudflare Workers via @cloudflare/next-on-pages:
+#      npm install -D @cloudflare/next-on-pages
+#      Add: compatibility_date = "2024-01-01"
+#      Add: compatibility_flags = ["nodejs_compat"]
+#      Build: npx @cloudflare/next-on-pages
+#      The .vercel/output/functions/ directory will be deployed.
+# See SETUP.md → Deployment section for full instructions.
+
+# For Vercel deployment, this wrangler.toml is not needed.
+# For Cloudflare Workers, uncomment and configure below:
+# pages_build_output_dir = ".vercel/output/static"
+# compatibility_date = "2024-01-01"
+# compatibility_flags = ["nodejs_compat"]

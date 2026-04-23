@@ -1,0 +1,207 @@
+# HLPFL Stays — Setup Guide
+
+This document covers everything you need to do before the first live booking can work.
+
+---
+
+## 1. Supabase — Database
+
+### Create a project
+1. Go to [supabase.com](https://supabase.com) and create a new project.
+2. Choose a region closest to your users (US East recommended for American travelers).
+3. Note your **Project URL** and **API keys** (Settings → API).
+
+### Run the migration
+1. In your Supabase dashboard, go to **SQL Editor**.
+2. Open `supabase/migrations/001_initial_schema.sql`.
+3. Paste the entire contents and click **Run**.
+4. This creates the `properties`, `bookings`, and `availability_blocks` tables, sets up RLS policies, and seeds the first property (Villa Caribe Azul).
+
+### Verify the seed data
+After running the migration, go to **Table Editor → properties**. You should see "Villa Caribe Azul" with `published = true`.
+
+### Create the admin user
+1. In Supabase dashboard, go to **Authentication → Users**.
+2. Click **Add user** → **Create new user**.
+3. Enter your admin email and a strong password.
+4. This is the only user who can access `/admin/`.
+
+### Environment variables to add
+```
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...
+SUPABASE_SERVICE_ROLE_KEY=eyJ...   # Keep this server-side only
+```
+
+---
+
+## 2. Stripe — Payments
+
+### Test mode (development)
+Test mode is safe — no real money moves. Use these test card details:
+- **Card number:** `4242 4242 4242 4242`
+- **Expiry:** Any future date (e.g., `12/30`)
+- **CVC:** Any 3 digits (e.g., `123`)
+- **ZIP:** Any 5 digits (e.g., `10001`)
+
+### Get API keys
+1. Go to [dashboard.stripe.com](https://dashboard.stripe.com) → Developers → API keys.
+2. Copy the **Secret key** (`sk_test_...` for test, `sk_live_...` for production).
+
+### Configure webhook endpoint
+1. In Stripe dashboard, go to **Developers → Webhooks**.
+2. Click **Add endpoint**.
+3. **Endpoint URL:** `https://hlpfl.org/api/webhooks/stripe`
+   - For local testing: use [Stripe CLI](https://stripe.com/docs/stripe-cli) with `stripe listen --forward-to localhost:3000/api/webhooks/stripe`
+4. **Events to listen to:**
+   - `checkout.session.completed`
+5. After saving, click **Reveal** next to **Signing secret** and copy the `whsec_...` value.
+
+### Environment variables to add
+```
+STRIPE_SECRET_KEY=sk_test_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+```
+
+### Production cutover
+- Replace `sk_test_...` with `sk_live_...`
+- Replace `whsec_...` with the live webhook signing secret
+- Add live webhook endpoint in Stripe dashboard pointing to production URL
+
+---
+
+## 3. Resend — Confirmation Emails
+
+### Create an account
+1. Go to [resend.com](https://resend.com) and create an account.
+2. Go to **Domains** and add `hlpfl.org`.
+3. Add the DNS records Resend provides (SPF, DKIM, DMARC) to your domain registrar.
+4. Wait for domain verification (usually a few minutes with Cloudflare).
+
+### Get API key
+1. Go to **API Keys** in Resend dashboard.
+2. Create a new API key with **Full access**.
+3. Copy the `re_...` value.
+
+### Environment variables to add
+```
+RESEND_API_KEY=re_...
+RESEND_FROM_EMAIL=stays@hlpfl.org
+```
+
+> **Note:** The from email must match a verified domain. If your domain isn't verified yet, use `onboarding@resend.dev` for testing (Resend provides this as a default sender).
+
+---
+
+## 4. App Configuration
+
+```
+NEXT_PUBLIC_SITE_URL=https://hlpfl.org
+```
+
+For local development, set this to `http://localhost:3000`. This controls where Stripe redirects users after payment.
+
+---
+
+## 5. Local Development
+
+```bash
+# Copy the example env file
+cp .env.local.example .env.local
+
+# Fill in your values, then:
+npm run dev
+```
+
+Visit:
+- `http://localhost:3000/stays/` — property listing
+- `http://localhost:3000/stays/villa-caribe-azul/` — property detail (placeholder data if no Supabase)
+- `http://localhost:3000/admin/` — admin dashboard
+
+---
+
+## 6. Adding Property Photos
+
+Photos are stored as URLs in the `photos` JSONB column. For now, place images in `public/stays/`:
+
+```
+public/
+  stays/
+    villa-caribe-azul/
+      photo-1.jpg
+      photo-2.jpg
+      ...
+```
+
+Then update the property's `photos` field in Supabase:
+```json
+[
+  {"url": "/stays/villa-caribe-azul/photo-1.jpg", "alt": "Oceanfront view"},
+  {"url": "/stays/villa-caribe-azul/photo-2.jpg", "alt": "Living room"}
+]
+```
+
+For production, consider uploading to Supabase Storage or Cloudflare Images.
+
+---
+
+## 7. Checklist Before First Booking
+
+- [ ] Supabase project created and migration SQL executed
+- [ ] Admin user created in Supabase Authentication
+- [ ] Stripe account verified (may need business info for live mode)
+- [ ] Stripe webhook endpoint configured with correct URL and `checkout.session.completed` event
+- [ ] Resend domain verified for your from address
+- [ ] All environment variables set in production (Vercel/Cloudflare env settings)
+- [ ] `NEXT_PUBLIC_SITE_URL` set to production URL
+- [ ] Property photos uploaded and URLs updated in Supabase
+- [ ] Test end-to-end with Stripe test card before switching to live keys
+
+---
+
+## 8. Costa Rica Compliance Notes
+
+The `/stays/terms/` page includes the required disclaimer, but you should also:
+
+- **ICT Registration:** If renting for more than 30 nights/year, register with [ICT](https://www.ict.go.cr/).
+- **Hacienda e-invoicing:** Rental income requires comprobantes electrónicos via the [ATV portal](https://www.hacienda.go.cr/). Contact a local contador for setup.
+- **Municipal tax:** Some cantons (including Limón) have specific tourism taxes. Verify with a local attorney.
+- **Seller of Travel:** If you plan to sell travel packages to California, Florida, Hawaii, Washington, or Iowa residents, you may need to register in those states. Consult with a travel law attorney.
+
+---
+
+## 9. Environment Variables — Full List
+
+| Variable | Where to find it | Required |
+|----------|-----------------|----------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase → Settings → API | ✅ |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase → Settings → API | ✅ |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase → Settings → API | ✅ |
+| `STRIPE_SECRET_KEY` | Stripe → Developers → API keys | ✅ |
+| `STRIPE_WEBHOOK_SECRET` | Stripe → Developers → Webhooks → signing secret | ✅ |
+| `RESEND_API_KEY` | Resend → API Keys | ✅ |
+| `RESEND_FROM_EMAIL` | Your verified domain email | ✅ |
+| `NEXT_PUBLIC_SITE_URL` | Your production domain | ✅ |
+
+---
+
+## 10. Deployment — Important Note
+
+The booking platform requires server-side API routes (`/api/bookings/create` and `/api/webhooks/stripe`). The previous `output: export` (static Cloudflare Pages) configuration has been removed because static sites cannot run server code.
+
+### Option A: Vercel (recommended for simplicity)
+1. Push your code to GitHub.
+2. Import the repo at [vercel.com/new](https://vercel.com/new).
+3. Add all environment variables in Vercel dashboard → Settings → Environment Variables.
+4. Deploy. Vercel handles API routes automatically.
+5. Update your Stripe webhook URL to the Vercel deployment URL.
+
+### Option B: Cloudflare Workers (keep existing provider)
+1. Install the adapter: `npm install -D @cloudflare/next-on-pages`
+2. Build: `npx @cloudflare/next-on-pages`
+3. Deploy: `wrangler pages deploy .vercel/output/static`
+4. Add env vars in Cloudflare Pages dashboard → Settings → Environment variables.
+5. Note: Some Node.js APIs may need `nodejs_compat` flag in `wrangler.toml`.
+
+### Why the change?
+The Stripe webhook endpoint must receive POST requests from Stripe's servers. A static HTML site cannot do this — it requires a server (or serverless function) that can execute Node.js code, verify the Stripe signature, update the database, and send emails.

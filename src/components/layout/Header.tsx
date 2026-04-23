@@ -6,11 +6,12 @@ import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 
 const navLinks = [
-  { href: '/services', label: 'Services' },
-  { href: '/packages', label: 'Packages' },
-  { href: '/about', label: 'About' },
-  { href: '/faq', label: 'FAQ' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/services', label: 'Services', badge: null },
+  { href: '/packages', label: 'Packages', badge: null },
+  { href: '/stays', label: 'Stays', badge: 'New' },
+  { href: '/about', label: 'About', badge: null },
+  { href: '/faq', label: 'FAQ', badge: null },
+  { href: '/contact', label: 'Contact', badge: null },
 ]
 
 export default function Header() {
@@ -47,9 +48,14 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-white/70 hover:text-white transition-colors tracking-wide"
+              className="relative text-sm font-medium text-white/70 hover:text-white transition-colors tracking-wide inline-flex items-center gap-1.5"
             >
               {link.label}
+              {link.badge && (
+                <span className="text-[9px] font-bold uppercase tracking-wider text-void bg-gold px-1.5 py-0.5 leading-none">
+                  {link.badge}
+                </span>
+              )}
             </Link>
           ))}
         </nav>
@@ -81,9 +87,14 @@ export default function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="text-base font-medium text-white/80 hover:text-gold transition-colors"
+              className="inline-flex items-center gap-2 text-base font-medium text-white/80 hover:text-gold transition-colors"
             >
               {link.label}
+              {link.badge && (
+                <span className="text-[9px] font-bold uppercase tracking-wider text-void bg-gold px-1.5 py-0.5 leading-none">
+                  {link.badge}
+                </span>
+              )}
             </Link>
           ))}
           <Link

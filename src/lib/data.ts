@@ -8,7 +8,8 @@ export type ServiceCategory =
   | "presence"
   | "commerce"
   | "growth"
-  | "intelligence";
+  | "intelligence"
+  | "travel";
 
 export type ContentPricing = {
   human: number;
@@ -535,6 +536,44 @@ export const services: Service[] = [
     priceNote: "per hour",
     stripeLink: "https://buy.stripe.com/7sY5kCcByamk4dUcsubQY0u",
   },
+
+  // ─── TRAVEL ───────────────────────────────────────────────────────────────
+
+  {
+    id: "travel-agency-launch",
+    category: "travel",
+    slug: "travel-agency-launch",
+    icon: "Plane",
+    nameEn: "Travel Agency Launch Package",
+    nameEs: "Paquete de Lanzamiento de Agencia de Viajes",
+    descEn:
+      "Wyoming LLC + EIN + bank account + booking website + Stripe + Seller of Travel compliance. Everything you need to legally run a Costa Rica vacation rental business targeting American travelers. You own the LLC. You own the site. You own the Stripe account. We just build it.",
+    descEs:
+      "LLC de Wyoming + EIN + cuenta bancaria + sitio de reservas + Stripe + cumplimiento de Seller of Travel. Todo lo que necesitas para administrar legalmente un negocio de alquiler vacacional en Costa Rica dirigido a viajeros americanos.",
+    price: 499,
+    priceNote: "one-time setup",
+    stripeLink: "https://buy.stripe.com/PLACEHOLDER_TRAVEL_LAUNCH",
+    featured: true,
+    deliveryDays: 30,
+  },
+  {
+    id: "vacation-rental-platform",
+    category: "travel",
+    slug: "vacation-rental-platform",
+    icon: "Home",
+    nameEn: "Vacation Rental Booking Platform",
+    nameEs: "Plataforma de Reservas de Alquiler Vacacional",
+    descEn:
+      "Multi-property direct-booking site — no Airbnb commissions. Availability calendar, Stripe Payment Links, guest confirmations via email, admin dashboard, damage deposit workflow, and ICT + Hacienda e-invoicing guidance for Costa Rica. Airbnb takes ~15%. Stripe takes 3%. Math is simple.",
+    descEs:
+      "Sitio de reservas directas multi-propiedad — sin comisiones de Airbnb. Calendario de disponibilidad, Stripe Payment Links, confirmaciones por email, panel de administración, flujo de depósito de daños y orientación de facturación electrónica ICT + Hacienda para Costa Rica.",
+    price: 299,
+    priceNote: "+ $29/month",
+    isRecurring: true,
+    stripeLink: "https://buy.stripe.com/PLACEHOLDER_VRBO_PLATFORM",
+    featured: true,
+    deliveryDays: 21,
+  },
 ];
 
 // ─── RETAINERS ────────────────────────────────────────────────────────────────
@@ -767,6 +806,11 @@ export const categoryLabels: Record<
     en: "Business Intelligence",
     es: "Inteligencia de Negocios",
     icon: "BarChart",
+  },
+  travel: {
+    en: "Travel & Hospitality",
+    es: "Viajes y Hospitalidad",
+    icon: "Plane",
   },
 };
 
