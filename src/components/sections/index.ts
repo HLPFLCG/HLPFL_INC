@@ -7,3 +7,4 @@ export { default as WhyHLPFL } from "./WhyHLPFL";
 export { default as TestimonialsSection } from "./TestimonialsSection";
 export { default as SocialProofSection } from "./SocialProofSection";
 export { default as HomeCTA } from "./HomeCTA";
+export { default as HowItWorksSection } from "./HowItWorksSection";
