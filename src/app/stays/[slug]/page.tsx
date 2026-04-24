@@ -42,18 +42,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 }
 
-export const revalidate = 60
-export const dynamicParams = true // allow slugs not returned by generateStaticParams
-
-export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  try {
-    const db = createServerClient()
-    const { data } = await db.from('properties').select('slug').eq('published', true)
-    return (data ?? []).map(p => ({ slug: p.slug }))
-  } catch {
-    return [{ slug: 'villa-caribe-azul' }]
-  }
-}
+export const runtime = 'edge'
+export const dynamic = 'force-dynamic'
 
 export default async function PropertyPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
