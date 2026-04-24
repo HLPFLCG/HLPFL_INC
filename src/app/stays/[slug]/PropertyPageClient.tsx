@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ScrollReveal } from '@/components/ui'
 import type { Property } from '@/lib/supabase'
@@ -116,6 +117,7 @@ function CalendarMonth({
 
 export default function PropertyPageClient({ property, unavailableDates }: Props) {
   const [activePhoto, setActivePhoto] = useState(0)
+  const [mainPhotoError, setMainPhotoError] = useState(false)
   const [checkIn, setCheckIn] = useState('')
   const [checkOut, setCheckOut] = useState('')
   const [selectingCheckOut, setSelectingCheckOut] = useState(false)
@@ -166,14 +168,13 @@ export default function PropertyPageClient({ property, unavailableDates }: Props
         <div className="max-w-6xl mx-auto px-4">
           {/* Main photo */}
           <div className="relative aspect-[16/9] bg-void overflow-hidden">
-            {photos[activePhoto] ? (
-              <img
+            {photos[activePhoto] && !mainPhotoError ? (
+              <Image
                 src={photos[activePhoto].url}
                 alt={photos[activePhoto].alt}
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjM2U1NTc4Ii8+PHRleHQgeD0iODAwIiB5PSI0NjAiIGZvbnQtc2l6ZT0iMzIiIGZpbGw9IiNhYjZjM2QiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk9jZWFuZnJvbnQgVmlsbGE8L3RleHQ+PC9zdmc+'
-                }}
+                fill
+                className="object-cover"
+                onError={() => setMainPhotoError(true)}
               />
             ) : (
               <div className="w-full h-full bg-void-light flex items-center justify-center">
@@ -188,12 +189,14 @@ export default function PropertyPageClient({ property, unavailableDates }: Props
               {photos.map((photo, i) => (
                 <button
                   key={i}
-                  onClick={() => setActivePhoto(i)}
+                  onClick={() => { setActivePhoto(i); setMainPhotoError(false) }}
                   className={`shrink-0 w-24 h-16 overflow-hidden border-2 transition-colors ${
                     i === activePhoto ? 'border-gold' : 'border-transparent opacity-60 hover:opacity-100'
                   }`}
                 >
-                  <img src={photo.url} alt={photo.alt} className="w-full h-full object-cover" />
+                  <div className="relative w-full h-full">
+                    <Image src={photo.url} alt={photo.alt} fill className="object-cover" />
+                  </div>
                 </button>
               ))}
             </div>
