@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 }
 
+export const runtime = 'edge'
 export const dynamic = 'force-dynamic'
 
 const PLACEHOLDER: Property = {
