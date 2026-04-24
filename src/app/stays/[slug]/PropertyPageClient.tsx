@@ -189,7 +189,10 @@ export default function PropertyPageClient({ property, unavailableDates }: Props
               {photos.map((photo, i) => (
                 <button
                   key={i}
-                  onClick={() => { setActivePhoto(i); setMainPhotoError(false) }}
+                  onClick={() => {
+                    setActivePhoto(i)
+                    setMainPhotoError(false)
+                  }}
                   className={`shrink-0 w-24 h-16 overflow-hidden border-2 transition-colors ${
                     i === activePhoto ? 'border-gold' : 'border-transparent opacity-60 hover:opacity-100'
                   }`}
