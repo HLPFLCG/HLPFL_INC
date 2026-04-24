@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ScrollReveal } from '@/components/ui'
 import type { Property } from '@/lib/supabase'
@@ -221,11 +222,12 @@ export default function BookingFormClient({ property, checkIn: initCheckIn, chec
                 <p className="text-xs font-semibold tracking-widest text-gold/60 uppercase mb-5">Your Booking</p>
 
                 {property.photos[0] && (
-                  <div className="aspect-video overflow-hidden mb-5">
-                    <img
+                  <div className="relative aspect-video overflow-hidden mb-5">
+                    <Image
                       src={(property.photos as { url: string; alt: string }[])[0].url}
                       alt={(property.photos as { url: string; alt: string }[])[0].alt}
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                 )}

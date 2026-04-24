@@ -1,6 +1,8 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 import { ScrollReveal } from '@/components/ui'
 import type { Property } from '@/lib/supabase'
 
@@ -27,6 +29,7 @@ function formatNightlyRate(cents: number) {
 
 function PropertyCard({ property }: { property: Property }) {
   const photo = property.photos[0]
+  const [imgError, setImgError] = useState(false)
   return (
     <Link
       href={`/stays/${property.slug}/`}
@@ -34,14 +37,13 @@ function PropertyCard({ property }: { property: Property }) {
     >
       {/* Photo */}
       <div className="relative aspect-[4/3] bg-void-dark overflow-hidden">
-        {photo ? (
-          <img
+        {photo && !imgError ? (
+          <Image
             src={photo.url}
             alt={photo.alt}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iIzNlNTU3OCIvPjx0ZXh0IHg9IjQwMCIgeT0iMzEwIiBmb250LXNpemU9IjI0IiBmaWxsPSIjYWI2YzNkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5WaWxsYSBQaG90bzwvdGV4dD48L3N2Zz4='
-            }}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            onError={() => setImgError(true)}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
