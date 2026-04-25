@@ -1,14 +1,14 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "hlpfl-inc",
-  "pages_build_output_dir": ".open-next/assets",
+  "main": ".open-next/worker.js",
+  "assets": {
+    "directory": ".open-next/assets"
+  },
   "compatibility_date": "2026-04-24",
   "compatibility_flags": [
     "nodejs_compat"
   ],
-  "images": {
-    "binding": "IMAGES"
-  },
   "observability": {
     "enabled": true
   }
