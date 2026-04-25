@@ -23,19 +23,21 @@ export default function DashboardBookingsPage() {
   const [propertyFilter, setPropertyFilter] = useState('all')
 
   useEffect(() => {
-    if (!client) { setLoading(false); return }
-    Promise.all([
-      supabase
-        .from('bookings')
-        .select('*, properties!inner(name, slug, client_id)')
-        .eq('properties.client_id', client.id)
-        .order('check_in', { ascending: false }),
-      supabase.from('properties').select('id, name, slug').eq('client_id', client.id),
-    ]).then(([b, p]) => {
+    async function load() {
+      if (!client) { setLoading(false); return }
+      const [b, p] = await Promise.all([
+        supabase
+          .from('bookings')
+          .select('*, properties!inner(name, slug, client_id)')
+          .eq('properties.client_id', client.id)
+          .order('check_in', { ascending: false }),
+        supabase.from('properties').select('id, name, slug').eq('client_id', client.id),
+      ])
       setBookings((b.data as BookingWithProperty[]) ?? [])
       setProperties((p.data as Property[]) ?? [])
       setLoading(false)
-    })
+    }
+    load()
   }, [client])
 
   async function updateStatus(id: string, status: string) {

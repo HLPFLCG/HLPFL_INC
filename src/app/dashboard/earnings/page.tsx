@@ -20,17 +20,18 @@ export default function DashboardEarningsPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    if (!client) { setLoading(false); return }
-    supabase
-      .from('bookings')
-      .select('*, properties!inner(name, slug, client_id)')
-      .eq('properties.client_id', client.id)
-      .eq('status', 'confirmed')
-      .order('check_in', { ascending: false })
-      .then(({ data }) => {
-        setBookings((data as BookingWithProperty[]) ?? [])
-        setLoading(false)
-      })
+    async function load() {
+      if (!client) { setLoading(false); return }
+      const { data } = await supabase
+        .from('bookings')
+        .select('*, properties!inner(name, slug, client_id)')
+        .eq('properties.client_id', client.id)
+        .eq('status', 'confirmed')
+        .order('check_in', { ascending: false })
+      setBookings((data as BookingWithProperty[]) ?? [])
+      setLoading(false)
+    }
+    load()
   }, [client])
 
   // Group by YYYY-MM
