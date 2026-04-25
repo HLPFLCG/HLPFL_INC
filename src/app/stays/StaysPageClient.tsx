@@ -20,6 +20,7 @@ const PLACEHOLDER_PROPERTY: Property = {
   amenities: ['Oceanfront', 'Private porch', 'Free WiFi', 'Air conditioning', 'Fully equipped kitchen'],
   photos: [{ url: '/stays/placeholder-villa.jpg', alt: 'Villa Caribe Azul — Puerto Viejo' }],
   published: true,
+  client_id: null,
   created_at: '',
 }
 

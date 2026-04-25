@@ -4,6 +4,20 @@ import { createClient } from '@supabase/supabase-js'
 
 export type BookingStatus = 'pending' | 'confirmed' | 'cancelled' | 'completed'
 
+export interface Client {
+  id: string
+  user_id: string
+  name: string
+  email: string
+  business_name: string | null
+  stripe_account_id: string | null
+  stripe_onboarded: boolean
+  api_key: string
+  plan: 'free' | 'pro'
+  whatsapp_number: string | null
+  created_at: string
+}
+
 export interface Property {
   id: string
   slug: string
@@ -18,6 +32,7 @@ export interface Property {
   amenities: string[]
   photos: { url: string; alt: string }[]
   published: boolean
+  client_id: string | null
   created_at: string
 }
 
@@ -62,4 +77,25 @@ export function createServerClient() {
   return createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY, {
     auth: { persistSession: false },
   })
+}
+
+// ─── HELPERS ──────────────────────────────────────────────────────────────────
+
+/** Resolve the authenticated client record for the current user session.
+ *  Returns null if not authenticated or no client record found. */
+export async function getMyClient(): Promise<Client | null> {
+  const { data: { session } } = await supabase.auth.getSession()
+  if (!session) return null
+  const { data } = await supabase.from('clients').select('*').eq('user_id', session.user.id).single()
+  return data ?? null
+}
+
+/** Format cents → "$185" */
+export function formatCents(cents: number): string {
+  return '$' + (cents / 100).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 })
+}
+
+/** Night count between two ISO date strings */
+export function nightsBetween(checkIn: string, checkOut: string): number {
+  return Math.round((new Date(checkOut).getTime() - new Date(checkIn).getTime()) / (1000 * 60 * 60 * 24))
 }
