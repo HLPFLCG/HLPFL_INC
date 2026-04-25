@@ -235,7 +235,6 @@ export default function DashboardLayoutClient({ children }: { children: React.Re
       else setClient(null)
     })
     return () => subscription.unsubscribe()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   async function signOut() {

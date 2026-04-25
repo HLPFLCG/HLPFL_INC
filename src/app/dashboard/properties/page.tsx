@@ -12,9 +12,13 @@ export default function DashboardPropertiesPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    if (!client) { setLoading(false); return }
-    supabase.from('properties').select('*').eq('client_id', client.id).order('created_at')
-      .then(({ data }) => { setProperties(data ?? []); setLoading(false) })
+    async function load() {
+      if (!client) { setLoading(false); return }
+      const { data } = await supabase.from('properties').select('*').eq('client_id', client.id).order('created_at')
+      setProperties(data ?? [])
+      setLoading(false)
+    }
+    load()
   }, [client])
 
   async function togglePublished(id: string, current: boolean) {

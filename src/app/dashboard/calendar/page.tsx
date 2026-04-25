@@ -57,8 +57,11 @@ export default function DashboardCalendarPage() {
   const [blockSaving, setBlockSaving] = useState(false)
 
   useEffect(() => {
-    if (!client) { setLoading(false); return }
-    loadAll()
+    async function init() {
+      if (!client) { setLoading(false); return }
+      await loadAll()
+    }
+    init()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [client])
 

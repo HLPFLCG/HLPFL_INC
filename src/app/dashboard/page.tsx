@@ -15,23 +15,25 @@ export default function DashboardOverviewPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    if (!client) { setLoading(false); return }
-    Promise.all([
-      supabase
-        .from('bookings')
-        .select('*, properties!inner(name, slug, client_id)')
-        .eq('properties.client_id', client.id)
-        .order('created_at', { ascending: false })
-        .limit(50),
-      supabase
-        .from('properties')
-        .select('*')
-        .eq('client_id', client.id),
-    ]).then(([b, p]) => {
+    async function load() {
+      if (!client) { setLoading(false); return }
+      const [b, p] = await Promise.all([
+        supabase
+          .from('bookings')
+          .select('*, properties!inner(name, slug, client_id)')
+          .eq('properties.client_id', client.id)
+          .order('created_at', { ascending: false })
+          .limit(50),
+        supabase
+          .from('properties')
+          .select('*')
+          .eq('client_id', client.id),
+      ])
       setBookings((b.data as BookingWithProperty[]) ?? [])
       setProperties(p.data ?? [])
       setLoading(false)
-    })
+    }
+    load()
   }, [client])
 
   const confirmed = bookings.filter(b => b.status === 'confirmed')

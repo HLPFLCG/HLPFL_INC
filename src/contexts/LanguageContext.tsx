@@ -23,23 +23,20 @@ interface LanguageContextValue {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("en");
+  const [lang, setLangState] = useState<Lang>(() => {
+    if (typeof window === "undefined") return "en";
+    const stored = localStorage.getItem("hlpfl-lang");
+    if (stored === "en" || stored === "es") return stored;
+    const preferSpanish =
+      typeof navigator !== "undefined" &&
+      (navigator.language?.startsWith("es") ||
+        Intl.DateTimeFormat().resolvedOptions().timeZone === "America/Costa_Rica");
+    return preferSpanish ? "es" : "en";
+  });
 
   useEffect(() => {
-    const stored = localStorage.getItem("hlpfl-lang");
-    if (stored === "en" || stored === "es") {
-      setLangState(stored);
-      document.documentElement.lang = stored;
-    } else {
-      const preferSpanish =
-        typeof navigator !== "undefined" &&
-        (navigator.language?.startsWith("es") ||
-          Intl.DateTimeFormat().resolvedOptions().timeZone === "America/Costa_Rica");
-      const detectedLang: Lang = preferSpanish ? "es" : "en";
-      setLangState(detectedLang);
-      document.documentElement.lang = detectedLang;
-    }
-  }, []);
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const setLang = useCallback((newLang: Lang) => {
     setLangState(newLang);
