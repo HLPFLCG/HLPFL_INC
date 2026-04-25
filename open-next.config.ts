@@ -1,7 +1,5 @@
-// default open-next.config.ts file created by @opennextjs/cloudflare
 import { defineCloudflareConfig } from "@opennextjs/cloudflare";
-import r2IncrementalCache from "@opennextjs/cloudflare/overrides/incremental-cache/r2-incremental-cache";
 
-export default defineCloudflareConfig({
-	incrementalCache: r2IncrementalCache,
-});
+// No R2 bucket required. ISR pages use per-worker in-memory caching,
+// which is sufficient for this low-traffic site.
+export default defineCloudflareConfig({});

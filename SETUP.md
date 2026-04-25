@@ -26,6 +26,38 @@ After running the migration, go to **Table Editor → properties**. You should s
 3. Enter your admin email and a strong password.
 4. This is the only user who can access `/admin/`.
 
+### Enable Google and Facebook OAuth (for customer dashboard login)
+
+#### Google
+1. Go to [console.cloud.google.com](https://console.cloud.google.com) → **APIs & Services → Credentials**.
+2. Create a new **OAuth 2.0 Client ID** (Web application).
+3. Add these **Authorized redirect URIs**:
+   - `https://your-project-id.supabase.co/auth/v1/callback`
+   - *(replace `your-project-id` with your actual project ID — visible in Supabase dashboard → Settings → API → Project URL)*
+4. Copy the **Client ID** and **Client secret**.
+5. In Supabase dashboard → **Authentication → Providers → Google**:
+   - Toggle **Enable**.
+   - Paste your Client ID and Client secret.
+   - Save.
+
+#### Facebook
+1. Go to [developers.facebook.com](https://developers.facebook.com) → **My Apps → Create App**.
+2. Choose **Consumer** type, enter your app name.
+3. In the app dashboard → **Facebook Login → Settings**:
+   - Add **Valid OAuth Redirect URI**: `https://your-project-id.supabase.co/auth/v1/callback`
+   - *(same `your-project-id` as above)*
+4. Copy the **App ID** and **App Secret** from **Settings → Basic**.
+5. In Supabase dashboard → **Authentication → Providers → Facebook**:
+   - Toggle **Enable**.
+   - Paste your App ID and App Secret.
+   - Save.
+
+#### Supabase URL configuration (required for both)
+In Supabase dashboard → **Authentication → URL Configuration**:
+- **Site URL**: `https://hlpfl.org`
+- **Redirect URLs**: add `https://hlpfl.org/dashboard`
+- For local testing also add: `http://localhost:3000/dashboard`
+
 ### Environment variables to add
 ```
 NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
@@ -185,23 +217,64 @@ The `/stays/terms/` page includes the required disclaimer, but you should also:
 
 ---
 
-## 10. Deployment — Important Note
+## 10. Deployment — Cloudflare Workers
 
-The booking platform requires server-side API routes (`/api/bookings/create` and `/api/webhooks/stripe`). The previous `output: export` (static Cloudflare Pages) configuration has been removed because static sites cannot run server code.
+This app deploys to **Cloudflare Workers** via `@opennextjs/cloudflare`. No R2 bucket is needed — ISR pages use per-worker in-memory caching, which is sufficient for this site's traffic level.
 
-### Option A: Vercel (recommended for simplicity)
-1. Push your code to GitHub.
-2. Import the repo at [vercel.com/new](https://vercel.com/new).
-3. Add all environment variables in Vercel dashboard → Settings → Environment Variables.
-4. Deploy. Vercel handles API routes automatically.
-5. Update your Stripe webhook URL to the Vercel deployment URL.
+### Prerequisites
 
-### Option B: Cloudflare Workers (keep existing provider)
-1. Install the adapter: `npm install -D @cloudflare/next-on-pages`
-2. Build: `npx @cloudflare/next-on-pages`
-3. Deploy: `wrangler pages deploy .vercel/output/static`
-4. Add env vars in Cloudflare Pages dashboard → Settings → Environment variables.
-5. Note: Some Node.js APIs may need `nodejs_compat` flag in `wrangler.toml`.
+```bash
+npm install -g wrangler
+wrangler login          # Opens browser to authenticate with your Cloudflare account
+```
 
-### Why the change?
-The Stripe webhook endpoint must receive POST requests from Stripe's servers. A static HTML site cannot do this — it requires a server (or serverless function) that can execute Node.js code, verify the Stripe signature, update the database, and send emails.
+### First-time setup
+
+1. Make sure your Worker is created in Cloudflare (it's created automatically on first deploy).
+2. Set all **server-side secrets** via Wrangler (these are encrypted and never visible in your code):
+
+```bash
+wrangler secret put SUPABASE_SERVICE_ROLE_KEY
+wrangler secret put STRIPE_SECRET_KEY
+wrangler secret put STRIPE_WEBHOOK_SECRET
+wrangler secret put RESEND_API_KEY
+```
+
+3. Set **public build-time variables** in your local `.env.local` before deploying. These are baked into the client JS bundle at build time, so they must be present when you run `npm run deploy`:
+
+```
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...
+NEXT_PUBLIC_SITE_URL=https://hlpfl.org
+RESEND_FROM_EMAIL=stays@hlpfl.org
+```
+
+### Deploy commands
+
+```bash
+# Build and deploy to production
+npm run deploy
+
+# Build and preview locally with Wrangler (uses your .env.local)
+npm run preview
+
+# Build only (no deploy)
+npm run build
+```
+
+### CI/CD via GitHub Actions (optional)
+
+If you automate deploys via GitHub Actions, add these as **GitHub repository secrets** and expose them in your workflow:
+
+```yaml
+env:
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+  NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+  NEXT_PUBLIC_SITE_URL: https://hlpfl.org
+  RESEND_FROM_EMAIL: stays@hlpfl.org
+```
+
+Server-side secrets (SUPABASE_SERVICE_ROLE_KEY, STRIPE_SECRET_KEY, etc.) stay as Wrangler secrets — you don't need to expose them at build time.
+
+---
