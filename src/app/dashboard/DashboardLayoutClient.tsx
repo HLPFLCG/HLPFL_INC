@@ -85,12 +85,16 @@ function LoginForm() {
   }
 
   async function handleOAuth(provider: 'google' | 'facebook') {
-    setError(''); setOauthLoading(provider)
+    setError('')
+    setOauthLoading(provider)
     const { error } = await supabase.auth.signInWithOAuth({
       provider,
       options: { redirectTo: `${window.location.origin}/dashboard` },
     })
-    if (error) { setError(error.message); setOauthLoading(null) }
+    if (error) {
+      setError(error.message)
+      setOauthLoading(null)
+    }
     // On success the browser redirects — no need to clear loading state
   }
 

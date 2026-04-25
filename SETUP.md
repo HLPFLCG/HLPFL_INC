@@ -33,6 +33,7 @@ After running the migration, go to **Table Editor → properties**. You should s
 2. Create a new **OAuth 2.0 Client ID** (Web application).
 3. Add these **Authorized redirect URIs**:
    - `https://your-project-id.supabase.co/auth/v1/callback`
+   - *(replace `your-project-id` with your actual project ID — visible in Supabase dashboard → Settings → API → Project URL)*
 4. Copy the **Client ID** and **Client secret**.
 5. In Supabase dashboard → **Authentication → Providers → Google**:
    - Toggle **Enable**.
@@ -44,6 +45,7 @@ After running the migration, go to **Table Editor → properties**. You should s
 2. Choose **Consumer** type, enter your app name.
 3. In the app dashboard → **Facebook Login → Settings**:
    - Add **Valid OAuth Redirect URI**: `https://your-project-id.supabase.co/auth/v1/callback`
+   - *(same `your-project-id` as above)*
 4. Copy the **App ID** and **App Secret** from **Settings → Basic**.
 5. In Supabase dashboard → **Authentication → Providers → Facebook**:
    - Toggle **Enable**.
