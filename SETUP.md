@@ -262,19 +262,28 @@ npm run preview
 npm run build
 ```
 
-### CI/CD via GitHub Actions (optional)
+### CI/CD via GitHub Actions
 
-If you automate deploys via GitHub Actions, add these as **GitHub repository secrets** and expose them in your workflow:
+A deploy workflow is already set up at `.github/workflows/deploy.yml`. It builds on every PR and deploys to production on every push to `main`.
 
-```yaml
-env:
-  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-  NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
-  NEXT_PUBLIC_SITE_URL: https://hlpfl.org
-  RESEND_FROM_EMAIL: stays@hlpfl.org
-```
+#### Step 1 — Disconnect Cloudflare Pages GitHub integration (important)
 
-Server-side secrets (SUPABASE_SERVICE_ROLE_KEY, STRIPE_SECRET_KEY, etc.) stay as Wrangler secrets — you don't need to expose them at build time.
+The Cloudflare Pages GitHub App auto-builds on every push, but this project is a **Workers** app, not a Pages app. The Pages builds will always fail. Remove it:
+
+1. Go to **Cloudflare Dashboard → Workers & Pages → hlpfl-inc → Settings → Git Integration**.
+2. Click **Disconnect** (or delete the Pages project if it was only ever a CI preview).
+
+#### Step 2 — Add GitHub repository secrets
+
+Go to **GitHub → HLPFLCG/HLPFL_INC → Settings → Secrets and variables → Actions → New repository secret** and add:
+
+| Secret name | Where to find it |
+|---|---|
+| `CLOUDFLARE_API_TOKEN` | Cloudflare Dashboard → My Profile → API Tokens → Create Token → use the **Edit Cloudflare Workers** template |
+| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare Dashboard → Workers & Pages → right side of the overview page |
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase → Project Settings → API → Project URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase → Project Settings → API → `anon` key |
+
+> **Note:** Server-side secrets (`SUPABASE_SERVICE_ROLE_KEY`, `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `RESEND_API_KEY`) are stored as **Wrangler secrets** (run `wrangler secret put <NAME>` once after first deploy). They are NOT needed as GitHub secrets because they are not used at build time.
 
 ---
