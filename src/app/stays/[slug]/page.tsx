@@ -23,6 +23,7 @@ const PLACEHOLDER: Property = {
     { url: '/stays/placeholder-villa.jpg', alt: 'Master bedroom' },
   ],
   published: true,
+  client_id: null,
   created_at: '',
 }
 

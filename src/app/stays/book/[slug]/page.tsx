@@ -26,6 +26,7 @@ const PLACEHOLDER: Property = {
   amenities: [],
   photos: [{ url: '/stays/placeholder-villa.jpg', alt: 'Villa Caribe Azul' }],
   published: true,
+  client_id: null,
   created_at: '',
 }
 

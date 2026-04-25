@@ -3,7 +3,9 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, LayoutDashboard } from 'lucide-react'
+import { supabase } from '@/lib/supabase'
+import type { User } from '@supabase/supabase-js'
 
 const navLinks = [
   { href: '/services', label: 'Services', badge: null },
@@ -17,11 +19,20 @@ const navLinks = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [user, setUser] = useState<User | null>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => setUser(session?.user ?? null))
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_e, session) => {
+      setUser(session?.user ?? null)
+    })
+    return () => subscription.unsubscribe()
   }, [])
 
   return (
@@ -60,8 +71,17 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* CTA + mobile toggle */}
+        {/* CTA + dashboard + mobile toggle */}
         <div className="flex items-center gap-4">
+          {user && (
+            <Link
+              href="/dashboard"
+              className="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-gold/80 hover:text-gold transition-colors tracking-wide"
+            >
+              <LayoutDashboard size={14} />
+              Dashboard
+            </Link>
+          )}
           <Link
             href="/packages"
             className="hidden md:inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-white text-sm font-semibold px-5 py-2.5 transition-colors"
@@ -97,6 +117,16 @@ export default function Header() {
               )}
             </Link>
           ))}
+          {user && (
+            <Link
+              href="/dashboard"
+              onClick={() => setMobileOpen(false)}
+              className="inline-flex items-center gap-2 text-base font-medium text-gold hover:text-gold-light transition-colors"
+            >
+              <LayoutDashboard size={16} />
+              Dashboard
+            </Link>
+          )}
           <Link
             href="/packages"
             onClick={() => setMobileOpen(false)}
