@@ -53,8 +53,9 @@ export default function DocumentsPageClient() {
     setUploadError('')
     setUploading(true)
 
-    const ext = file.name.split('.').pop()
-    const path = `${user.id}/${Date.now()}-${file.name.replace(/[^a-z0-9.\-_]/gi, '_')}`
+    const ext = file.name.includes('.') ? `.${file.name.split('.').pop()!.replace(/[^a-z0-9]/gi, '')}` : ''
+    const storageName = `${Date.now()}-${crypto.randomUUID()}${ext}`
+    const path = `${user.id}/${storageName}`
 
     const { error: storageErr } = await supabase.storage
       .from('documents')

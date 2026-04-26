@@ -132,6 +132,12 @@ export async function GET(
 
 // ── HTML response pages (minimal, no JS needed) ───────────────────────────────
 
+function responseEmoji(type: string): string {
+  if (type === 'confirmed' || type === 'already_confirmed') return '✓'
+  if (type === 'error') return '⚠'
+  return '✕'
+}
+
 function buildResponsePage(type: string, message: string, siteUrl: string) {
   const colors: Record<string, string> = {
     confirmed: '#22c55e',
@@ -156,7 +162,7 @@ function buildResponsePage(type: string, message: string, siteUrl: string) {
     </p>
     <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.25em;color:#c87941;margin:0 0 40px;">Reservations</p>
 
-    <p style="font-size:48px;margin:0 0 20px;">${type === 'confirmed' || type === 'already_confirmed' ? '✓' : type === 'error' ? '⚠' : '✕'}</p>
+    <p style="font-size:48px;margin:0 0 20px;">${responseEmoji(type)}</p>
 
     <p style="font-size:20px;font-weight:700;color:${color};margin:0 0 12px;">${message}</p>
     <p style="font-size:13px;color:rgba(255,255,255,0.4);margin:0 0 32px;">You can close this window.</p>

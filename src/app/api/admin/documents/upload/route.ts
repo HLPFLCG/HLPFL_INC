@@ -55,7 +55,10 @@ export async function POST(req: NextRequest) {
   }
 
   const fileName = nameOverride ?? file.name
-  const path = `${customerId}/${Date.now()}-${fileName.replace(/[^a-z0-9.\-_]/gi, '_')}`
+  // Use a UUID-based storage path to prevent any path traversal from user-provided filenames
+  const ext = fileName.includes('.') ? `.${fileName.split('.').pop()!.replace(/[^a-z0-9]/gi, '')}` : ''
+  const storageName = `${crypto.randomUUID()}${ext}`
+  const path = `${customerId}/${storageName}`
 
   // Upload to Supabase Storage using admin service role
   const fileBuffer = await file.arrayBuffer()
