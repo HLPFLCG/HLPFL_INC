@@ -2,6 +2,10 @@ import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { Resend } from 'resend'
 import { createServerClient } from '@/lib/supabase'
+import {
+  handleCheckoutCompleted as portalCheckoutCompleted,
+  handleChargeRefunded as portalChargeRefunded,
+} from '@/lib/portal/webhook-handler'
 
 export const runtime = 'edge'
 
@@ -108,6 +112,20 @@ export async function POST(req: NextRequest) {
       // Email failure should not fail the webhook response
       console.error('Webhook: email send failed', emailErr)
     }
+  }
+
+  // ── Portal: write customer + purchase into Supabase ────────────────────────
+  if (event.type === 'checkout.session.completed') {
+    const session = event.data.object as Stripe.Checkout.Session
+    // Only handle portal purchases — stays bookings carry booking_id in metadata.
+    if (!session.metadata?.booking_id) {
+      await portalCheckoutCompleted(session)
+    }
+  }
+
+  if (event.type === 'charge.refunded') {
+    const charge = event.data.object as Stripe.Charge
+    await portalChargeRefunded(charge)
   }
 
   return NextResponse.json({ received: true })
