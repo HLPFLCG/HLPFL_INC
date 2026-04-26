@@ -20,10 +20,17 @@ interface LanguageContextValue {
   ) => (typeof translations)[S]["en"];
 }
 
-const LanguageContext = createContext<LanguageContextValue | null>(null);
+export const LanguageContext = createContext<LanguageContextValue | null>(null);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
+export function LanguageProvider({
+  children,
+  initialLang,
+}: {
+  children: ReactNode;
+  initialLang?: Lang;
+}) {
   const [lang, setLangState] = useState<Lang>(() => {
+    if (initialLang) return initialLang;
     if (typeof window === "undefined") return "en";
     const stored = localStorage.getItem("hlpfl-lang");
     if (stored === "en" || stored === "es") return stored;
