@@ -10,6 +10,9 @@ const NAV = [
   { href: '/admin/bookings', label: 'Bookings' },
   { href: '/admin/properties', label: 'Properties' },
   { href: '/admin/blocks', label: 'Availability Blocks' },
+  { href: '/admin/projects', label: 'Projects' },
+  { href: '/admin/customers', label: 'Customers' },
+  { href: '/admin/reservations', label: 'Reservations' },
 ]
 
 export default function AdminLayoutClient({ children }: { children: React.ReactNode }) {

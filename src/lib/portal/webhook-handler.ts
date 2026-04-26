@@ -4,6 +4,7 @@
 
 import type Stripe from 'stripe'
 import { createSupabaseAdminClient } from './supabase-server'
+import { syncToMailchimp } from './mailchimp'
 
 /**
  * Handle checkout.session.completed — upsert customer + insert purchase.
@@ -70,6 +71,13 @@ export async function handleCheckoutCompleted(
   if (insertErr) {
     console.error('portal-webhook: purchase insert error', insertErr.message)
   }
+
+  // 3. Sync to Mailchimp audience (fire-and-forget).
+  syncToMailchimp({
+    email_address: email,
+    status: 'subscribed',
+    tags: ['portal-customer', session.metadata?.sku ?? 'unknown'].filter(Boolean),
+  }).catch((e) => console.error('portal-webhook: mailchimp sync error', e))
 }
 
 /**
