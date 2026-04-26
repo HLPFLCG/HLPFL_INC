@@ -27,41 +27,37 @@ export async function handleCheckoutCompleted(
       ? session.payment_intent
       : session.payment_intent?.id ?? null
 
-  // 1. Upsert the portal customer record (keyed on email).
-  //    If the user hasn't signed up yet this creates a stub; the auth trigger
-  //    (migration 0004) will fill in the full row when they first sign in.
-  const { data: customer, error: upsertErr } = await supabase
+  // Look up an existing portal customer by email.
+  // The customers.id is a FK to auth.users (no default), so we cannot INSERT
+  // a row without a corresponding auth.users entry — that's done by the auth
+  // trigger (migration 0004) when the user first signs up.
+  // Here we only backfill stripe_customer_id if the row already exists.
+  const { data: existing } = await supabase
     .from('customers')
-    .upsert(
-      {
-        // id is auth.users FK — omit here so it's filled by the auth trigger.
-        // Instead we match on email and only backfill stripe_customer_id.
-        email,
-        stripe_customer_id: stripeCustomerId,
-      },
-      { onConflict: 'email', ignoreDuplicates: false }
-    )
     .select('id')
+    .eq('email', email)
     .maybeSingle()
 
-  if (upsertErr) {
-    console.error('portal-webhook: customer upsert error', upsertErr.message)
-    return
-  }
-
-  if (!customer) {
-    // Customer row doesn't exist yet (user hasn't signed up).
-    // The purchase will be recorded once they complete signup via the auth trigger.
+  if (!existing) {
     console.info(
-      'portal-webhook: no customer row for email yet (pre-signup purchase)',
+      'portal-webhook: customer not signed up yet — stripe_customer_id will be set on first login',
       email
     )
     return
   }
 
+  // Backfill stripe_customer_id if needed
+  if (stripeCustomerId) {
+    await supabase
+      .from('customers')
+      .update({ stripe_customer_id: stripeCustomerId })
+      .eq('id', existing.id)
+      .is('stripe_customer_id', null)
+  }
+
   // 2. Insert the purchase record.
   const { error: insertErr } = await supabase.from('purchases').insert({
-    customer_id: customer.id,
+    customer_id: existing.id,
     stripe_payment_intent_id: paymentIntentId,
     stripe_checkout_session_id: session.id,
     product_sku: session.metadata?.sku ?? 'unknown',
